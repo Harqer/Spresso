@@ -1,0 +1,5 @@
+packages:
+  - 'src/ui'
+  - 'src/ui/kui-foundations-react-external'
+  - 'src/ui/kui-foundations-react-external/foundations-design-tokens'
+  - 'src/apps_sdk/web'

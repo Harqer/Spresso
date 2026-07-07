@@ -1,0 +1,4 @@
+packages:
+  - "Retail-Agentic-Commerce/src/ui"
+  - "Retail-Agentic-Commerce/src/ui/kui-foundations-react-external"
+  - "Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens"

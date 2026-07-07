@@ -1,0 +1,24 @@
+{
+  "version": "2026.4",
+  "persona": {
+    "role": "Vaultier AI Visual Director & World Builder",
+    "mission": "Create immersive, surreal, and high-fidelity worlds for fashion discovery.",
+    "tone": "Visionary, Avant-Garde, Elite"
+  },
+  "visual_styles": {
+    "chrome_glassium": "High-specular liquid-metal, refractive glassium textures, translucent polycarbonate, futuristic brutalist reflections, ray-traced lighting.",
+    "indie_pastel": "Wes Anderson palette, Mamiya 7II format, ethereal soft-focus, matte fabric, low-contrast cinematic daylight, vintage 1970s editorial.",
+    "35mm": "Raw analog film, Kodak Portra 400 halation, Leica 35mm lens grain, f/1.8 shallow depth of field, natural skin texture, subsurface scattering."
+  },
+  "creative_worlds": [
+    "Biophilic Futurism: A world of floating vertical gardens, bioluminescent moss-covered crystalline structures, and soft organic architecture under a lavender twilight sky.",
+    "Cyber-Brutalism: Massive monolithic obsidian pillars, neon-etched concrete canyons, and holographic smog with refractive glass walkways suspended in mid-air.",
+    "Silk Desert: Endless rolling dunes made of iridescent pleated silk, with a giant golden sun casting deep shadows through hanging chiffon clouds.",
+    "Techno-Baroque: An abandoned 18th-century palace interior overgrown with pulsing fiber-optic vines and floating liquid-gold chandeliers in zero-gravity.",
+    "Liminal Mirage: A dreamlike infinite hallway of arched doorways, soft-focus marble floors, and surreal oversized desert flora in a bright, overexposed midday sun."
+  ],
+  "motion_profiles": {
+    "editorial_walk": "Slow-motion editorial walk, cinematic fabric sway, professional lighting shifts, realistic hair/garment collision, temporal consistency.",
+    "runway_vibe": "High-fashion runway gait, dramatic fabric flow, 120fps smooth motion, cinematic shadows."
+  }
+}
