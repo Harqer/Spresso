@@ -1,0 +1,30 @@
+appId: com.meta.wearable.retail
+---
+- clearState
+- launchApp
+- assertVisible: "Vaultier"
+- assertNotVisible: "Mock"
+- assertNotVisible: "Placeholder"
+- assertNotVisible: "Aura" # Legacy branding check
+
+# 1. Verification of Initial Greeting
+- assertVisible: "Welcome to Vaultier."
+
+# 2. Agentic Discovery Test (Zero-Mock)
+- tapOn: "Search or ask Vaultier..."
+- inputText: "Find me a biomorphic chrome jacket for my glasses."
+- tapOn:
+    id: "Send" # Based on Icon.AutoMirrored.Filled.Send
+- waitForAnimationEnd
+- assertVisible: "Vaultier is reasoning..."
+- waitVisible: "🔥 Closest Matches (same vibe)" # Confirms backend response
+- assertNotVisible: "Grounded Discovery" # Default fallback check
+
+# 3. Industrial Data Audit
+- assertNotVisible: "0.0" # Price zero check
+- assertNotVisible: "unclassified" # Default category check
+
+# 4. Agentic Purchase Flow
+- tapOn: "Confirm Purchase"
+- assertVisible: "Confirm Purchase" # Biometric prompt title
+- assertVisible: "Authenticate to complete your order"
