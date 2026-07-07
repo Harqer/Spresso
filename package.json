@@ -1,0 +1,30 @@
+{
+  "name": "aura-quiet-living",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx server.ts",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "NODE_ENV=production tsx server.ts"
+  },
+  "dependencies": {
+    "firebase": "^11.0.1",
+    "@google/genai": "^1.29.0",
+    "@marsidev/react-turnstile": "^1.5.3",
+    "@sentry/react": "^10.62.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "tsx": "^4.19.3",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}

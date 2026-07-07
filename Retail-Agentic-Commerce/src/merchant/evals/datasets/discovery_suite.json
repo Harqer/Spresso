@@ -1,0 +1,36 @@
+[
+  {
+    "testCaseId": "intent_vto_premium",
+    "input": {
+      "user_message": "Show me how this jacket looks on me",
+      "user_metadata": { "user_tier": "premium" },
+      "image_data": "base64_stub_image"
+    },
+    "reference": {
+      "intent": "VTO",
+      "response": "Initiating high-fidelity virtual try-on. I am mapping the jacket texture to your dimensions now."
+    }
+  },
+  {
+    "testCaseId": "intent_vto_gate_free",
+    "input": {
+      "user_message": "Try this on me",
+      "user_metadata": { "user_tier": "free" }
+    },
+    "reference": {
+      "intent": "CHAT",
+      "response": "Motion Virtual Try-On is a premium feature. Join the Creator tier to see this in action."
+    }
+  },
+  {
+    "testCaseId": "product_search_context",
+    "input": {
+      "user_message": "Find minimalist denim jackets",
+      "user_metadata": { "user_tier": "free" }
+    },
+    "reference": {
+      "intent": "SEARCH",
+      "response": "I've scanned the global web and identified several minimalist denim jackets that match your style. Here are the most elite options at the best prices."
+    }
+  }
+]
