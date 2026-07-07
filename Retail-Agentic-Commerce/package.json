@@ -1,0 +1,14 @@
+{
+  "name": "retail-agentic-commerce-monorepo",
+  "private": true,
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter \"*\" dev",
+    "genkit": "infisical run -- env GENKIT_ENV=dev GENKIT_LOG_LEVEL=error pnpm dlx genkit-cli start --port 4000 --experimental-reflection-v2 -- uv run --quiet uvicorn src.merchant.main:app --port 8000 --log-level error",
+    "build": "pnpm --filter \"*\" build",
+    "lint": "pnpm --filter \"*\" lint"
+  }
+}

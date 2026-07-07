@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "656500460421",
+    "project_id": "spresso-5561f",
+    "storage_bucket": "spresso-5561f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:656500460421:android:35772b1f8aefe620d252ec",
+        "android_client_info": {
+          "package_name": "com.meta.wearable.retail"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8pF6VMGyNOei41R9wjYAFARZ0At1sUm8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

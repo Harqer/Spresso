@@ -1,0 +1,22 @@
+[build]
+  # Industrial Standard: Always build from the workspace root
+  base = "."
+  publish = "Retail-Agentic-Commerce/src/ui/.next"
+  # Force workspace-aware install and build specific package
+  command = "pnpm install && pnpm --filter agentic-commerce-ui run build"
+
+[build.environment]
+  NODE_VERSION = "22"
+  # Prevent lockfile conflicts in production
+  PNPM_FLAGS = "--frozen-lockfile --shamefully-hoist"
+  # Sentry Hardening (Suppressing warnings as requested by logs)
+  SENTRY_SUPPRESS_INSTRUMENTATION_FILE_WARNING = "1"
+  SENTRY_SUPPRESS_GLOBAL_ERROR_HANDLER_FILE_WARNING = "1"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production.environment]
+  NEXT_PUBLIC_VAULTIER_ENV = "production"

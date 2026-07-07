@@ -1,0 +1,62 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "aura-edge-service",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-06-28",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  "r2_buckets": [
+    {
+      "binding": "ASSETS",
+      "bucket_name": "aura-assets"
+    }
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "aura-db",
+      "database_id": "9b3721d9-fd26-4b62-9173-c3c877bbd6e5"
+    }
+  ],
+  "vectorize": [
+    {
+      "binding": "VECTOR_INDEX",
+      "index_name": "aura-products"
+    }
+  ],
+  "ai": {
+    "binding": "AI"
+  },
+  "vars": {
+    "ENVIRONMENT": "development"
+  },
+  "placement": {
+    "mode": "smart"
+  },
+  "env": {
+    "production": {
+      "name": "vaultier-edge-prod",
+      "vars": {
+        "ENVIRONMENT": "production"
+      },
+      "r2_buckets": [
+        {
+          "binding": "ASSETS",
+          "bucket_name": "vaultier-assets-prod"
+        }
+      ],
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "vaultier-db-prod",
+          "database_id": "9b3721d9-fd26-4b62-9173-c3c877bbd6e5"
+        }
+      ]
+    }
+  }
+}
