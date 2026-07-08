@@ -1,0 +1,38 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.meta.wearable.retail.wearable-retail-app-mergeDebugResources-63:/values-v18/values-v18.xml",
+            "map": [
+                {
+                    "source": "/home/shaolin/.gradle/caches/9.3.1/transforms/9505a7c1e18b70d0f20122d96a96aa0c/transformed/core-1.7.0/res/values-v18/values.xml",
+                    "from": {
+                        "startLines": "4,12",
+                        "startColumns": "0,0",
+                        "startOffsets": "146,562",
+                        "endLines": "11,19",
+                        "endColumns": "8,8",
+                        "endOffsets": "561,975"
+                    },
+                    "to": {
+                        "startLines": "3,11",
+                        "startColumns": "4,4",
+                        "startOffsets": "104,524",
+                        "endLines": "10,18",
+                        "endColumns": "8,8",
+                        "endOffsets": "519,937"
+                    }
+                },
+                {
+                    "source": "/home/shaolin/.gradle/caches/9.3.1/transforms/cd33b47ef70dc78f33f8ceda03120b3c/transformed/appcompat-1.7.1/res/values-v18/values-v18.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "48",
+                        "endOffsets": "99"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 9.1.0" type="partial_results">
+    <map id="UnsafeIntentLaunch">
+            <map id="unprotected">
+                <entry
+                    name="com.meta.wearable.retail.MainActivity"
+                    boolean="true"/>
+            </map>
+    </map>
+    <map id="UnusedResources">
+        <location id="R.drawable.about"
+            file="${:wearable-retail-app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/about.xml"
+            line="1"
+            column="1"
+            startOffset="0"
+            endLine="1"
+            endColumn="429"
+            endOffset="428"/>
+        <location id="R.drawable.login_1"
+            file="${:wearable-retail-app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/login_1.xml"
+            line="1"
+            column="1"
+            startOffset="0"
+            endLine="1"
+            endColumn="429"
+            endOffset="428"/>
+        <location id="R.drawable.login_2"
+            file="${:wearable-retail-app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/login_2.xml"
+            line="1"
+            column="1"
+            startOffset="0"
+            endLine="1"
+            endColumn="429"
+            endOffset="428"/>
+        <location id="R.drawable.login_3"
+            file="${:wearable-retail-app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/login_3.xml"
+            line="1"
+            column="1"
+            startOffset="0"
+            endLine="1"
+            endColumn="429"
+            endOffset="428"/>
+        <location id="R.drawable.support"
+            file="${:wearable-retail-app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/support.xml"
+            line="1"
+            column="1"
+            startOffset="0"
+            endLine="17"
+            endColumn="10"
+            endOffset="437"/>
+        <entry
+            name="model"
+            string="drawable[about(D),launch_scre(U),login_1(D),login_2(D),login_3(D),support(D),welcome(U)],mipmap[ic_launcher(U),ic_launcher_round(U)],string[vaultier_app_name(U)],style[Theme_RetailAgenticCommerce(U)];;;;"/>
+    </map>
+
+</incidents>

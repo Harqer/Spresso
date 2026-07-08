@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { AgentActivityPanel } from "@/components/agent-activity/AgentActivityPanel";
+import { AgentActivityPanel } from "./AgentActivityPanel";
 import { AgentActivityLogProvider } from "@/hooks/useAgentActivityLog";
 
 // Wrapper component to provide required context

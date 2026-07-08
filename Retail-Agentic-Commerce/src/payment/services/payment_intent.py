@@ -88,13 +88,26 @@ def generate_payment_intent_id() -> str:
     return f"pi_{uuid.uuid4().hex[:12]}"
 
 
-from src.merchant.services.stripe_service import StripePaymentService
-
-async def create_and_process_payment_intent(
+def create_and_process_payment_intent(
     db: Session,
     request: CreatePaymentIntentRequest,
 ) -> PaymentIntentResponse:
-    """Create and process a payment intent using real Stripe integration."""
+    """Create and process a payment intent.
+
+    Args:
+        db: Database session
+        request: The payment intent request
+
+    Returns:
+        PaymentIntentResponse with the processed payment intent details
+
+    Raises:
+        VaultTokenNotFoundError: If the vault token does not exist
+        VaultTokenConsumedError: If the vault token has already been used
+        VaultTokenExpiredError: If the vault token has expired
+        AmountExceedsAllowanceError: If the amount exceeds the allowance
+        CurrencyMismatchError: If the currency doesn't match
+    """
     # Get the vault token
     vault_token = get_vault_token(db, request.vault_token)
 
@@ -117,41 +130,24 @@ async def create_and_process_payment_intent(
     if request.amount > max_amount:
         raise AmountExceedsAllowanceError(request.amount, max_amount)
 
-    # Validate currency
+    # Validate currency (case-insensitive comparison)
     allowed_currency: str = str(allowance.get("currency", "")).lower()
     if request.currency.lower() != allowed_currency:
         raise CurrencyMismatchError(request.currency.lower(), allowed_currency)
 
-    # Industrial Strategy: Create real Stripe PaymentIntent
-    # This replaces the simulated completion with a live financial pulse
-    stripe_intent = await StripePaymentService.create_payment_intent(
-        amount=request.amount,
-        currency=request.currency.lower(),
-        metadata={
-            "vault_token": vault_token.id,
-            "checkout_session_id": allowance.get("checkout_session_id", ""),
-            "merchant_id": allowance.get("merchant_id", ""),
-        },
-        idempotency_key=f"payment_{vault_token.id}"
-    )
-
+    # Generate payment intent ID
+    payment_intent_id = generate_payment_intent_id()
     now = datetime.now(UTC)
 
-    # Create payment intent record mapped to Stripe ID
-    payment_status = PaymentIntentStatus.PENDING
-    if stripe_intent["status"] == "succeeded":
-        payment_status = PaymentIntentStatus.COMPLETED
-    elif stripe_intent["status"] == "requires_action":
-        payment_status = PaymentIntentStatus.PENDING # In DB we keep it as pending until confirmed
-
+    # Create payment intent record
     payment_intent = PaymentIntent(
-        id=stripe_intent["id"],
+        id=payment_intent_id,
         vault_token_id=vault_token.id,
         amount=request.amount,
         currency=request.currency.lower(),
-        status=payment_status,
+        status=PaymentIntentStatus.COMPLETED,
         created_at=now,
-        completed_at=now if stripe_intent["status"] == "succeeded" else None,
+        completed_at=now,
     )
 
     # Mark vault token as consumed (single-use)
@@ -161,20 +157,12 @@ async def create_and_process_payment_intent(
     db.commit()
     db.refresh(payment_intent)
 
-    # Map to response enum
-    response_status = PaymentIntentStatusEnum.PENDING
-    if stripe_intent["status"] == "succeeded":
-        response_status = PaymentIntentStatusEnum.COMPLETED
-    elif stripe_intent["status"] == "requires_action":
-        response_status = PaymentIntentStatusEnum.REQUIRES_ACTION
-
     return PaymentIntentResponse(
         id=payment_intent.id,
         vault_token_id=payment_intent.vault_token_id,
         amount=payment_intent.amount,
         currency=payment_intent.currency,
-        status=response_status,
-        client_secret=stripe_intent.get("client_secret"),
+        status=PaymentIntentStatusEnum.COMPLETED,
         created_at=payment_intent.created_at,
         completed_at=payment_intent.completed_at,
     )

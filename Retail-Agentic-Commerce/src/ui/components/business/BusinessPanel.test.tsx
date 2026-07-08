@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { BusinessPanel } from "@/components/business/BusinessPanel";
+import { BusinessPanel } from "./BusinessPanel";
 import { ACPLogProvider } from "@/hooks/useACPLog";
 import { AgentActivityLogProvider } from "@/hooks/useAgentActivityLog";
 import type { CheckoutProtocol } from "@/types";

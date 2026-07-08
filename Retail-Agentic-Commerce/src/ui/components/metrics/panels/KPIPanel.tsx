@@ -1,7 +1,7 @@
 "use client";
 
 import type { KPIData } from "@/types";
-import { KPICard } from "@/components/metrics/cards/KPICard";
+import { KPICard } from "../cards/KPICard";
 
 interface KPIPanelProps {
   kpis: KPIData[];

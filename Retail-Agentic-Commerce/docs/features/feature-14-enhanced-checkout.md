@@ -75,8 +75,9 @@ The current checkout flow uses hardcoded buyer information and simulated payment
 
 ## API Integration
 
-Update checkout session with fulfillment address (`POST /checkout_sessions/{id}`):
+Update checkout session with fulfillment address:
 ```json
+POST /checkout_sessions/{id}
 {
   "fulfillment_address": {
     "first_name": "John",

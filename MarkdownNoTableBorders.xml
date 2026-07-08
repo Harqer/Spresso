@@ -1,0 +1,14 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/Maintainers/work-management/REF-issues.md</file>
+  <line>25</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/Maintainers/work-management/REF-issues.md" />
+  <problem_class id="MarkdownNoTableBorders" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Table doesn't have side borders</problem_class>
+  <description>For compatibility reasons, all table rows should have borders (pipe symbols) at the start and at the end</description>
+  <highlighted_element>| Issue type | Title Prefix | Description | |:-----------|:-------------|:------------| | Bug | `[BU...</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>281</length>
+</problem>
+</problems>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vaultier_app_name">Vaultier Retail</string>
+    <style name="Theme.RetailAgenticCommerce" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">#F5F2EB</item>
+        <item name="android:windowBackground">#F5F2EB</item>
+    </style>
+</resources>

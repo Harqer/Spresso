@@ -38,8 +38,6 @@ lerna-debug.log*
 *.sln
 *.sw?
 
-vite-temp/
-
 .projects/cache
 .projects/vault
 .projects/state.test.json
@@ -47,23 +45,4 @@ vite-temp/
 .env
 .env.*
 !.env.example
-# Ignore all hidden files and folders
-.*
-
-# Exceptions (Do NOT ignore these)
-# Ignore all hidden files and folders
-.*
-
-# Exceptions (Do NOT ignore these)
-!.gitignore
-!.gitattributes
-!.github/
-build/
-outputs/
-tmp_venv/
-__pycache__/
-*.xml
-.*
-!.gitignore
-!.gitattributes
-node_modules/
+vite-temp/

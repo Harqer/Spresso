@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "/home/shaolin/.gradle/daemon/9.3.1/com.meta.wearable.retail.wearable-retail-app-debug-65:/drawable_welcome.xml.flat",
+        "source": "/home/shaolin/.gradle/daemon/9.3.1/com.meta.wearable.retail.wearable-retail-app-main-67:/drawable/welcome.xml"
+    },
+    {
+        "merged": "/home/shaolin/.gradle/daemon/9.3.1/com.meta.wearable.retail.wearable-retail-app-debug-65:/drawable_login_2.xml.flat",
+        "source": "/home/shaolin/.gradle/daemon/9.3.1/com.meta.wearable.retail.wearable-retail-app-main-67:/drawable/login_2.xml"
+    },
+    {
+        "merged": "/home/shaolin/.gradle/daemon/9.3.1/com.meta.wearable.retail.wearable-retail-app-debug-65:/drawable_login_3.xml.flat",
+        "source": "/home/shaolin/.gradle/daemon/9.3.1/com.meta.wearable.retail.wearable-retail-app-main-67:/drawable/login_3.xml"
+    },
+    {
+        "merged": "/home/shaolin/.gradle/daemon/9.3.1/com.meta.wearable.retail.wearable-retail-app-debug-65:/drawable_launch_scre.xml.flat",
+        "source": "/home/shaolin/.gradle/daemon/9.3.1/com.meta.wearable.retail.wearable-retail-app-main-67:/drawable/launch_scre.xml"
+    },
+    {
+        "merged": "/home/shaolin/.gradle/daemon/9.3.1/com.meta.wearable.retail.wearable-retail-app-debug-65:/drawable_support.xml.flat",
+        "source": "/home/shaolin/.gradle/daemon/9.3.1/com.meta.wearable.retail.wearable-retail-app-main-67:/drawable/support.xml"
+    },
+    {
+        "merged": "/home/shaolin/.gradle/daemon/9.3.1/com.meta.wearable.retail.wearable-retail-app-debug-65:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/home/shaolin/.gradle/daemon/9.3.1/com.meta.wearable.retail.wearable-retail-app-main-67:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/home/shaolin/.gradle/daemon/9.3.1/com.meta.wearable.retail.wearable-retail-app-debug-65:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/home/shaolin/.gradle/daemon/9.3.1/com.meta.wearable.retail.wearable-retail-app-main-67:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/home/shaolin/.gradle/daemon/9.3.1/com.meta.wearable.retail.wearable-retail-app-debug-65:/drawable_about.xml.flat",
+        "source": "/home/shaolin/.gradle/daemon/9.3.1/com.meta.wearable.retail.wearable-retail-app-main-67:/drawable/about.xml"
+    },
+    {
+        "merged": "/home/shaolin/.gradle/daemon/9.3.1/com.meta.wearable.retail.wearable-retail-app-debug-65:/drawable_login_1.xml.flat",
+        "source": "/home/shaolin/.gradle/daemon/9.3.1/com.meta.wearable.retail.wearable-retail-app-main-67:/drawable/login_1.xml"
+    },
+    {
+        "merged": "/home/shaolin/.gradle/daemon/9.3.1/com.meta.wearable.retail.wearable-retail-app-debug-65:/drawable_login_4.xml.flat",
+        "source": "/home/shaolin/.gradle/daemon/9.3.1/com.meta.wearable.retail.wearable-retail-app-main-67:/drawable/login_4.xml"
+    }
+]

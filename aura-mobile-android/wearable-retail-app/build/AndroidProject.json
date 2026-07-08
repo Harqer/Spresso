@@ -1,0 +1,1035 @@
+{
+    "namespace": "com.meta.wearable.retail",
+    "androidTestNamespace": "com.meta.wearable.retail.test",
+    "testFixturesNamespace": null,
+    "variants": [
+        {
+            "name": "debug",
+            "displayName": "debug",
+            "mainArtifact": {
+                "minSdkVersion": {
+                    "apiLevel": 30,
+                    "codename": null
+                },
+                "targetSdkVersionOverride": {
+                    "apiLevel": 35,
+                    "codename": null
+                },
+                "maxSdkVersion": null,
+                "signingConfigName": "debug",
+                "applicationId": "com.meta.wearable.retail",
+                "abiFilters": [
+                    "armeabi-v7a",
+                    "arm64-v8a",
+                    "x86",
+                    "x86_64"
+                ],
+                "testInfo": null,
+                "bundleInfo": {
+                    "bundleTaskName": "bundleDebug",
+                    "bundleTaskOutputListingFile": {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/bundle_ide_redirect_file/debug/createDebugBundleListingFileRedirect/redirect.txt",
+                        "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/bundle_ide_redirect_file/debug/createDebugBundleListingFileRedirect/redirect.txt",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "redirect.txt",
+                        "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/bundle_ide_redirect_file/debug/createDebugBundleListingFileRedirect",
+                        "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/bundle_ide_redirect_file/debug/createDebugBundleListingFileRedirect/redirect.txt",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    },
+                    "apkFromBundleTaskName": "extractApksForDebug",
+                    "apkFromBundleTaskOutputListingFile": {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/apk_from_bundle_ide_redirect_file/debug/createDebugApksFromBundleListingFileRedirect/redirect.txt",
+                        "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/apk_from_bundle_ide_redirect_file/debug/createDebugApksFromBundleListingFileRedirect/redirect.txt",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "redirect.txt",
+                        "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/apk_from_bundle_ide_redirect_file/debug/createDebugApksFromBundleListingFileRedirect",
+                        "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/apk_from_bundle_ide_redirect_file/debug/createDebugApksFromBundleListingFileRedirect/redirect.txt",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    }
+                },
+                "codeShrinker": null,
+                "compileTaskName": "compileDebugSources",
+                "assembleTaskName": "assembleDebug",
+                "sourceGenTaskName": "generateDebugSources",
+                "resGenTaskName": "generateDebugResources",
+                "ideSetupTaskNames": [
+                    "generateDebugSources"
+                ],
+                "generatedSourceFolders": [
+                    {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/debug/out",
+                        "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/debug/out",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "out",
+                        "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/debug",
+                        "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/debug/out",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    },
+                    {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/source/buildConfig/debug",
+                        "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/source/buildConfig/debug",
+                        "directory": true,
+                        "file": false,
+                        "freeSpace": 183916306432,
+                        "hidden": false,
+                        "name": "debug",
+                        "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/source/buildConfig",
+                        "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/source/buildConfig/debug",
+                        "totalSpace": 981132795904,
+                        "usableSpace": 134001991680
+                    }
+                ],
+                "generatedResourceFolders": [
+                    
+                ],
+                "classesFolders": [
+                    {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes",
+                        "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "classes",
+                        "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/javac/debug/compileDebugJavaWithJavac",
+                        "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    },
+                    {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/compile_r_class_jar/debug/generateDebugRFile/R.jar",
+                        "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/compile_r_class_jar/debug/generateDebugRFile/R.jar",
+                        "directory": false,
+                        "file": true,
+                        "freeSpace": 183916306432,
+                        "hidden": false,
+                        "name": "R.jar",
+                        "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/compile_r_class_jar/debug/generateDebugRFile",
+                        "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/compile_r_class_jar/debug/generateDebugRFile/R.jar",
+                        "totalSpace": 981132795904,
+                        "usableSpace": 134001991680
+                    },
+                    {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/built_in_kotlinc/debug/compileDebugKotlin/classes",
+                        "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/built_in_kotlinc/debug/compileDebugKotlin/classes",
+                        "directory": true,
+                        "file": false,
+                        "freeSpace": 183916306432,
+                        "hidden": false,
+                        "name": "classes",
+                        "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/built_in_kotlinc/debug/compileDebugKotlin",
+                        "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/built_in_kotlinc/debug/compileDebugKotlin/classes",
+                        "totalSpace": 981132795904,
+                        "usableSpace": 134001991680
+                    }
+                ],
+                "assembleTaskOutputListingFile": {
+                    "absolute": true,
+                    "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/apk_ide_redirect_file/debug/createDebugApkListingFileRedirect/redirect.txt",
+                    "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/apk_ide_redirect_file/debug/createDebugApkListingFileRedirect/redirect.txt",
+                    "directory": false,
+                    "file": true,
+                    "freeSpace": 183916306432,
+                    "hidden": false,
+                    "name": "redirect.txt",
+                    "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/apk_ide_redirect_file/debug/createDebugApkListingFileRedirect",
+                    "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/apk_ide_redirect_file/debug/createDebugApkListingFileRedirect/redirect.txt",
+                    "totalSpace": 981132795904,
+                    "usableSpace": 134001991680
+                },
+                "desugaredMethodsFiles": [
+                    {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/.gradle/caches/9.3.1/transforms/5cd19ab6e5483ffaf2d95ddce075cd59/transformed/D8BackportedDesugaredMethods.txt",
+                        "canonicalPath": "/home/shaolin/.gradle/caches/9.3.1/transforms/5cd19ab6e5483ffaf2d95ddce075cd59/transformed/D8BackportedDesugaredMethods.txt",
+                        "directory": false,
+                        "file": true,
+                        "freeSpace": 183916306432,
+                        "hidden": false,
+                        "name": "D8BackportedDesugaredMethods.txt",
+                        "parent": "/home/shaolin/.gradle/caches/9.3.1/transforms/5cd19ab6e5483ffaf2d95ddce075cd59/transformed",
+                        "path": "/home/shaolin/.gradle/caches/9.3.1/transforms/5cd19ab6e5483ffaf2d95ddce075cd59/transformed/D8BackportedDesugaredMethods.txt",
+                        "totalSpace": 981132795904,
+                        "usableSpace": 134001991680
+                    }
+                ],
+                "generatedClassPaths": {
+                    
+                },
+                "bytecodeTransformations": [
+                    
+                ],
+                "generatedAssetsFolders": [
+                    
+                ],
+                "mappingR8TextFile": null,
+                "mappingR8PartitionFile": null,
+                "modelSyncFiles": [
+                    
+                ],
+                "signed": true
+            },
+            "deviceTestArtifacts": {
+                "_android_test_": {
+                    "minSdkVersion": {
+                        "apiLevel": 30,
+                        "codename": null
+                    },
+                    "targetSdkVersionOverride": {
+                        "apiLevel": 35,
+                        "codename": null
+                    },
+                    "maxSdkVersion": null,
+                    "signingConfigName": "debug",
+                    "applicationId": "com.meta.wearable.retail.test",
+                    "abiFilters": [
+                        "armeabi-v7a",
+                        "arm64-v8a",
+                        "x86",
+                        "x86_64"
+                    ],
+                    "testInfo": {
+                        "animationsDisabled": false,
+                        "execution": "HOST",
+                        "additionalRuntimeApks": [
+                            
+                        ],
+                        "instrumentedTestTaskName": "connectedDebugAndroidTest"
+                    },
+                    "bundleInfo": null,
+                    "codeShrinker": null,
+                    "compileTaskName": "compileDebugAndroidTestSources",
+                    "assembleTaskName": "assembleDebugAndroidTest",
+                    "sourceGenTaskName": "generateDebugAndroidTestSources",
+                    "resGenTaskName": "generateDebugAndroidTestResources",
+                    "ideSetupTaskNames": [
+                        "generateDebugAndroidTestSources"
+                    ],
+                    "generatedSourceFolders": [
+                        {
+                            "absolute": true,
+                            "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/debugAndroidTest/out",
+                            "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/debugAndroidTest/out",
+                            "directory": false,
+                            "file": false,
+                            "freeSpace": 0,
+                            "hidden": false,
+                            "name": "out",
+                            "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/debugAndroidTest",
+                            "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/debugAndroidTest/out",
+                            "totalSpace": 0,
+                            "usableSpace": 0
+                        },
+                        {
+                            "absolute": true,
+                            "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/source/buildConfig/androidTest/debug",
+                            "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/source/buildConfig/androidTest/debug",
+                            "directory": false,
+                            "file": false,
+                            "freeSpace": 0,
+                            "hidden": false,
+                            "name": "debug",
+                            "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/source/buildConfig/androidTest",
+                            "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/source/buildConfig/androidTest/debug",
+                            "totalSpace": 0,
+                            "usableSpace": 0
+                        }
+                    ],
+                    "generatedResourceFolders": [
+                        
+                    ],
+                    "classesFolders": [
+                        {
+                            "absolute": true,
+                            "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/javac/debugAndroidTest/compileDebugAndroidTestJavaWithJavac/classes",
+                            "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/javac/debugAndroidTest/compileDebugAndroidTestJavaWithJavac/classes",
+                            "directory": false,
+                            "file": false,
+                            "freeSpace": 0,
+                            "hidden": false,
+                            "name": "classes",
+                            "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/javac/debugAndroidTest/compileDebugAndroidTestJavaWithJavac",
+                            "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/javac/debugAndroidTest/compileDebugAndroidTestJavaWithJavac/classes",
+                            "totalSpace": 0,
+                            "usableSpace": 0
+                        },
+                        {
+                            "absolute": true,
+                            "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/compile_r_class_jar/debugAndroidTest/generateDebugAndroidTestRFile/R.jar",
+                            "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/compile_r_class_jar/debugAndroidTest/generateDebugAndroidTestRFile/R.jar",
+                            "directory": false,
+                            "file": false,
+                            "freeSpace": 0,
+                            "hidden": false,
+                            "name": "R.jar",
+                            "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/compile_r_class_jar/debugAndroidTest/generateDebugAndroidTestRFile",
+                            "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/compile_r_class_jar/debugAndroidTest/generateDebugAndroidTestRFile/R.jar",
+                            "totalSpace": 0,
+                            "usableSpace": 0
+                        },
+                        {
+                            "absolute": true,
+                            "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/built_in_kotlinc/debugAndroidTest/compileDebugAndroidTestKotlin/classes",
+                            "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/built_in_kotlinc/debugAndroidTest/compileDebugAndroidTestKotlin/classes",
+                            "directory": false,
+                            "file": false,
+                            "freeSpace": 0,
+                            "hidden": false,
+                            "name": "classes",
+                            "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/built_in_kotlinc/debugAndroidTest/compileDebugAndroidTestKotlin",
+                            "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/built_in_kotlinc/debugAndroidTest/compileDebugAndroidTestKotlin/classes",
+                            "totalSpace": 0,
+                            "usableSpace": 0
+                        }
+                    ],
+                    "assembleTaskOutputListingFile": {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/apk_ide_redirect_file/debugAndroidTest/createDebugAndroidTestApkListingFileRedirect/redirect.txt",
+                        "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/apk_ide_redirect_file/debugAndroidTest/createDebugAndroidTestApkListingFileRedirect/redirect.txt",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "redirect.txt",
+                        "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/apk_ide_redirect_file/debugAndroidTest/createDebugAndroidTestApkListingFileRedirect",
+                        "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/apk_ide_redirect_file/debugAndroidTest/createDebugAndroidTestApkListingFileRedirect/redirect.txt",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    },
+                    "desugaredMethodsFiles": [
+                        {
+                            "absolute": true,
+                            "absolutePath": "/home/shaolin/.gradle/caches/9.3.1/transforms/5cd19ab6e5483ffaf2d95ddce075cd59/transformed/D8BackportedDesugaredMethods.txt",
+                            "canonicalPath": "/home/shaolin/.gradle/caches/9.3.1/transforms/5cd19ab6e5483ffaf2d95ddce075cd59/transformed/D8BackportedDesugaredMethods.txt",
+                            "directory": false,
+                            "file": true,
+                            "freeSpace": 183916306432,
+                            "hidden": false,
+                            "name": "D8BackportedDesugaredMethods.txt",
+                            "parent": "/home/shaolin/.gradle/caches/9.3.1/transforms/5cd19ab6e5483ffaf2d95ddce075cd59/transformed",
+                            "path": "/home/shaolin/.gradle/caches/9.3.1/transforms/5cd19ab6e5483ffaf2d95ddce075cd59/transformed/D8BackportedDesugaredMethods.txt",
+                            "totalSpace": 981132795904,
+                            "usableSpace": 134001991680
+                        }
+                    ],
+                    "generatedClassPaths": {
+                        
+                    },
+                    "bytecodeTransformations": [
+                        
+                    ],
+                    "generatedAssetsFolders": [
+                        
+                    ],
+                    "mappingR8TextFile": null,
+                    "mappingR8PartitionFile": null,
+                    "modelSyncFiles": [
+                        
+                    ],
+                    "signed": true
+                }
+            },
+            "hostTestArtifacts": {
+                "_unit_test_": {
+                    "mockablePlatformJar": {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/.gradle/caches/9.3.1/transforms/57e3c685062ef93983284813b2bfe953/transformed/android.jar",
+                        "canonicalPath": "/home/shaolin/.gradle/caches/9.3.1/transforms/57e3c685062ef93983284813b2bfe953/transformed/android.jar",
+                        "directory": false,
+                        "file": true,
+                        "freeSpace": 183916306432,
+                        "hidden": false,
+                        "name": "android.jar",
+                        "parent": "/home/shaolin/.gradle/caches/9.3.1/transforms/57e3c685062ef93983284813b2bfe953/transformed",
+                        "path": "/home/shaolin/.gradle/caches/9.3.1/transforms/57e3c685062ef93983284813b2bfe953/transformed/android.jar",
+                        "totalSpace": 981132795904,
+                        "usableSpace": 134001991680
+                    },
+                    "compileTaskName": "compileDebugUnitTestSources",
+                    "assembleTaskName": "assembleDebugUnitTest",
+                    "classesFolders": [
+                        {
+                            "absolute": true,
+                            "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/javac/debugUnitTest/compileDebugUnitTestJavaWithJavac/classes",
+                            "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/javac/debugUnitTest/compileDebugUnitTestJavaWithJavac/classes",
+                            "directory": false,
+                            "file": false,
+                            "freeSpace": 0,
+                            "hidden": false,
+                            "name": "classes",
+                            "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/javac/debugUnitTest/compileDebugUnitTestJavaWithJavac",
+                            "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/javac/debugUnitTest/compileDebugUnitTestJavaWithJavac/classes",
+                            "totalSpace": 0,
+                            "usableSpace": 0
+                        },
+                        {
+                            "absolute": true,
+                            "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/built_in_kotlinc/debugUnitTest/compileDebugUnitTestKotlin/classes",
+                            "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/built_in_kotlinc/debugUnitTest/compileDebugUnitTestKotlin/classes",
+                            "directory": false,
+                            "file": false,
+                            "freeSpace": 0,
+                            "hidden": false,
+                            "name": "classes",
+                            "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/built_in_kotlinc/debugUnitTest/compileDebugUnitTestKotlin",
+                            "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/built_in_kotlinc/debugUnitTest/compileDebugUnitTestKotlin/classes",
+                            "totalSpace": 0,
+                            "usableSpace": 0
+                        },
+                        {
+                            "absolute": true,
+                            "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/compile_and_runtime_r_class_jar/debug/processDebugResources/R.jar",
+                            "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/compile_and_runtime_r_class_jar/debug/processDebugResources/R.jar",
+                            "directory": false,
+                            "file": true,
+                            "freeSpace": 183916306432,
+                            "hidden": false,
+                            "name": "R.jar",
+                            "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/compile_and_runtime_r_class_jar/debug/processDebugResources",
+                            "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/compile_and_runtime_r_class_jar/debug/processDebugResources/R.jar",
+                            "totalSpace": 981132795904,
+                            "usableSpace": 134001991680
+                        }
+                    ],
+                    "runtimeResourceFolder": {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/java_res/debugUnitTest/processDebugUnitTestJavaRes/out",
+                        "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/java_res/debugUnitTest/processDebugUnitTestJavaRes/out",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "out",
+                        "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/java_res/debugUnitTest/processDebugUnitTestJavaRes",
+                        "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/java_res/debugUnitTest/processDebugUnitTestJavaRes/out",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    },
+                    "ideSetupTaskNames": [
+                        "createMockableJar"
+                    ],
+                    "generatedSourceFolders": [
+                        {
+                            "absolute": true,
+                            "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/debugUnitTest/out",
+                            "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/debugUnitTest/out",
+                            "directory": false,
+                            "file": false,
+                            "freeSpace": 0,
+                            "hidden": false,
+                            "name": "out",
+                            "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/debugUnitTest",
+                            "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/debugUnitTest/out",
+                            "totalSpace": 0,
+                            "usableSpace": 0
+                        }
+                    ],
+                    "generatedClassPaths": {
+                        
+                    },
+                    "bytecodeTransformations": [
+                        
+                    ],
+                    "modelSyncFiles": [
+                        
+                    ]
+                }
+            },
+            "testFixturesArtifact": null,
+            "testSuiteArtifacts": {
+                
+            },
+            "testedTargetVariant": null,
+            "runTestInSeparateProcess": false,
+            "desugaredMethods": [
+                {
+                    "absolute": true,
+                    "absolutePath": "/home/shaolin/.gradle/caches/9.3.1/transforms/5cd19ab6e5483ffaf2d95ddce075cd59/transformed/D8BackportedDesugaredMethods.txt",
+                    "canonicalPath": "/home/shaolin/.gradle/caches/9.3.1/transforms/5cd19ab6e5483ffaf2d95ddce075cd59/transformed/D8BackportedDesugaredMethods.txt",
+                    "directory": false,
+                    "file": true,
+                    "freeSpace": 183916306432,
+                    "hidden": false,
+                    "name": "D8BackportedDesugaredMethods.txt",
+                    "parent": "/home/shaolin/.gradle/caches/9.3.1/transforms/5cd19ab6e5483ffaf2d95ddce075cd59/transformed",
+                    "path": "/home/shaolin/.gradle/caches/9.3.1/transforms/5cd19ab6e5483ffaf2d95ddce075cd59/transformed/D8BackportedDesugaredMethods.txt",
+                    "totalSpace": 981132795904,
+                    "usableSpace": 134001991680
+                }
+            ],
+            "experimentalProperties": {
+                
+            },
+            "androidTestArtifact": {
+                "minSdkVersion": {
+                    "apiLevel": 30,
+                    "codename": null
+                },
+                "targetSdkVersionOverride": {
+                    "apiLevel": 35,
+                    "codename": null
+                },
+                "maxSdkVersion": null,
+                "signingConfigName": "debug",
+                "applicationId": "com.meta.wearable.retail.test",
+                "abiFilters": [
+                    "armeabi-v7a",
+                    "arm64-v8a",
+                    "x86",
+                    "x86_64"
+                ],
+                "testInfo": {
+                    "animationsDisabled": false,
+                    "execution": "HOST",
+                    "additionalRuntimeApks": [
+                        
+                    ],
+                    "instrumentedTestTaskName": "connectedDebugAndroidTest"
+                },
+                "bundleInfo": null,
+                "codeShrinker": null,
+                "compileTaskName": "compileDebugAndroidTestSources",
+                "assembleTaskName": "assembleDebugAndroidTest",
+                "sourceGenTaskName": "generateDebugAndroidTestSources",
+                "resGenTaskName": "generateDebugAndroidTestResources",
+                "ideSetupTaskNames": [
+                    "generateDebugAndroidTestSources"
+                ],
+                "generatedSourceFolders": [
+                    {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/debugAndroidTest/out",
+                        "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/debugAndroidTest/out",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "out",
+                        "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/debugAndroidTest",
+                        "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/debugAndroidTest/out",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    },
+                    {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/source/buildConfig/androidTest/debug",
+                        "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/source/buildConfig/androidTest/debug",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "debug",
+                        "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/source/buildConfig/androidTest",
+                        "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/source/buildConfig/androidTest/debug",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    }
+                ],
+                "generatedResourceFolders": [
+                    
+                ],
+                "classesFolders": [
+                    {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/javac/debugAndroidTest/compileDebugAndroidTestJavaWithJavac/classes",
+                        "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/javac/debugAndroidTest/compileDebugAndroidTestJavaWithJavac/classes",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "classes",
+                        "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/javac/debugAndroidTest/compileDebugAndroidTestJavaWithJavac",
+                        "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/javac/debugAndroidTest/compileDebugAndroidTestJavaWithJavac/classes",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    },
+                    {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/compile_r_class_jar/debugAndroidTest/generateDebugAndroidTestRFile/R.jar",
+                        "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/compile_r_class_jar/debugAndroidTest/generateDebugAndroidTestRFile/R.jar",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "R.jar",
+                        "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/compile_r_class_jar/debugAndroidTest/generateDebugAndroidTestRFile",
+                        "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/compile_r_class_jar/debugAndroidTest/generateDebugAndroidTestRFile/R.jar",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    },
+                    {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/built_in_kotlinc/debugAndroidTest/compileDebugAndroidTestKotlin/classes",
+                        "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/built_in_kotlinc/debugAndroidTest/compileDebugAndroidTestKotlin/classes",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "classes",
+                        "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/built_in_kotlinc/debugAndroidTest/compileDebugAndroidTestKotlin",
+                        "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/built_in_kotlinc/debugAndroidTest/compileDebugAndroidTestKotlin/classes",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    }
+                ],
+                "assembleTaskOutputListingFile": {
+                    "absolute": true,
+                    "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/apk_ide_redirect_file/debugAndroidTest/createDebugAndroidTestApkListingFileRedirect/redirect.txt",
+                    "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/apk_ide_redirect_file/debugAndroidTest/createDebugAndroidTestApkListingFileRedirect/redirect.txt",
+                    "directory": false,
+                    "file": false,
+                    "freeSpace": 0,
+                    "hidden": false,
+                    "name": "redirect.txt",
+                    "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/apk_ide_redirect_file/debugAndroidTest/createDebugAndroidTestApkListingFileRedirect",
+                    "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/apk_ide_redirect_file/debugAndroidTest/createDebugAndroidTestApkListingFileRedirect/redirect.txt",
+                    "totalSpace": 0,
+                    "usableSpace": 0
+                },
+                "desugaredMethodsFiles": [
+                    {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/.gradle/caches/9.3.1/transforms/5cd19ab6e5483ffaf2d95ddce075cd59/transformed/D8BackportedDesugaredMethods.txt",
+                        "canonicalPath": "/home/shaolin/.gradle/caches/9.3.1/transforms/5cd19ab6e5483ffaf2d95ddce075cd59/transformed/D8BackportedDesugaredMethods.txt",
+                        "directory": false,
+                        "file": true,
+                        "freeSpace": 183916306432,
+                        "hidden": false,
+                        "name": "D8BackportedDesugaredMethods.txt",
+                        "parent": "/home/shaolin/.gradle/caches/9.3.1/transforms/5cd19ab6e5483ffaf2d95ddce075cd59/transformed",
+                        "path": "/home/shaolin/.gradle/caches/9.3.1/transforms/5cd19ab6e5483ffaf2d95ddce075cd59/transformed/D8BackportedDesugaredMethods.txt",
+                        "totalSpace": 981132795904,
+                        "usableSpace": 134001991680
+                    }
+                ],
+                "generatedClassPaths": {
+                    
+                },
+                "bytecodeTransformations": [
+                    
+                ],
+                "generatedAssetsFolders": [
+                    
+                ],
+                "mappingR8TextFile": null,
+                "mappingR8PartitionFile": null,
+                "modelSyncFiles": [
+                    
+                ],
+                "signed": true
+            },
+            "instantAppCompatible": false,
+            "unitTestArtifact": {
+                "mockablePlatformJar": {
+                    "absolute": true,
+                    "absolutePath": "/home/shaolin/.gradle/caches/9.3.1/transforms/57e3c685062ef93983284813b2bfe953/transformed/android.jar",
+                    "canonicalPath": "/home/shaolin/.gradle/caches/9.3.1/transforms/57e3c685062ef93983284813b2bfe953/transformed/android.jar",
+                    "directory": false,
+                    "file": true,
+                    "freeSpace": 183916306432,
+                    "hidden": false,
+                    "name": "android.jar",
+                    "parent": "/home/shaolin/.gradle/caches/9.3.1/transforms/57e3c685062ef93983284813b2bfe953/transformed",
+                    "path": "/home/shaolin/.gradle/caches/9.3.1/transforms/57e3c685062ef93983284813b2bfe953/transformed/android.jar",
+                    "totalSpace": 981132795904,
+                    "usableSpace": 134001991680
+                },
+                "compileTaskName": "compileDebugUnitTestSources",
+                "assembleTaskName": "assembleDebugUnitTest",
+                "classesFolders": [
+                    {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/javac/debugUnitTest/compileDebugUnitTestJavaWithJavac/classes",
+                        "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/javac/debugUnitTest/compileDebugUnitTestJavaWithJavac/classes",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "classes",
+                        "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/javac/debugUnitTest/compileDebugUnitTestJavaWithJavac",
+                        "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/javac/debugUnitTest/compileDebugUnitTestJavaWithJavac/classes",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    },
+                    {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/built_in_kotlinc/debugUnitTest/compileDebugUnitTestKotlin/classes",
+                        "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/built_in_kotlinc/debugUnitTest/compileDebugUnitTestKotlin/classes",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "classes",
+                        "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/built_in_kotlinc/debugUnitTest/compileDebugUnitTestKotlin",
+                        "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/built_in_kotlinc/debugUnitTest/compileDebugUnitTestKotlin/classes",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    },
+                    {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/compile_and_runtime_r_class_jar/debug/processDebugResources/R.jar",
+                        "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/compile_and_runtime_r_class_jar/debug/processDebugResources/R.jar",
+                        "directory": false,
+                        "file": true,
+                        "freeSpace": 183916306432,
+                        "hidden": false,
+                        "name": "R.jar",
+                        "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/compile_and_runtime_r_class_jar/debug/processDebugResources",
+                        "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/compile_and_runtime_r_class_jar/debug/processDebugResources/R.jar",
+                        "totalSpace": 981132795904,
+                        "usableSpace": 134001991680
+                    }
+                ],
+                "runtimeResourceFolder": {
+                    "absolute": true,
+                    "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/java_res/debugUnitTest/processDebugUnitTestJavaRes/out",
+                    "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/java_res/debugUnitTest/processDebugUnitTestJavaRes/out",
+                    "directory": false,
+                    "file": false,
+                    "freeSpace": 0,
+                    "hidden": false,
+                    "name": "out",
+                    "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/java_res/debugUnitTest/processDebugUnitTestJavaRes",
+                    "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/java_res/debugUnitTest/processDebugUnitTestJavaRes/out",
+                    "totalSpace": 0,
+                    "usableSpace": 0
+                },
+                "ideSetupTaskNames": [
+                    "createMockableJar"
+                ],
+                "generatedSourceFolders": [
+                    {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/debugUnitTest/out",
+                        "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/debugUnitTest/out",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "out",
+                        "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/debugUnitTest",
+                        "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/debugUnitTest/out",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    }
+                ],
+                "generatedClassPaths": {
+                    
+                },
+                "bytecodeTransformations": [
+                    
+                ],
+                "modelSyncFiles": [
+                    
+                ]
+            }
+        },
+        {
+            "name": "release",
+            "displayName": "release",
+            "mainArtifact": {
+                "minSdkVersion": {
+                    "apiLevel": 30,
+                    "codename": null
+                },
+                "targetSdkVersionOverride": {
+                    "apiLevel": 35,
+                    "codename": null
+                },
+                "maxSdkVersion": null,
+                "signingConfigName": null,
+                "applicationId": "com.meta.wearable.retail",
+                "abiFilters": [
+                    "armeabi-v7a",
+                    "arm64-v8a",
+                    "x86",
+                    "x86_64"
+                ],
+                "testInfo": null,
+                "bundleInfo": {
+                    "bundleTaskName": "bundleRelease",
+                    "bundleTaskOutputListingFile": {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/bundle_ide_redirect_file/release/createReleaseBundleListingFileRedirect/redirect.txt",
+                        "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/bundle_ide_redirect_file/release/createReleaseBundleListingFileRedirect/redirect.txt",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "redirect.txt",
+                        "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/bundle_ide_redirect_file/release/createReleaseBundleListingFileRedirect",
+                        "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/bundle_ide_redirect_file/release/createReleaseBundleListingFileRedirect/redirect.txt",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    },
+                    "apkFromBundleTaskName": "extractApksForRelease",
+                    "apkFromBundleTaskOutputListingFile": {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/apk_from_bundle_ide_redirect_file/release/createReleaseApksFromBundleListingFileRedirect/redirect.txt",
+                        "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/apk_from_bundle_ide_redirect_file/release/createReleaseApksFromBundleListingFileRedirect/redirect.txt",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "redirect.txt",
+                        "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/apk_from_bundle_ide_redirect_file/release/createReleaseApksFromBundleListingFileRedirect",
+                        "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/apk_from_bundle_ide_redirect_file/release/createReleaseApksFromBundleListingFileRedirect/redirect.txt",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    }
+                },
+                "codeShrinker": "R8",
+                "compileTaskName": "compileReleaseSources",
+                "assembleTaskName": "assembleRelease",
+                "sourceGenTaskName": "generateReleaseSources",
+                "resGenTaskName": "generateReleaseResources",
+                "ideSetupTaskNames": [
+                    "generateReleaseSources"
+                ],
+                "generatedSourceFolders": [
+                    {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/release/out",
+                        "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/release/out",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "out",
+                        "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/release",
+                        "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/release/out",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    },
+                    {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/source/buildConfig/release",
+                        "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/source/buildConfig/release",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "release",
+                        "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/source/buildConfig",
+                        "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/source/buildConfig/release",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    }
+                ],
+                "generatedResourceFolders": [
+                    
+                ],
+                "classesFolders": [
+                    {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/javac/release/compileReleaseJavaWithJavac/classes",
+                        "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/javac/release/compileReleaseJavaWithJavac/classes",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "classes",
+                        "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/javac/release/compileReleaseJavaWithJavac",
+                        "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/javac/release/compileReleaseJavaWithJavac/classes",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    },
+                    {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/compile_r_class_jar/release/generateReleaseRFile/R.jar",
+                        "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/compile_r_class_jar/release/generateReleaseRFile/R.jar",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "R.jar",
+                        "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/compile_r_class_jar/release/generateReleaseRFile",
+                        "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/compile_r_class_jar/release/generateReleaseRFile/R.jar",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    },
+                    {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/built_in_kotlinc/release/compileReleaseKotlin/classes",
+                        "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/built_in_kotlinc/release/compileReleaseKotlin/classes",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "classes",
+                        "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/built_in_kotlinc/release/compileReleaseKotlin",
+                        "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/built_in_kotlinc/release/compileReleaseKotlin/classes",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    }
+                ],
+                "assembleTaskOutputListingFile": {
+                    "absolute": true,
+                    "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/apk_ide_redirect_file/release/createReleaseApkListingFileRedirect/redirect.txt",
+                    "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/apk_ide_redirect_file/release/createReleaseApkListingFileRedirect/redirect.txt",
+                    "directory": false,
+                    "file": false,
+                    "freeSpace": 0,
+                    "hidden": false,
+                    "name": "redirect.txt",
+                    "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/apk_ide_redirect_file/release/createReleaseApkListingFileRedirect",
+                    "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/apk_ide_redirect_file/release/createReleaseApkListingFileRedirect/redirect.txt",
+                    "totalSpace": 0,
+                    "usableSpace": 0
+                },
+                "desugaredMethodsFiles": [
+                    {
+                        "absolute": true,
+                        "absolutePath": "/home/shaolin/.gradle/caches/9.3.1/transforms/5cd19ab6e5483ffaf2d95ddce075cd59/transformed/D8BackportedDesugaredMethods.txt",
+                        "canonicalPath": "/home/shaolin/.gradle/caches/9.3.1/transforms/5cd19ab6e5483ffaf2d95ddce075cd59/transformed/D8BackportedDesugaredMethods.txt",
+                        "directory": false,
+                        "file": true,
+                        "freeSpace": 183916306432,
+                        "hidden": false,
+                        "name": "D8BackportedDesugaredMethods.txt",
+                        "parent": "/home/shaolin/.gradle/caches/9.3.1/transforms/5cd19ab6e5483ffaf2d95ddce075cd59/transformed",
+                        "path": "/home/shaolin/.gradle/caches/9.3.1/transforms/5cd19ab6e5483ffaf2d95ddce075cd59/transformed/D8BackportedDesugaredMethods.txt",
+                        "totalSpace": 981132795904,
+                        "usableSpace": 134001991680
+                    }
+                ],
+                "generatedClassPaths": {
+                    
+                },
+                "bytecodeTransformations": [
+                    
+                ],
+                "generatedAssetsFolders": [
+                    
+                ],
+                "mappingR8TextFile": {
+                    "absolute": true,
+                    "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/outputs/mapping/release/mapping.txt",
+                    "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/outputs/mapping/release/mapping.txt",
+                    "directory": false,
+                    "file": false,
+                    "freeSpace": 0,
+                    "hidden": false,
+                    "name": "mapping.txt",
+                    "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/outputs/mapping/release",
+                    "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/outputs/mapping/release/mapping.txt",
+                    "totalSpace": 0,
+                    "usableSpace": 0
+                },
+                "mappingR8PartitionFile": {
+                    "absolute": true,
+                    "absolutePath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/outputs/mapping/release/mapping.prt",
+                    "canonicalPath": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/outputs/mapping/release/mapping.prt",
+                    "directory": false,
+                    "file": false,
+                    "freeSpace": 0,
+                    "hidden": false,
+                    "name": "mapping.prt",
+                    "parent": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/outputs/mapping/release",
+                    "path": "/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/outputs/mapping/release/mapping.prt",
+                    "totalSpace": 0,
+                    "usableSpace": 0
+                },
+                "modelSyncFiles": [
+                    
+                ],
+                "signed": false
+            },
+            "deviceTestArtifacts": {
+                
+            },
+            "hostTestArtifacts": {
+                
+            },
+            "testFixturesArtifact": null,
+            "testSuiteArtifacts": {
+                
+            },
+            "testedTargetVariant": null,
+            "runTestInSeparateProcess": false,
+            "desugaredMethods": [
+                {
+                    "absolute": true,
+                    "absolutePath": "/home/shaolin/.gradle/caches/9.3.1/transforms/5cd19ab6e5483ffaf2d95ddce075cd59/transformed/D8BackportedDesugaredMethods.txt",
+                    "canonicalPath": "/home/shaolin/.gradle/caches/9.3.1/transforms/5cd19ab6e5483ffaf2d95ddce075cd59/transformed/D8BackportedDesugaredMethods.txt",
+                    "directory": false,
+                    "file": true,
+                    "freeSpace": 183916306432,
+                    "hidden": false,
+                    "name": "D8BackportedDesugaredMethods.txt",
+                    "parent": "/home/shaolin/.gradle/caches/9.3.1/transforms/5cd19ab6e5483ffaf2d95ddce075cd59/transformed",
+                    "path": "/home/shaolin/.gradle/caches/9.3.1/transforms/5cd19ab6e5483ffaf2d95ddce075cd59/transformed/D8BackportedDesugaredMethods.txt",
+                    "totalSpace": 981132795904,
+                    "usableSpace": 134001991680
+                }
+            ],
+            "experimentalProperties": {
+                
+            },
+            "androidTestArtifact": null,
+            "instantAppCompatible": false,
+            "unitTestArtifact": null
+        }
+    ],
+    "testSuites": [
+        
+    ],
+    "javaCompileOptions": {
+        "encoding": "UTF-8",
+        "sourceCompatibility": "1.8",
+        "targetCompatibility": "1.8",
+        "coreLibraryDesugaringEnabled": false
+    },
+    "resourcePrefix": null,
+    "dynamicFeatures": [
+        
+    ],
+    "viewBindingOptions": {
+        "enabled": false
+    },
+    "flags": {
+        "booleanFlagMap": {
+            "APPLICATION_R_CLASS_CONSTANT_IDS": false,
+            "TEST_R_CLASS_CONSTANT_IDS": false,
+            "JETPACK_COMPOSE": true,
+            "ML_MODEL_BINDING": false,
+            "TRANSITIVE_R_CLASS": false,
+            "UNIFIED_TEST_PLATFORM": true,
+            "USE_ANDROID_X": true,
+            "BUILD_FEATURE_ANDROID_RESOURCES": true,
+            "EXCLUDE_LIBRARY_COMPONENTS_FROM_CONSTRAINTS": false,
+            "ENABLE_COMPILE_RUNTIME_CLASSPATH_ALIGNMENT": false,
+            "DATA_BINDING_ENABLED": false,
+            "GENERATE_MANIFEST_CLASS": false,
+            "OLD_VARIANT_API_IN_USE": false,
+            "R8_GRADUAL_API": false,
+            "BUILT_IN_KOTLIN_DEFAULT_ENABLED": true
+        }
+    },
+    "lintChecksJars": [
+        
+    ],
+    "desugarLibConfig": [
+        
+    ],
+    "lintJar": null
+}

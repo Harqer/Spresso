@@ -1,0 +1,6 @@
+com.meta.wearable.retail.wearable-retail-app-updated_navigation_xml-0 /home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/generated/updated_navigation_xml/debug
+com.meta.wearable.retail.wearable-retail-app-packageDebugResources-1 /home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.meta.wearable.retail.wearable-retail-app-packageDebugResources-2 /home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.meta.wearable.retail.wearable-retail-app-debug-3 /home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/build/intermediates/merged_res/debug/mergeDebugResources
+com.meta.wearable.retail.wearable-retail-app-debug-4 /home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/debug/res
+com.meta.wearable.retail.wearable-retail-app-main-5 /home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/res

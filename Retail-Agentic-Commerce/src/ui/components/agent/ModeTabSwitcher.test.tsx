@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { ModeTabSwitcher, type CheckoutMode } from "@/components/agent/ModeTabSwitcher";
+import { ModeTabSwitcher, type CheckoutMode } from "./ModeTabSwitcher";
 
 describe("ModeTabSwitcher", () => {
   it("marks the active mode as selected", () => {

@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { SearchPromptBar } from "@/components/agent/SearchPromptBar";
+import { SearchPromptBar } from "./SearchPromptBar";
 
 describe("SearchPromptBar", () => {
   it("renders input and button", () => {

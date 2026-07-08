@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { ProductCard } from "@/components/agent/ProductCard";
+import { ProductCard } from "./ProductCard";
 import type { Product } from "@/types";
 
 // Mock Next.js Image component

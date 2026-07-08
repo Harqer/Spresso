@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { ProductGrid } from "@/components/agent/ProductGrid";
+import { ProductGrid } from "./ProductGrid";
 import type { Product } from "@/types";
 
 // Mock Next.js Image component

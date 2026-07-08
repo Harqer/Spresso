@@ -1,0 +1,19 @@
+<lint-module
+    format="1"
+    dir="/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wear-retail-watch"
+    name=":wear-retail-watch"
+    type="APP"
+    maven="Aura Retail:wear-retail-watch:unspecified"
+    agpVersion="9.1.0"
+    buildFolder="build"
+    bootClassPath="/home/shaolin/Android/Sdk/platforms/android-37.0/android.jar:/home/shaolin/Android/Sdk/build-tools/36.0.0/core-lambda-stubs.jar"
+    javaSourceLevel="1.8"
+    compileTarget="android-37"
+    highlightGradualR8Api="false">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="debug"/>
+</lint-module>

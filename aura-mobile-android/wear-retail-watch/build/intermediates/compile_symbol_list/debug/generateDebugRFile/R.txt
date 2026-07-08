@@ -1,0 +1,3 @@
+int mipmap ic_launcher 0x0
+int mipmap ic_launcher_round 0x0
+int string vaultier_watch_app_name 0x0

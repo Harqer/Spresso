@@ -1,7 +1,7 @@
 "use client";
 
 import type { RevenueDataPoint, TimeRange } from "@/types";
-import { GlassAreaChart } from "@/components/metrics/charts/GlassAreaChart";
+import { GlassAreaChart } from "../charts/GlassAreaChart";
 
 interface RevenuePanelProps {
   data: RevenueDataPoint[];

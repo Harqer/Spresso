@@ -1,0 +1,9 @@
+name: 'Test Android App'
+description: 'Runs unit tests for the wearable app'
+runs:
+  using: "composite"
+  steps:
+    - name: Run Android Health Checks
+      shell: bash
+      working-directory: aura-mobile-android
+      run: ./gradlew test
