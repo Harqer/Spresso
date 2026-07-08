@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { RecommendationSkeleton } from "@/components/RecommendationSkeleton";
+import { RecommendationSkeleton } from "./RecommendationSkeleton";
 
 describe("RecommendationSkeleton", () => {
   it("renders 3 skeleton cards", () => {

@@ -1,0 +1,62 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/.gitignore</file>
+  <line>128</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/.gitignore" />
+  <problem_class id="IgnoreFileDuplicateEntry" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Ignore file duplicates</problem_class>
+  <description>&lt;code&gt;build/&lt;/code&gt; pattern is defined more than once</description>
+  <highlighted_element>build/</highlighted_element>
+  <language>IgnoreLang</language>
+  <offset>0</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/.gitignore</file>
+  <line>129</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/.gitignore" />
+  <problem_class id="IgnoreFileDuplicateEntry" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Ignore file duplicates</problem_class>
+  <description>&lt;code&gt;dist/&lt;/code&gt; pattern is defined more than once</description>
+  <highlighted_element>dist/</highlighted_element>
+  <language>IgnoreLang</language>
+  <offset>0</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/.gitignore</file>
+  <line>134</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/.gitignore" />
+  <problem_class id="IgnoreFileDuplicateEntry" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Ignore file duplicates</problem_class>
+  <description>&lt;code&gt;.next/&lt;/code&gt; pattern is defined more than once</description>
+  <highlighted_element>.next/</highlighted_element>
+  <language>IgnoreLang</language>
+  <offset>0</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/.gitignore</file>
+  <line>135</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/.gitignore" />
+  <problem_class id="IgnoreFileDuplicateEntry" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Ignore file duplicates</problem_class>
+  <description>&lt;code&gt;out/&lt;/code&gt; pattern is defined more than once</description>
+  <highlighted_element>out/</highlighted_element>
+  <language>IgnoreLang</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/.gitignore</file>
+  <line>155</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/.gitignore" />
+  <problem_class id="IgnoreFileDuplicateEntry" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Ignore file duplicates</problem_class>
+  <description>&lt;code&gt;.DS_Store&lt;/code&gt; pattern is defined more than once</description>
+  <highlighted_element>.DS_Store</highlighted_element>
+  <language>IgnoreLang</language>
+  <offset>0</offset>
+  <length>9</length>
+</problem>
+</problems>

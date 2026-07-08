@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { render, waitFor, act } from "@testing-library/react";
-import { WebhookToAgentActivityBridge } from "@/components/WebhookToAgentActivityBridge";
+import { WebhookToAgentActivityBridge } from "./WebhookToAgentActivityBridge";
 
 const addPostPurchaseEvent = vi.fn();
 const logEvent = vi.fn(() => "acp_event_1");

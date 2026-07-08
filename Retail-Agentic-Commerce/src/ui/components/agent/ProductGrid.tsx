@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ProductCard } from "@/components/agent/ProductCard";
+import { ProductCard } from "./ProductCard";
 import type { Product } from "@/types";
 
 interface ProductGridProps {

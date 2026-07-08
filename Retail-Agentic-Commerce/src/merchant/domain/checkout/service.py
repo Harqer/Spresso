@@ -566,39 +566,10 @@ async def complete_checkout_session(
                     "Secure authentication failed. Session invalid.", "auth_failed"
                 )
 
-        # HITL Strategy:
-        # 1. If token is not provided or is 'init', create PaymentIntent and return client_secret
-        # 2. If token is provided, verify it.
-
-        metadata = json.loads(session.metadata_json or "{}")
-
-        is_hitl_init = payment_data.token in ["init", "pulse", "confirm"]
-        if is_hitl_init or not payment_data.token.startswith("pi_"):
-            # Create a payment intent in Stripe (Initial HITL Trigger)
-            stripe_intent = await StripePaymentService.create_payment_intent(
-                amount=total_amount, metadata={"checkout_session_id": session_id}
-            )
-
-            # Store in metadata for subsequent verification
-            metadata["client_secret"] = stripe_intent["client_secret"]
-            metadata["payment_intent_id"] = stripe_intent["id"]
-            session.metadata_json = json.dumps(metadata)
-            session.status = CheckoutStatus.READY_FOR_PAYMENT # Keep ready until confirmed
-
-            db.add(session)
-            db.commit()
-            db.refresh(session)
-
-            # Return with Authentication Required for HITL frontend trigger
-            response = session_to_response(session)
-            response.status = CheckoutStatusEnum.AUTHENTICATION_REQUIRED
-            return response
-
-        # Verification Step: Client provides the confirmed PaymentIntent ID
-        is_valid = await StripePaymentService.verify_payment(payment_data.token)
-        if not is_valid:
-            raise CheckoutServiceError("Payment verification failed. Human pulse not detected.", "payment_failed")
-
+        # Create a payment intent in Stripe
+        await StripePaymentService.create_payment_intent(
+            amount=total_amount, metadata={"checkout_session_id": session_id}
+        )
     except Exception as e:
         logger.error(f"Stripe payment failed for session {session_id}: {e}")
         raise CheckoutServiceError(f"Payment failed: {str(e)}", "payment_failed") from e

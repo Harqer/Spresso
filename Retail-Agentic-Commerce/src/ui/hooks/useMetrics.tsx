@@ -24,7 +24,7 @@ import type {
   MetricsAPIRecommendationAttribution,
 } from "@/types";
 import { getMetricsDashboard } from "@/lib/api-client";
-import { fetchPhoenixAgentPerformance } from "@/hooks/usePhoenixTelemetry";
+import { fetchPhoenixAgentPerformance } from "./usePhoenixTelemetry";
 
 const initialState: MetricsState = {
   timeRange: "24h",

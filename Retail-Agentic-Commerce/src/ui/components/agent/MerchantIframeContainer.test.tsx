@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, act } from "@testing-library/react";
-import { MerchantIframeContainer } from "@/components/agent/MerchantIframeContainer";
+import { MerchantIframeContainer } from "./MerchantIframeContainer";
 
 const mockGetWidgetUrl = vi.fn();
 const mockCallToolWithWidget = vi.fn();

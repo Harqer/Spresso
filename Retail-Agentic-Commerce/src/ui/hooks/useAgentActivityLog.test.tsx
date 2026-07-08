@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { renderHook, act } from "@testing-library/react";
-import { AgentActivityLogProvider, useAgentActivityLog } from "@/hooks/useAgentActivityLog";
+import { AgentActivityLogProvider, useAgentActivityLog } from "./useAgentActivityLog";
 import type { PromotionInputSignals, PromotionDecision } from "@/types";
 
 const wrapper = ({ children }: { children: React.ReactNode }) => (

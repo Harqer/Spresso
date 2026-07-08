@@ -33,7 +33,6 @@ class CheckoutStatusEnum(StrEnum):
 
     NOT_READY_FOR_PAYMENT = "not_ready_for_payment"
     READY_FOR_PAYMENT = "ready_for_payment"
-    AUTHENTICATION_REQUIRED = "authentication_required"
     COMPLETED = "completed"
     CANCELED = "canceled"
 
@@ -532,12 +531,6 @@ class CheckoutSessionResponse(BaseModel):
     links: list[Link] = Field(..., description="HATEOAS links")
     order: Order | None = Field(
         default=None, description="Order (present after completion)"
-    )
-    client_secret: str | None = Field(
-        default=None, description="Stripe client secret for HITL confirmation"
-    )
-    payment_intent_id: str | None = Field(
-        default=None, description="Stripe PaymentIntent ID"
     )
 
 

@@ -1,16 +1,16 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { renderHook, act, waitFor } from "@testing-library/react";
 import type { ReactNode } from "react";
-import { MetricsProvider, useMetrics } from "@/hooks/useMetrics";
+import { MetricsProvider, useMetrics } from "./useMetrics";
 import { getMetricsDashboard } from "@/lib/api-client";
-import { fetchPhoenixAgentPerformance } from "@/hooks/usePhoenixTelemetry";
+import { fetchPhoenixAgentPerformance } from "./usePhoenixTelemetry";
 import type { MetricsDashboardAPIResponse, AgentPerformanceData } from "@/types";
 
 vi.mock("@/lib/api-client", () => ({
   getMetricsDashboard: vi.fn(),
 }));
 
-vi.mock("@/hooks/usePhoenixTelemetry", () => ({
+vi.mock("./usePhoenixTelemetry", () => ({
   fetchPhoenixAgentPerformance: vi.fn(),
 }));
 

@@ -146,7 +146,7 @@ workflow:
     max_attempts: 2
     retry_on_exception: true
 
-  example_input: |
+    EXAMPLE INPUT:
     {
       "brand_persona": {
         "company_name": "Acme T-Shirts",
@@ -166,7 +166,7 @@ workflow:
       "status": "order_shipped"
     }
 
-  example_output: |
+    EXAMPLE OUTPUT:
     {
       "order_id": "order_xyz789",
       "status": "order_shipped",
