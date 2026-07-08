@@ -145,14 +145,29 @@ def delegate_payment(
         422: {"description": "Validation error (amount/currency)"},
     },
 )
-async def process_payment_intent(
+def process_payment_intent(
     request_data: CreatePaymentIntentRequest,
     db: Annotated[Session, Depends(get_session)],
     _api_key: Annotated[str, Depends(verify_psp_api_key)],
 ) -> PaymentIntentResponse:
-    """Create and process a payment intent using real-time financial protocols."""
+    """Create and process a payment intent.
+
+    Uses a vault token to process a payment. The vault token is consumed
+    after successful processing (single-use).
+
+    Args:
+        request_data: The payment intent request body.
+        db: Database session.
+        _api_key: Validated PSP API key (unused but required for auth).
+
+    Returns:
+        PaymentIntentResponse with the processed payment details.
+
+    Raises:
+        HTTPException: Various status codes for different error conditions.
+    """
     try:
-        response = await create_and_process_payment_intent(db, request_data)
+        response = create_and_process_payment_intent(db, request_data)
     except VaultTokenNotFoundError as e:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,

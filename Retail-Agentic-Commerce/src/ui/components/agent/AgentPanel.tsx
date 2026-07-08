@@ -2,15 +2,15 @@
 
 import { useState, useCallback, useEffect } from "react";
 import { Stack, Flex, Text } from "@kui/foundations-react-external";
-import { ChatMessage } from "@/components/agent/ChatMessage";
-import { ProductGrid } from "@/components/agent/ProductGrid";
-import { CheckoutCard } from "@/components/agent/CheckoutCard";
-import { ConfirmationCard } from "@/components/agent/ConfirmationCard";
-import { StreamingText } from "@/components/agent/StreamingText";
-import { PaymentShippingForm } from "@/components/agent/PaymentShippingForm";
-import { ModeTabSwitcher } from "@/components/agent/ModeTabSwitcher";
-import { MerchantIframeContainer } from "@/components/agent/MerchantIframeContainer";
-import { SearchPromptBar } from "@/components/agent/SearchPromptBar";
+import { ChatMessage } from "./ChatMessage";
+import { ProductGrid } from "./ProductGrid";
+import { CheckoutCard } from "./CheckoutCard";
+import { ConfirmationCard } from "./ConfirmationCard";
+import { StreamingText } from "./StreamingText";
+import { PaymentShippingForm } from "./PaymentShippingForm";
+import { ModeTabSwitcher } from "./ModeTabSwitcher";
+import { MerchantIframeContainer } from "./MerchantIframeContainer";
+import { SearchPromptBar } from "./SearchPromptBar";
 import { useCheckoutFlow } from "@/hooks/useCheckoutFlow";
 import { useACPLog } from "@/hooks/useACPLog";
 import { useAgentActivityLog } from "@/hooks/useAgentActivityLog";
@@ -25,7 +25,7 @@ import type {
   PaymentFormData,
   BillingAddressFormData,
 } from "@/types";
-import type { CheckoutMode } from "@/components/agent/ModeTabSwitcher";
+import type { CheckoutMode } from "./ModeTabSwitcher";
 
 /**
  * Payment Modal Component

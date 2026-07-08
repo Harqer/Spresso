@@ -45,7 +45,6 @@ class PaymentIntentStatusEnum(StrEnum):
 
     PENDING = "pending"
     COMPLETED = "completed"
-    REQUIRES_ACTION = "requires_action"
 
 
 class RiskSignalTypeEnum(StrEnum):
@@ -204,7 +203,6 @@ class PaymentIntentResponse(BaseModel):
     amount: int = Field(..., description="Payment amount in minor units")
     currency: str = Field(..., description="ISO 4217 currency code")
     status: PaymentIntentStatusEnum = Field(..., description="Payment status")
-    client_secret: str | None = Field(default=None, description="Stripe client secret for 3DS")
     created_at: datetime = Field(..., description="Creation timestamp")
     completed_at: datetime | None = Field(
         default=None, description="Completion timestamp"

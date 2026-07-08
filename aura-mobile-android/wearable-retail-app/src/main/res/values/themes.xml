@@ -1,0 +1,6 @@
+<resources>
+    <style name="Theme.RetailAgenticCommerce" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">#F5F2EB</item>
+        <item name="android:windowBackground">#F5F2EB</item>
+    </style>
+</resources>

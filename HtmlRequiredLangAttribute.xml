@@ -1,0 +1,50 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/reports/lint-results-debug.html</file>
+  <line>2</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/reports/lint-results-debug.html" />
+  <problem_class id="HtmlRequiredLangAttribute" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Missing required 'lang' attribute</problem_class>
+  <description>Missing required 'lang' attribute</description>
+  <highlighted_element>html</highlighted_element>
+  <language>XML</language>
+  <offset>1</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/reports/lint-results-debug.html</file>
+  <line>2</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/reports/lint-results-debug.html" />
+  <problem_class id="HtmlRequiredLangAttribute" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Missing required 'lang' attribute</problem_class>
+  <description>Missing required 'lang' attribute</description>
+  <highlighted_element>html</highlighted_element>
+  <language>XML</language>
+  <offset>1</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/reports/tests/testDebugUnitTest/com.meta.wearable.retail.ui.ProductTest/index.html</file>
+  <line>2</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/reports/tests/testDebugUnitTest/com.meta.wearable.retail.ui.ProductTest/index.html" />
+  <problem_class id="HtmlRequiredLangAttribute" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Missing required 'lang' attribute</problem_class>
+  <description>Missing required 'lang' attribute</description>
+  <highlighted_element>html</highlighted_element>
+  <language>XML</language>
+  <offset>1</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/reports/tests/testDebugUnitTest/index.html</file>
+  <line>2</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/reports/tests/testDebugUnitTest/index.html" />
+  <problem_class id="HtmlRequiredLangAttribute" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Missing required 'lang' attribute</problem_class>
+  <description>Missing required 'lang' attribute</description>
+  <highlighted_element>html</highlighted_element>
+  <language>XML</language>
+  <offset>1</offset>
+  <length>4</length>
+</problem>
+</problems>

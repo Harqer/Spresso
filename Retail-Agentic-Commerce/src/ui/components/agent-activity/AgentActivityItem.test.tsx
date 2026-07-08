@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { AgentActivityItem } from "@/components/agent-activity/AgentActivityItem";
+import { AgentActivityItem } from "./AgentActivityItem";
 import type { AgentActivityEvent } from "@/types";
 
 describe("AgentActivityItem", () => {

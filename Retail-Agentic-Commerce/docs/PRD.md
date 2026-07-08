@@ -82,12 +82,12 @@ Implement the 5 required RESTful endpoints per the ACP specification (API Versio
 * **Response**: Full checkout state with `status`, `line_items`, `totals`, `fulfillment_options`
 
 #### FR-ACP-02: Update Checkout Session
-* **Endpoint**: `POST /checkout_sessions/\{id\}`
+* **Endpoint**: `POST /checkout_sessions/{id}`
 * **Purpose**: Modify items, address, or fulfillment options
 * **Status Transition**: `not_ready_for_payment` → `ready_for_payment` when all required fields present
 
 #### FR-ACP-03: Complete Checkout
-* **Endpoint**: `POST /checkout_sessions/\{id\}/complete`
+* **Endpoint**: `POST /checkout_sessions/{id}/complete`
 * **Purpose**: Finalize transaction with payment token
 * **Request Schema**:
 ```json
@@ -102,11 +102,11 @@ Implement the 5 required RESTful endpoints per the ACP specification (API Versio
 * **Status Transition**: `ready_for_payment` → `completed`
 
 #### FR-ACP-04: Cancel Checkout
-* **Endpoint**: `POST /checkout_sessions/\{id\}/cancel`
+* **Endpoint**: `POST /checkout_sessions/{id}/cancel`
 * **Status Transition**: Any → `canceled`
 
 #### FR-ACP-05: Get Checkout Session
-* **Endpoint**: `GET /checkout_sessions/\{id\}`
+* **Endpoint**: `GET /checkout_sessions/{id}`
 * **Purpose**: Retrieve current checkout state
 
 #### ACP Response Schema (All Endpoints)
@@ -439,12 +439,12 @@ Implement UCP-compliant endpoints alongside existing ACP endpoints (API Version:
 * **Status Transition**: `incomplete` (initial state)
 
 #### FR-UCP-03: Update Checkout Session (UCP)
-* **Endpoint**: `PUT /checkout-sessions/\{id\}` (PUT, not POST)
+* **Endpoint**: `PUT /checkout-sessions/{id}` (PUT, not POST)
 * **Purpose**: Update checkout session with full replacement semantics
 * **Status Transition**: `incomplete` → `ready_for_complete` when all required fields present
 
 #### FR-UCP-04: Complete Checkout (UCP)
-* **Endpoint**: `POST /checkout-sessions/\{id\}/complete`
+* **Endpoint**: `POST /checkout-sessions/{id}/complete`
 * **Purpose**: Finalize transaction with payment instruments
 * **Request Schema**:
 ```json
@@ -474,11 +474,11 @@ Implement UCP-compliant endpoints alongside existing ACP endpoints (API Version:
 * **Status Transition**: `ready_for_complete` → `completed`
 
 #### FR-UCP-05: Cancel Checkout (UCP)
-* **Endpoint**: `POST /checkout-sessions/\{id\}/cancel`
+* **Endpoint**: `POST /checkout-sessions/{id}/cancel`
 * **Status Transition**: Any → `canceled`
 
 #### FR-UCP-06: Get Checkout Session (UCP)
-* **Endpoint**: `GET /checkout-sessions/\{id\}`
+* **Endpoint**: `GET /checkout-sessions/{id}`
 * **Purpose**: Retrieve current checkout state
 
 **UCP request headers (all endpoints):**

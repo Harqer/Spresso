@@ -1,8 +1,8 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { App } from "@/App";
-import type { Product } from "@/types";
+import { App } from "./App";
+import type { Product } from "./types";
 
 const mockProducts: Product[] = [
   {

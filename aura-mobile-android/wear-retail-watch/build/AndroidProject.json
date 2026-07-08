@@ -1,0 +1,979 @@
+{
+    "namespace": "com.aura.retail.watch",
+    "androidTestNamespace": "com.aura.retail.watch.test",
+    "testFixturesNamespace": null,
+    "variants": [
+        {
+            "name": "debug",
+            "displayName": "debug",
+            "mainArtifact": {
+                "minSdkVersion": {
+                    "apiLevel": 25,
+                    "codename": null
+                },
+                "targetSdkVersionOverride": {
+                    "apiLevel": 35,
+                    "codename": null
+                },
+                "maxSdkVersion": null,
+                "signingConfigName": "debug",
+                "applicationId": "com.aura.retail.watch",
+                "abiFilters": [
+                    "armeabi-v7a",
+                    "arm64-v8a",
+                    "x86",
+                    "x86_64"
+                ],
+                "testInfo": null,
+                "bundleInfo": {
+                    "bundleTaskName": "bundleDebug",
+                    "bundleTaskOutputListingFile": {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/bundle_ide_redirect_file/debug/createDebugBundleListingFileRedirect/redirect.txt",
+                        "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/bundle_ide_redirect_file/debug/createDebugBundleListingFileRedirect/redirect.txt",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "redirect.txt",
+                        "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/bundle_ide_redirect_file/debug/createDebugBundleListingFileRedirect",
+                        "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/bundle_ide_redirect_file/debug/createDebugBundleListingFileRedirect/redirect.txt",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    },
+                    "apkFromBundleTaskName": "extractApksForDebug",
+                    "apkFromBundleTaskOutputListingFile": {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/apk_from_bundle_ide_redirect_file/debug/createDebugApksFromBundleListingFileRedirect/redirect.txt",
+                        "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/apk_from_bundle_ide_redirect_file/debug/createDebugApksFromBundleListingFileRedirect/redirect.txt",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "redirect.txt",
+                        "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/apk_from_bundle_ide_redirect_file/debug/createDebugApksFromBundleListingFileRedirect",
+                        "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/apk_from_bundle_ide_redirect_file/debug/createDebugApksFromBundleListingFileRedirect/redirect.txt",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    }
+                },
+                "codeShrinker": null,
+                "compileTaskName": "compileDebugSources",
+                "assembleTaskName": "assembleDebug",
+                "sourceGenTaskName": "generateDebugSources",
+                "resGenTaskName": "generateDebugResources",
+                "ideSetupTaskNames": [
+                    "generateDebugSources"
+                ],
+                "generatedSourceFolders": [
+                    {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/generated/ap_generated_sources/debug/out",
+                        "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/generated/ap_generated_sources/debug/out",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "out",
+                        "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/generated/ap_generated_sources/debug",
+                        "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/generated/ap_generated_sources/debug/out",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    }
+                ],
+                "generatedResourceFolders": [
+                    
+                ],
+                "classesFolders": [
+                    {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes",
+                        "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "classes",
+                        "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/javac/debug/compileDebugJavaWithJavac",
+                        "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    },
+                    {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/compile_r_class_jar/debug/generateDebugRFile/R.jar",
+                        "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/compile_r_class_jar/debug/generateDebugRFile/R.jar",
+                        "directory": false,
+                        "file": true,
+                        "freeSpace": 183916339200,
+                        "hidden": false,
+                        "name": "R.jar",
+                        "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/compile_r_class_jar/debug/generateDebugRFile",
+                        "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/compile_r_class_jar/debug/generateDebugRFile/R.jar",
+                        "totalSpace": 981132795904,
+                        "usableSpace": 134002024448
+                    },
+                    {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/built_in_kotlinc/debug/compileDebugKotlin/classes",
+                        "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/built_in_kotlinc/debug/compileDebugKotlin/classes",
+                        "directory": true,
+                        "file": false,
+                        "freeSpace": 183916339200,
+                        "hidden": false,
+                        "name": "classes",
+                        "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/built_in_kotlinc/debug/compileDebugKotlin",
+                        "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/built_in_kotlinc/debug/compileDebugKotlin/classes",
+                        "totalSpace": 981132795904,
+                        "usableSpace": 134002024448
+                    }
+                ],
+                "assembleTaskOutputListingFile": {
+                    "absolute": true,
+                    "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/apk_ide_redirect_file/debug/createDebugApkListingFileRedirect/redirect.txt",
+                    "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/apk_ide_redirect_file/debug/createDebugApkListingFileRedirect/redirect.txt",
+                    "directory": false,
+                    "file": true,
+                    "freeSpace": 183916339200,
+                    "hidden": false,
+                    "name": "redirect.txt",
+                    "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/apk_ide_redirect_file/debug/createDebugApkListingFileRedirect",
+                    "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/apk_ide_redirect_file/debug/createDebugApkListingFileRedirect/redirect.txt",
+                    "totalSpace": 981132795904,
+                    "usableSpace": 134002024448
+                },
+                "desugaredMethodsFiles": [
+                    {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/1427dd9b65d90e361fe2657922f6968e/transformed/D8BackportedDesugaredMethods.txt",
+                        "canonicalPath": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/1427dd9b65d90e361fe2657922f6968e/transformed/D8BackportedDesugaredMethods.txt",
+                        "directory": false,
+                        "file": true,
+                        "freeSpace": 183916339200,
+                        "hidden": false,
+                        "name": "D8BackportedDesugaredMethods.txt",
+                        "parent": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/1427dd9b65d90e361fe2657922f6968e/transformed",
+                        "path": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/1427dd9b65d90e361fe2657922f6968e/transformed/D8BackportedDesugaredMethods.txt",
+                        "totalSpace": 981132795904,
+                        "usableSpace": 134002024448
+                    }
+                ],
+                "generatedClassPaths": {
+                    
+                },
+                "bytecodeTransformations": [
+                    
+                ],
+                "generatedAssetsFolders": [
+                    
+                ],
+                "mappingR8TextFile": null,
+                "mappingR8PartitionFile": null,
+                "modelSyncFiles": [
+                    
+                ],
+                "signed": true
+            },
+            "deviceTestArtifacts": {
+                "_android_test_": {
+                    "minSdkVersion": {
+                        "apiLevel": 25,
+                        "codename": null
+                    },
+                    "targetSdkVersionOverride": {
+                        "apiLevel": 35,
+                        "codename": null
+                    },
+                    "maxSdkVersion": null,
+                    "signingConfigName": "debug",
+                    "applicationId": "com.aura.retail.watch.test",
+                    "abiFilters": [
+                        "armeabi-v7a",
+                        "arm64-v8a",
+                        "x86",
+                        "x86_64"
+                    ],
+                    "testInfo": {
+                        "animationsDisabled": false,
+                        "execution": "HOST",
+                        "additionalRuntimeApks": [
+                            
+                        ],
+                        "instrumentedTestTaskName": "connectedDebugAndroidTest"
+                    },
+                    "bundleInfo": null,
+                    "codeShrinker": null,
+                    "compileTaskName": "compileDebugAndroidTestSources",
+                    "assembleTaskName": "assembleDebugAndroidTest",
+                    "sourceGenTaskName": "generateDebugAndroidTestSources",
+                    "resGenTaskName": "generateDebugAndroidTestResources",
+                    "ideSetupTaskNames": [
+                        "generateDebugAndroidTestSources"
+                    ],
+                    "generatedSourceFolders": [
+                        {
+                            "absolute": true,
+                            "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/generated/ap_generated_sources/debugAndroidTest/out",
+                            "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/generated/ap_generated_sources/debugAndroidTest/out",
+                            "directory": false,
+                            "file": false,
+                            "freeSpace": 0,
+                            "hidden": false,
+                            "name": "out",
+                            "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/generated/ap_generated_sources/debugAndroidTest",
+                            "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/generated/ap_generated_sources/debugAndroidTest/out",
+                            "totalSpace": 0,
+                            "usableSpace": 0
+                        }
+                    ],
+                    "generatedResourceFolders": [
+                        
+                    ],
+                    "classesFolders": [
+                        {
+                            "absolute": true,
+                            "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/javac/debugAndroidTest/compileDebugAndroidTestJavaWithJavac/classes",
+                            "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/javac/debugAndroidTest/compileDebugAndroidTestJavaWithJavac/classes",
+                            "directory": false,
+                            "file": false,
+                            "freeSpace": 0,
+                            "hidden": false,
+                            "name": "classes",
+                            "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/javac/debugAndroidTest/compileDebugAndroidTestJavaWithJavac",
+                            "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/javac/debugAndroidTest/compileDebugAndroidTestJavaWithJavac/classes",
+                            "totalSpace": 0,
+                            "usableSpace": 0
+                        },
+                        {
+                            "absolute": true,
+                            "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/compile_r_class_jar/debugAndroidTest/generateDebugAndroidTestRFile/R.jar",
+                            "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/compile_r_class_jar/debugAndroidTest/generateDebugAndroidTestRFile/R.jar",
+                            "directory": false,
+                            "file": false,
+                            "freeSpace": 0,
+                            "hidden": false,
+                            "name": "R.jar",
+                            "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/compile_r_class_jar/debugAndroidTest/generateDebugAndroidTestRFile",
+                            "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/compile_r_class_jar/debugAndroidTest/generateDebugAndroidTestRFile/R.jar",
+                            "totalSpace": 0,
+                            "usableSpace": 0
+                        },
+                        {
+                            "absolute": true,
+                            "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/built_in_kotlinc/debugAndroidTest/compileDebugAndroidTestKotlin/classes",
+                            "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/built_in_kotlinc/debugAndroidTest/compileDebugAndroidTestKotlin/classes",
+                            "directory": false,
+                            "file": false,
+                            "freeSpace": 0,
+                            "hidden": false,
+                            "name": "classes",
+                            "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/built_in_kotlinc/debugAndroidTest/compileDebugAndroidTestKotlin",
+                            "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/built_in_kotlinc/debugAndroidTest/compileDebugAndroidTestKotlin/classes",
+                            "totalSpace": 0,
+                            "usableSpace": 0
+                        }
+                    ],
+                    "assembleTaskOutputListingFile": {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/apk_ide_redirect_file/debugAndroidTest/createDebugAndroidTestApkListingFileRedirect/redirect.txt",
+                        "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/apk_ide_redirect_file/debugAndroidTest/createDebugAndroidTestApkListingFileRedirect/redirect.txt",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "redirect.txt",
+                        "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/apk_ide_redirect_file/debugAndroidTest/createDebugAndroidTestApkListingFileRedirect",
+                        "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/apk_ide_redirect_file/debugAndroidTest/createDebugAndroidTestApkListingFileRedirect/redirect.txt",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    },
+                    "desugaredMethodsFiles": [
+                        {
+                            "absolute": true,
+                            "absolutePath": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/1427dd9b65d90e361fe2657922f6968e/transformed/D8BackportedDesugaredMethods.txt",
+                            "canonicalPath": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/1427dd9b65d90e361fe2657922f6968e/transformed/D8BackportedDesugaredMethods.txt",
+                            "directory": false,
+                            "file": true,
+                            "freeSpace": 183916339200,
+                            "hidden": false,
+                            "name": "D8BackportedDesugaredMethods.txt",
+                            "parent": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/1427dd9b65d90e361fe2657922f6968e/transformed",
+                            "path": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/1427dd9b65d90e361fe2657922f6968e/transformed/D8BackportedDesugaredMethods.txt",
+                            "totalSpace": 981132795904,
+                            "usableSpace": 134002024448
+                        }
+                    ],
+                    "generatedClassPaths": {
+                        
+                    },
+                    "bytecodeTransformations": [
+                        
+                    ],
+                    "generatedAssetsFolders": [
+                        
+                    ],
+                    "mappingR8TextFile": null,
+                    "mappingR8PartitionFile": null,
+                    "modelSyncFiles": [
+                        
+                    ],
+                    "signed": true
+                }
+            },
+            "hostTestArtifacts": {
+                "_unit_test_": {
+                    "mockablePlatformJar": {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/57e3c685062ef93983284813b2bfe953/transformed/android.jar",
+                        "canonicalPath": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/57e3c685062ef93983284813b2bfe953/transformed/android.jar",
+                        "directory": false,
+                        "file": true,
+                        "freeSpace": 183916339200,
+                        "hidden": false,
+                        "name": "android.jar",
+                        "parent": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/57e3c685062ef93983284813b2bfe953/transformed",
+                        "path": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/57e3c685062ef93983284813b2bfe953/transformed/android.jar",
+                        "totalSpace": 981132795904,
+                        "usableSpace": 134002024448
+                    },
+                    "compileTaskName": "compileDebugUnitTestSources",
+                    "assembleTaskName": "assembleDebugUnitTest",
+                    "classesFolders": [
+                        {
+                            "absolute": true,
+                            "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/javac/debugUnitTest/compileDebugUnitTestJavaWithJavac/classes",
+                            "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/javac/debugUnitTest/compileDebugUnitTestJavaWithJavac/classes",
+                            "directory": false,
+                            "file": false,
+                            "freeSpace": 0,
+                            "hidden": false,
+                            "name": "classes",
+                            "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/javac/debugUnitTest/compileDebugUnitTestJavaWithJavac",
+                            "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/javac/debugUnitTest/compileDebugUnitTestJavaWithJavac/classes",
+                            "totalSpace": 0,
+                            "usableSpace": 0
+                        },
+                        {
+                            "absolute": true,
+                            "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/built_in_kotlinc/debugUnitTest/compileDebugUnitTestKotlin/classes",
+                            "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/built_in_kotlinc/debugUnitTest/compileDebugUnitTestKotlin/classes",
+                            "directory": false,
+                            "file": false,
+                            "freeSpace": 0,
+                            "hidden": false,
+                            "name": "classes",
+                            "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/built_in_kotlinc/debugUnitTest/compileDebugUnitTestKotlin",
+                            "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/built_in_kotlinc/debugUnitTest/compileDebugUnitTestKotlin/classes",
+                            "totalSpace": 0,
+                            "usableSpace": 0
+                        },
+                        {
+                            "absolute": true,
+                            "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/compile_and_runtime_r_class_jar/debug/processDebugResources/R.jar",
+                            "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/compile_and_runtime_r_class_jar/debug/processDebugResources/R.jar",
+                            "directory": false,
+                            "file": true,
+                            "freeSpace": 183916322816,
+                            "hidden": false,
+                            "name": "R.jar",
+                            "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/compile_and_runtime_r_class_jar/debug/processDebugResources",
+                            "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/compile_and_runtime_r_class_jar/debug/processDebugResources/R.jar",
+                            "totalSpace": 981132795904,
+                            "usableSpace": 134002008064
+                        }
+                    ],
+                    "runtimeResourceFolder": {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/java_res/debugUnitTest/processDebugUnitTestJavaRes/out",
+                        "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/java_res/debugUnitTest/processDebugUnitTestJavaRes/out",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "out",
+                        "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/java_res/debugUnitTest/processDebugUnitTestJavaRes",
+                        "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/java_res/debugUnitTest/processDebugUnitTestJavaRes/out",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    },
+                    "ideSetupTaskNames": [
+                        "createMockableJar"
+                    ],
+                    "generatedSourceFolders": [
+                        {
+                            "absolute": true,
+                            "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/generated/ap_generated_sources/debugUnitTest/out",
+                            "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/generated/ap_generated_sources/debugUnitTest/out",
+                            "directory": false,
+                            "file": false,
+                            "freeSpace": 0,
+                            "hidden": false,
+                            "name": "out",
+                            "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/generated/ap_generated_sources/debugUnitTest",
+                            "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/generated/ap_generated_sources/debugUnitTest/out",
+                            "totalSpace": 0,
+                            "usableSpace": 0
+                        }
+                    ],
+                    "generatedClassPaths": {
+                        
+                    },
+                    "bytecodeTransformations": [
+                        
+                    ],
+                    "modelSyncFiles": [
+                        
+                    ]
+                }
+            },
+            "testFixturesArtifact": null,
+            "testSuiteArtifacts": {
+                
+            },
+            "testedTargetVariant": null,
+            "runTestInSeparateProcess": false,
+            "desugaredMethods": [
+                {
+                    "absolute": true,
+                    "absolutePath": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/1427dd9b65d90e361fe2657922f6968e/transformed/D8BackportedDesugaredMethods.txt",
+                    "canonicalPath": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/1427dd9b65d90e361fe2657922f6968e/transformed/D8BackportedDesugaredMethods.txt",
+                    "directory": false,
+                    "file": true,
+                    "freeSpace": 183916322816,
+                    "hidden": false,
+                    "name": "D8BackportedDesugaredMethods.txt",
+                    "parent": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/1427dd9b65d90e361fe2657922f6968e/transformed",
+                    "path": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/1427dd9b65d90e361fe2657922f6968e/transformed/D8BackportedDesugaredMethods.txt",
+                    "totalSpace": 981132795904,
+                    "usableSpace": 134002008064
+                }
+            ],
+            "experimentalProperties": {
+                
+            },
+            "androidTestArtifact": {
+                "minSdkVersion": {
+                    "apiLevel": 25,
+                    "codename": null
+                },
+                "targetSdkVersionOverride": {
+                    "apiLevel": 35,
+                    "codename": null
+                },
+                "maxSdkVersion": null,
+                "signingConfigName": "debug",
+                "applicationId": "com.aura.retail.watch.test",
+                "abiFilters": [
+                    "armeabi-v7a",
+                    "arm64-v8a",
+                    "x86",
+                    "x86_64"
+                ],
+                "testInfo": {
+                    "animationsDisabled": false,
+                    "execution": "HOST",
+                    "additionalRuntimeApks": [
+                        
+                    ],
+                    "instrumentedTestTaskName": "connectedDebugAndroidTest"
+                },
+                "bundleInfo": null,
+                "codeShrinker": null,
+                "compileTaskName": "compileDebugAndroidTestSources",
+                "assembleTaskName": "assembleDebugAndroidTest",
+                "sourceGenTaskName": "generateDebugAndroidTestSources",
+                "resGenTaskName": "generateDebugAndroidTestResources",
+                "ideSetupTaskNames": [
+                    "generateDebugAndroidTestSources"
+                ],
+                "generatedSourceFolders": [
+                    {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/generated/ap_generated_sources/debugAndroidTest/out",
+                        "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/generated/ap_generated_sources/debugAndroidTest/out",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "out",
+                        "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/generated/ap_generated_sources/debugAndroidTest",
+                        "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/generated/ap_generated_sources/debugAndroidTest/out",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    }
+                ],
+                "generatedResourceFolders": [
+                    
+                ],
+                "classesFolders": [
+                    {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/javac/debugAndroidTest/compileDebugAndroidTestJavaWithJavac/classes",
+                        "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/javac/debugAndroidTest/compileDebugAndroidTestJavaWithJavac/classes",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "classes",
+                        "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/javac/debugAndroidTest/compileDebugAndroidTestJavaWithJavac",
+                        "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/javac/debugAndroidTest/compileDebugAndroidTestJavaWithJavac/classes",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    },
+                    {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/compile_r_class_jar/debugAndroidTest/generateDebugAndroidTestRFile/R.jar",
+                        "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/compile_r_class_jar/debugAndroidTest/generateDebugAndroidTestRFile/R.jar",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "R.jar",
+                        "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/compile_r_class_jar/debugAndroidTest/generateDebugAndroidTestRFile",
+                        "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/compile_r_class_jar/debugAndroidTest/generateDebugAndroidTestRFile/R.jar",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    },
+                    {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/built_in_kotlinc/debugAndroidTest/compileDebugAndroidTestKotlin/classes",
+                        "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/built_in_kotlinc/debugAndroidTest/compileDebugAndroidTestKotlin/classes",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "classes",
+                        "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/built_in_kotlinc/debugAndroidTest/compileDebugAndroidTestKotlin",
+                        "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/built_in_kotlinc/debugAndroidTest/compileDebugAndroidTestKotlin/classes",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    }
+                ],
+                "assembleTaskOutputListingFile": {
+                    "absolute": true,
+                    "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/apk_ide_redirect_file/debugAndroidTest/createDebugAndroidTestApkListingFileRedirect/redirect.txt",
+                    "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/apk_ide_redirect_file/debugAndroidTest/createDebugAndroidTestApkListingFileRedirect/redirect.txt",
+                    "directory": false,
+                    "file": false,
+                    "freeSpace": 0,
+                    "hidden": false,
+                    "name": "redirect.txt",
+                    "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/apk_ide_redirect_file/debugAndroidTest/createDebugAndroidTestApkListingFileRedirect",
+                    "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/apk_ide_redirect_file/debugAndroidTest/createDebugAndroidTestApkListingFileRedirect/redirect.txt",
+                    "totalSpace": 0,
+                    "usableSpace": 0
+                },
+                "desugaredMethodsFiles": [
+                    {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/1427dd9b65d90e361fe2657922f6968e/transformed/D8BackportedDesugaredMethods.txt",
+                        "canonicalPath": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/1427dd9b65d90e361fe2657922f6968e/transformed/D8BackportedDesugaredMethods.txt",
+                        "directory": false,
+                        "file": true,
+                        "freeSpace": 183916322816,
+                        "hidden": false,
+                        "name": "D8BackportedDesugaredMethods.txt",
+                        "parent": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/1427dd9b65d90e361fe2657922f6968e/transformed",
+                        "path": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/1427dd9b65d90e361fe2657922f6968e/transformed/D8BackportedDesugaredMethods.txt",
+                        "totalSpace": 981132795904,
+                        "usableSpace": 134002008064
+                    }
+                ],
+                "generatedClassPaths": {
+                    
+                },
+                "bytecodeTransformations": [
+                    
+                ],
+                "generatedAssetsFolders": [
+                    
+                ],
+                "mappingR8TextFile": null,
+                "mappingR8PartitionFile": null,
+                "modelSyncFiles": [
+                    
+                ],
+                "signed": true
+            },
+            "instantAppCompatible": false,
+            "unitTestArtifact": {
+                "mockablePlatformJar": {
+                    "absolute": true,
+                    "absolutePath": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/57e3c685062ef93983284813b2bfe953/transformed/android.jar",
+                    "canonicalPath": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/57e3c685062ef93983284813b2bfe953/transformed/android.jar",
+                    "directory": false,
+                    "file": true,
+                    "freeSpace": 183916322816,
+                    "hidden": false,
+                    "name": "android.jar",
+                    "parent": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/57e3c685062ef93983284813b2bfe953/transformed",
+                    "path": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/57e3c685062ef93983284813b2bfe953/transformed/android.jar",
+                    "totalSpace": 981132795904,
+                    "usableSpace": 134002008064
+                },
+                "compileTaskName": "compileDebugUnitTestSources",
+                "assembleTaskName": "assembleDebugUnitTest",
+                "classesFolders": [
+                    {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/javac/debugUnitTest/compileDebugUnitTestJavaWithJavac/classes",
+                        "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/javac/debugUnitTest/compileDebugUnitTestJavaWithJavac/classes",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "classes",
+                        "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/javac/debugUnitTest/compileDebugUnitTestJavaWithJavac",
+                        "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/javac/debugUnitTest/compileDebugUnitTestJavaWithJavac/classes",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    },
+                    {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/built_in_kotlinc/debugUnitTest/compileDebugUnitTestKotlin/classes",
+                        "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/built_in_kotlinc/debugUnitTest/compileDebugUnitTestKotlin/classes",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "classes",
+                        "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/built_in_kotlinc/debugUnitTest/compileDebugUnitTestKotlin",
+                        "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/built_in_kotlinc/debugUnitTest/compileDebugUnitTestKotlin/classes",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    },
+                    {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/compile_and_runtime_r_class_jar/debug/processDebugResources/R.jar",
+                        "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/compile_and_runtime_r_class_jar/debug/processDebugResources/R.jar",
+                        "directory": false,
+                        "file": true,
+                        "freeSpace": 183916322816,
+                        "hidden": false,
+                        "name": "R.jar",
+                        "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/compile_and_runtime_r_class_jar/debug/processDebugResources",
+                        "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/compile_and_runtime_r_class_jar/debug/processDebugResources/R.jar",
+                        "totalSpace": 981132795904,
+                        "usableSpace": 134002008064
+                    }
+                ],
+                "runtimeResourceFolder": {
+                    "absolute": true,
+                    "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/java_res/debugUnitTest/processDebugUnitTestJavaRes/out",
+                    "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/java_res/debugUnitTest/processDebugUnitTestJavaRes/out",
+                    "directory": false,
+                    "file": false,
+                    "freeSpace": 0,
+                    "hidden": false,
+                    "name": "out",
+                    "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/java_res/debugUnitTest/processDebugUnitTestJavaRes",
+                    "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/java_res/debugUnitTest/processDebugUnitTestJavaRes/out",
+                    "totalSpace": 0,
+                    "usableSpace": 0
+                },
+                "ideSetupTaskNames": [
+                    "createMockableJar"
+                ],
+                "generatedSourceFolders": [
+                    {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/generated/ap_generated_sources/debugUnitTest/out",
+                        "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/generated/ap_generated_sources/debugUnitTest/out",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "out",
+                        "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/generated/ap_generated_sources/debugUnitTest",
+                        "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/generated/ap_generated_sources/debugUnitTest/out",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    }
+                ],
+                "generatedClassPaths": {
+                    
+                },
+                "bytecodeTransformations": [
+                    
+                ],
+                "modelSyncFiles": [
+                    
+                ]
+            }
+        },
+        {
+            "name": "release",
+            "displayName": "release",
+            "mainArtifact": {
+                "minSdkVersion": {
+                    "apiLevel": 25,
+                    "codename": null
+                },
+                "targetSdkVersionOverride": {
+                    "apiLevel": 35,
+                    "codename": null
+                },
+                "maxSdkVersion": null,
+                "signingConfigName": null,
+                "applicationId": "com.aura.retail.watch",
+                "abiFilters": [
+                    "armeabi-v7a",
+                    "arm64-v8a",
+                    "x86",
+                    "x86_64"
+                ],
+                "testInfo": null,
+                "bundleInfo": {
+                    "bundleTaskName": "bundleRelease",
+                    "bundleTaskOutputListingFile": {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/bundle_ide_redirect_file/release/createReleaseBundleListingFileRedirect/redirect.txt",
+                        "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/bundle_ide_redirect_file/release/createReleaseBundleListingFileRedirect/redirect.txt",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "redirect.txt",
+                        "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/bundle_ide_redirect_file/release/createReleaseBundleListingFileRedirect",
+                        "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/bundle_ide_redirect_file/release/createReleaseBundleListingFileRedirect/redirect.txt",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    },
+                    "apkFromBundleTaskName": "extractApksForRelease",
+                    "apkFromBundleTaskOutputListingFile": {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/apk_from_bundle_ide_redirect_file/release/createReleaseApksFromBundleListingFileRedirect/redirect.txt",
+                        "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/apk_from_bundle_ide_redirect_file/release/createReleaseApksFromBundleListingFileRedirect/redirect.txt",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "redirect.txt",
+                        "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/apk_from_bundle_ide_redirect_file/release/createReleaseApksFromBundleListingFileRedirect",
+                        "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/apk_from_bundle_ide_redirect_file/release/createReleaseApksFromBundleListingFileRedirect/redirect.txt",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    }
+                },
+                "codeShrinker": "R8",
+                "compileTaskName": "compileReleaseSources",
+                "assembleTaskName": "assembleRelease",
+                "sourceGenTaskName": "generateReleaseSources",
+                "resGenTaskName": "generateReleaseResources",
+                "ideSetupTaskNames": [
+                    "generateReleaseSources"
+                ],
+                "generatedSourceFolders": [
+                    {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/generated/ap_generated_sources/release/out",
+                        "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/generated/ap_generated_sources/release/out",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "out",
+                        "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/generated/ap_generated_sources/release",
+                        "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/generated/ap_generated_sources/release/out",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    }
+                ],
+                "generatedResourceFolders": [
+                    
+                ],
+                "classesFolders": [
+                    {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/javac/release/compileReleaseJavaWithJavac/classes",
+                        "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/javac/release/compileReleaseJavaWithJavac/classes",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "classes",
+                        "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/javac/release/compileReleaseJavaWithJavac",
+                        "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/javac/release/compileReleaseJavaWithJavac/classes",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    },
+                    {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/compile_r_class_jar/release/generateReleaseRFile/R.jar",
+                        "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/compile_r_class_jar/release/generateReleaseRFile/R.jar",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "R.jar",
+                        "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/compile_r_class_jar/release/generateReleaseRFile",
+                        "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/compile_r_class_jar/release/generateReleaseRFile/R.jar",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    },
+                    {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/built_in_kotlinc/release/compileReleaseKotlin/classes",
+                        "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/built_in_kotlinc/release/compileReleaseKotlin/classes",
+                        "directory": false,
+                        "file": false,
+                        "freeSpace": 0,
+                        "hidden": false,
+                        "name": "classes",
+                        "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/built_in_kotlinc/release/compileReleaseKotlin",
+                        "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/built_in_kotlinc/release/compileReleaseKotlin/classes",
+                        "totalSpace": 0,
+                        "usableSpace": 0
+                    }
+                ],
+                "assembleTaskOutputListingFile": {
+                    "absolute": true,
+                    "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/apk_ide_redirect_file/release/createReleaseApkListingFileRedirect/redirect.txt",
+                    "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/apk_ide_redirect_file/release/createReleaseApkListingFileRedirect/redirect.txt",
+                    "directory": false,
+                    "file": false,
+                    "freeSpace": 0,
+                    "hidden": false,
+                    "name": "redirect.txt",
+                    "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/apk_ide_redirect_file/release/createReleaseApkListingFileRedirect",
+                    "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/intermediates/apk_ide_redirect_file/release/createReleaseApkListingFileRedirect/redirect.txt",
+                    "totalSpace": 0,
+                    "usableSpace": 0
+                },
+                "desugaredMethodsFiles": [
+                    {
+                        "absolute": true,
+                        "absolutePath": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/1427dd9b65d90e361fe2657922f6968e/transformed/D8BackportedDesugaredMethods.txt",
+                        "canonicalPath": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/1427dd9b65d90e361fe2657922f6968e/transformed/D8BackportedDesugaredMethods.txt",
+                        "directory": false,
+                        "file": true,
+                        "freeSpace": 183916339200,
+                        "hidden": false,
+                        "name": "D8BackportedDesugaredMethods.txt",
+                        "parent": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/1427dd9b65d90e361fe2657922f6968e/transformed",
+                        "path": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/1427dd9b65d90e361fe2657922f6968e/transformed/D8BackportedDesugaredMethods.txt",
+                        "totalSpace": 981132795904,
+                        "usableSpace": 134002024448
+                    }
+                ],
+                "generatedClassPaths": {
+                    
+                },
+                "bytecodeTransformations": [
+                    
+                ],
+                "generatedAssetsFolders": [
+                    
+                ],
+                "mappingR8TextFile": {
+                    "absolute": true,
+                    "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/outputs/mapping/release/mapping.txt",
+                    "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/outputs/mapping/release/mapping.txt",
+                    "directory": false,
+                    "file": false,
+                    "freeSpace": 0,
+                    "hidden": false,
+                    "name": "mapping.txt",
+                    "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/outputs/mapping/release",
+                    "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/outputs/mapping/release/mapping.txt",
+                    "totalSpace": 0,
+                    "usableSpace": 0
+                },
+                "mappingR8PartitionFile": {
+                    "absolute": true,
+                    "absolutePath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/outputs/mapping/release/mapping.prt",
+                    "canonicalPath": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/outputs/mapping/release/mapping.prt",
+                    "directory": false,
+                    "file": false,
+                    "freeSpace": 0,
+                    "hidden": false,
+                    "name": "mapping.prt",
+                    "parent": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/outputs/mapping/release",
+                    "path": "REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch/build/outputs/mapping/release/mapping.prt",
+                    "totalSpace": 0,
+                    "usableSpace": 0
+                },
+                "modelSyncFiles": [
+                    
+                ],
+                "signed": false
+            },
+            "deviceTestArtifacts": {
+                
+            },
+            "hostTestArtifacts": {
+                
+            },
+            "testFixturesArtifact": null,
+            "testSuiteArtifacts": {
+                
+            },
+            "testedTargetVariant": null,
+            "runTestInSeparateProcess": false,
+            "desugaredMethods": [
+                {
+                    "absolute": true,
+                    "absolutePath": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/1427dd9b65d90e361fe2657922f6968e/transformed/D8BackportedDesugaredMethods.txt",
+                    "canonicalPath": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/1427dd9b65d90e361fe2657922f6968e/transformed/D8BackportedDesugaredMethods.txt",
+                    "directory": false,
+                    "file": true,
+                    "freeSpace": 183916322816,
+                    "hidden": false,
+                    "name": "D8BackportedDesugaredMethods.txt",
+                    "parent": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/1427dd9b65d90e361fe2657922f6968e/transformed",
+                    "path": "REDACTED_HOME/.gradle/caches/9.3.1/transforms/1427dd9b65d90e361fe2657922f6968e/transformed/D8BackportedDesugaredMethods.txt",
+                    "totalSpace": 981132795904,
+                    "usableSpace": 134002008064
+                }
+            ],
+            "experimentalProperties": {
+                
+            },
+            "androidTestArtifact": null,
+            "instantAppCompatible": false,
+            "unitTestArtifact": null
+        }
+    ],
+    "testSuites": [
+        
+    ],
+    "javaCompileOptions": {
+        "encoding": "UTF-8",
+        "sourceCompatibility": "1.8",
+        "targetCompatibility": "1.8",
+        "coreLibraryDesugaringEnabled": false
+    },
+    "resourcePrefix": null,
+    "dynamicFeatures": [
+        
+    ],
+    "viewBindingOptions": {
+        "enabled": false
+    },
+    "flags": {
+        "booleanFlagMap": {
+            "APPLICATION_R_CLASS_CONSTANT_IDS": false,
+            "TEST_R_CLASS_CONSTANT_IDS": false,
+            "JETPACK_COMPOSE": true,
+            "ML_MODEL_BINDING": false,
+            "TRANSITIVE_R_CLASS": false,
+            "UNIFIED_TEST_PLATFORM": true,
+            "USE_ANDROID_X": true,
+            "BUILD_FEATURE_ANDROID_RESOURCES": true,
+            "EXCLUDE_LIBRARY_COMPONENTS_FROM_CONSTRAINTS": false,
+            "ENABLE_COMPILE_RUNTIME_CLASSPATH_ALIGNMENT": false,
+            "DATA_BINDING_ENABLED": false,
+            "GENERATE_MANIFEST_CLASS": false,
+            "OLD_VARIANT_API_IN_USE": false,
+            "R8_GRADUAL_API": false,
+            "BUILT_IN_KOTLIN_DEFAULT_ENABLED": true
+        }
+    },
+    "lintChecksJars": [
+        
+    ],
+    "desugarLibConfig": [
+        
+    ],
+    "lintJar": null
+}

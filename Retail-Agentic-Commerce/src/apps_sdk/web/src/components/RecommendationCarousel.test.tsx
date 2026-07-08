@@ -1,6 +1,6 @@
  import { describe, it, expect, vi } from "vitest";
  import { render, screen } from "@testing-library/react";
- import { RecommendationCarousel } from "@/components/RecommendationCarousel";
+ import { RecommendationCarousel } from "./RecommendationCarousel";
  import type { Product } from "@/types";
  
  describe("RecommendationCarousel", () => {

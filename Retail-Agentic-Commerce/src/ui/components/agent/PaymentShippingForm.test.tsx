@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { PaymentShippingForm } from "@/components/agent/PaymentShippingForm";
+import { PaymentShippingForm } from "./PaymentShippingForm";
 import type { PaymentFormData, BillingAddressFormData } from "@/types";
 
 describe("PaymentShippingForm", () => {

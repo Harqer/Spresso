@@ -1,13 +1,13 @@
 "use client";
 
 import { useMetrics } from "@/hooks/useMetrics";
-import { MetricsHeader } from "@/components/metrics/MetricsHeader";
-import { KPIPanel } from "@/components/metrics/panels/KPIPanel";
-import { RevenuePanel } from "@/components/metrics/panels/RevenuePanel";
-import { AgentPerformancePanel } from "@/components/metrics/panels/AgentPerformancePanel";
-import { RecommendationAttributionPanel } from "@/components/metrics/panels/RecommendationAttributionPanel";
-import { PromotionPanel } from "@/components/metrics/panels/PromotionPanel";
-import { ProductHealthPanel } from "@/components/metrics/panels/ProductHealthPanel";
+import { MetricsHeader } from "./MetricsHeader";
+import { KPIPanel } from "./panels/KPIPanel";
+import { RevenuePanel } from "./panels/RevenuePanel";
+import { AgentPerformancePanel } from "./panels/AgentPerformancePanel";
+import { RecommendationAttributionPanel } from "./panels/RecommendationAttributionPanel";
+import { PromotionPanel } from "./panels/PromotionPanel";
+import { ProductHealthPanel } from "./panels/ProductHealthPanel";
 
 /**
  * Main dashboard container with grid layout

@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { JSONViewer } from "@/components/business/JSONViewer";
+import { JSONViewer } from "./JSONViewer";
 
 describe("JSONViewer", () => {
   it("renders title when provided", () => {

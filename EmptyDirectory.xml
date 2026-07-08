@@ -1,0 +1,1019 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/data</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/data" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;Retail-Agentic-Commerce/src/ui/data&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/prompts</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/prompts" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;Retail-Agentic-Commerce/src/ui/prompts&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/generated/res/pngs/debug</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/generated/res/pngs/debug" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/generated/res/pngs/debug&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/generated/res/resValues/debug</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/generated/res/resValues/debug" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/generated/res/resValues/debug&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/generated/updated_navigation_xml/debug</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/generated/updated_navigation_xml/debug" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/generated/updated_navigation_xml/debug&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/aar_metadata_check/debug/checkDebugAarMetadata</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/aar_metadata_check/debug/checkDebugAarMetadata" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/aar_metadata_check/debug/checkDebugAarMetadata&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/assets/debug/mergeDebugAssets</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/assets/debug/mergeDebugAssets" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/assets/debug/mergeDebugAssets&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/compiled_navigation_res/debug/compileDebugNavigationResources</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/compiled_navigation_res/debug/compileDebugNavigationResources" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/compiled_navigation_res/debug/compileDebugNavigationResources&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/compressed_assets/debug/compressDebugAssets/out</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/compressed_assets/debug/compressDebugAssets/out" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/compressed_assets/debug/compressDebugAssets/out&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/data_binding_layout_info_type_merge/debug/mergeDebugResources/out</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/data_binding_layout_info_type_merge/debug/mergeDebugResources/out" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/data_binding_layout_info_type_merge/debug/mergeDebugResources/out&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/data_binding_layout_info_type_package/debug/packageDebugResources/out</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/data_binding_layout_info_type_package/debug/packageDebugResources/out" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/data_binding_layout_info_type_package/debug/packageDebugResources/out&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/0</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/0" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/0&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/1</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/1" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/1&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/10</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/10" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/10&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/11</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/11" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/11&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/12</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/12" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/12&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/13</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/13" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/13&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/14</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/14" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/14&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/15</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/15" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/15&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/2</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/2" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/2&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/3</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/3" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/3&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/4</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/4" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/4&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/5</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/5" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/5&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/6</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/6" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/6&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/7</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/7" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/7&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/8</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/8" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/8&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/9</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/9" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeLibDexDebug/9&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/10</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/10" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/10&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/11</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/11" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/11&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/13</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/13" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/13&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/14</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/14" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/14&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/15</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/15" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/15&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/2</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/2" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/2&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/3</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/3" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/3&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/4</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/4" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/4&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/5</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/5" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/5&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/6</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/6" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/6&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/7</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/7" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/7&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/8</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/8" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/8&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/9</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/9" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/dex/debug/mergeProjectDexDebug/9&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/duplicate_classes_check/debug/checkDebugDuplicateClasses</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/duplicate_classes_check/debug/checkDebugDuplicateClasses" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/duplicate_classes_check/debug/checkDebugDuplicateClasses&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/external_file_lib_dex_archives/debug/desugarDebugFileDependencies</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/external_file_lib_dex_archives/debug/desugarDebugFileDependencies" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/external_file_lib_dex_archives/debug/desugarDebugFileDependencies&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/external_libs_dex_archive/debug/dexBuilderDebug/out</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/external_libs_dex_archive/debug/dexBuilderDebug/out" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/external_libs_dex_archive/debug/dexBuilderDebug/out&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/external_libs_dex_archive_with_artifact_transforms/debug/dexBuilderDebug/out</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/external_libs_dex_archive_with_artifact_transforms/debug/dexBuilderDebug/out" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/external_libs_dex_archive_with_artifact_transforms/debug/dexBuilderDebug/out&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/incremental/debug/packageDebugResources/stripped.dir</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/incremental/debug/packageDebugResources/stripped.dir" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/incremental/debug/packageDebugResources/stripped.dir&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/java_res/debug/processDebugJavaRes/out/com/aura/retail/watch/util</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/java_res/debug/processDebugJavaRes/out/com/aura/retail/watch/util" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/java_res/debug/processDebugJavaRes/out/com/aura/retail/watch/util&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/merged_jni_libs/debug/mergeDebugJniLibFolders/out</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/merged_jni_libs/debug/mergeDebugJniLibFolders/out" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/merged_jni_libs/debug/mergeDebugJniLibFolders/out&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/merged_test_only_native_libs/debug/mergeDebugNativeLibs/out</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/merged_test_only_native_libs/debug/mergeDebugNativeLibs/out" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/merged_test_only_native_libs/debug/mergeDebugNativeLibs/out&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/mixed_scope_dex_archive/debug/dexBuilderDebug/out</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/mixed_scope_dex_archive/debug/dexBuilderDebug/out" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/mixed_scope_dex_archive/debug/dexBuilderDebug/out&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/sub_project_dex_archive/debug/dexBuilderDebug/out</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/sub_project_dex_archive/debug/dexBuilderDebug/out" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/sub_project_dex_archive/debug/dexBuilderDebug/out&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/validate_signing_config/debug/validateSigningDebug</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/validate_signing_config/debug/validateSigningDebug" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/intermediates/validate_signing_config/debug/validateSigningDebug&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/kotlin/compileDebugKotlin/local-state</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/kotlin/compileDebugKotlin/local-state" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/build/kotlin/compileDebugKotlin/local-state&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/src/main/java/com/aura/retail/watch/ui</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/src/main/java/com/aura/retail/watch/ui" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wear-retail-watch/src/main/java/com/aura/retail/watch/ui&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/debug/out</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/debug/out" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/generated/ap_generated_sources/debug/out&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/generated/res/pngs/debug</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/generated/res/pngs/debug" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/generated/res/pngs/debug&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/generated/updated_navigation_xml/debug</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/generated/updated_navigation_xml/debug" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/generated/updated_navigation_xml/debug&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/aar_metadata_check/debug/checkDebugAarMetadata</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/aar_metadata_check/debug/checkDebugAarMetadata" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/aar_metadata_check/debug/checkDebugAarMetadata&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/compiled_navigation_res/debug/compileDebugNavigationResources</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/compiled_navigation_res/debug/compileDebugNavigationResources" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/compiled_navigation_res/debug/compileDebugNavigationResources&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/data_binding_layout_info_type_merge/debug/mergeDebugResources/out</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/data_binding_layout_info_type_merge/debug/mergeDebugResources/out" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/data_binding_layout_info_type_merge/debug/mergeDebugResources/out&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/data_binding_layout_info_type_package/debug/packageDebugResources/out</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/data_binding_layout_info_type_package/debug/packageDebugResources/out" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/data_binding_layout_info_type_package/debug/packageDebugResources/out&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/0</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/0" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/0&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/1</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/1" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/1&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/10</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/10" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/10&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/11</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/11" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/11&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/12</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/12" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/12&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/13</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/13" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/13&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/14</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/14" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/14&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/15</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/15" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/15&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/2</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/2" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/2&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/3</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/3" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/3&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/4</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/4" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/4&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/5</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/5" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/5&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/6</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/6" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/6&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/7</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/7" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/7&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/8</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/8" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/8&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/9</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/9" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeLibDexDebug/9&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/1</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/1" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/1&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/10</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/10" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/10&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/11</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/11" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/11&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/12</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/12" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/12&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/13</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/13" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/13&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/15</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/15" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/15&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/2</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/2" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/2&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/3</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/3" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/3&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/4</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/4" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/4&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/6</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/6" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/6&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/7</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/7" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/7&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/8</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/8" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/8&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/9</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/9" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/dex/debug/mergeProjectDexDebug/9&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/duplicate_classes_check/debug/checkDebugDuplicateClasses</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/duplicate_classes_check/debug/checkDebugDuplicateClasses" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/duplicate_classes_check/debug/checkDebugDuplicateClasses&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/external_file_lib_dex_archives/debug/desugarDebugFileDependencies</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/external_file_lib_dex_archives/debug/desugarDebugFileDependencies" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/external_file_lib_dex_archives/debug/desugarDebugFileDependencies&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/external_libs_dex_archive/debug/dexBuilderDebug/out</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/external_libs_dex_archive/debug/dexBuilderDebug/out" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/external_libs_dex_archive/debug/dexBuilderDebug/out&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/external_libs_dex_archive_with_artifact_transforms/debug/dexBuilderDebug/out</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/external_libs_dex_archive_with_artifact_transforms/debug/dexBuilderDebug/out" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/external_libs_dex_archive_with_artifact_transforms/debug/dexBuilderDebug/out&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/global_synthetics_external_lib/debug/dexBuilderDebug/out</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/global_synthetics_external_lib/debug/dexBuilderDebug/out" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/global_synthetics_external_lib/debug/dexBuilderDebug/out&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/global_synthetics_external_libs_artifact_transform/debug/dexBuilderDebug/out</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/global_synthetics_external_libs_artifact_transform/debug/dexBuilderDebug/out" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/global_synthetics_external_libs_artifact_transform/debug/dexBuilderDebug/out&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/global_synthetics_file_lib/debug/desugarDebugFileDependencies</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/global_synthetics_file_lib/debug/desugarDebugFileDependencies" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/global_synthetics_file_lib/debug/desugarDebugFileDependencies&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/global_synthetics_mixed_scope/debug/dexBuilderDebug/out</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/global_synthetics_mixed_scope/debug/dexBuilderDebug/out" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/global_synthetics_mixed_scope/debug/dexBuilderDebug/out&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/global_synthetics_subproject/debug/dexBuilderDebug/out</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/global_synthetics_subproject/debug/dexBuilderDebug/out" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/global_synthetics_subproject/debug/dexBuilderDebug/out&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/java_res/debug/processDebugJavaRes/out/com/meta/wearable/retail/ui</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/java_res/debug/processDebugJavaRes/out/com/meta/wearable/retail/ui" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/java_res/debug/processDebugJavaRes/out/com/meta/wearable/retail/ui&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/java_res/debug/processDebugJavaRes/out/com/meta/wearable/retail/util</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/java_res/debug/processDebugJavaRes/out/com/meta/wearable/retail/util" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/java_res/debug/processDebugJavaRes/out/com/meta/wearable/retail/util&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/java_res/debugUnitTest/processDebugUnitTestJavaRes/out/com/meta/wearable/retail/ui</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/java_res/debugUnitTest/processDebugUnitTestJavaRes/out/com/meta/wearable/retail/ui" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/java_res/debugUnitTest/processDebugUnitTestJavaRes/out/com/meta/wearable/retail/ui&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/merged_jni_libs/debug/mergeDebugJniLibFolders/out</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/merged_jni_libs/debug/mergeDebugJniLibFolders/out" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/merged_jni_libs/debug/mergeDebugJniLibFolders/out&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/merged_test_only_native_libs/debug/mergeDebugNativeLibs/out</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/merged_test_only_native_libs/debug/mergeDebugNativeLibs/out" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/merged_test_only_native_libs/debug/mergeDebugNativeLibs/out&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/mixed_scope_dex_archive/debug/dexBuilderDebug/out</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/mixed_scope_dex_archive/debug/dexBuilderDebug/out" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/mixed_scope_dex_archive/debug/dexBuilderDebug/out&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/sub_project_dex_archive/debug/dexBuilderDebug/out</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/sub_project_dex_archive/debug/dexBuilderDebug/out" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/sub_project_dex_archive/debug/dexBuilderDebug/out&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/validate_signing_config/debug/validateSigningDebug</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/validate_signing_config/debug/validateSigningDebug" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/intermediates/validate_signing_config/debug/validateSigningDebug&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/kotlin/compileDebugKotlin/local-state</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/kotlin/compileDebugKotlin/local-state" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/kotlin/compileDebugKotlin/local-state&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/kotlin/compileDebugUnitTestKotlin/local-state</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/kotlin/compileDebugUnitTestKotlin/local-state" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/kotlin/compileDebugUnitTestKotlin/local-state&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/tmp/compileDebugJavaWithJavac/compileTransaction/backup-dir</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/tmp/compileDebugJavaWithJavac/compileTransaction/backup-dir" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/tmp/compileDebugJavaWithJavac/compileTransaction/backup-dir&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/tmp/testDebugUnitTest</file>
+  <entry_point TYPE="dir" FQNAME="$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/tmp/testDebugUnitTest" />
+  <problem_class id="EmptyDirectory" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty directory</problem_class>
+  <hints />
+  <description>Empty directory &lt;code&gt;aura-mobile-android/wearable-retail-app/build/tmp/testDebugUnitTest&lt;/code&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+</problems>

@@ -1,0 +1,830 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/.agents/skills/stripe-projects-cli/SKILL.md</file>
+  <line>11</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.agents/skills/stripe-projects-cli/SKILL.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 1, but got 0.</description>
+  <highlighted_element>0.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.agents/skills/stripe-projects-cli/SKILL.md</file>
+  <line>12</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.agents/skills/stripe-projects-cli/SKILL.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 2, but got 1.</description>
+  <highlighted_element>1.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.agents/skills/stripe-projects-cli/SKILL.md</file>
+  <line>13</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.agents/skills/stripe-projects-cli/SKILL.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 3, but got 2.</description>
+  <highlighted_element>2.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.agents/skills/stripe-projects-cli/SKILL.md</file>
+  <line>14</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.agents/skills/stripe-projects-cli/SKILL.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 4, but got 3.</description>
+  <highlighted_element>3.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.agents/skills/stripe-projects-cli/SKILL.md</file>
+  <line>15</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.agents/skills/stripe-projects-cli/SKILL.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 5, but got 4.</description>
+  <highlighted_element>4.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.agents/skills/stripe-projects-cli/SKILL.md</file>
+  <line>16</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.agents/skills/stripe-projects-cli/SKILL.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 6, but got 5.</description>
+  <highlighted_element>5.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.agents/skills/stripe-projects-cli/SKILL.md</file>
+  <line>37</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.agents/skills/stripe-projects-cli/SKILL.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 7, but got 6.</description>
+  <highlighted_element>6.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.agents/skills/stripe-projects-cli/SKILL.md</file>
+  <line>38</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.agents/skills/stripe-projects-cli/SKILL.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 8, but got 7.</description>
+  <highlighted_element>7.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md</file>
+  <line>44</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 1, but got 5.</description>
+  <highlighted_element>5.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md</file>
+  <line>45</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 2, but got 6.</description>
+  <highlighted_element>6.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md</file>
+  <line>46</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 3, but got 7.</description>
+  <highlighted_element>7.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md</file>
+  <line>47</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 4, but got 8.</description>
+  <highlighted_element>8.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md</file>
+  <line>52</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 1, but got 9.</description>
+  <highlighted_element>9.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md</file>
+  <line>53</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 2, but got 10.</description>
+  <highlighted_element>10.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md</file>
+  <line>54</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 3, but got 11.</description>
+  <highlighted_element>11.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md</file>
+  <line>55</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 4, but got 12.</description>
+  <highlighted_element>12.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md</file>
+  <line>56</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 5, but got 13.</description>
+  <highlighted_element>13.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md</file>
+  <line>61</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 1, but got 14.</description>
+  <highlighted_element>14.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md</file>
+  <line>62</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 2, but got 15.</description>
+  <highlighted_element>15.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md</file>
+  <line>67</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 1, but got 16.</description>
+  <highlighted_element>16.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md</file>
+  <line>78</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/features/index.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 1, but got 17.</description>
+  <highlighted_element>17.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md</file>
+  <line>29</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 1, but got 2.</description>
+  <highlighted_element>2.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md</file>
+  <line>31</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 2, but got 3.</description>
+  <highlighted_element>3.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md</file>
+  <line>59</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 3, but got 4.</description>
+  <highlighted_element>4.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md</file>
+  <line>61</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 4, but got 5.</description>
+  <highlighted_element>5.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md</file>
+  <line>63</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 5, but got 6.</description>
+  <highlighted_element>6.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md</file>
+  <line>65</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 6, but got 7.</description>
+  <highlighted_element>7.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md</file>
+  <line>67</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 7, but got 8.</description>
+  <highlighted_element>8.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md</file>
+  <line>73</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 8, but got 9.</description>
+  <highlighted_element>9.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md</file>
+  <line>75</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 9, but got 10.</description>
+  <highlighted_element>10.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md</file>
+  <line>83</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 10, but got 11.</description>
+  <highlighted_element>11.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md</file>
+  <line>85</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 11, but got 12.</description>
+  <highlighted_element>12.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md</file>
+  <line>91</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 12, but got 13.</description>
+  <highlighted_element>13.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md</file>
+  <line>93</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 13, but got 14.</description>
+  <highlighted_element>14.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md</file>
+  <line>95</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 14, but got 15.</description>
+  <highlighted_element>15.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md</file>
+  <line>97</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 15, but got 16.</description>
+  <highlighted_element>16.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md</file>
+  <line>147</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 1, but got 7.</description>
+  <highlighted_element>7.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md</file>
+  <line>35</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 1, but got 2.</description>
+  <highlighted_element>2.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md</file>
+  <line>37</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 2, but got 3.</description>
+  <highlighted_element>3.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md</file>
+  <line>65</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 3, but got 4.</description>
+  <highlighted_element>4.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md</file>
+  <line>67</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 4, but got 5.</description>
+  <highlighted_element>5.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md</file>
+  <line>69</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 5, but got 6.</description>
+  <highlighted_element>6.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md</file>
+  <line>71</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 6, but got 7.</description>
+  <highlighted_element>7.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md</file>
+  <line>73</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 7, but got 8.</description>
+  <highlighted_element>8.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md</file>
+  <line>79</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 8, but got 9.</description>
+  <highlighted_element>9.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md</file>
+  <line>81</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 9, but got 10.</description>
+  <highlighted_element>10.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md</file>
+  <line>89</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 10, but got 11.</description>
+  <highlighted_element>11.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md</file>
+  <line>91</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 11, but got 12.</description>
+  <highlighted_element>12.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md</file>
+  <line>97</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 12, but got 13.</description>
+  <highlighted_element>13.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md</file>
+  <line>99</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 13, but got 14.</description>
+  <highlighted_element>14.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md</file>
+  <line>101</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 14, but got 15.</description>
+  <highlighted_element>15.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md</file>
+  <line>103</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 15, but got 16.</description>
+  <highlighted_element>16.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md</file>
+  <line>153</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/dist/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 1, but got 7.</description>
+  <highlighted_element>7.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md</file>
+  <line>30</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 1, but got 2.</description>
+  <highlighted_element>2.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md</file>
+  <line>32</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 2, but got 3.</description>
+  <highlighted_element>3.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md</file>
+  <line>60</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 3, but got 4.</description>
+  <highlighted_element>4.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md</file>
+  <line>62</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 4, but got 5.</description>
+  <highlighted_element>5.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md</file>
+  <line>64</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 5, but got 6.</description>
+  <highlighted_element>6.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md</file>
+  <line>66</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 6, but got 7.</description>
+  <highlighted_element>7.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md</file>
+  <line>68</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 7, but got 8.</description>
+  <highlighted_element>8.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md</file>
+  <line>74</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 8, but got 9.</description>
+  <highlighted_element>9.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md</file>
+  <line>76</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 9, but got 10.</description>
+  <highlighted_element>10.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md</file>
+  <line>84</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 10, but got 11.</description>
+  <highlighted_element>11.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md</file>
+  <line>86</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 11, but got 12.</description>
+  <highlighted_element>12.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md</file>
+  <line>92</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 12, but got 13.</description>
+  <highlighted_element>13.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md</file>
+  <line>94</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 13, but got 14.</description>
+  <highlighted_element>14.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md</file>
+  <line>96</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 14, but got 15.</description>
+  <highlighted_element>15.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md</file>
+  <line>98</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 15, but got 16.</description>
+  <highlighted_element>16.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md</file>
+  <line>148</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens/LICENSE.md" />
+  <problem_class id="MarkdownIncorrectlyNumberedListItem" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Incorrectly numbered list item</problem_class>
+  <description>Item is not correctly numbered. Expected item number 1, but got 7.</description>
+  <highlighted_element>7.</highlighted_element>
+  <language>Markdown</language>
+  <offset>0</offset>
+  <length>3</length>
+</problem>
+</problems>

@@ -41,10 +41,10 @@ class AppsSdkSettings(BaseSettings):
     mcp_server_port: int = 2091
 
     # Backend URLs
-    merchant_api_url: str = "https://***REDACTED_PROJECT_ID***.web.app/api/proxy/merchant"
-    psp_api_url: str = "https://***REDACTED_PROJECT_ID***.web.app/api/proxy/psp"
-    recommendation_agent_url: str = "https://***REDACTED_PROJECT_ID***.web.app/api/agents/recommendation"
-    search_agent_url: str = "https://***REDACTED_PROJECT_ID***.web.app/api/agents/search"
+    merchant_api_url: str = "http://localhost:8000"
+    psp_api_url: str = "http://localhost:8001"
+    recommendation_agent_url: str = "http://localhost:8004"
+    search_agent_url: str = "http://localhost:8005"
 
     # Search tuning
     # Minimum similarity score required to keep a search result.

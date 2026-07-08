@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 9.1.0" type="incidents">
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.core:core-ktx than 1.12.0 is available: 1.19.0">
+        <fix-replace
+            description="Change to 1.19.0"
+            family="Update versions"
+            oldString="1.12.0"
+            replacement="1.19.0"
+            priority="0"/>
+        <location
+            file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+            line="39"
+            column="20"
+            startOffset="871"
+            endLine="39"
+            endColumn="51"
+            endOffset="902"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of com.google.android.gms:play-services-wearable than 18.1.0 is available: 20.0.1">
+        <fix-replace
+            description="Change to 20.0.1"
+            family="Update versions"
+            oldString="18.1.0"
+            replacement="20.0.1"
+            priority="0"/>
+        <location
+            file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+            line="40"
+            column="20"
+            startOffset="923"
+            endLine="40"
+            endColumn="74"
+            endOffset="977"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.recyclerview:recyclerview than 1.3.2 is available: 1.4.0">
+        <fix-replace
+            description="Change to 1.4.0"
+            family="Update versions"
+            oldString="1.3.2"
+            replacement="1.4.0"
+            priority="0"/>
+        <location
+            file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+            line="43"
+            column="20"
+            startOffset="1125"
+            endLine="43"
+            endColumn="62"
+            endOffset="1167"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.activity:activity-compose than 1.8.2 is available: 1.13.0">
+        <fix-replace
+            description="Change to 1.13.0"
+            family="Update versions"
+            oldString="1.8.2"
+            replacement="1.13.0"
+            priority="0"/>
+        <location
+            file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+            line="53"
+            column="20"
+            startOffset="1600"
+            endLine="53"
+            endColumn="62"
+            endOffset="1642"/>
+    </incident>
+
+    <incident
+        id="MonochromeLauncherIcon"
+        severity="warning"
+        message="The application adaptive icon is missing a monochrome tag">
+        <location
+            file="${:wear-retail-watch*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-anydpi-v26/ic_launcher.xml"
+            line="1"
+            column="1"
+            startOffset="0"
+            endLine="4"
+            endColumn="17"
+            endOffset="207"/>
+    </incident>
+
+    <incident
+        id="MonochromeLauncherIcon"
+        severity="warning"
+        message="The application adaptive roundIcon is missing a monochrome tag">
+        <location
+            file="${:wear-retail-watch*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-anydpi-v26/ic_launcher_round.xml"
+            line="1"
+            column="1"
+            startOffset="0"
+            endLine="4"
+            endColumn="17"
+            endOffset="207"/>
+    </incident>
+
+    <incident
+        id="WearRecents"
+        severity="warning"
+        message="Set `taskAffinity` for Wear activities to make them appear correctly in recents">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set `taskAffinity`"
+                robot="true"
+                independent="true"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="taskAffinity"
+                value=""
+                point="0"
+                mark="0"/>
+            <fix-composite
+                description="Exclude from recents"
+                robot="true"
+                independent="true">
+                <fix-attribute
+                    description="Set excludeFromRecents=&quot;true&quot;"
+                    robot="true"
+                    independent="true"
+                    namespace="http://schemas.android.com/apk/res/android"
+                    attribute="excludeFromRecents"
+                    value="true"/>
+                <fix-attribute
+                    description="Set noHistory=&quot;true&quot;"
+                    robot="true"
+                    independent="true"
+                    namespace="http://schemas.android.com/apk/res/android"
+                    attribute="noHistory"
+                    value="true"/>
+            </fix-composite>
+        </fix-alternatives>
+        <location
+            file="${:wear-retail-watch*debug*MAIN*sourceProvider*0*manifest*0}"
+            line="25"
+            column="9"
+            startOffset="859"
+            endLine="33"
+            endColumn="20"
+            endOffset="1244"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead (androidx.core:core-ktx is already available as `androidx-core-ktx`, but using version 1.18.0 instead)">
+        <fix-alternatives>
+            <fix-composite
+                description="Replace with new library catalog declaration for androidx-core-core-ktx-v1120"
+                robot="true"
+                independent="true">
+                <fix-replace
+                    description="Replace with androidxCoreKtx = &quot;1.12.0&quot;..."
+                    robot="true"
+                    independent="true"
+                    oldString="_lint_insert_begin_"
+                    replacement="androidxCoreKtx = &quot;1.12.0&quot;&#xA;"
+                    priority="0">
+                    <range
+                        file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                        startOffset="65"
+                        endOffset="65"/>
+                </fix-replace>
+                <fix-replace
+                    description="Replace with androidx-core-core-ktx-v1120 = { module = &quot;androidx.core:core-ktx&quot;, version.ref = &quot;androidxCoreKtx&quot; }..."
+                    robot="true"
+                    independent="true"
+                    oldString="_lint_insert_begin_"
+                    replacement="androidx-core-core-ktx-v1120 = { module = &quot;androidx.core:core-ktx&quot;, version.ref = &quot;androidxCoreKtx&quot; }&#xA;"
+                    priority="0">
+                    <range
+                        file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                        startOffset="432"
+                        endOffset="432"/>
+                </fix-replace>
+                <fix-replace
+                    description="Replace with libs.androidx.core.core.ktx.v1120"
+                    robot="true"
+                    independent="true"
+                    replacement="libs.androidx.core.core.ktx.v1120"
+                    priority="0">
+                    <range
+                        file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+                        startOffset="871"
+                        endOffset="902"/>
+                </fix-replace>
+            </fix-composite>
+            <fix-replace
+                description="Replace with existing version catalog reference `androidx-core-ktx` (version 1.18.0)"
+                replacement="libs.androidx.core.ktx"
+                priority="0">
+                <range
+                    file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+                    startOffset="871"
+                    endOffset="902"/>
+            </fix-replace>
+        </fix-alternatives>
+        <location
+            file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+            line="39"
+            column="20"
+            startOffset="871"
+            endLine="39"
+            endColumn="51"
+            endOffset="902"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for gms-play-services-wearable"
+            robot="true">
+            <fix-replace
+                description="Replace with playServicesWearableVersion = &quot;18.1.0&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="playServicesWearableVersion = &quot;18.1.0&quot;&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                    startOffset="419"
+                    endOffset="419"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with gms-play-services-wearable = { module = &quot;com.google.android.gms:play-services-wearable&quot;, version.ref = &quot;playServicesWearableVersion&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="gms-play-services-wearable = { module = &quot;com.google.android.gms:play-services-wearable&quot;, version.ref = &quot;playServicesWearableVersion&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                    startOffset="2357"
+                    endOffset="2357"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.gms.play.services.wearable"
+                robot="true"
+                replacement="libs.gms.play.services.wearable"
+                priority="0">
+                <range
+                    file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+                    startOffset="923"
+                    endOffset="977"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+            line="40"
+            column="20"
+            startOffset="923"
+            endLine="40"
+            endColumn="74"
+            endOffset="977"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for percentlayout"
+            robot="true">
+            <fix-replace
+                description="Replace with percentlayoutVersion = &quot;1.0.0&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="percentlayoutVersion = &quot;1.0.0&quot;&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                    startOffset="419"
+                    endOffset="419"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with percentlayout = { module = &quot;androidx.percentlayout:percentlayout&quot;, version.ref = &quot;percentlayoutVersion&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="percentlayout = { module = &quot;androidx.percentlayout:percentlayout&quot;, version.ref = &quot;percentlayoutVersion&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                    startOffset="2895"
+                    endOffset="2895"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.percentlayout"
+                robot="true"
+                replacement="libs.percentlayout"
+                priority="0">
+                <range
+                    file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+                    startOffset="998"
+                    endOffset="1042"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+            line="41"
+            column="20"
+            startOffset="998"
+            endLine="41"
+            endColumn="64"
+            endOffset="1042"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for legacy-support-v4"
+            robot="true">
+            <fix-replace
+                description="Replace with legacySupportV4Version = &quot;1.0.0&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="legacySupportV4Version = &quot;1.0.0&quot;&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                    startOffset="321"
+                    endOffset="321"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with legacy-support-v4 = { module = &quot;androidx.legacy:legacy-support-v4&quot;, version.ref = &quot;legacySupportV4Version&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="legacy-support-v4 = { module = &quot;androidx.legacy:legacy-support-v4&quot;, version.ref = &quot;legacySupportV4Version&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                    startOffset="2895"
+                    endOffset="2895"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.legacy.support.v4"
+                robot="true"
+                replacement="libs.legacy.support.v4"
+                priority="0">
+                <range
+                    file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+                    startOffset="1063"
+                    endOffset="1104"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+            line="42"
+            column="20"
+            startOffset="1063"
+            endLine="42"
+            endColumn="61"
+            endOffset="1104"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for recyclerview"
+            robot="true">
+            <fix-replace
+                description="Replace with recyclerviewVersion = &quot;1.3.2&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="recyclerviewVersion = &quot;1.3.2&quot;&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                    startOffset="419"
+                    endOffset="419"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with recyclerview = { module = &quot;androidx.recyclerview:recyclerview&quot;, version.ref = &quot;recyclerviewVersion&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="recyclerview = { module = &quot;androidx.recyclerview:recyclerview&quot;, version.ref = &quot;recyclerviewVersion&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                    startOffset="2895"
+                    endOffset="2895"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.recyclerview"
+                robot="true"
+                replacement="libs.recyclerview"
+                priority="0">
+                <range
+                    file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+                    startOffset="1125"
+                    endOffset="1167"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+            line="43"
+            column="20"
+            startOffset="1125"
+            endLine="43"
+            endColumn="62"
+            endOffset="1167"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for androidx-wear-compose-compose-material3"
+            robot="true">
+            <fix-replace
+                description="Replace with composeMaterial3Version = &quot;1.6.2&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="composeMaterial3Version = &quot;1.6.2&quot;&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                    startOffset="265"
+                    endOffset="265"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with androidx-wear-compose-compose-material3 = { module = &quot;androidx.wear.compose:compose-material3&quot;, version.ref = &quot;composeMaterial3Version&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-wear-compose-compose-material3 = { module = &quot;androidx.wear.compose:compose-material3&quot;, version.ref = &quot;composeMaterial3Version&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                    startOffset="556"
+                    endOffset="556"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.androidx.wear.compose.compose.material3"
+                robot="true"
+                replacement="libs.androidx.wear.compose.compose.material3"
+                priority="0">
+                <range
+                    file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+                    startOffset="1226"
+                    endOffset="1273"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+            line="46"
+            column="20"
+            startOffset="1226"
+            endLine="46"
+            endColumn="67"
+            endOffset="1273"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for compose-foundation"
+            robot="true">
+            <fix-replace
+                description="Replace with composeFoundationVersion = &quot;1.6.2&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="composeFoundationVersion = &quot;1.6.2&quot;&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                    startOffset="265"
+                    endOffset="265"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with compose-foundation = { module = &quot;androidx.wear.compose:compose-foundation&quot;, version.ref = &quot;composeFoundationVersion&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="compose-foundation = { module = &quot;androidx.wear.compose:compose-foundation&quot;, version.ref = &quot;composeFoundationVersion&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                    startOffset="2357"
+                    endOffset="2357"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.compose.foundation"
+                robot="true"
+                replacement="libs.compose.foundation"
+                priority="0">
+                <range
+                    file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+                    startOffset="1294"
+                    endOffset="1342"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+            line="47"
+            column="20"
+            startOffset="1294"
+            endLine="47"
+            endColumn="68"
+            endOffset="1342"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for compose-navigation3"
+            robot="true">
+            <fix-replace
+                description="Replace with composeNavigation3Version = &quot;1.6.2&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="composeNavigation3Version = &quot;1.6.2&quot;&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                    startOffset="265"
+                    endOffset="265"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with compose-navigation3 = { module = &quot;androidx.wear.compose:compose-navigation3&quot;, version.ref = &quot;composeNavigation3Version&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="compose-navigation3 = { module = &quot;androidx.wear.compose:compose-navigation3&quot;, version.ref = &quot;composeNavigation3Version&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                    startOffset="2357"
+                    endOffset="2357"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.compose.navigation3"
+                robot="true"
+                replacement="libs.compose.navigation3"
+                priority="0">
+                <range
+                    file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+                    startOffset="1363"
+                    endOffset="1412"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+            line="48"
+            column="20"
+            startOffset="1363"
+            endLine="48"
+            endColumn="69"
+            endOffset="1412"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for androidx-compose-ui-ui"
+            robot="true">
+            <fix-replace
+                description="Replace with androidx-compose-ui-ui = { module = &quot;androidx.compose.ui:ui&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-compose-ui-ui = { module = &quot;androidx.compose.ui:ui&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                    startOffset="432"
+                    endOffset="432"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.androidx.compose.ui.ui"
+                robot="true"
+                replacement="libs.androidx.compose.ui.ui"
+                priority="0">
+                <range
+                    file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+                    startOffset="1494"
+                    endOffset="1518"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+            line="51"
+            column="20"
+            startOffset="1494"
+            endLine="51"
+            endColumn="44"
+            endOffset="1518"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for androidx-compose-ui-ui-tooling-preview"
+            robot="true">
+            <fix-replace
+                description="Replace with androidx-compose-ui-ui-tooling-preview = { module = &quot;androidx.compose.ui:ui-tooling-preview&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-compose-ui-ui-tooling-preview = { module = &quot;androidx.compose.ui:ui-tooling-preview&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                    startOffset="432"
+                    endOffset="432"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.androidx.compose.ui.ui.tooling.preview"
+                robot="true"
+                replacement="libs.androidx.compose.ui.ui.tooling.preview"
+                priority="0">
+                <range
+                    file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+                    startOffset="1539"
+                    endOffset="1579"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+            line="52"
+            column="20"
+            startOffset="1539"
+            endLine="52"
+            endColumn="60"
+            endOffset="1579"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead (androidx.activity:activity-compose is already available as `androidx-activity-compose`, but using version 1.13.0 instead)">
+        <fix-alternatives>
+            <fix-composite
+                description="Replace with new library catalog declaration for androidx-activity-activity-compose-v182"
+                robot="true"
+                independent="true">
+                <fix-replace
+                    description="Replace with androidxActivityCompose = &quot;1.8.2&quot;..."
+                    robot="true"
+                    independent="true"
+                    oldString="_lint_insert_begin_"
+                    replacement="androidxActivityCompose = &quot;1.8.2&quot;&#xA;"
+                    priority="0">
+                    <range
+                        file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                        startOffset="41"
+                        endOffset="41"/>
+                </fix-replace>
+                <fix-replace
+                    description="Replace with androidx-activity-activity-compose-v182 = { module = &quot;androidx.activity:activity-compose&quot;, version.ref = &quot;androidxActivityCompose&quot; }..."
+                    robot="true"
+                    independent="true"
+                    oldString="_lint_insert_begin_"
+                    replacement="androidx-activity-activity-compose-v182 = { module = &quot;androidx.activity:activity-compose&quot;, version.ref = &quot;androidxActivityCompose&quot; }&#xA;"
+                    priority="0">
+                    <range
+                        file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                        startOffset="432"
+                        endOffset="432"/>
+                </fix-replace>
+                <fix-replace
+                    description="Replace with libs.androidx.activity.activity.compose.v182"
+                    robot="true"
+                    independent="true"
+                    replacement="libs.androidx.activity.activity.compose.v182"
+                    priority="0">
+                    <range
+                        file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+                        startOffset="1600"
+                        endOffset="1642"/>
+                </fix-replace>
+            </fix-composite>
+            <fix-replace
+                description="Replace with existing version catalog reference `androidx-activity-compose` (version 1.13.0)"
+                replacement="libs.androidx.activity.compose"
+                priority="0">
+                <range
+                    file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+                    startOffset="1600"
+                    endOffset="1642"/>
+            </fix-replace>
+        </fix-alternatives>
+        <location
+            file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+            line="53"
+            column="20"
+            startOffset="1600"
+            endLine="53"
+            endColumn="62"
+            endOffset="1642"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for androidx-compose-ui-ui-tooling"
+            robot="true">
+            <fix-replace
+                description="Replace with androidx-compose-ui-ui-tooling = { module = &quot;androidx.compose.ui:ui-tooling&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-compose-ui-ui-tooling = { module = &quot;androidx.compose.ui:ui-tooling&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                    startOffset="432"
+                    endOffset="432"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.androidx.compose.ui.ui.tooling"
+                robot="true"
+                replacement="libs.androidx.compose.ui.ui.tooling"
+                priority="0">
+                <range
+                    file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+                    startOffset="1673"
+                    endOffset="1705"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:wear-retail-watch*projectDir}/build.gradle.kts"
+            line="55"
+            column="25"
+            startOffset="1673"
+            endLine="55"
+            endColumn="57"
+            endOffset="1705"/>
+    </incident>
+
+</incidents>

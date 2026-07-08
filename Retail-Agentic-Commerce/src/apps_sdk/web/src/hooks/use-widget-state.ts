@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState, type SetStateAction } from "react";
-import { usePersistedWidgetState } from "@/hooks/use-openai-global";
+import { usePersistedWidgetState } from "./use-openai-global";
 
 /**
  * React hook for managing widget state that persists across re-renders
