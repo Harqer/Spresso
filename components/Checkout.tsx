@@ -22,6 +22,7 @@ const Checkout: React.FC<CheckoutProps> = ({ items, onBack }) => {
   const [isCompleted, setIsCompleted] = useState(false);
   const [isAwaitingSecureConfirmation, setIsAwaitingSecureConfirmation] = useState(false);
   const [authError, setAuthError] = useState<string | null>(null);
+  const [paymentMethod, setPaymentMethod] = useState<'card' | 'apple' | 'crypto'>('card');
 
   const subtotal = items.reduce((sum, item) => sum + item.price, 0);
   const shipping = 0; // Free shipping
@@ -127,6 +128,41 @@ const Checkout: React.FC<CheckoutProps> = ({ items, onBack }) => {
             
             <div className="space-y-12">
               <div className={isAwaitingSecureConfirmation ? "opacity-50" : ""}>
+                <h2 className="text-xl font-serif text-[#2C2A26] mb-6">Payment Method</h2>
+                <div className="grid grid-cols-3 gap-4 mb-12">
+                   <button
+                     onClick={() => setPaymentMethod('card')}
+                     disabled={isAwaitingSecureConfirmation}
+                     className={`flex flex-col items-center justify-center p-4 border transition-all ${paymentMethod === 'card' ? 'border-[#2C2A26] bg-[#2C2A26] text-[#F5F2EB]' : 'border-[#D6D1C7] text-[#5D5A53] hover:border-[#2C2A26]'}`}
+                   >
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 mb-2">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+                      </svg>
+                      <span className="text-[10px] uppercase tracking-widest font-bold">Credit Card</span>
+                   </button>
+                   <button
+                     onClick={() => setPaymentMethod('apple')}
+                     disabled={isAwaitingSecureConfirmation}
+                     className={`flex flex-col items-center justify-center p-4 border transition-all ${paymentMethod === 'apple' ? 'border-[#2C2A26] bg-[#2C2A26] text-[#F5F2EB]' : 'border-[#D6D1C7] text-[#5D5A53] hover:border-[#2C2A26]'}`}
+                   >
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6 mb-2">
+                        <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2.002-.156-3.75 1.09-4.51 1.09zM15.53 4.416c.83-1.013 1.39-2.427 1.235-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.57-1.702z" />
+                      </svg>
+                      <span className="text-[10px] uppercase tracking-widest font-bold">Apple Pay</span>
+                   </button>
+                   <button
+                     onClick={() => setPaymentMethod('crypto')}
+                     disabled={isAwaitingSecureConfirmation}
+                     className={`flex flex-col items-center justify-center p-4 border transition-all ${paymentMethod === 'crypto' ? 'border-[#2C2A26] bg-[#2C2A26] text-[#F5F2EB]' : 'border-[#D6D1C7] text-[#5D5A53] hover:border-[#2C2A26]'}`}
+                   >
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 mb-2">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 10.5h6m-6 3h6m-3-6v9" />
+                      </svg>
+                      <span className="text-[10px] uppercase tracking-widest font-bold">Crypto</span>
+                   </button>
+                </div>
+
                 <h2 className="text-xl font-serif text-[#2C2A26] mb-6">Contact Information</h2>
                 <div className="space-y-4">
                    <input type="email" placeholder="Email address" defaultValue={user?.email || ""} disabled={isAwaitingSecureConfirmation} className="w-full bg-transparent border-b border-[#D6D1C7] py-3 text-[#2C2A26] placeholder-[#A8A29E] outline-none focus:border-[#2C2A26] transition-colors" />

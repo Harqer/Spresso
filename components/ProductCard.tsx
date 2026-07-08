@@ -22,20 +22,32 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) => {
           className="w-full h-full object-cover transition-transform duration-1000 ease-in-out group-hover:scale-110 sepia-[0.1]"
         />
         
-        {/* Hover overlay with "Quick View" - minimalistic */}
-        <div className="absolute inset-0 bg-[#2C2A26]/0 group-hover:bg-[#2C2A26]/5 transition-colors duration-500 flex items-center justify-center">
-            <div className="opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                <span className="bg-white/90 backdrop-blur text-[#2C2A26] px-6 py-3 rounded-full text-xs uppercase tracking-widest font-medium">
-                    View Details
-                </span>
+        {/* Luxury Badge */}
+        <div className="absolute top-6 left-6 z-10">
+          <span className="bg-[#2C2A26] text-[#F5F2EB] px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-bold">
+            Limited Edition
+          </span>
+        </div>
+
+        {/* Refined Quick View Overlay */}
+        <div className="absolute inset-0 bg-[#2C2A26]/0 group-hover:bg-[#2C2A26]/10 transition-all duration-700 flex items-end justify-center pb-12">
+            <div className="opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-8 group-hover:translate-y-0">
+                <button className="bg-white text-[#2C2A26] px-10 py-4 text-[10px] uppercase tracking-[0.3em] font-bold shadow-2xl hover:bg-[#2C2A26] hover:text-white transition-colors duration-300">
+                    Quick View
+                </button>
             </div>
         </div>
       </div>
       
-      <div className="text-center">
-        <h3 className="text-2xl font-serif font-medium text-[#2C2A26] mb-1 group-hover:opacity-70 transition-opacity">{product.name}</h3>
-        <p className="text-sm font-light text-[#5D5A53] mb-3 tracking-wide">{product.category}</p>
-        <span className="text-sm font-medium text-[#2C2A26] block">${product.price}</span>
+      <div className="space-y-2">
+        <div className="flex justify-between items-start">
+          <div className="text-left">
+            <p className="text-[10px] uppercase tracking-[0.2em] text-[#A8A29E] font-bold mb-1">{product.category} • Vaultier Studio</p>
+            <h3 className="text-2xl font-serif text-[#2C2A26] group-hover:opacity-70 transition-opacity">{product.name}</h3>
+          </div>
+          <span className="text-lg font-light text-[#2C2A26]">${product.price}</span>
+        </div>
+        <p className="text-xs font-light text-[#5D5A53] tracking-wide line-clamp-1">{product.tagline}</p>
       </div>
     </div>
   );
