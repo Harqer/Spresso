@@ -1,7 +1,7 @@
 "use client";
 
 import type { PromotionBreakdownData } from "@/types";
-import { GlassPieChart } from "@/components/metrics/charts/GlassPieChart";
+import { GlassPieChart } from "../charts/GlassPieChart";
 
 interface PromotionPanelProps {
   data: PromotionBreakdownData[];

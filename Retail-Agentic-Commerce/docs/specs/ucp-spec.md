@@ -174,7 +174,7 @@ Content-Type: application/json
         "profile": "https://platform.example/profile.json"
       }
     },
-    "checkout": {}
+    "checkout": { ... }
   }
 }
 ```
@@ -348,7 +348,7 @@ UCP uses a "Trust-by-Design" model that separates **payment credential providers
         "brand": "visa",
         "last_digits": "4242"
       },
-      "billing_address": {},
+      "billing_address": { ... },
       "credential": {
         "type": "PAYMENT_GATEWAY",
         "token": "{\"signature\":\"...\",\"protocolVersion\":\"ECv2\"...}"

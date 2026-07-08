@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { App } from "@/App";
+import { App } from "./App";
 import "./index.css";
 import { applyDocumentTheme } from "@openai/apps-sdk-ui/theme";
-import type { OpenAiGlobals, ToolOutput } from "@/types";
+import type { OpenAiGlobals, ToolOutput } from "./types";
 
 // Initialize theme from localStorage or system preference before React renders
 const THEME_STORAGE_KEY = "acp-widget-theme";

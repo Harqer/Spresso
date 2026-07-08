@@ -1,4 +1,14 @@
 {
+  "auth": {
+    "providers": {
+      "googleSignIn": {
+        "enabled": true
+      },
+      "emailPassword": {
+        "enabled": true
+      }
+    }
+  },
   "hosting": {
     "public": "Retail-Agentic-Commerce/src/ui/.next",
     "ignore": [

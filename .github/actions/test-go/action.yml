@@ -1,0 +1,9 @@
+name: 'Test Go Gateway'
+description: 'Runs go test for the industrial gateway'
+runs:
+  using: "composite"
+  steps:
+    - name: Run Gateway Tests
+      shell: bash
+      working-directory: aura-gateway-go
+      run: go test ./... -v

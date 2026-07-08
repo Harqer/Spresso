@@ -1,0 +1,86 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/proguard-rules.pro</file>
+  <line>16</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/proguard-rules.pro" />
+  <problem_class id="ShrinkerUnresolvedReference" severity="ERROR" attribute_key="ERRORS_ATTRIBUTES">Unresolved reference in Shrinker Config file</problem_class>
+  <description>Unresolved class name</description>
+  <highlighted_element>androidx.compose.runtime.Composer</highlighted_element>
+  <language>SHRINKER_CONFIG</language>
+  <offset>34</offset>
+  <length>33</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/proguard-rules.pro</file>
+  <line>19</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/proguard-rules.pro" />
+  <problem_class id="ShrinkerUnresolvedReference" severity="ERROR" attribute_key="ERRORS_ATTRIBUTES">Unresolved reference in Shrinker Config file</problem_class>
+  <description>Unresolved class name</description>
+  <highlighted_element>kotlinx.coroutines.internal.MainDispatcherFactory</highlighted_element>
+  <language>SHRINKER_CONFIG</language>
+  <offset>17</offset>
+  <length>49</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/proguard-rules.pro</file>
+  <line>20</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/proguard-rules.pro" />
+  <problem_class id="ShrinkerUnresolvedReference" severity="ERROR" attribute_key="ERRORS_ATTRIBUTES">Unresolved reference in Shrinker Config file</problem_class>
+  <description>Unresolved class name</description>
+  <highlighted_element>kotlinx.coroutines.CoroutineExceptionHandler</highlighted_element>
+  <language>SHRINKER_CONFIG</language>
+  <offset>17</offset>
+  <length>44</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/proguard-rules.pro</file>
+  <line>21</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/proguard-rules.pro" />
+  <problem_class id="ShrinkerUnresolvedReference" severity="ERROR" attribute_key="ERRORS_ATTRIBUTES">Unresolved reference in Shrinker Config file</problem_class>
+  <description>Unresolved class name</description>
+  <highlighted_element>kotlinx.coroutines.android.AndroidExceptionPreHandler</highlighted_element>
+  <language>SHRINKER_CONFIG</language>
+  <offset>17</offset>
+  <length>53</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/proguard-rules.pro</file>
+  <line>22</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/proguard-rules.pro" />
+  <problem_class id="ShrinkerUnresolvedReference" severity="ERROR" attribute_key="ERRORS_ATTRIBUTES">Unresolved reference in Shrinker Config file</problem_class>
+  <description>Unresolved class name</description>
+  <highlighted_element>kotlinx.coroutines.android.AndroidDispatcherFactory</highlighted_element>
+  <language>SHRINKER_CONFIG</language>
+  <offset>17</offset>
+  <length>51</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/proguard-rules.pro</file>
+  <line>29</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/proguard-rules.pro" />
+  <problem_class id="ShrinkerUnresolvedReference" severity="ERROR" attribute_key="ERRORS_ATTRIBUTES">Unresolved reference in Shrinker Config file</problem_class>
+  <description>Unresolved class name</description>
+  <highlighted_element>okhttp3.internal.publicsuffix.PublicSuffixDatabase</highlighted_element>
+  <language>SHRINKER_CONFIG</language>
+  <offset>17</offset>
+  <length>50</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/proguard-rules.pro</file>
+  <line>37</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/proguard-rules.pro" />
+  <problem_class id="ShrinkerUnresolvedReference" severity="ERROR" attribute_key="ERRORS_ATTRIBUTES">Unresolved reference in Shrinker Config file</problem_class>
+  <description>Unresolved class name</description>
+  <highlighted_element>android.webkit.WebView</highlighted_element>
+  <language>SHRINKER_CONFIG</language>
+  <offset>12</offset>
+  <length>22</length>
+</problem>
+</problems>

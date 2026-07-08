@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useCallback, useRef } from "react";
-import { useACPLog, type ACPEventType } from "@/hooks/useACPLog";
-import { useAgentActivityLog } from "@/hooks/useAgentActivityLog";
+import { useACPLog, type ACPEventType } from "./useACPLog";
+import { useAgentActivityLog } from "./useAgentActivityLog";
 import type {
   PromotionInputSignals,
   PromotionDecision,

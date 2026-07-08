@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { fetchPhoenixAgentPerformance } from "@/hooks/usePhoenixTelemetry";
+import { fetchPhoenixAgentPerformance } from "./usePhoenixTelemetry";
 
 function jsonResponse(payload: unknown, status = 200): Response {
   return new Response(JSON.stringify(payload), {

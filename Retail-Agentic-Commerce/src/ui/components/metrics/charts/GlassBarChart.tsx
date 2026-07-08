@@ -10,7 +10,7 @@ import {
   ResponsiveContainer,
   Cell,
 } from "recharts";
-import { ChartTooltip } from "@/components/metrics/charts/ChartTooltip";
+import { ChartTooltip } from "./ChartTooltip";
 
 interface GlassBarChartProps<T> {
   data: T[];

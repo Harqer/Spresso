@@ -1,0 +1,665 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/.gitlab-ci.yml</file>
+  <line>5</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.gitlab-ci.yml" />
+  <problem_class id="Annotator" severity="INFORMATION" attribute_key="INFORMATION_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>#loc</description>
+  <highlighted_element>validate</highlighted_element>
+  <language>yaml</language>
+  <offset>4</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.gitlab-ci.yml</file>
+  <line>6</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.gitlab-ci.yml" />
+  <problem_class id="Annotator" severity="INFORMATION" attribute_key="INFORMATION_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>#loc</description>
+  <highlighted_element>security</highlighted_element>
+  <language>yaml</language>
+  <offset>4</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.gitlab-ci.yml</file>
+  <line>7</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.gitlab-ci.yml" />
+  <problem_class id="Annotator" severity="INFORMATION" attribute_key="INFORMATION_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>#loc</description>
+  <highlighted_element>identity-pulse</highlighted_element>
+  <language>yaml</language>
+  <offset>4</offset>
+  <length>14</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.gitlab-ci.yml</file>
+  <line>8</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.gitlab-ci.yml" />
+  <problem_class id="Annotator" severity="INFORMATION" attribute_key="INFORMATION_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>#loc</description>
+  <highlighted_element>test</highlighted_element>
+  <language>yaml</language>
+  <offset>4</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.gitlab-ci.yml</file>
+  <line>9</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.gitlab-ci.yml" />
+  <problem_class id="Annotator" severity="INFORMATION" attribute_key="INFORMATION_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>#loc</description>
+  <highlighted_element>deploy-staging</highlighted_element>
+  <language>yaml</language>
+  <offset>4</offset>
+  <length>14</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.gitlab-ci.yml</file>
+  <line>10</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.gitlab-ci.yml" />
+  <problem_class id="Annotator" severity="INFORMATION" attribute_key="INFORMATION_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>#loc</description>
+  <highlighted_element>hardware-verification</highlighted_element>
+  <language>yaml</language>
+  <offset>4</offset>
+  <length>21</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.gitlab-ci.yml</file>
+  <line>11</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.gitlab-ci.yml" />
+  <problem_class id="Annotator" severity="INFORMATION" attribute_key="INFORMATION_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>#loc</description>
+  <highlighted_element>deploy-prod</highlighted_element>
+  <language>yaml</language>
+  <offset>4</offset>
+  <length>11</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.gitlab-ci.yml</file>
+  <line>12</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.gitlab-ci.yml" />
+  <problem_class id="Annotator" severity="INFORMATION" attribute_key="INFORMATION_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>#loc</description>
+  <highlighted_element>audit-log</highlighted_element>
+  <language>yaml</language>
+  <offset>4</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.gitlab-ci.yml</file>
+  <line>13</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.gitlab-ci.yml" />
+  <problem_class id="Annotator" severity="INFORMATION" attribute_key="INFORMATION_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>#loc</description>
+  <highlighted_element>checkpoint</highlighted_element>
+  <language>yaml</language>
+  <offset>4</offset>
+  <length>10</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.gitlab-ci.yml</file>
+  <line>29</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.gitlab-ci.yml" />
+  <problem_class id="Annotator" severity="INFORMATION" attribute_key="INFORMATION_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>#loc</description>
+  <highlighted_element>.failure-template</highlighted_element>
+  <language>yaml</language>
+  <offset>0</offset>
+  <length>17</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.gitlab-ci.yml</file>
+  <line>41</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.gitlab-ci.yml" />
+  <problem_class id="Annotator" severity="INFORMATION" attribute_key="INFORMATION_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>#loc</description>
+  <highlighted_element>lint-and-autofix</highlighted_element>
+  <language>yaml</language>
+  <offset>0</offset>
+  <length>16</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.gitlab-ci.yml</file>
+  <line>42</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.gitlab-ci.yml" />
+  <problem_class id="Annotator" severity="INFORMATION" attribute_key="INFORMATION_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>#loc</description>
+  <highlighted_element>.failure-template</highlighted_element>
+  <language>yaml</language>
+  <offset>11</offset>
+  <length>17</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.gitlab-ci.yml</file>
+  <line>43</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.gitlab-ci.yml" />
+  <problem_class id="Annotator" severity="INFORMATION" attribute_key="INFORMATION_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>#loc</description>
+  <highlighted_element>validate</highlighted_element>
+  <language>yaml</language>
+  <offset>9</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.gitlab-ci.yml</file>
+  <line>67</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.gitlab-ci.yml" />
+  <problem_class id="Annotator" severity="INFORMATION" attribute_key="INFORMATION_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>#loc</description>
+  <highlighted_element>security-pulse</highlighted_element>
+  <language>yaml</language>
+  <offset>0</offset>
+  <length>14</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.gitlab-ci.yml</file>
+  <line>68</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.gitlab-ci.yml" />
+  <problem_class id="Annotator" severity="INFORMATION" attribute_key="INFORMATION_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>#loc</description>
+  <highlighted_element>security</highlighted_element>
+  <language>yaml</language>
+  <offset>9</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.gitlab-ci.yml</file>
+  <line>78</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.gitlab-ci.yml" />
+  <problem_class id="Annotator" severity="INFORMATION" attribute_key="INFORMATION_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>#loc</description>
+  <highlighted_element>secure-secrets-gate</highlighted_element>
+  <language>yaml</language>
+  <offset>0</offset>
+  <length>19</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.gitlab-ci.yml</file>
+  <line>79</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.gitlab-ci.yml" />
+  <problem_class id="Annotator" severity="INFORMATION" attribute_key="INFORMATION_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>#loc</description>
+  <highlighted_element>identity-pulse</highlighted_element>
+  <language>yaml</language>
+  <offset>9</offset>
+  <length>14</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.gitlab-ci.yml</file>
+  <line>92</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.gitlab-ci.yml" />
+  <problem_class id="Annotator" severity="INFORMATION" attribute_key="INFORMATION_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>#loc</description>
+  <highlighted_element>llm-cortex-test</highlighted_element>
+  <language>yaml</language>
+  <offset>0</offset>
+  <length>15</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.gitlab-ci.yml</file>
+  <line>93</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.gitlab-ci.yml" />
+  <problem_class id="Annotator" severity="INFORMATION" attribute_key="INFORMATION_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>#loc</description>
+  <highlighted_element>test</highlighted_element>
+  <language>yaml</language>
+  <offset>9</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.gitlab-ci.yml</file>
+  <line>102</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.gitlab-ci.yml" />
+  <problem_class id="Annotator" severity="INFORMATION" attribute_key="INFORMATION_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>#loc</description>
+  <highlighted_element>hardware-pulse</highlighted_element>
+  <language>yaml</language>
+  <offset>0</offset>
+  <length>14</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.gitlab-ci.yml</file>
+  <line>103</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.gitlab-ci.yml" />
+  <problem_class id="Annotator" severity="INFORMATION" attribute_key="INFORMATION_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>#loc</description>
+  <highlighted_element>hardware-verification</highlighted_element>
+  <language>yaml</language>
+  <offset>9</offset>
+  <length>21</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.gitlab-ci.yml</file>
+  <line>114</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.gitlab-ci.yml" />
+  <problem_class id="Annotator" severity="INFORMATION" attribute_key="INFORMATION_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>#loc</description>
+  <highlighted_element>promote-to-production</highlighted_element>
+  <language>yaml</language>
+  <offset>0</offset>
+  <length>21</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.gitlab-ci.yml</file>
+  <line>115</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.gitlab-ci.yml" />
+  <problem_class id="Annotator" severity="INFORMATION" attribute_key="INFORMATION_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>#loc</description>
+  <highlighted_element>deploy-prod</highlighted_element>
+  <language>yaml</language>
+  <offset>9</offset>
+  <length>11</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.gitlab-ci.yml</file>
+  <line>125</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.gitlab-ci.yml" />
+  <problem_class id="Annotator" severity="INFORMATION" attribute_key="INFORMATION_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>#loc</description>
+  <highlighted_element>create-mirror</highlighted_element>
+  <language>yaml</language>
+  <offset>0</offset>
+  <length>13</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/.gitlab-ci.yml</file>
+  <line>126</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/.gitlab-ci.yml" />
+  <problem_class id="Annotator" severity="INFORMATION" attribute_key="INFORMATION_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>#loc</description>
+  <highlighted_element>checkpoint</highlighted_element>
+  <language>yaml</language>
+  <offset>9</offset>
+  <length>10</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/PRD.md</file>
+  <line>98</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/PRD.md" />
+  <problem_class id="Annotator" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>':' expected, got '}' #loc</description>
+  <highlighted_element />
+  <language>Markdown</language>
+  <offset>28</offset>
+  <length>1</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/PRD.md</file>
+  <line>119</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/PRD.md" />
+  <problem_class id="Annotator" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>':' expected, got '}' #loc</description>
+  <highlighted_element />
+  <language>Markdown</language>
+  <offset>16</offset>
+  <length>1</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/PRD.md</file>
+  <line>156</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/PRD.md" />
+  <problem_class id="Annotator" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>':' expected, got '}' #loc</description>
+  <highlighted_element />
+  <language>Markdown</language>
+  <offset>20</offset>
+  <length>1</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/PRD.md</file>
+  <line>408</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/PRD.md" />
+  <problem_class id="Annotator" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>':' expected, got '}' #loc</description>
+  <highlighted_element />
+  <language>Markdown</language>
+  <offset>25</offset>
+  <length>1</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/PRD.md</file>
+  <line>463</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/PRD.md" />
+  <problem_class id="Annotator" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>':' expected, got '}' #loc</description>
+  <highlighted_element />
+  <language>Markdown</language>
+  <offset>32</offset>
+  <length>1</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/PRD.md</file>
+  <line>471</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/PRD.md" />
+  <problem_class id="Annotator" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>':' expected, got '}' #loc</description>
+  <highlighted_element />
+  <language>Markdown</language>
+  <offset>23</offset>
+  <length>1</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/PRD.md</file>
+  <line>508</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/PRD.md" />
+  <problem_class id="Annotator" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>':' expected, got '}' #loc</description>
+  <highlighted_element />
+  <language>Markdown</language>
+  <offset>16</offset>
+  <length>1</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/PRD.md</file>
+  <line>516</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/PRD.md" />
+  <problem_class id="Annotator" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>':' expected, got '}' #loc</description>
+  <highlighted_element />
+  <language>Markdown</language>
+  <offset>22</offset>
+  <length>1</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/PRD.md</file>
+  <line>517</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/docs/PRD.md" />
+  <problem_class id="Annotator" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>':' expected, got '}' #loc</description>
+  <highlighted_element />
+  <language>Markdown</language>
+  <offset>18</offset>
+  <length>1</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/apps_sdk/README.md</file>
+  <line>151</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/Retail-Agentic-Commerce/src/apps_sdk/README.md" />
+  <problem_class id="Annotator" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>':' expected, got '}' #loc</description>
+  <highlighted_element>}</highlighted_element>
+  <language>Markdown</language>
+  <offset>14</offset>
+  <length>1</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/lint_partial_results/debug/lintAnalyzeDebug/out/lint-resources.xml</file>
+  <line>1</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/lint_partial_results/debug/lintAnalyzeDebug/out/lint-resources.xml" />
+  <problem_class id="Annotator" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>Unexpected tokens #loc</description>
+  <highlighted_element>http://schemas.android.com/apk/res-auto;;${\:wear-retail-watch*debug*MAIN*sourceProvider*0*resDir*0}...</highlighted_element>
+  <language>XML</language>
+  <offset>0</offset>
+  <length>426</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/lint_partial_results/debug/lintAnalyzeDebug/out/lint-resources.xml</file>
+  <line>1</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/lint_partial_results/debug/lintAnalyzeDebug/out/lint-resources.xml" />
+  <problem_class id="Annotator" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>Unexpected tokens #loc</description>
+  <highlighted_element>Retail</highlighted_element>
+  <language>XML</language>
+  <offset>427</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/lint_partial_results/debug/lintAnalyzeDebug/out/lint-resources.xml</file>
+  <line>1</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/lint_partial_results/debug/lintAnalyzeDebug/out/lint-resources.xml" />
+  <problem_class id="Annotator" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>Top level element is not completed #loc</description>
+  <highlighted_element>Watch&quot;;</highlighted_element>
+  <language>XML</language>
+  <offset>434</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/lint_partial_results/debug/lintAnalyzeDebug/out/lint-resources.xml</file>
+  <line>1</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/intermediates/lint_partial_results/debug/lintAnalyzeDebug/out/lint-resources.xml" />
+  <problem_class id="Annotator" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>Valid XML document must have a root tag #loc</description>
+  <highlighted_element />
+  <language>XML</language>
+  <offset>441</offset>
+  <length>0</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/reports/lint-results-debug.html</file>
+  <line>474</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wear-retail-watch/build/reports/lint-results-debug.html" />
+  <problem_class id="Annotator" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>Closing tag matches nothing #loc</description>
+  <highlighted_element>&lt;/button&gt;</highlighted_element>
+  <language>HTML</language>
+  <offset>152</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/lint-cache/lintAnalyzeDebug/maven-versions/repo1.maven.org/com/meta/wearable/mwdat-camera/maven-metadata.xml</file>
+  <line>1</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/lint-cache/lintAnalyzeDebug/maven-versions/repo1.maven.org/com/meta/wearable/mwdat-camera/maven-metadata.xml" />
+  <problem_class id="Annotator" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>Valid XML document must have a root tag #loc</description>
+  <highlighted_element />
+  <language>XML</language>
+  <offset>0</offset>
+  <length>0</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/lint-cache/lintAnalyzeDebug/maven-versions/repo1.maven.org/com/meta/wearable/mwdat-core/maven-metadata.xml</file>
+  <line>1</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/lint-cache/lintAnalyzeDebug/maven-versions/repo1.maven.org/com/meta/wearable/mwdat-core/maven-metadata.xml" />
+  <problem_class id="Annotator" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>Valid XML document must have a root tag #loc</description>
+  <highlighted_element />
+  <language>XML</language>
+  <offset>0</offset>
+  <length>0</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/lint-cache/lintAnalyzeDebug/maven-versions/repo1.maven.org/com/meta/wearable/mwdat-display/maven-metadata.xml</file>
+  <line>1</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/lint-cache/lintAnalyzeDebug/maven-versions/repo1.maven.org/com/meta/wearable/mwdat-display/maven-metadata.xml" />
+  <problem_class id="Annotator" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>Valid XML document must have a root tag #loc</description>
+  <highlighted_element />
+  <language>XML</language>
+  <offset>0</offset>
+  <length>0</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/lint-cache/lintAnalyzeDebug/maven-versions/repo1.maven.org/com/meta/wearable/mwdat-mockdevice/maven-metadata.xml</file>
+  <line>1</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/lint-cache/lintAnalyzeDebug/maven-versions/repo1.maven.org/com/meta/wearable/mwdat-mockdevice/maven-metadata.xml" />
+  <problem_class id="Annotator" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>Valid XML document must have a root tag #loc</description>
+  <highlighted_element />
+  <language>XML</language>
+  <offset>0</offset>
+  <length>0</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/lint_partial_results/debug/lintAnalyzeDebug/out/lint-resources.xml</file>
+  <line>1</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/lint_partial_results/debug/lintAnalyzeDebug/out/lint-resources.xml" />
+  <problem_class id="Annotator" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>Unexpected tokens #loc</description>
+  <highlighted_element>http://schemas.android.com/apk/res-auto;;${\:wearable-retail-app*debug*MAIN*sourceProvider*0*resDir*...</highlighted_element>
+  <language>XML</language>
+  <offset>0</offset>
+  <length>1185</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/lint_partial_results/debug/lintAnalyzeDebug/out/lint-resources.xml</file>
+  <line>1</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/lint_partial_results/debug/lintAnalyzeDebug/out/lint-resources.xml" />
+  <problem_class id="Annotator" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>Top level element is not completed #loc</description>
+  <highlighted_element>Retail&quot;;+style:Theme.RetailAgenticCommerce,10,V400010010,c000400f1,;Dandroid\:Theme.Material.Light.N...</highlighted_element>
+  <language>XML</language>
+  <offset>1186</offset>
+  <length>178</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/lint_partial_results/debug/lintAnalyzeDebug/out/lint-resources.xml</file>
+  <line>1</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/intermediates/lint_partial_results/debug/lintAnalyzeDebug/out/lint-resources.xml" />
+  <problem_class id="Annotator" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>Valid XML document must have a root tag #loc</description>
+  <highlighted_element />
+  <language>XML</language>
+  <offset>1364</offset>
+  <length>0</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/reports/lint-results-debug.html</file>
+  <line>541</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/reports/lint-results-debug.html" />
+  <problem_class id="Annotator" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>Closing tag matches nothing #loc</description>
+  <highlighted_element>&lt;/button&gt;</highlighted_element>
+  <language>HTML</language>
+  <offset>157</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/reports/lint-results-debug.html</file>
+  <line>1010</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/reports/lint-results-debug.html" />
+  <problem_class id="Annotator" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>Closing tag matches nothing #loc</description>
+  <highlighted_element>&lt;/button&gt;</highlighted_element>
+  <language>HTML</language>
+  <offset>153</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/reports/tests/testDebugUnitTest/com.meta.wearable.retail.ui.ProductTest/index.html</file>
+  <line>113</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/reports/tests/testDebugUnitTest/com.meta.wearable.retail.ui.ProductTest/index.html" />
+  <problem_class id="Annotator" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>Closing tag matches nothing #loc</description>
+  <highlighted_element>&lt;/p&gt;</highlighted_element>
+  <language>HTML</language>
+  <offset>76</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/reports/tests/testDebugUnitTest/index.html</file>
+  <line>112</line>
+  <module>aura-quiet-living</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/aura-mobile-android/wearable-retail-app/build/reports/tests/testDebugUnitTest/index.html" />
+  <problem_class id="Annotator" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Annotator</problem_class>
+  <hints />
+  <description>Closing tag matches nothing #loc</description>
+  <highlighted_element>&lt;/p&gt;</highlighted_element>
+  <language>HTML</language>
+  <offset>76</offset>
+  <length>4</length>
+</problem>
+</problems>

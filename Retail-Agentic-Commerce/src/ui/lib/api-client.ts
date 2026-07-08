@@ -34,10 +34,10 @@ const isServer = typeof window === "undefined";
 // - Client-side: always uses /api/proxy/* paths (keys handled server-side)
 // - Server-side: uses direct URLs for server components/actions
 const API_URL = isServer
-  ? process.env.MERCHANT_API_URL || "https://spresso-5561f.web.app/api/proxy/merchant"
+  ? process.env.MERCHANT_API_URL || "http://localhost:8000"
   : "/api/proxy/merchant";
 
-const PSP_URL = isServer ? process.env.PSP_API_URL || "https://spresso-5561f.web.app/api/proxy/psp" : "/api/proxy/psp";
+const PSP_URL = isServer ? process.env.PSP_API_URL || "http://localhost:8001" : "/api/proxy/psp";
 
 // API keys: only used server-side (proxy routes handle client auth)
 const MERCHANT_API_KEY = isServer ? process.env.MERCHANT_API_KEY || "" : "";

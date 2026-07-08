@@ -1,7 +1,7 @@
 "use client";
 
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
-import { ChartTooltip } from "@/components/metrics/charts/ChartTooltip";
+import { ChartTooltip } from "./ChartTooltip";
 
 interface PieDataItem {
   label: string;

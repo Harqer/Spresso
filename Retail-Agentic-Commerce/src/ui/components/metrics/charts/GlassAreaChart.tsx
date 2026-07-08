@@ -9,7 +9,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import { ChartTooltip } from "@/components/metrics/charts/ChartTooltip";
+import { ChartTooltip } from "./ChartTooltip";
 
 interface GlassAreaChartProps {
   data: Record<string, unknown>[];

@@ -6,7 +6,7 @@ plugins {
 
 kotlin {
     compilerOptions {
-        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+        jvmTarget = JvmTarget.fromTarget("17")
         freeCompilerArgs.add("-Xskip-metadata-version-check")
         freeCompilerArgs.add("-opt-in=androidx.compose.foundation.style.ExperimentalFoundationStyleApi")
     }

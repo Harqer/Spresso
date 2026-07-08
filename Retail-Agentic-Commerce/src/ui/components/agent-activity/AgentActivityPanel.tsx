@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { useAgentActivityLog } from "@/hooks/useAgentActivityLog";
-import { AgentActivityItem } from "@/components/agent-activity/AgentActivityItem";
+import { AgentActivityItem } from "./AgentActivityItem";
 
 /**
  * Empty state - shows agent waiting state
