@@ -563,31 +563,65 @@ fun ProductItem(
             .styleable(styleState, VaultierTheme.styles.productCardStyle, style)
     ) {
         Column {
-            AsyncImage(
-                model = product.imageUrl,
-                contentDescription = product.name,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(180.dp)
-                    .background(Color(0xFFF0EFE9)),
-                contentScale = ContentScale.Crop
-            )
-            Column(modifier = Modifier.padding(12.dp)) {
-                Text(text = product.name, style = VaultierTheme.typography.bodyMedium)
-                Text(
-                    text = "$${product.price}",
-                    style = VaultierTheme.typography.bodySmall,
-                    color = Color.Gray
+            Box(modifier = Modifier.fillMaxWidth().height(220.dp)) {
+                AsyncImage(
+                    model = product.imageUrl,
+                    contentDescription = product.name,
+                    modifier = Modifier.fillMaxSize(),
+                    contentScale = ContentScale.Crop
                 )
-                Spacer(modifier = Modifier.height(8.dp))
+                
+                // Luxury Badge
+                Surface(
+                    color = Color(0xFF2C2A26),
+                    modifier = Modifier.padding(12.dp).align(Alignment.TopStart)
+                ) {
+                    Text(
+                        "LIMITED", 
+                        color = Color.White, 
+                        fontSize = 8.sp, 
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp),
+                        letterSpacing = 1.sp
+                    )
+                }
+            }
+            
+            Column(modifier = Modifier.padding(16.dp)) {
+                Text(
+                    text = product.category.uppercase(), 
+                    style = VaultierTheme.typography.labelSmall,
+                    color = Color.Gray,
+                    letterSpacing = 1.sp
+                )
+                Spacer(modifier = Modifier.height(4.dp))
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = product.name, 
+                        style = VaultierTheme.typography.titleMedium,
+                        modifier = Modifier.weight(1f),
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis
+                    )
+                    Text(
+                        text = "$${product.price}",
+                        style = VaultierTheme.typography.bodyLarge,
+                        fontWeight = FontWeight.Light
+                    )
+                }
+                Spacer(modifier = Modifier.height(12.dp))
                 Button(
                     onClick = onAddToCart,
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxWidth().height(48.dp),
                     shape = VaultierTheme.shapes.extraSmall,
                     colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF2C2A26)),
                     contentPadding = PaddingValues(0.dp)
                 ) {
-                    Text("Add to Cart", fontSize = 12.sp)
+                    Text("ADD TO CART", fontSize = 10.sp, letterSpacing = 2.sp, fontWeight = FontWeight.Bold)
                 }
             }
         }
