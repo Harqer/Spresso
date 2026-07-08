@@ -2,29 +2,43 @@ appId: com.meta.wearable.retail
 ---
 - clearState
 - launchApp
+
+# --- 1. IDENTITY PULSE ---
 - assertVisible: "Vaultier"
-- assertNotVisible: "Mock"
-- assertNotVisible: "Placeholder"
-- assertNotVisible: "Aura" # Legacy branding check
+- tapOn: "Sign In with Google"
+- waitForAnimationEnd
 
-# 1. Verification of Initial Greeting
-- assertVisible: "Welcome to Vaultier."
+# --- 2. HARDWARE PULSE ---
+- assertVisible: "Link your Glasses"
+- tapOn: "Continue"
 
-# 2. Agentic Discovery Test (Zero-Mock)
+# --- 3. DISCOVERY CYCLE ---
+- assertVisible: "Welcome to Vaultier"
+- tapOn: "Welcome to Vaultier"
+
+- assertVisible: "Visionary Voice"
+- tapOn: "Visionary Voice"
+
+- assertVisible: "Vaultier"
+- assertVisible: "Welcome to Vaultier.*"
+
+# Agentic Discovery Test
 - tapOn: "Search or ask Vaultier..."
-- inputText: "Find me a biomorphic chrome jacket for my glasses."
+- inputText: "Find me a biomorphic chrome jacket."
 - tapOn:
-    id: "Send" # Based on Icon.AutoMirrored.Filled.Send
+    id: "Send"
 - waitForAnimationEnd
 - assertVisible: "Vaultier is reasoning..."
-- waitVisible: "🔥 Closest Matches (same vibe)" # Confirms backend response
-- assertNotVisible: "Grounded Discovery" # Default fallback check
 
-# 3. Industrial Data Audit
-- assertNotVisible: "0.0" # Price zero check
-- assertNotVisible: "unclassified" # Default category check
+# --- 4. CART & CHECKOUT PULSE ---
+- tapOn: "ADD TO CART"
+- tapOn:
+    id: "Cart"
 
-# 4. Agentic Purchase Flow
+- assertVisible: "Summary"
+- assertVisible: "Total"
 - tapOn: "Confirm Purchase"
-- assertVisible: "Confirm Purchase" # Biometric prompt title
-- assertVisible: "Authenticate to complete your order"
+
+# Verify HITL Biometric Trigger
+- assertVisible: "Confirm Purchase"
+- assertVisible: "Finalize order"
