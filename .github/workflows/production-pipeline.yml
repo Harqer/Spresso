@@ -83,3 +83,21 @@ jobs:
           echo "Gateway Rollout: COMPLETE"
           
           echo "DEPLOYMENT STATUS: SUCCESSFUL - VAULTIER IS LIVE"
+
+      # --- 6. AUTONOMIC REPAIR PULSE (2026 industrial Standard) ---
+      - name: Alert Vaultier Architect on Failure
+        if: failure()
+        shell: bash
+        run: |
+          echo "PULSE FAILURE DETECTED. ALERTING AUTONOMIC REPAIR ENDPOINT..."
+          curl -X POST "${{ env.VAULTIER_BACKEND_URL }}/autonomic/repair" \
+            -H "Content-Type: application/json" \
+            -H "X-Vaultier-Internal-Secret: ${{ env.VAULTIER_INTERNAL_SECRET }}" \
+            -d "{
+              \"status\": \"failed\",
+              \"repository\": \"${{ github.repository }}\",
+              \"workflow\": \"${{ github.workflow }}\",
+              \"run_id\": \"${{ github.run_id }}\",
+              \"actor\": \"${{ github.actor }}\",
+              \"branch\": \"${{ github.ref_name }}\"
+            }"
