@@ -888,4 +888,6 @@ def session_to_response(session: CheckoutSession) -> CheckoutSessionResponse:
         messages=list(messages),
         links=links,
         order=order,
+        client_secret=metadata_data.get("client_secret"),
+        payment_intent_id=metadata_data.get("payment_intent_id"),
     )

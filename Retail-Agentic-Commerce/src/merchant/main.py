@@ -36,6 +36,7 @@ from src.merchant.api.routes.health import router as health_router
 from src.merchant.api.routes.metrics import router as metrics_router
 from src.merchant.api.routes.products import router as products_router
 from src.merchant.api.routes.webhooks import router as webhooks_router
+from src.merchant.api.routes.autonomic import router as autonomic_router
 from src.merchant.config import get_settings
 from src.merchant.db import init_and_seed_db
 from src.merchant.middleware import ACPHeadersMiddleware, RequestLoggingMiddleware
@@ -124,6 +125,7 @@ app.add_middleware(InternalSecurityMiddleware)
 # Include routers
 app.include_router(health_router)
 app.include_router(checkout_router)
+app.include_router(autonomic_router)
 # ... (rest of routers)
 app.include_router(vaultier_checkout_router)
 
