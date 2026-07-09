@@ -1,0 +1,850 @@
+[
+  {
+    "dependency": "vitest",
+    "ecosystem": "npm",
+    "fixed_in": "3.2.6",
+    "number": 157,
+    "severity": "critical",
+    "summary": "When Vitest UI server is listening, arbitrary file can be read and executed"
+  },
+  {
+    "dependency": "vite",
+    "ecosystem": "npm",
+    "fixed_in": "6.4.3",
+    "number": 156,
+    "severity": "medium",
+    "summary": "launch-editor: NTLMv2 hash disclosure via UNC path handling on Windows"
+  },
+  {
+    "dependency": "vite",
+    "ecosystem": "npm",
+    "fixed_in": "6.4.3",
+    "number": 155,
+    "severity": "high",
+    "summary": "vite: `server.fs.deny` bypass on Windows alternate paths"
+  },
+  {
+    "dependency": "vitest",
+    "ecosystem": "npm",
+    "fixed_in": "3.2.6",
+    "number": 154,
+    "severity": "critical",
+    "summary": "When Vitest UI server is listening, arbitrary file can be read and executed"
+  },
+  {
+    "dependency": "vite",
+    "ecosystem": "npm",
+    "fixed_in": "6.4.2",
+    "number": 153,
+    "severity": "medium",
+    "summary": "Vite Vulnerable to Path Traversal in Optimized Deps `.map` Handling"
+  },
+  {
+    "dependency": "esbuild",
+    "ecosystem": "npm",
+    "fixed_in": "0.25.0",
+    "number": 152,
+    "severity": "medium",
+    "summary": "esbuild enables any website to send any requests to the development server and read the response"
+  },
+  {
+    "dependency": "esbuild",
+    "ecosystem": "npm",
+    "fixed_in": "0.28.1",
+    "number": 150,
+    "severity": "low",
+    "summary": "esbuild allows arbitrary file read when running the development server on Windows"
+  },
+  {
+    "dependency": "postcss",
+    "ecosystem": "npm",
+    "fixed_in": "8.5.10",
+    "number": 146,
+    "severity": "medium",
+    "summary": "PostCSS has XSS via Unescaped </style> in its CSS Stringify Output"
+  },
+  {
+    "dependency": "undici",
+    "ecosystem": "npm",
+    "fixed_in": "6.27.0",
+    "number": 144,
+    "severity": "low",
+    "summary": "undici vulnerable to Set-Cookie SameSite attribute downgrade via permissive substring matching"
+  },
+  {
+    "dependency": "undici",
+    "ecosystem": "npm",
+    "fixed_in": "6.27.0",
+    "number": 143,
+    "severity": "medium",
+    "summary": "undici vulnerable to HTTP header injection via Set-Cookie percent-decoding"
+  },
+  {
+    "dependency": "undici",
+    "ecosystem": "npm",
+    "fixed_in": "6.27.0",
+    "number": 141,
+    "severity": "low",
+    "summary": "undici vulnerable to HTTP response queue poisoning via keep-alive socket reuse"
+  },
+  {
+    "dependency": "undici",
+    "ecosystem": "npm",
+    "fixed_in": "6.24.0",
+    "number": 136,
+    "severity": "medium",
+    "summary": "Undici has CRLF Injection in undici via `upgrade` option"
+  },
+  {
+    "dependency": "undici",
+    "ecosystem": "npm",
+    "fixed_in": "6.24.0",
+    "number": 135,
+    "severity": "medium",
+    "summary": "Undici has an HTTP Request/Response Smuggling issue"
+  },
+  {
+    "dependency": "esbuild",
+    "ecosystem": "npm",
+    "fixed_in": "0.25.0",
+    "number": 133,
+    "severity": "medium",
+    "summary": "esbuild enables any website to send any requests to the development server and read the response"
+  },
+  {
+    "dependency": "pyasn1",
+    "ecosystem": "pip",
+    "fixed_in": "0.6.3",
+    "number": 110,
+    "severity": "high",
+    "summary": "Denial of Service in pyasn1 via Unbounded Recursion"
+  },
+  {
+    "dependency": "transformers",
+    "ecosystem": "pip",
+    "fixed_in": "5.3.0",
+    "number": 92,
+    "severity": "high",
+    "summary": "HuggingFace transformers vulnerable to remote code execution"
+  },
+  {
+    "dependency": "langgraph-sdk",
+    "ecosystem": "pip",
+    "fixed_in": "0.3.15",
+    "number": 91,
+    "severity": "medium",
+    "summary": "LangGraph SDK has unsafe URL path construction"
+  },
+  {
+    "dependency": "langgraph-checkpoint",
+    "ecosystem": "pip",
+    "fixed_in": "4.1.1",
+    "number": 90,
+    "severity": "medium",
+    "summary": "LangGraph Checkpoint: Unsafe JSON deserialization in checkpoint loading"
+  },
+  {
+    "dependency": "litellm",
+    "ecosystem": "pip",
+    "fixed_in": "1.83.10",
+    "number": 89,
+    "severity": "high",
+    "summary": "LiteLLM allows a user to modify their own user_role via the /user/update endpoint"
+  },
+  {
+    "dependency": "litellm",
+    "ecosystem": "pip",
+    "fixed_in": "1.83.14",
+    "number": 88,
+    "severity": "high",
+    "summary": "LiteLLM allows an authenticated internal_user to create API keys with access to routes that their role does not permit"
+  },
+  {
+    "dependency": "pydantic-settings",
+    "ecosystem": "pip",
+    "fixed_in": "2.14.2",
+    "number": 87,
+    "severity": "medium",
+    "summary": "pydantic-settings: NestedSecretsSettingsSource follows symlinks outside secrets_dir, enabling local file read and bypassing secrets_dir_max_size"
+  },
+  {
+    "dependency": "langsmith",
+    "ecosystem": "pip",
+    "fixed_in": "0.8.18",
+    "number": 86,
+    "severity": "high",
+    "summary": "LangSmith SDK TracingMiddleware: Arbitrary server-side file read"
+  },
+  {
+    "dependency": "litellm",
+    "ecosystem": "pip",
+    "fixed_in": "1.84.0",
+    "number": 85,
+    "severity": "critical",
+    "summary": "LiteLLM: Authentication Bypass via Host Header Injection"
+  },
+  {
+    "dependency": "langchain",
+    "ecosystem": "pip",
+    "fixed_in": "1.3.9",
+    "number": 84,
+    "severity": "medium",
+    "summary": "LangChain: Path traversal and sandbox escape in LangChain file-search middleware and loaders"
+  },
+  {
+    "dependency": "bleach",
+    "ecosystem": "pip",
+    "fixed_in": "6.4.0",
+    "number": 83,
+    "severity": "medium",
+    "summary": "Bleach clean() / Cleaner() fails to sanitize dangerous URI schemes in allowed formaction attributes"
+  },
+  {
+    "dependency": "bleach",
+    "ecosystem": "pip",
+    "fixed_in": null,
+    "number": 82,
+    "severity": "medium",
+    "summary": "Bleach linkify(parse_email=True) CPU exhaustion via unbounded email regex scanning"
+  },
+  {
+    "dependency": "bleach",
+    "ecosystem": "pip",
+    "fixed_in": "6.4.0",
+    "number": 81,
+    "severity": "low",
+    "summary": "Bleach: URI sanitization allows disallowed URI schemes with Unicode > U+00A0 in output"
+  },
+  {
+    "dependency": "starlette",
+    "ecosystem": "pip",
+    "fixed_in": "1.3.1",
+    "number": 80,
+    "severity": "high",
+    "summary": "Starlette: request.form() limits silently ignored for application/x-www-form-urlencoded enable DoS"
+  },
+  {
+    "dependency": "Starlette",
+    "ecosystem": "pip",
+    "fixed_in": "1.3.0",
+    "number": 79,
+    "severity": "low",
+    "summary": "Starlette: Unvalidated request path concatenated into authority poisons request.url.hostname"
+  },
+  {
+    "dependency": "python-multipart",
+    "ecosystem": "pip",
+    "fixed_in": "0.0.30",
+    "number": 78,
+    "severity": "high",
+    "summary": "python-multipart: Quadratic-time querystring parsing with semicolon separators causes CPU denial of service"
+  },
+  {
+    "dependency": "python-multipart",
+    "ecosystem": "pip",
+    "fixed_in": "0.0.31",
+    "number": 77,
+    "severity": "low",
+    "summary": "python-multipart: Negative Content-Length in parse_form buffers the entire body in memory"
+  },
+  {
+    "dependency": "python-multipart",
+    "ecosystem": "pip",
+    "fixed_in": "0.0.30",
+    "number": 76,
+    "severity": "low",
+    "summary": "python-multipart: Semicolon treated as querystring field separator enables parameter smuggling"
+  },
+  {
+    "dependency": "python-multipart",
+    "ecosystem": "pip",
+    "fixed_in": "0.0.30",
+    "number": 75,
+    "severity": "low",
+    "summary": "python-multipart: Content-Disposition parameter smuggling via RFC 2231/5987 extended parameters"
+  },
+  {
+    "dependency": "starlette",
+    "ecosystem": "pip",
+    "fixed_in": "1.1.0",
+    "number": 74,
+    "severity": "high",
+    "summary": "Starlette: SSRF and NTLM credential theft via UNC paths in StaticFiles on Windows"
+  },
+  {
+    "dependency": "starlette",
+    "ecosystem": "pip",
+    "fixed_in": "1.1.0",
+    "number": 73,
+    "severity": "medium",
+    "summary": "Starlette: Arbitrary HTTP method dispatched to `HTTPEndpoint` attributes via `getattr`"
+  },
+  {
+    "dependency": "cryptography",
+    "ecosystem": "pip",
+    "fixed_in": "48.0.1",
+    "number": 72,
+    "severity": "high",
+    "summary": "Vulnerable OpenSSL included in cryptography wheels"
+  },
+  {
+    "dependency": "aiohttp",
+    "ecosystem": "pip",
+    "fixed_in": "3.14.1",
+    "number": 71,
+    "severity": "medium",
+    "summary": "aiohttp: Incomplete websocket frame payloads bypass memory limits"
+  },
+  {
+    "dependency": "aiohttp",
+    "ecosystem": "pip",
+    "fixed_in": "3.14.1",
+    "number": 70,
+    "severity": "low",
+    "summary": "aiohttp: TLS Server Hostname Override Is Ignored When Reusing HTTPS Connections"
+  },
+  {
+    "dependency": "aiohttp",
+    "ecosystem": "pip",
+    "fixed_in": "3.14.1",
+    "number": 69,
+    "severity": "low",
+    "summary": "aiohttp: Payload Response Resources Are Not Closed After Mid-Body Disconnect"
+  },
+  {
+    "dependency": "aiohttp",
+    "ecosystem": "pip",
+    "fixed_in": "3.14.1",
+    "number": 68,
+    "severity": "medium",
+    "summary": "aiohttp: HTTP/1 Pipelined Requests Queue Without Limit"
+  },
+  {
+    "dependency": "aiohttp",
+    "ecosystem": "pip",
+    "fixed_in": "3.14.1",
+    "number": 67,
+    "severity": "medium",
+    "summary": "aiohttp: Unread Compressed Request Bodies Bypass client_max_size During Cleanup"
+  },
+  {
+    "dependency": "aiohttp",
+    "ecosystem": "pip",
+    "fixed_in": "3.14.1",
+    "number": 66,
+    "severity": "medium",
+    "summary": "aiohttp: C HTTP Parser Bypasses max_line_size for Fragmented Lines"
+  },
+  {
+    "dependency": "aiohttp",
+    "ecosystem": "pip",
+    "fixed_in": "3.14.1",
+    "number": 65,
+    "severity": "medium",
+    "summary": "aiohttp: DigestAuthMiddleware Applies Credentials to Cross-Origin Redirect Challenges"
+  },
+  {
+    "dependency": "aiohttp",
+    "ecosystem": "pip",
+    "fixed_in": "3.14.1",
+    "number": 64,
+    "severity": "low",
+    "summary": "aiohttp: Host-Only Cookies Become Domain Cookies After CookieJar Persistence"
+  },
+  {
+    "dependency": "aiohttp",
+    "ecosystem": "pip",
+    "fixed_in": "3.14.0",
+    "number": 63,
+    "severity": "low",
+    "summary": "aiohttp: CRLF injection in multipart headers"
+  },
+  {
+    "dependency": "pyjwt",
+    "ecosystem": "pip",
+    "fixed_in": "2.13.0",
+    "number": 62,
+    "severity": "medium",
+    "summary": "PyJWT: Unauthenticated DoS via unbounded Base64URL decoding of unused payload segment in b64=false detached JWS"
+  },
+  {
+    "dependency": "PyJWT",
+    "ecosystem": "pip",
+    "fixed_in": "2.13.0",
+    "number": 61,
+    "severity": "medium",
+    "summary": "PyJWKClient: missing scheme allowlist enables CVE-2024-21643-class SSRF + token forgery via file://, ftp://, data: schemes"
+  },
+  {
+    "dependency": "pyjwt",
+    "ecosystem": "pip",
+    "fixed_in": "2.13.0",
+    "number": 60,
+    "severity": "high",
+    "summary": "PyJWT: Public-key JWK accepted as HMAC secret enables forged HS256 tokens when mixed families are allowed"
+  },
+  {
+    "dependency": "pyjwt",
+    "ecosystem": "pip",
+    "fixed_in": "2.13.0",
+    "number": 59,
+    "severity": "medium",
+    "summary": "PyJWT: Algorithm allow-list bypass when decoding with `PyJWK` / `PyJWKClient` keys"
+  },
+  {
+    "dependency": "pyjwt",
+    "ecosystem": "pip",
+    "fixed_in": "2.13.0",
+    "number": 58,
+    "severity": "low",
+    "summary": "PyJWKClient unbounded JWKS endpoint requests via attacker-controlled kid values (DoS)"
+  },
+  {
+    "dependency": "authlib",
+    "ecosystem": "pip",
+    "fixed_in": "1.6.10",
+    "number": 57,
+    "severity": "medium",
+    "summary": "Authlib OAuth 2.0 has Open Redirect in Authorization API that allows attacker-controlled redirect_uri through unsupported response_type"
+  },
+  {
+    "dependency": "starlette",
+    "ecosystem": "pip",
+    "fixed_in": "1.0.1",
+    "number": 56,
+    "severity": "medium",
+    "summary": "Starlette has missing Host header validation that poisons request.url.path, bypassing path-based security checks"
+  },
+  {
+    "dependency": "aiohttp",
+    "ecosystem": "pip",
+    "fixed_in": "3.14.0",
+    "number": 55,
+    "severity": "medium",
+    "summary": "AIOHTTP is vulnerable to cross-origin redirect with per-request cookies"
+  },
+  {
+    "dependency": "aiohttp",
+    "ecosystem": "pip",
+    "fixed_in": "3.14.0",
+    "number": 54,
+    "severity": "medium",
+    "summary": "AIOHTTP is Vulnerable to Deserialization of Untrusted Data"
+  },
+  {
+    "dependency": "idna",
+    "ecosystem": "pip",
+    "fixed_in": "3.15",
+    "number": 53,
+    "severity": "medium",
+    "summary": "Internationalized Domain Names in Applications (IDNA): Specially crafted inputs to idna.encode() can bypass CVE-2024-3651 fix"
+  },
+  {
+    "dependency": "langchain-classic",
+    "ecosystem": "pip",
+    "fixed_in": "1.0.7",
+    "number": 52,
+    "severity": "high",
+    "summary": "LangSmith SDK: Public prompt pull deserializes untrusted manifests without trust boundary warning"
+  },
+  {
+    "dependency": "langsmith",
+    "ecosystem": "pip",
+    "fixed_in": "0.8.0",
+    "number": 51,
+    "severity": "high",
+    "summary": "LangSmith SDK: Public prompt pull deserializes untrusted manifests without trust boundary warning"
+  },
+  {
+    "dependency": "authlib",
+    "ecosystem": "pip",
+    "fixed_in": "1.6.12",
+    "number": 50,
+    "severity": "medium",
+    "summary": "Authlib OIDC Implicit/Hybrid Authorization Vulnerable to Open Redirect"
+  },
+  {
+    "dependency": "litellm",
+    "ecosystem": "pip",
+    "fixed_in": "1.83.10",
+    "number": 49,
+    "severity": "high",
+    "summary": "LiteLLM has a sandbox escape in custom-code guardrail"
+  },
+  {
+    "dependency": "langchain-core",
+    "ecosystem": "pip",
+    "fixed_in": "1.3.3",
+    "number": 48,
+    "severity": "high",
+    "summary": "LangChain vulnerable to unsafe deserialization of attacker-controlled objects through overly broad `load()` allowlists"
+  },
+  {
+    "dependency": "Mako",
+    "ecosystem": "pip",
+    "fixed_in": "1.3.12",
+    "number": 47,
+    "severity": "high",
+    "summary": "Mako vulnerable to path traversal via backslash URI on Windows in TemplateLookup"
+  },
+  {
+    "dependency": "pip",
+    "ecosystem": "pip",
+    "fixed_in": "26.1",
+    "number": 46,
+    "severity": "medium",
+    "summary": "pip Vulnerable to Inclusion of Functionality from Untrusted Control Sphere"
+  },
+  {
+    "dependency": "litellm",
+    "ecosystem": "pip",
+    "fixed_in": "1.83.7",
+    "number": 45,
+    "severity": "high",
+    "summary": "LiteLLM: Authenticated command execution via MCP stdio test endpoints"
+  },
+  {
+    "dependency": "litellm",
+    "ecosystem": "pip",
+    "fixed_in": "1.83.7",
+    "number": 44,
+    "severity": "high",
+    "summary": "LiteLLM: Server-Side Template Injection in /prompts/test endpoint"
+  },
+  {
+    "dependency": "pip",
+    "ecosystem": "pip",
+    "fixed_in": "26.1",
+    "number": 43,
+    "severity": "medium",
+    "summary": "pip has an interpretation conflict due to handling both concatenated tar and ZIP files as ZIP files"
+  },
+  {
+    "dependency": "ragas",
+    "ecosystem": "pip",
+    "fixed_in": null,
+    "number": 42,
+    "severity": "low",
+    "summary": "RAGAS has SSRF via Multi-Modal Faithfulness Collections Module"
+  },
+  {
+    "dependency": "python-dotenv",
+    "ecosystem": "pip",
+    "fixed_in": "1.2.2",
+    "number": 41,
+    "severity": "medium",
+    "summary": "python-dotenv: Symlink following in set_key allows arbitrary file overwrite via cross-device rename fallback"
+  },
+  {
+    "dependency": "langchain-openai",
+    "ecosystem": "pip",
+    "fixed_in": "1.1.14",
+    "number": 40,
+    "severity": "low",
+    "summary": "langchain-openai: Image token counting SSRF protection can be bypassed via DNS rebinding"
+  },
+  {
+    "dependency": "langchain-text-splitters",
+    "ecosystem": "pip",
+    "fixed_in": "1.1.2",
+    "number": 39,
+    "severity": "medium",
+    "summary": "LangChain Text Splitters: HTMLHeaderTextSplitter.split_text_from_url SSRF Redirect Bypass"
+  },
+  {
+    "dependency": "authlib",
+    "ecosystem": "pip",
+    "fixed_in": "1.6.11",
+    "number": 38,
+    "severity": "medium",
+    "summary": "Authlib: Cross-site request forging when using cache"
+  },
+  {
+    "dependency": "Mako",
+    "ecosystem": "pip",
+    "fixed_in": "1.3.11",
+    "number": 37,
+    "severity": "high",
+    "summary": "Mako: Path traversal via double-slash URI prefix in TemplateLookup"
+  },
+  {
+    "dependency": "langsmith",
+    "ecosystem": "pip",
+    "fixed_in": "0.7.31",
+    "number": 36,
+    "severity": "medium",
+    "summary": "LangSmith SDK: Streaming token events bypass output redaction"
+  },
+  {
+    "dependency": "langchain-core",
+    "ecosystem": "pip",
+    "fixed_in": "1.2.28",
+    "number": 35,
+    "severity": "medium",
+    "summary": "LangChain has incomplete f-string validation in prompt templates"
+  },
+  {
+    "dependency": "cryptography",
+    "ecosystem": "pip",
+    "fixed_in": "46.0.7",
+    "number": 34,
+    "severity": "medium",
+    "summary": "Cryptography vulnerable to buffer overflow if non-contiguous buffers were passed to APIs"
+  },
+  {
+    "dependency": "transformers",
+    "ecosystem": "pip",
+    "fixed_in": "5.0.0rc3",
+    "number": 33,
+    "severity": "medium",
+    "summary": "HuggingFace Transformers allows for arbitrary code execution in the `Trainer` class"
+  },
+  {
+    "dependency": "litellm",
+    "ecosystem": "pip",
+    "fixed_in": "1.83.0",
+    "number": 32,
+    "severity": "high",
+    "summary": "LiteLLM: Password hash exposure and pass-the-hash authentication bypass"
+  },
+  {
+    "dependency": "litellm",
+    "ecosystem": "pip",
+    "fixed_in": "1.83.0",
+    "number": 31,
+    "severity": "critical",
+    "summary": "LiteLLM: Authentication bypass via OIDC userinfo cache key collision"
+  },
+  {
+    "dependency": "litellm",
+    "ecosystem": "pip",
+    "fixed_in": "1.83.0",
+    "number": 30,
+    "severity": "high",
+    "summary": "LiteLLM: Privilege escalation via unrestricted proxy configuration endpoint"
+  },
+  {
+    "dependency": "aiohttp",
+    "ecosystem": "pip",
+    "fixed_in": "3.13.4",
+    "number": 29,
+    "severity": "medium",
+    "summary": "AIOHTTP accepts duplicate Host headers"
+  },
+  {
+    "dependency": "aiohttp",
+    "ecosystem": "pip",
+    "fixed_in": "3.13.4",
+    "number": 28,
+    "severity": "low",
+    "summary": "AIOHTTP's C parser (llhttp) accepts null bytes and control characters in response header values - header injection/security bypass"
+  },
+  {
+    "dependency": "aiohttp",
+    "ecosystem": "pip",
+    "fixed_in": "3.13.4",
+    "number": 27,
+    "severity": "low",
+    "summary": "AIOHTTP has HTTP response splitting via \\r in reason phrase"
+  },
+  {
+    "dependency": "aiohttp",
+    "ecosystem": "pip",
+    "fixed_in": "3.13.4",
+    "number": 26,
+    "severity": "low",
+    "summary": "AIOHTTP leaks Cookie and Proxy-Authorization headers on cross-origin redirect"
+  },
+  {
+    "dependency": "aiohttp",
+    "ecosystem": "pip",
+    "fixed_in": "3.13.4",
+    "number": 25,
+    "severity": "low",
+    "summary": "AIOHTTP has late size enforcement for non-file multipart fields causes memory DoS"
+  },
+  {
+    "dependency": "aiohttp",
+    "ecosystem": "pip",
+    "fixed_in": "3.13.4",
+    "number": 24,
+    "severity": "medium",
+    "summary": "AIOHTTP has a Multipart Header Size Bypass"
+  },
+  {
+    "dependency": "aiohttp",
+    "ecosystem": "pip",
+    "fixed_in": "3.13.4",
+    "number": 23,
+    "severity": "medium",
+    "summary": "AIOHTTP affected by UNC SSRF/NTLMv2 Credential Theft/Local File Read in static resource handler on Windows"
+  },
+  {
+    "dependency": "aiohttp",
+    "ecosystem": "pip",
+    "fixed_in": "3.13.4",
+    "number": 22,
+    "severity": "low",
+    "summary": "AIOHTTP has CRLF injection through multipart part content type header construction"
+  },
+  {
+    "dependency": "aiohttp",
+    "ecosystem": "pip",
+    "fixed_in": "3.13.4",
+    "number": 21,
+    "severity": "low",
+    "summary": "AIOHTTP Affected by Denial of Service (DoS) via Unbounded DNS Cache in TCPConnector"
+  },
+  {
+    "dependency": "aiohttp",
+    "ecosystem": "pip",
+    "fixed_in": "3.13.4",
+    "number": 20,
+    "severity": "medium",
+    "summary": "aiohttp allows unlimited trailer headers, leading to possible uncapped memory usage"
+  },
+  {
+    "dependency": "Pygments",
+    "ecosystem": "pip",
+    "fixed_in": "2.20.0",
+    "number": 19,
+    "severity": "low",
+    "summary": "Pygments has Regular Expression Denial of Service (ReDoS) due to Inefficient Regex for GUID Matching"
+  },
+  {
+    "dependency": "cryptography",
+    "ecosystem": "pip",
+    "fixed_in": "46.0.6",
+    "number": 18,
+    "severity": "low",
+    "summary": "cryptography has incomplete DNS name constraint enforcement on peer names"
+  },
+  {
+    "dependency": "langchain-core",
+    "ecosystem": "pip",
+    "fixed_in": "1.2.22",
+    "number": 17,
+    "severity": "high",
+    "summary": "LangChain Core has Path Traversal vulnerabilites in legacy `load_prompt` functions"
+  },
+  {
+    "dependency": "requests",
+    "ecosystem": "pip",
+    "fixed_in": "2.33.0",
+    "number": 16,
+    "severity": "medium",
+    "summary": "Requests has Insecure Temp File Reuse in its extract_zipped_paths() utility function"
+  },
+  {
+    "dependency": "authlib",
+    "ecosystem": "pip",
+    "fixed_in": "1.6.9",
+    "number": 15,
+    "severity": "high",
+    "summary": "Authlib: Fail-Open Cryptographic Verification in OIDC Hash Binding"
+  },
+  {
+    "dependency": "authlib",
+    "ecosystem": "pip",
+    "fixed_in": "1.6.9",
+    "number": 14,
+    "severity": "high",
+    "summary": "Authlib Vulnerable to JWE RSA1_5 Bleichenbacher Padding Oracle"
+  },
+  {
+    "dependency": "authlib",
+    "ecosystem": "pip",
+    "fixed_in": "1.6.9",
+    "number": 13,
+    "severity": "critical",
+    "summary": "Authlib JWS JWK Header Injection: Signature Verification Bypass"
+  },
+  {
+    "dependency": "langgraph",
+    "ecosystem": "pip",
+    "fixed_in": "1.0.10",
+    "number": 12,
+    "severity": "medium",
+    "summary": "LangGraph checkpoint loading has unsafe msgpack deserialization"
+  },
+  {
+    "dependency": "diskcache",
+    "ecosystem": "pip",
+    "fixed_in": null,
+    "number": 11,
+    "severity": "medium",
+    "summary": "DiskCache has unsafe pickle deserialization"
+  },
+  {
+    "dependency": "esbuild",
+    "ecosystem": "npm",
+    "fixed_in": "0.28.1",
+    "number": 9,
+    "severity": "low",
+    "summary": "esbuild allows arbitrary file read when running the development server on Windows"
+  },
+  {
+    "dependency": "postcss",
+    "ecosystem": "npm",
+    "fixed_in": "8.5.10",
+    "number": 8,
+    "severity": "medium",
+    "summary": "PostCSS has XSS via Unescaped </style> in its CSS Stringify Output"
+  },
+  {
+    "dependency": "lodash",
+    "ecosystem": "npm",
+    "fixed_in": "4.18.0",
+    "number": 7,
+    "severity": "high",
+    "summary": "lodash vulnerable to Code Injection via `_.template` imports key names"
+  },
+  {
+    "dependency": "lodash",
+    "ecosystem": "npm",
+    "fixed_in": "4.18.0",
+    "number": 6,
+    "severity": "medium",
+    "summary": "lodash vulnerable to Prototype Pollution via array path bypass in `_.unset` and `_.omit`"
+  },
+  {
+    "dependency": "lodash",
+    "ecosystem": "npm",
+    "fixed_in": "4.17.23",
+    "number": 5,
+    "severity": "medium",
+    "summary": "Lodash has Prototype Pollution Vulnerability in `_.unset` and `_.omit` functions"
+  },
+  {
+    "dependency": "@opentelemetry/core",
+    "ecosystem": "npm",
+    "fixed_in": "2.8.0",
+    "number": 4,
+    "severity": "medium",
+    "summary": "OpenTelemetry Core: Unbounded memory allocation in W3C Baggage propagation"
+  },
+  {
+    "dependency": "uuid",
+    "ecosystem": "npm",
+    "fixed_in": "11.1.1",
+    "number": 3,
+    "severity": "medium",
+    "summary": "uuid: Missing buffer bounds check in v3/v5/v6 when buf is provided"
+  },
+  {
+    "dependency": "@opentelemetry/auto-instrumentations-node",
+    "ecosystem": "npm",
+    "fixed_in": "0.75.0",
+    "number": 2,
+    "severity": "high",
+    "summary": "Prometheus exporter process crash via malformed HTTP request"
+  },
+  {
+    "dependency": "@opentelemetry/sdk-node",
+    "ecosystem": "npm",
+    "fixed_in": "0.217.0",
+    "number": 1,
+    "severity": "high",
+    "summary": "Prometheus exporter process crash via malformed HTTP request"
+  }
+]
