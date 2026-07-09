@@ -10,5 +10,8 @@
     "genkit": "infisical run -- env GENKIT_ENV=dev GENKIT_LOG_LEVEL=error pnpm dlx genkit-cli start --port 4000 --experimental-reflection-v2 -- uv run --quiet uvicorn src.merchant.main:app --port 8000 --log-level error",
     "build": "pnpm --filter \"*\" build",
     "lint": "pnpm --filter \"*\" lint"
+  },
+  "dependencies": {
+    "esbuild": "^0.28.1"
   }
 }
