@@ -4,22 +4,14 @@
 -keep class com.meta.wearable.dat.** { *; }
 -dontwarn com.meta.wearable.dat.**
 
-# Firebase Identity Pulse (Replacing Clerk)
--keep class com.google.firebase.** { *; }
+# Firebase Identity Pulse
+-keep class com.google.firebase.auth.** { *; }
+-keep class com.google.firebase.common.** { *; }
 -dontwarn com.google.firebase.**
--keep class com.google.android.gms.internal.** { *; }
--dontwarn com.google.android.gms.internal.**
 -keep class com.google.android.libraries.identity.googleid.** { *; }
 -keep class androidx.credentials.** { *; }
 
-# Jetpack Compose
--keepclassmembers class * extends androidx.compose.runtime.Composer { *; }
-
-# Kotlin Coroutines
--keepnames class kotlinx.coroutines.internal.MainDispatcherFactory {}
--keepnames class kotlinx.coroutines.CoroutineExceptionHandler {}
--keepnames class kotlinx.coroutines.android.AndroidExceptionPreHandler {}
--keepnames class kotlinx.coroutines.android.AndroidDispatcherFactory {}
+# Removed redundant Compose and Coroutine rules (Handled by AGP 9 and Compose Compiler)
 
 # OkHttp
 -dontwarn okhttp3.**
