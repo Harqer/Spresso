@@ -30,6 +30,7 @@ from src.merchant.services.agent_outcomes import summarize_agent_outcomes
 from src.merchant.services.recommendation_attribution import (
     summarize_recommendation_attribution,
 )
+from src.merchant.services.cache import cached
 
 _TIME_RANGE_TO_DURATION: dict[DashboardTimeRange, timedelta] = {
     DashboardTimeRange.ONE_HOUR: timedelta(hours=1),
@@ -70,41 +71,12 @@ from typing import Any
 
 logger = logging.getLogger(__name__)
 
-# Expert Strategy: Industrial Metrics Caching (90s window)
-# Hardened Client Configuration (Production Grade)
-_redis_url = os.getenv("UPSTASH_REDIS_REST_URL")
-_redis_token = os.getenv("UPSTASH_REDIS_REST_TOKEN")
 
-if not _redis_url or not _redis_token:
-    logger.error("CRITICAL: Upstash Redis credentials missing. Caching is DISABLED.")
-    _redis = None
-else:
-    # REST client is the recommended way to securely implement Redis @ Cloudflare
-    # Using explicit SSL verification and industrial timeouts.
-    _redis = Redis(
-        url=_redis_url,
-        token=_redis_token,
-        rest_encoding="utf-8",
-        rest_retries=3,
-        rest_retry_interval=1,
-    )
-
-
+@cached(ttl=90, prefix="vaultier:metrics")
 def get_dashboard_metrics(
     db: Session, time_range: DashboardTimeRange
 ) -> dict[str, Any]:
     """Build metrics dashboard aggregates for the requested time range."""
-    cache_key = f"vaultier:metrics:{time_range.value}"
-
-    if _redis:
-        try:
-            cached = _redis.get(cache_key)
-            if cached:
-                logger.info(f"Industrial Metrics HIT: {cache_key}")
-                return json.loads(cached)
-        except Exception as e:
-            logger.error(f"Metrics Cache Read Failure: {e}")
-
     now = datetime.now(UTC)
     duration = _TIME_RANGE_TO_DURATION[time_range]
     interval = _TIME_RANGE_TO_INTERVAL[time_range]
@@ -214,12 +186,6 @@ def get_dashboard_metrics(
         "promotion_breakdown": _build_promotion_breakdown(current_completed),
         "product_health": _build_product_health(products, competitor_prices),
     }
-
-    if _redis:
-        try:
-            _redis.set(cache_key, json.dumps(metrics_payload), ex=90)
-        except Exception as e:
-            logger.error(f"Metrics Cache Write Failure: {e}")
 
     return metrics_payload
 
