@@ -58,6 +58,7 @@
     "react-dom": "^19.0.0",
     "recharts": "^3.9.1",
     "tailwind-merge": "^2.6.1",
+    "undici": "^8.7.0",
     "uuid": "^14.0.1",
     "ws": "^8.21.0"
   },
