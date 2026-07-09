@@ -216,6 +216,9 @@ importers:
       uuid:
         specifier: ^14.0.1
         version: 14.0.1
+      ws:
+        specifier: ^8.21.0
+        version: 8.21.0
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3.2.0
