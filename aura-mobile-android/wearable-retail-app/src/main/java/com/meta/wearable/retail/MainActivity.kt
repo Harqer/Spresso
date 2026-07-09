@@ -48,25 +48,29 @@ import com.meta.wearable.dat.core.types.PermissionStatus
 import com.meta.wearable.dat.core.types.RegistrationState
 import com.meta.wearable.retail.ui.theme.VaultierTheme
 import com.meta.wearable.retail.ui.Product
+import com.meta.wearable.retail.ui.ProductRepository
 import com.meta.wearable.retail.ui.RetailMobileApp
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import java.util.concurrent.Executor
+import javax.inject.Inject
 
 enum class AppScreen {
     Support, About, Launch, Identity, Hardware, Permissions, Welcome, ChooseVoice, Shop
 }
 
+@AndroidEntryPoint
 class MainActivity : FragmentActivity() {
-    private lateinit var sessionManager: RetailSessionManager
+    @Inject lateinit var sessionManager: RetailSessionManager
+    @Inject lateinit var repository: ProductRepository
     private lateinit var executor: Executor
     private var sharedImageUri by mutableStateOf<Uri?>(null)
-    private lateinit var auth: FirebaseAuth
+    @Inject lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        auth = Firebase.auth
-        sessionManager = RetailSessionManager(this)
+        // sessionManager and auth are injected by Hilt
         executor = ContextCompat.getMainExecutor(this)
         handleIntent(intent)
         
@@ -166,6 +170,7 @@ class MainActivity : FragmentActivity() {
                                         RetailMobileApp(
                                             userToken = token,
                                             sessionManager = sessionManager,
+                                            repository = repository,
                                             initialImageUri = sharedImageUri,
                                             onRequestGalleryAccess = { showRationale = true },
                                             onCompletePurchase = { items, onAuthenticated ->
