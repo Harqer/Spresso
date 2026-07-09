@@ -90,6 +90,9 @@ class Settings(BaseSettings):
     sentry_environment: str = os.getenv("ENV", "development")
     sentry_traces_sample_rate: float = 1.0
 
+    # Redis Configuration
+    redis_url: str = os.getenv("REDIS_URL", "redis://default:bM1T4IQZxOzyjMxZb5nPuHFUDtCoGToc@redis-19343.c276.us-east-1-2.ec2.cloud.redislabs.com:19343")
+
     # Stripe Configuration
     stripe_secret_key: str = os.getenv("STRIPE_SECRET_KEY", "")
     stripe_webhook_secret: str = os.getenv("STRIPE_WEBHOOK_SECRET", "")
