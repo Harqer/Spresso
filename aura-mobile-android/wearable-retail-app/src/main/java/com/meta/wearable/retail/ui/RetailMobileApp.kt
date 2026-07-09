@@ -61,6 +61,7 @@ data class ChatUiMessage(
 fun RetailMobileApp(
     userToken: String,
     sessionManager: RetailSessionManager,
+    repository: ProductRepository, // Injected via Hilt
     initialImageUri: Uri? = null,
     onCompletePurchase: (List<Product>, () -> Unit) -> Unit,
     onRequestGalleryAccess: () -> Unit = {}
@@ -68,7 +69,6 @@ fun RetailMobileApp(
     val context = LocalContext.current
     val scrollState = rememberScrollState()
     val scope = rememberCoroutineScope()
-    val repository = remember { ProductRepository() }
     
     var products by remember { mutableStateOf<List<Product>>(emptyList()) }
     var cartItems by remember { mutableStateOf<List<Product>>(emptyList()) }

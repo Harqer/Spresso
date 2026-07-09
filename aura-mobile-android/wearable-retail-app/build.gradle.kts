@@ -2,6 +2,8 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.plugin.compose")
     id("com.google.gms.google-services")
+    id("com.google.dagger.hilt.android")
+    id("kotlin-kapt")
 }
 
 kotlin {
@@ -82,6 +84,11 @@ dependencies {
     implementation("androidx.credentials:credentials-play-services-auth:1.6.0-rc02")
     implementation("com.google.android.libraries.identity.googleid:googleid:1.1.1")
     
+    // Hilt DI
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+
     // Industrial Identity: Firebase Auth (Replacing Clerk)
     implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
     implementation("com.google.firebase:firebase-auth")
