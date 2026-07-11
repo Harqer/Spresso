@@ -1,0 +1,14 @@
+/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/java/com/meta/wearable/retail/ui/RetailGlimmerUI.kt
+/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/java/com/meta/wearable/retail/glimmer/Builders.kt
+/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/java/com/meta/wearable/retail/ui/theme/VaultierTheme.kt
+/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/java/com/meta/wearable/retail/ui/Product.kt
+/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/java/com/meta/wearable/retail/di/AppModule.kt
+/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/java/com/meta/wearable/retail/util/GeminiNanoBanana2.kt
+/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/java/com/meta/wearable/retail/MainActivity.kt
+/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/java/com/meta/wearable/retail/ui/ProductRepository.kt
+/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/java/com/meta/wearable/retail/ui/RetailMobileApp.kt
+/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/java/com/meta/wearable/retail/RetailGlassesActivity.kt
+/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/java/com/meta/wearable/retail/ui/theme/ComponentStyles.kt
+/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/java/com/meta/wearable/retail/util/VaultierSettings.kt
+/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/java/com/meta/wearable/retail/RetailSessionManager.kt
+/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/java/com/meta/wearable/retail/RetailApplication.kt

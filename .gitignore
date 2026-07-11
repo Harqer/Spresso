@@ -1,48 +1,13 @@
-# Zero-Trust Security: Ignore all dotfiles by default
+# Strict Zero-Trust Policy: Block all dotfiles and directories
 .*
+**/\.*
 
-# Whitelist production-critical system files
+# Sole Exception: Allow the .gitignore file itself
 !.gitignore
-!.gitlab-ci.yml
-!.github/
-!.infisical.json
-!.agents/
-!.continue/
-!.devin/
-!.windsurf/
+!**/.gitignore
 
-# Allow nested gitignores and dockerignores
-!*/.gitignore
-!*/.dockerignore
-
-# Standard build and log ignores
+# Standard build and log ignores (redundant but safe)
 node_modules
 dist
-dist-ssr
-*.local
 logs
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-# Editor directories (Explicitly re-blocked just in case)
-.vscode/*
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-.projects/cache
-.projects/vault
-.projects/state.test.json
-.projects/state.local.test.json
-.env
-.env.*
-!.env.example
-vite-temp/

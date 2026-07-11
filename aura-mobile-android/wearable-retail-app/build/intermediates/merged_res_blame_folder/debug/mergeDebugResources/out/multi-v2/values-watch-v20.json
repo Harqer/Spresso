@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.meta.wearable.retail.wearable-retail-app-mergeDebugResources-63:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.meta.wearable.retail.wearable-retail-app-mergeDebugResources-70:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "/home/shaolin/.gradle/caches/9.3.1/transforms/b85ea68ec2c5d79bb91ccdf3207e7484/transformed/play-services-auth-21.1.1/res/values-watch-v20/values.xml",
+                    "source": "/home/shaolin/.gradle/caches/9.6.1/transforms/d3c5f4be64758f396d319afbafd0721a/transformed/play-services-auth-20.7.0/res/values-watch-v20/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11",
                         "startColumns": "0,0,0,0,0,0,0,0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/shaolin/.gradle/caches/9.3.1/transforms/cd33b47ef70dc78f33f8ceda03120b3c/transformed/appcompat-1.7.1/res/values-watch-v20/values-watch-v20.xml",
+                    "source": "/home/shaolin/.gradle/caches/9.6.1/transforms/c079ca8fa420f795505fced9bd8fc579/transformed/appcompat-1.6.1/res/values-watch-v20/values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",

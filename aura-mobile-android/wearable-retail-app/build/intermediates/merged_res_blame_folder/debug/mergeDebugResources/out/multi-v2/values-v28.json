@@ -1,29 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.meta.wearable.retail.wearable-retail-app-mergeDebugResources-63:/values-v28/values-v28.xml",
+            "outputFile": "com.meta.wearable.retail.wearable-retail-app-mergeDebugResources-70:/values-v28/values-v28.xml",
             "map": [
                 {
-                    "source": "/home/shaolin/.gradle/caches/9.3.1/transforms/9505a7c1e18b70d0f20122d96a96aa0c/transformed/core-1.7.0/res/values-v28/values.xml",
-                    "from": {
-                        "startLines": "4,13",
-                        "startColumns": "0,0",
-                        "startOffsets": "146,625",
-                        "endLines": "12,21",
-                        "endColumns": "8,8",
-                        "endOffsets": "624,1101"
-                    },
-                    "to": {
-                        "startLines": "12,21",
-                        "startColumns": "4,4",
-                        "startOffsets": "589,1072",
-                        "endLines": "20,29",
-                        "endColumns": "8,8",
-                        "endOffsets": "1067,1548"
-                    }
-                },
-                {
-                    "source": "/home/shaolin/.gradle/caches/9.3.1/transforms/cd33b47ef70dc78f33f8ceda03120b3c/transformed/appcompat-1.7.1/res/values-v28/values-v28.xml",
+                    "source": "/home/shaolin/.gradle/caches/9.6.1/transforms/c079ca8fa420f795505fced9bd8fc579/transformed/appcompat-1.6.1/res/values-v28/values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,8",
                         "startColumns": "4,4,4,4",

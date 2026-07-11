@@ -2,3 +2,14 @@ packages:
   - "Retail-Agentic-Commerce/src/ui"
   - "Retail-Agentic-Commerce/src/ui/kui-foundations-react-external"
   - "Retail-Agentic-Commerce/src/ui/kui-foundations-react-external/foundations-design-tokens"
+
+# Industrial Hardening: Global Security Overrides
+pnpm:
+  overrides:
+    lodash: "^4.18.1"
+    postcss: "^8.5.16"
+    esbuild: "^0.28.1"
+    # Force overrides for deep nesting structures found in pnpm audit
+    "@arcjet/next>next>postcss": "^8.5.16"
+    "next>postcss": "^8.5.16"
+    "tsup>esbuild": "^0.28.1"

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.meta.wearable.retail.wearable-retail-app-mergeDebugResources-63:/values-fb/values-fb.xml",
+            "outputFile": "com.meta.wearable.retail.wearable-retail-app-mergeDebugResources-70:/values-fb/values-fb.xml",
             "map": [
                 {
-                    "source": "/home/shaolin/.gradle/caches/9.3.1/transforms/878fd814a418aabff4777cd79e45d60a/transformed/mwdat-core-0.7.0/res/values-fb/values-fb.xml",
+                    "source": "/home/shaolin/.gradle/caches/9.6.1/transforms/d9a1e01a8dd6840b4b5200ff5c296ee8/transformed/mwdat-core-0.7.0/res/values-fb/values-fb.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

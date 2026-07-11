@@ -12,501 +12,479 @@
 9-->INJECTED
 10
 11    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-11-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:4:5-76
-11-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:4:22-73
+11-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:5:5-76
+11-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:5:22-73
 12    <uses-permission android:name="android.permission.INTERNET" />
-12-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:5:5-67
-12-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:5:22-64
+12-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:6:5-67
+12-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:6:22-64
 13    <uses-permission android:name="android.permission.CAMERA" />
-13-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:6:5-65
-13-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:6:22-62
+13-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:7:5-65
+13-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:7:22-62
 14
 15    <uses-feature
-15-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:8:5-85
+15-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:9:5-85
 16        android:name="android.hardware.camera"
-16-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:8:19-57
+16-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:9:19-57
 17        android:required="false" />
-17-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:8:58-82
+17-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:9:58-82
 18
 19    <!-- Vaultier Gallery Integration (Late 2026 Standards) -->
 20    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-20-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:11:5-76
-20-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:11:22-73
+20-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:12:5-76
+20-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:12:22-73
 21    <!-- Android 14+ Partial Access -->
 22    <uses-permission android:name="android.permission.READ_MEDIA_VISUAL_USER_SELECTED" />
-22-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:13:5-90
-22-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:13:22-87
+22-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:14:5-90
+22-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:14:22-87
 23    <!-- Fallback for older devices -->
 24    <uses-permission
-24-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:15:5-107
+24-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:16:5-107
 25        android:name="android.permission.READ_EXTERNAL_STORAGE"
-25-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:15:22-77
+25-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:16:22-77
 26        android:maxSdkVersion="32" />
-26-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:15:78-104
-27    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-27-->[com.clerk:clerk-android-api:1.0.32] /home/shaolin/.gradle/caches/9.3.1/transforms/1fda4def92dac7d9147805573de0d359/transformed/clerk-android-api-1.0.32/AndroidManifest.xml:8:5-79
-27-->[com.clerk:clerk-android-api:1.0.32] /home/shaolin/.gradle/caches/9.3.1/transforms/1fda4def92dac7d9147805573de0d359/transformed/clerk-android-api-1.0.32/AndroidManifest.xml:8:22-76
-28    <uses-permission android:name="android.permission.USE_BIOMETRIC" /> <!-- suppress DeprecatedClassUsageInspection -->
-28-->[androidx.biometric:biometric:1.2.0-alpha05] /home/shaolin/.gradle/caches/9.3.1/transforms/544de2987f8d3897e553359a20a0c864/transformed/biometric-1.2.0-alpha05/AndroidManifest.xml:22:5-72
-28-->[androidx.biometric:biometric:1.2.0-alpha05] /home/shaolin/.gradle/caches/9.3.1/transforms/544de2987f8d3897e553359a20a0c864/transformed/biometric-1.2.0-alpha05/AndroidManifest.xml:22:22-69
-29    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
-29-->[androidx.biometric:biometric:1.2.0-alpha05] /home/shaolin/.gradle/caches/9.3.1/transforms/544de2987f8d3897e553359a20a0c864/transformed/biometric-1.2.0-alpha05/AndroidManifest.xml:25:5-74
-29-->[androidx.biometric:biometric:1.2.0-alpha05] /home/shaolin/.gradle/caches/9.3.1/transforms/544de2987f8d3897e553359a20a0c864/transformed/biometric-1.2.0-alpha05/AndroidManifest.xml:25:22-71
-30    <uses-permission android:name="android.permission.BLUETOOTH" />
-30-->[com.meta.wearable:mwdat-mockdevice:0.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/81b2edffa7511abb6d4a912cf21c0ad5/transformed/mwdat-mockdevice-0.7.0/AndroidManifest.xml:13:5-68
-30-->[com.meta.wearable:mwdat-mockdevice:0.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/81b2edffa7511abb6d4a912cf21c0ad5/transformed/mwdat-mockdevice-0.7.0/AndroidManifest.xml:13:22-65
-31
-32    <queries>
-32-->[com.meta.wearable:mwdat-core:0.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/878fd814a418aabff4777cd79e45d60a/transformed/mwdat-core-0.7.0/AndroidManifest.xml:15:5-18:15
-33        <package android:name="com.facebook.stella" />
-33-->[com.meta.wearable:mwdat-core:0.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/878fd814a418aabff4777cd79e45d60a/transformed/mwdat-core-0.7.0/AndroidManifest.xml:16:9-55
-33-->[com.meta.wearable:mwdat-core:0.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/878fd814a418aabff4777cd79e45d60a/transformed/mwdat-core-0.7.0/AndroidManifest.xml:16:18-52
-34        <package android:name="com.facebook.stella_debug" />
-34-->[com.meta.wearable:mwdat-core:0.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/878fd814a418aabff4777cd79e45d60a/transformed/mwdat-core-0.7.0/AndroidManifest.xml:17:9-61
-34-->[com.meta.wearable:mwdat-core:0.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/878fd814a418aabff4777cd79e45d60a/transformed/mwdat-core-0.7.0/AndroidManifest.xml:17:18-58
-35    </queries>
-36
-37    <uses-permission android:name="android.permission.REORDER_TASKS" />
-37-->[androidx.test:core:1.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/9505a7c1e18b70d0f20122d96a96aa0c/transformed/core-1.7.0/AndroidManifest.xml:24:5-72
-37-->[androidx.test:core:1.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/9505a7c1e18b70d0f20122d96a96aa0c/transformed/core-1.7.0/AndroidManifest.xml:24:22-69
-38
-39    <permission
-39-->[androidx.core:core:1.19.0-alpha02] /home/shaolin/.gradle/caches/9.3.1/transforms/5f5aa3b26f65e344d4339f383b906f2a/transformed/core-1.19.0-alpha02/AndroidManifest.xml:22:5-24:47
-40        android:name="com.meta.wearable.retail.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-40-->[androidx.core:core:1.19.0-alpha02] /home/shaolin/.gradle/caches/9.3.1/transforms/5f5aa3b26f65e344d4339f383b906f2a/transformed/core-1.19.0-alpha02/AndroidManifest.xml:23:9-81
-41        android:protectionLevel="signature" />
-41-->[androidx.core:core:1.19.0-alpha02] /home/shaolin/.gradle/caches/9.3.1/transforms/5f5aa3b26f65e344d4339f383b906f2a/transformed/core-1.19.0-alpha02/AndroidManifest.xml:24:9-44
-42
-43    <uses-permission android:name="com.meta.wearable.retail.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-43-->[androidx.core:core:1.19.0-alpha02] /home/shaolin/.gradle/caches/9.3.1/transforms/5f5aa3b26f65e344d4339f383b906f2a/transformed/core-1.19.0-alpha02/AndroidManifest.xml:26:5-97
-43-->[androidx.core:core:1.19.0-alpha02] /home/shaolin/.gradle/caches/9.3.1/transforms/5f5aa3b26f65e344d4339f383b906f2a/transformed/core-1.19.0-alpha02/AndroidManifest.xml:26:22-94
-44
-45    <application
-45-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:17:5-67:19
-46        android:name="com.meta.wearable.retail.RetailApplication"
-46-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:18:9-42
-47        android:allowBackup="true"
-47-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:19:9-35
-48        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-48-->[androidx.core:core:1.19.0-alpha02] /home/shaolin/.gradle/caches/9.3.1/transforms/5f5aa3b26f65e344d4339f383b906f2a/transformed/core-1.19.0-alpha02/AndroidManifest.xml:28:18-86
-49        android:debuggable="true"
-50        android:extractNativeLibs="false"
-50-->INJECTED
-51        android:icon="@mipmap/ic_launcher"
-51-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:20:9-43
-52        android:label="@string/vaultier_app_name"
-52-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:21:9-50
-53        android:roundIcon="@mipmap/ic_launcher_round"
-53-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:22:9-54
-54        android:supportsRtl="true"
-54-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:23:9-35
-55        android:theme="@style/Theme.RetailAgenticCommerce" >
-55-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:24:9-59
-56        <meta-data
-56-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:26:9-28:48
-57            android:name="com.meta.wearable.mwdat.APPLICATION_ID"
-57-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:27:13-66
-58            android:value="2561594630944553" />
-58-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:28:13-45
-59        <meta-data
-59-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:29:9-31:84
-60            android:name="com.meta.wearable.mwdat.CLIENT_TOKEN"
-60-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:30:13-64
-61            android:value="AR|2561594630944553|ae56c0b0735f481616dd18d1edcc9d68" />
-61-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:31:13-81
-62        <meta-data
-62-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:32:9-34:36
-63            android:name="com.meta.wearable.mwdat.DAM_ENABLED"
-63-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:33:13-63
-64            android:value="true" />
-64-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:34:13-33
-65
-66        <activity
-66-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:36:9-58:20
-67            android:name="com.meta.wearable.retail.MainActivity"
-67-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:37:13-41
-68            android:exported="true" >
-68-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:38:13-36
+26-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:16:78-104
+27    <uses-permission android:name="android.permission.USE_BIOMETRIC" /> <!-- suppress DeprecatedClassUsageInspection -->
+27-->[androidx.biometric:biometric:1.2.0-alpha05] /home/shaolin/.gradle/caches/9.6.1/transforms/6200c291d4ac316ea19033e001667070/transformed/biometric-1.2.0-alpha05/AndroidManifest.xml:22:5-72
+27-->[androidx.biometric:biometric:1.2.0-alpha05] /home/shaolin/.gradle/caches/9.6.1/transforms/6200c291d4ac316ea19033e001667070/transformed/biometric-1.2.0-alpha05/AndroidManifest.xml:22:22-69
+28    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+28-->[androidx.biometric:biometric:1.2.0-alpha05] /home/shaolin/.gradle/caches/9.6.1/transforms/6200c291d4ac316ea19033e001667070/transformed/biometric-1.2.0-alpha05/AndroidManifest.xml:25:5-74
+28-->[androidx.biometric:biometric:1.2.0-alpha05] /home/shaolin/.gradle/caches/9.6.1/transforms/6200c291d4ac316ea19033e001667070/transformed/biometric-1.2.0-alpha05/AndroidManifest.xml:25:22-71
+29    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+29-->[com.google.firebase:firebase-auth:23.2.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c94f486eadb8d25c58a4f1f97a5aacae/transformed/firebase-auth-23.2.0/AndroidManifest.xml:26:5-79
+29-->[com.google.firebase:firebase-auth:23.2.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c94f486eadb8d25c58a4f1f97a5aacae/transformed/firebase-auth-23.2.0/AndroidManifest.xml:26:22-76
+30    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+30-->[com.google.android.recaptcha:recaptcha:18.6.1] /home/shaolin/.gradle/caches/9.6.1/transforms/c9a2a1d053ee8f2fd40e0d1298513399/transformed/recaptcha-18.6.1/AndroidManifest.xml:9:5-98
+30-->[com.google.android.recaptcha:recaptcha:18.6.1] /home/shaolin/.gradle/caches/9.6.1/transforms/c9a2a1d053ee8f2fd40e0d1298513399/transformed/recaptcha-18.6.1/AndroidManifest.xml:9:22-95
+31    <uses-permission android:name="android.permission.BLUETOOTH" />
+31-->[com.meta.wearable:mwdat-mockdevice:0.7.0] /home/shaolin/.gradle/caches/9.6.1/transforms/42f8f572850f608219047e22b55b85b3/transformed/mwdat-mockdevice-0.7.0/AndroidManifest.xml:13:5-68
+31-->[com.meta.wearable:mwdat-mockdevice:0.7.0] /home/shaolin/.gradle/caches/9.6.1/transforms/42f8f572850f608219047e22b55b85b3/transformed/mwdat-mockdevice-0.7.0/AndroidManifest.xml:13:22-65
+32
+33    <queries>
+33-->[com.meta.wearable:mwdat-core:0.7.0] /home/shaolin/.gradle/caches/9.6.1/transforms/d9a1e01a8dd6840b4b5200ff5c296ee8/transformed/mwdat-core-0.7.0/AndroidManifest.xml:15:5-18:15
+34        <package android:name="com.facebook.stella" />
+34-->[com.meta.wearable:mwdat-core:0.7.0] /home/shaolin/.gradle/caches/9.6.1/transforms/d9a1e01a8dd6840b4b5200ff5c296ee8/transformed/mwdat-core-0.7.0/AndroidManifest.xml:16:9-55
+34-->[com.meta.wearable:mwdat-core:0.7.0] /home/shaolin/.gradle/caches/9.6.1/transforms/d9a1e01a8dd6840b4b5200ff5c296ee8/transformed/mwdat-core-0.7.0/AndroidManifest.xml:16:18-52
+35        <package android:name="com.facebook.stella_debug" />
+35-->[com.meta.wearable:mwdat-core:0.7.0] /home/shaolin/.gradle/caches/9.6.1/transforms/d9a1e01a8dd6840b4b5200ff5c296ee8/transformed/mwdat-core-0.7.0/AndroidManifest.xml:17:9-61
+35-->[com.meta.wearable:mwdat-core:0.7.0] /home/shaolin/.gradle/caches/9.6.1/transforms/d9a1e01a8dd6840b4b5200ff5c296ee8/transformed/mwdat-core-0.7.0/AndroidManifest.xml:17:18-58
+36    </queries>
+37
+38    <permission
+38-->[androidx.core:core:1.19.0-alpha02] /home/shaolin/.gradle/caches/9.6.1/transforms/44fa9c6af2df63402c8a8635ec8c6ab3/transformed/core-1.19.0-alpha02/AndroidManifest.xml:22:5-24:47
+39        android:name="com.meta.wearable.retail.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+39-->[androidx.core:core:1.19.0-alpha02] /home/shaolin/.gradle/caches/9.6.1/transforms/44fa9c6af2df63402c8a8635ec8c6ab3/transformed/core-1.19.0-alpha02/AndroidManifest.xml:23:9-81
+40        android:protectionLevel="signature" />
+40-->[androidx.core:core:1.19.0-alpha02] /home/shaolin/.gradle/caches/9.6.1/transforms/44fa9c6af2df63402c8a8635ec8c6ab3/transformed/core-1.19.0-alpha02/AndroidManifest.xml:24:9-44
+41
+42    <uses-permission android:name="com.meta.wearable.retail.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+42-->[androidx.core:core:1.19.0-alpha02] /home/shaolin/.gradle/caches/9.6.1/transforms/44fa9c6af2df63402c8a8635ec8c6ab3/transformed/core-1.19.0-alpha02/AndroidManifest.xml:26:5-97
+42-->[androidx.core:core:1.19.0-alpha02] /home/shaolin/.gradle/caches/9.6.1/transforms/44fa9c6af2df63402c8a8635ec8c6ab3/transformed/core-1.19.0-alpha02/AndroidManifest.xml:26:22-94
+43
+44    <application
+44-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:18:5-69:19
+45        android:name="com.meta.wearable.retail.RetailApplication"
+45-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:19:9-42
+46        android:allowBackup="true"
+46-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:20:9-35
+47        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+47-->[androidx.core:core:1.19.0-alpha02] /home/shaolin/.gradle/caches/9.6.1/transforms/44fa9c6af2df63402c8a8635ec8c6ab3/transformed/core-1.19.0-alpha02/AndroidManifest.xml:28:18-86
+48        android:debuggable="true"
+49        android:extractNativeLibs="false"
+49-->INJECTED
+50        android:icon="@mipmap/ic_launcher"
+50-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:21:9-43
+51        android:label="@string/vaultier_app_name"
+51-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:22:9-50
+52        android:roundIcon="@mipmap/ic_launcher_round"
+52-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:23:9-54
+53        android:supportsRtl="true"
+53-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:24:9-35
+54        android:theme="@style/Theme.RetailAgenticCommerce" >
+54-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:25:9-59
+55        <meta-data
+55-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:27:9-29:48
+56            android:name="com.meta.wearable.mwdat.APPLICATION_ID"
+56-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:28:13-66
+57            android:value="2561594630944553" />
+57-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:29:13-45
+58        <meta-data
+58-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:30:9-32:84
+59            android:name="com.meta.wearable.mwdat.CLIENT_TOKEN"
+59-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:31:13-64
+60            android:value="AR|2561594630944553|ae56c0b0735f481616dd18d1edcc9d68" />
+60-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:32:13-81
+61        <meta-data
+61-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:33:9-35:36
+62            android:name="com.meta.wearable.mwdat.DAM_ENABLED"
+62-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:34:13-63
+63            android:value="true" />
+63-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:35:13-33
+64
+65        <activity
+65-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:37:9-60:20
+66            android:name="com.meta.wearable.retail.MainActivity"
+66-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:38:13-41
+67            android:exported="true"
+67-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:39:13-36
+68            android:launchMode="singleTop" >
+68-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:40:13-43
 69            <intent-filter>
-69-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:39:13-42:29
+69-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:41:13-44:29
 70                <action android:name="android.intent.action.MAIN" />
-70-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:40:17-69
-70-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:40:25-66
+70-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:42:17-69
+70-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:42:25-66
 71
 72                <category android:name="android.intent.category.LAUNCHER" />
-72-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:41:17-77
-72-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:41:27-74
+72-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:43:17-77
+72-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:43:27-74
 73            </intent-filter>
 74
 75            <!-- Callback for Meta AI registration -->
 76            <intent-filter>
-76-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:45:13-50:29
+76-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:47:13-52:29
 77                <action android:name="android.intent.action.VIEW" />
-77-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:46:17-69
-77-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:46:25-66
+77-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:48:17-69
+77-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:48:25-66
 78
 79                <category android:name="android.intent.category.DEFAULT" />
-79-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:47:17-76
-79-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:47:27-73
+79-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:49:17-76
+79-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:49:27-73
 80                <category android:name="android.intent.category.BROWSABLE" />
-80-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:48:17-78
-80-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:48:27-75
+80-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:50:17-78
+80-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:50:27-75
 81
 82                <data android:scheme="retailagent" />
-82-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:49:17-54
-82-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:49:23-51
+82-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:51:17-54
+82-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:51:23-51
 83            </intent-filter>
 84
 85            <!-- Vaultier Identifier: Handle Shared Screenshots and Photos -->
 86            <intent-filter>
-86-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:53:13-57:29
+86-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:55:13-59:29
 87                <action android:name="android.intent.action.SEND" />
-87-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:54:17-69
-87-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:54:25-66
+87-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:56:17-69
+87-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:56:25-66
 88
 89                <category android:name="android.intent.category.DEFAULT" />
-89-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:47:17-76
-89-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:47:27-73
+89-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:49:17-76
+89-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:49:27-73
 90
 91                <data android:mimeType="image/*" />
-91-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:49:17-54
-91-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:56:23-49
+91-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:51:17-54
+91-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:58:23-49
 92            </intent-filter>
 93        </activity>
 94
 95        <!-- Projected Activity for Glasses -->
 96        <activity
-96-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:61:9-65:80
+96-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:63:9-67:80
 97            android:name="com.meta.wearable.retail.RetailGlassesActivity"
-97-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:62:13-50
+97-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:64:13-50
 98            android:exported="false"
-98-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:63:13-37
+98-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:65:13-37
 99            android:requiredDisplayCategory="xr_projected"
-99-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:64:13-59
+99-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:66:13-59
 100            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
-100-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:65:13-77
+100-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:67:13-77
 101        <activity
-101-->[com.clerk:clerk-android-api:1.0.32] /home/shaolin/.gradle/caches/9.3.1/transforms/1fda4def92dac7d9147805573de0d359/transformed/clerk-android-api-1.0.32/AndroidManifest.xml:11:9-16:61
-102            android:name="com.clerk.api.sso.SSOManagerActivity"
-102-->[com.clerk:clerk-android-api:1.0.32] /home/shaolin/.gradle/caches/9.3.1/transforms/1fda4def92dac7d9147805573de0d359/transformed/clerk-android-api-1.0.32/AndroidManifest.xml:12:13-64
-103            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|keyboard|keyboardHidden"
-103-->[com.clerk:clerk-android-api:1.0.32] /home/shaolin/.gradle/caches/9.3.1/transforms/1fda4def92dac7d9147805573de0d359/transformed/clerk-android-api-1.0.32/AndroidManifest.xml:13:13-115
-104            android:exported="false"
-104-->[com.clerk:clerk-android-api:1.0.32] /home/shaolin/.gradle/caches/9.3.1/transforms/1fda4def92dac7d9147805573de0d359/transformed/clerk-android-api-1.0.32/AndroidManifest.xml:14:13-37
+101-->[com.google.firebase:firebase-auth:23.2.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c94f486eadb8d25c58a4f1f97a5aacae/transformed/firebase-auth-23.2.0/AndroidManifest.xml:29:9-46:20
+102            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+102-->[com.google.firebase:firebase-auth:23.2.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c94f486eadb8d25c58a4f1f97a5aacae/transformed/firebase-auth-23.2.0/AndroidManifest.xml:30:13-80
+103            android:excludeFromRecents="true"
+103-->[com.google.firebase:firebase-auth:23.2.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c94f486eadb8d25c58a4f1f97a5aacae/transformed/firebase-auth-23.2.0/AndroidManifest.xml:31:13-46
+104            android:exported="true"
+104-->[com.google.firebase:firebase-auth:23.2.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c94f486eadb8d25c58a4f1f97a5aacae/transformed/firebase-auth-23.2.0/AndroidManifest.xml:32:13-36
 105            android:launchMode="singleTask"
-105-->[com.clerk:clerk-android-api:1.0.32] /home/shaolin/.gradle/caches/9.3.1/transforms/1fda4def92dac7d9147805573de0d359/transformed/clerk-android-api-1.0.32/AndroidManifest.xml:15:13-44
-106            android:theme="@style/Theme.Clerk.AuthBridge" />
-106-->[com.clerk:clerk-android-api:1.0.32] /home/shaolin/.gradle/caches/9.3.1/transforms/1fda4def92dac7d9147805573de0d359/transformed/clerk-android-api-1.0.32/AndroidManifest.xml:16:13-58
-107        <activity
-107-->[com.clerk:clerk-android-api:1.0.32] /home/shaolin/.gradle/caches/9.3.1/transforms/1fda4def92dac7d9147805573de0d359/transformed/clerk-android-api-1.0.32/AndroidManifest.xml:17:9-41:20
-108            android:name="com.clerk.api.sso.SSOReceiverActivity"
-108-->[com.clerk:clerk-android-api:1.0.32] /home/shaolin/.gradle/caches/9.3.1/transforms/1fda4def92dac7d9147805573de0d359/transformed/clerk-android-api-1.0.32/AndroidManifest.xml:18:13-65
-109            android:exported="true"
-109-->[com.clerk:clerk-android-api:1.0.32] /home/shaolin/.gradle/caches/9.3.1/transforms/1fda4def92dac7d9147805573de0d359/transformed/clerk-android-api-1.0.32/AndroidManifest.xml:19:13-36
-110            android:theme="@style/Theme.Clerk.AuthBridge" >
-110-->[com.clerk:clerk-android-api:1.0.32] /home/shaolin/.gradle/caches/9.3.1/transforms/1fda4def92dac7d9147805573de0d359/transformed/clerk-android-api-1.0.32/AndroidManifest.xml:20:13-58
-111            <intent-filter>
-111-->[com.clerk:clerk-android-api:1.0.32] /home/shaolin/.gradle/caches/9.3.1/transforms/1fda4def92dac7d9147805573de0d359/transformed/clerk-android-api-1.0.32/AndroidManifest.xml:21:13-30:29
-112                <action android:name="android.intent.action.VIEW" />
-112-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:46:17-69
-112-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:46:25-66
-113
-114                <category android:name="android.intent.category.DEFAULT" />
-114-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:47:17-76
-114-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:47:27-73
-115                <category android:name="android.intent.category.BROWSABLE" />
-115-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:48:17-78
-115-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:48:27-75
-116
-117                <data
-117-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:49:17-54
-118                    android:host="com.meta.wearable.retail.callback"
-119                    android:scheme="clerk" />
-119-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:49:23-51
-120            </intent-filter>
-121            <intent-filter>
-121-->[com.clerk:clerk-android-api:1.0.32] /home/shaolin/.gradle/caches/9.3.1/transforms/1fda4def92dac7d9147805573de0d359/transformed/clerk-android-api-1.0.32/AndroidManifest.xml:31:13-40:29
-122                <action android:name="android.intent.action.VIEW" />
-122-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:46:17-69
-122-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:46:25-66
-123
-124                <category android:name="android.intent.category.DEFAULT" />
-124-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:47:17-76
-124-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:47:27-73
-125                <category android:name="android.intent.category.BROWSABLE" />
-125-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:48:17-78
-125-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:48:27-75
-126
-127                <data
-127-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:49:17-54
-128                    android:host="com.meta.wearable.retail.oauth"
-129                    android:scheme="clerk" />
-129-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:49:23-51
-130            </intent-filter>
-131        </activity>
-132
-133        <service
-133-->[androidx.credentials:credentials-play-services-auth:1.6.0] /home/shaolin/.gradle/caches/9.3.1/transforms/71e62dec00961082886918e21966c5dc/transformed/credentials-play-services-auth-1.6.0/AndroidManifest.xml:24:9-32:19
-134            android:name="androidx.credentials.playservices.CredentialProviderMetadataHolder"
-134-->[androidx.credentials:credentials-play-services-auth:1.6.0] /home/shaolin/.gradle/caches/9.3.1/transforms/71e62dec00961082886918e21966c5dc/transformed/credentials-play-services-auth-1.6.0/AndroidManifest.xml:25:13-94
-135            android:enabled="true"
-135-->[androidx.credentials:credentials-play-services-auth:1.6.0] /home/shaolin/.gradle/caches/9.3.1/transforms/71e62dec00961082886918e21966c5dc/transformed/credentials-play-services-auth-1.6.0/AndroidManifest.xml:26:13-35
-136            android:exported="false" >
-136-->[androidx.credentials:credentials-play-services-auth:1.6.0] /home/shaolin/.gradle/caches/9.3.1/transforms/71e62dec00961082886918e21966c5dc/transformed/credentials-play-services-auth-1.6.0/AndroidManifest.xml:27:13-37
-137            <meta-data
-137-->[androidx.credentials:credentials-play-services-auth:1.6.0] /home/shaolin/.gradle/caches/9.3.1/transforms/71e62dec00961082886918e21966c5dc/transformed/credentials-play-services-auth-1.6.0/AndroidManifest.xml:29:13-31:104
-138                android:name="androidx.credentials.CREDENTIAL_PROVIDER_KEY"
-138-->[androidx.credentials:credentials-play-services-auth:1.6.0] /home/shaolin/.gradle/caches/9.3.1/transforms/71e62dec00961082886918e21966c5dc/transformed/credentials-play-services-auth-1.6.0/AndroidManifest.xml:30:17-76
-139                android:value="androidx.credentials.playservices.CredentialProviderPlayServicesImpl" />
-139-->[androidx.credentials:credentials-play-services-auth:1.6.0] /home/shaolin/.gradle/caches/9.3.1/transforms/71e62dec00961082886918e21966c5dc/transformed/credentials-play-services-auth-1.6.0/AndroidManifest.xml:31:17-101
-140        </service>
-141
-142        <activity
-142-->[androidx.credentials:credentials-play-services-auth:1.6.0] /home/shaolin/.gradle/caches/9.3.1/transforms/71e62dec00961082886918e21966c5dc/transformed/credentials-play-services-auth-1.6.0/AndroidManifest.xml:34:9-41:20
-143            android:name="androidx.credentials.playservices.controllers.identityauth.HiddenActivity"
-143-->[androidx.credentials:credentials-play-services-auth:1.6.0] /home/shaolin/.gradle/caches/9.3.1/transforms/71e62dec00961082886918e21966c5dc/transformed/credentials-play-services-auth-1.6.0/AndroidManifest.xml:35:13-101
-144            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-144-->[androidx.credentials:credentials-play-services-auth:1.6.0] /home/shaolin/.gradle/caches/9.3.1/transforms/71e62dec00961082886918e21966c5dc/transformed/credentials-play-services-auth-1.6.0/AndroidManifest.xml:36:13-87
-145            android:enabled="true"
-145-->[androidx.credentials:credentials-play-services-auth:1.6.0] /home/shaolin/.gradle/caches/9.3.1/transforms/71e62dec00961082886918e21966c5dc/transformed/credentials-play-services-auth-1.6.0/AndroidManifest.xml:37:13-35
-146            android:exported="false"
-146-->[androidx.credentials:credentials-play-services-auth:1.6.0] /home/shaolin/.gradle/caches/9.3.1/transforms/71e62dec00961082886918e21966c5dc/transformed/credentials-play-services-auth-1.6.0/AndroidManifest.xml:38:13-37
-147            android:fitsSystemWindows="true"
-147-->[androidx.credentials:credentials-play-services-auth:1.6.0] /home/shaolin/.gradle/caches/9.3.1/transforms/71e62dec00961082886918e21966c5dc/transformed/credentials-play-services-auth-1.6.0/AndroidManifest.xml:39:13-45
-148            android:theme="@style/Theme.Hidden" >
-148-->[androidx.credentials:credentials-play-services-auth:1.6.0] /home/shaolin/.gradle/caches/9.3.1/transforms/71e62dec00961082886918e21966c5dc/transformed/credentials-play-services-auth-1.6.0/AndroidManifest.xml:40:13-48
-149        </activity>
-150        <activity
-150-->[androidx.credentials:credentials-play-services-auth:1.6.0] /home/shaolin/.gradle/caches/9.3.1/transforms/71e62dec00961082886918e21966c5dc/transformed/credentials-play-services-auth-1.6.0/AndroidManifest.xml:42:9-49:20
-151            android:name="androidx.credentials.playservices.controllers.identitycredentials.IdentityCredentialApiHiddenActivity"
-151-->[androidx.credentials:credentials-play-services-auth:1.6.0] /home/shaolin/.gradle/caches/9.3.1/transforms/71e62dec00961082886918e21966c5dc/transformed/credentials-play-services-auth-1.6.0/AndroidManifest.xml:43:13-129
-152            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-152-->[androidx.credentials:credentials-play-services-auth:1.6.0] /home/shaolin/.gradle/caches/9.3.1/transforms/71e62dec00961082886918e21966c5dc/transformed/credentials-play-services-auth-1.6.0/AndroidManifest.xml:44:13-87
-153            android:enabled="true"
-153-->[androidx.credentials:credentials-play-services-auth:1.6.0] /home/shaolin/.gradle/caches/9.3.1/transforms/71e62dec00961082886918e21966c5dc/transformed/credentials-play-services-auth-1.6.0/AndroidManifest.xml:45:13-35
-154            android:exported="false"
-154-->[androidx.credentials:credentials-play-services-auth:1.6.0] /home/shaolin/.gradle/caches/9.3.1/transforms/71e62dec00961082886918e21966c5dc/transformed/credentials-play-services-auth-1.6.0/AndroidManifest.xml:46:13-37
-155            android:fitsSystemWindows="true"
-155-->[androidx.credentials:credentials-play-services-auth:1.6.0] /home/shaolin/.gradle/caches/9.3.1/transforms/71e62dec00961082886918e21966c5dc/transformed/credentials-play-services-auth-1.6.0/AndroidManifest.xml:47:13-45
-156            android:theme="@style/Theme.Hidden" >
-156-->[androidx.credentials:credentials-play-services-auth:1.6.0] /home/shaolin/.gradle/caches/9.3.1/transforms/71e62dec00961082886918e21966c5dc/transformed/credentials-play-services-auth-1.6.0/AndroidManifest.xml:48:13-48
-157        </activity>
-158
-159        <service
-159-->[com.meta.wearable:mwdat-core:0.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/878fd814a418aabff4777cd79e45d60a/transformed/mwdat-core-0.7.0/AndroidManifest.xml:21:9-29:19
-160            android:name="com.meta.wearable.acdc.sdk.service.ACDCRegistrationService"
-160-->[com.meta.wearable:mwdat-core:0.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/878fd814a418aabff4777cd79e45d60a/transformed/mwdat-core-0.7.0/AndroidManifest.xml:22:13-86
-161            android:exported="true" >
-161-->[com.meta.wearable:mwdat-core:0.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/878fd814a418aabff4777cd79e45d60a/transformed/mwdat-core-0.7.0/AndroidManifest.xml:23:13-36
-162            <intent-filter>
-162-->[com.meta.wearable:mwdat-core:0.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/878fd814a418aabff4777cd79e45d60a/transformed/mwdat-core-0.7.0/AndroidManifest.xml:24:13-28:29
-163                <action android:name="com.meta.wearable.acdc.sdk.service.ACDCRegistrationService.BIND" />
-163-->[com.meta.wearable:mwdat-core:0.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/878fd814a418aabff4777cd79e45d60a/transformed/mwdat-core-0.7.0/AndroidManifest.xml:25:17-106
-163-->[com.meta.wearable:mwdat-core:0.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/878fd814a418aabff4777cd79e45d60a/transformed/mwdat-core-0.7.0/AndroidManifest.xml:25:25-103
-164
-165                <category android:name="android.intent.category.DEFAULT" />
-165-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:47:17-76
-165-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:47:27-73
-166            </intent-filter>
-167        </service>
-168
+105-->[com.google.firebase:firebase-auth:23.2.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c94f486eadb8d25c58a4f1f97a5aacae/transformed/firebase-auth-23.2.0/AndroidManifest.xml:33:13-44
+106            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+106-->[com.google.firebase:firebase-auth:23.2.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c94f486eadb8d25c58a4f1f97a5aacae/transformed/firebase-auth-23.2.0/AndroidManifest.xml:34:13-72
+107            <intent-filter>
+107-->[com.google.firebase:firebase-auth:23.2.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c94f486eadb8d25c58a4f1f97a5aacae/transformed/firebase-auth-23.2.0/AndroidManifest.xml:35:13-45:29
+108                <action android:name="android.intent.action.VIEW" />
+108-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:48:17-69
+108-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:48:25-66
+109
+110                <category android:name="android.intent.category.DEFAULT" />
+110-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:49:17-76
+110-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:49:27-73
+111                <category android:name="android.intent.category.BROWSABLE" />
+111-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:50:17-78
+111-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:50:27-75
+112
+113                <data
+113-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:51:17-54
+114                    android:host="firebase.auth"
+115                    android:path="/"
+116                    android:scheme="genericidp" />
+116-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:51:23-51
+117            </intent-filter>
+118        </activity>
+119        <activity
+119-->[com.google.firebase:firebase-auth:23.2.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c94f486eadb8d25c58a4f1f97a5aacae/transformed/firebase-auth-23.2.0/AndroidManifest.xml:47:9-64:20
+120            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+120-->[com.google.firebase:firebase-auth:23.2.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c94f486eadb8d25c58a4f1f97a5aacae/transformed/firebase-auth-23.2.0/AndroidManifest.xml:48:13-79
+121            android:excludeFromRecents="true"
+121-->[com.google.firebase:firebase-auth:23.2.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c94f486eadb8d25c58a4f1f97a5aacae/transformed/firebase-auth-23.2.0/AndroidManifest.xml:49:13-46
+122            android:exported="true"
+122-->[com.google.firebase:firebase-auth:23.2.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c94f486eadb8d25c58a4f1f97a5aacae/transformed/firebase-auth-23.2.0/AndroidManifest.xml:50:13-36
+123            android:launchMode="singleTask"
+123-->[com.google.firebase:firebase-auth:23.2.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c94f486eadb8d25c58a4f1f97a5aacae/transformed/firebase-auth-23.2.0/AndroidManifest.xml:51:13-44
+124            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+124-->[com.google.firebase:firebase-auth:23.2.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c94f486eadb8d25c58a4f1f97a5aacae/transformed/firebase-auth-23.2.0/AndroidManifest.xml:52:13-72
+125            <intent-filter>
+125-->[com.google.firebase:firebase-auth:23.2.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c94f486eadb8d25c58a4f1f97a5aacae/transformed/firebase-auth-23.2.0/AndroidManifest.xml:53:13-63:29
+126                <action android:name="android.intent.action.VIEW" />
+126-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:48:17-69
+126-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:48:25-66
+127
+128                <category android:name="android.intent.category.DEFAULT" />
+128-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:49:17-76
+128-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:49:27-73
+129                <category android:name="android.intent.category.BROWSABLE" />
+129-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:50:17-78
+129-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:50:27-75
+130
+131                <data
+131-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:51:17-54
+132                    android:host="firebase.auth"
+133                    android:path="/"
+134                    android:scheme="recaptcha" />
+134-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:51:23-51
+135            </intent-filter>
+136        </activity>
+137
+138        <service
+138-->[com.google.firebase:firebase-auth:23.2.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c94f486eadb8d25c58a4f1f97a5aacae/transformed/firebase-auth-23.2.0/AndroidManifest.xml:66:9-72:19
+139            android:name="com.google.firebase.components.ComponentDiscoveryService"
+139-->[com.google.firebase:firebase-auth:23.2.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c94f486eadb8d25c58a4f1f97a5aacae/transformed/firebase-auth-23.2.0/AndroidManifest.xml:67:13-84
+140            android:directBootAware="true"
+140-->[com.google.firebase:firebase-common:21.0.0] /home/shaolin/.gradle/caches/9.6.1/transforms/cf3e37c0df4a341a54492a771625bab5/transformed/firebase-common-21.0.0/AndroidManifest.xml:32:13-43
+141            android:exported="false" >
+141-->[com.google.firebase:firebase-auth:23.2.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c94f486eadb8d25c58a4f1f97a5aacae/transformed/firebase-auth-23.2.0/AndroidManifest.xml:68:13-37
+142            <meta-data
+142-->[com.google.firebase:firebase-auth:23.2.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c94f486eadb8d25c58a4f1f97a5aacae/transformed/firebase-auth-23.2.0/AndroidManifest.xml:69:13-71:85
+143                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+143-->[com.google.firebase:firebase-auth:23.2.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c94f486eadb8d25c58a4f1f97a5aacae/transformed/firebase-auth-23.2.0/AndroidManifest.xml:70:17-109
+144                android:value="com.google.firebase.components.ComponentRegistrar" />
+144-->[com.google.firebase:firebase-auth:23.2.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c94f486eadb8d25c58a4f1f97a5aacae/transformed/firebase-auth-23.2.0/AndroidManifest.xml:71:17-82
+145            <meta-data
+145-->[com.google.firebase:firebase-common-ktx:21.0.0] /home/shaolin/.gradle/caches/9.6.1/transforms/137aca34f8615f4a0b5155748e373974/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:12:13-14:85
+146                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+146-->[com.google.firebase:firebase-common-ktx:21.0.0] /home/shaolin/.gradle/caches/9.6.1/transforms/137aca34f8615f4a0b5155748e373974/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:13:17-116
+147                android:value="com.google.firebase.components.ComponentRegistrar" />
+147-->[com.google.firebase:firebase-common-ktx:21.0.0] /home/shaolin/.gradle/caches/9.6.1/transforms/137aca34f8615f4a0b5155748e373974/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:14:17-82
+148            <meta-data
+148-->[com.google.firebase:firebase-common:21.0.0] /home/shaolin/.gradle/caches/9.6.1/transforms/cf3e37c0df4a341a54492a771625bab5/transformed/firebase-common-21.0.0/AndroidManifest.xml:35:13-37:85
+149                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+149-->[com.google.firebase:firebase-common:21.0.0] /home/shaolin/.gradle/caches/9.6.1/transforms/cf3e37c0df4a341a54492a771625bab5/transformed/firebase-common-21.0.0/AndroidManifest.xml:36:17-109
+150                android:value="com.google.firebase.components.ComponentRegistrar" />
+150-->[com.google.firebase:firebase-common:21.0.0] /home/shaolin/.gradle/caches/9.6.1/transforms/cf3e37c0df4a341a54492a771625bab5/transformed/firebase-common-21.0.0/AndroidManifest.xml:37:17-82
+151        </service>
+152        <service
+152-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/shaolin/.gradle/caches/9.6.1/transforms/dec16fbb5f3106fbfc5e16a9782f3846/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:24:9-32:19
+153            android:name="androidx.credentials.playservices.CredentialProviderMetadataHolder"
+153-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/shaolin/.gradle/caches/9.6.1/transforms/dec16fbb5f3106fbfc5e16a9782f3846/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:25:13-94
+154            android:enabled="true"
+154-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/shaolin/.gradle/caches/9.6.1/transforms/dec16fbb5f3106fbfc5e16a9782f3846/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:26:13-35
+155            android:exported="false" >
+155-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/shaolin/.gradle/caches/9.6.1/transforms/dec16fbb5f3106fbfc5e16a9782f3846/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:27:13-37
+156            <meta-data
+156-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/shaolin/.gradle/caches/9.6.1/transforms/dec16fbb5f3106fbfc5e16a9782f3846/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:29:13-31:104
+157                android:name="androidx.credentials.CREDENTIAL_PROVIDER_KEY"
+157-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/shaolin/.gradle/caches/9.6.1/transforms/dec16fbb5f3106fbfc5e16a9782f3846/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:30:17-76
+158                android:value="androidx.credentials.playservices.CredentialProviderPlayServicesImpl" />
+158-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/shaolin/.gradle/caches/9.6.1/transforms/dec16fbb5f3106fbfc5e16a9782f3846/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:31:17-101
+159        </service>
+160
+161        <activity
+161-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/shaolin/.gradle/caches/9.6.1/transforms/dec16fbb5f3106fbfc5e16a9782f3846/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:34:9-41:20
+162            android:name="androidx.credentials.playservices.HiddenActivity"
+162-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/shaolin/.gradle/caches/9.6.1/transforms/dec16fbb5f3106fbfc5e16a9782f3846/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:35:13-76
+163            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+163-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/shaolin/.gradle/caches/9.6.1/transforms/dec16fbb5f3106fbfc5e16a9782f3846/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:36:13-87
+164            android:enabled="true"
+164-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/shaolin/.gradle/caches/9.6.1/transforms/dec16fbb5f3106fbfc5e16a9782f3846/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:37:13-35
+165            android:exported="false"
+165-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/shaolin/.gradle/caches/9.6.1/transforms/dec16fbb5f3106fbfc5e16a9782f3846/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:38:13-37
+166            android:fitsSystemWindows="true"
+166-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/shaolin/.gradle/caches/9.6.1/transforms/dec16fbb5f3106fbfc5e16a9782f3846/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:39:13-45
+167            android:theme="@style/Theme.Hidden" >
+167-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/shaolin/.gradle/caches/9.6.1/transforms/dec16fbb5f3106fbfc5e16a9782f3846/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:40:13-48
+168        </activity>
 169        <activity
-169-->[com.google.android.gms:play-services-auth:21.1.1] /home/shaolin/.gradle/caches/9.3.1/transforms/b85ea68ec2c5d79bb91ccdf3207e7484/transformed/play-services-auth-21.1.1/AndroidManifest.xml:23:9-27:75
+169-->[com.google.android.gms:play-services-auth:20.7.0] /home/shaolin/.gradle/caches/9.6.1/transforms/d3c5f4be64758f396d319afbafd0721a/transformed/play-services-auth-20.7.0/AndroidManifest.xml:23:9-27:75
 170            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-170-->[com.google.android.gms:play-services-auth:21.1.1] /home/shaolin/.gradle/caches/9.3.1/transforms/b85ea68ec2c5d79bb91ccdf3207e7484/transformed/play-services-auth-21.1.1/AndroidManifest.xml:24:13-93
+170-->[com.google.android.gms:play-services-auth:20.7.0] /home/shaolin/.gradle/caches/9.6.1/transforms/d3c5f4be64758f396d319afbafd0721a/transformed/play-services-auth-20.7.0/AndroidManifest.xml:24:13-93
 171            android:excludeFromRecents="true"
-171-->[com.google.android.gms:play-services-auth:21.1.1] /home/shaolin/.gradle/caches/9.3.1/transforms/b85ea68ec2c5d79bb91ccdf3207e7484/transformed/play-services-auth-21.1.1/AndroidManifest.xml:25:13-46
+171-->[com.google.android.gms:play-services-auth:20.7.0] /home/shaolin/.gradle/caches/9.6.1/transforms/d3c5f4be64758f396d319afbafd0721a/transformed/play-services-auth-20.7.0/AndroidManifest.xml:25:13-46
 172            android:exported="false"
-172-->[com.google.android.gms:play-services-auth:21.1.1] /home/shaolin/.gradle/caches/9.3.1/transforms/b85ea68ec2c5d79bb91ccdf3207e7484/transformed/play-services-auth-21.1.1/AndroidManifest.xml:26:13-37
+172-->[com.google.android.gms:play-services-auth:20.7.0] /home/shaolin/.gradle/caches/9.6.1/transforms/d3c5f4be64758f396d319afbafd0721a/transformed/play-services-auth-20.7.0/AndroidManifest.xml:26:13-37
 173            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-173-->[com.google.android.gms:play-services-auth:21.1.1] /home/shaolin/.gradle/caches/9.3.1/transforms/b85ea68ec2c5d79bb91ccdf3207e7484/transformed/play-services-auth-21.1.1/AndroidManifest.xml:27:13-72
+173-->[com.google.android.gms:play-services-auth:20.7.0] /home/shaolin/.gradle/caches/9.6.1/transforms/d3c5f4be64758f396d319afbafd0721a/transformed/play-services-auth-20.7.0/AndroidManifest.xml:27:13-72
 174        <!--
 175            Service handling Google Sign-In user revocation. For apps that do not integrate with
 176            Google Sign-In, this service will never be started.
 177        -->
 178        <service
-178-->[com.google.android.gms:play-services-auth:21.1.1] /home/shaolin/.gradle/caches/9.3.1/transforms/b85ea68ec2c5d79bb91ccdf3207e7484/transformed/play-services-auth-21.1.1/AndroidManifest.xml:33:9-37:51
+178-->[com.google.android.gms:play-services-auth:20.7.0] /home/shaolin/.gradle/caches/9.6.1/transforms/d3c5f4be64758f396d319afbafd0721a/transformed/play-services-auth-20.7.0/AndroidManifest.xml:33:9-37:51
 179            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-179-->[com.google.android.gms:play-services-auth:21.1.1] /home/shaolin/.gradle/caches/9.3.1/transforms/b85ea68ec2c5d79bb91ccdf3207e7484/transformed/play-services-auth-21.1.1/AndroidManifest.xml:34:13-89
+179-->[com.google.android.gms:play-services-auth:20.7.0] /home/shaolin/.gradle/caches/9.6.1/transforms/d3c5f4be64758f396d319afbafd0721a/transformed/play-services-auth-20.7.0/AndroidManifest.xml:34:13-89
 180            android:exported="true"
-180-->[com.google.android.gms:play-services-auth:21.1.1] /home/shaolin/.gradle/caches/9.3.1/transforms/b85ea68ec2c5d79bb91ccdf3207e7484/transformed/play-services-auth-21.1.1/AndroidManifest.xml:35:13-36
+180-->[com.google.android.gms:play-services-auth:20.7.0] /home/shaolin/.gradle/caches/9.6.1/transforms/d3c5f4be64758f396d319afbafd0721a/transformed/play-services-auth-20.7.0/AndroidManifest.xml:35:13-36
 181            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-181-->[com.google.android.gms:play-services-auth:21.1.1] /home/shaolin/.gradle/caches/9.3.1/transforms/b85ea68ec2c5d79bb91ccdf3207e7484/transformed/play-services-auth-21.1.1/AndroidManifest.xml:36:13-107
+181-->[com.google.android.gms:play-services-auth:20.7.0] /home/shaolin/.gradle/caches/9.6.1/transforms/d3c5f4be64758f396d319afbafd0721a/transformed/play-services-auth-20.7.0/AndroidManifest.xml:36:13-107
 182            android:visibleToInstantApps="true" />
-182-->[com.google.android.gms:play-services-auth:21.1.1] /home/shaolin/.gradle/caches/9.3.1/transforms/b85ea68ec2c5d79bb91ccdf3207e7484/transformed/play-services-auth-21.1.1/AndroidManifest.xml:37:13-48
+182-->[com.google.android.gms:play-services-auth:20.7.0] /home/shaolin/.gradle/caches/9.6.1/transforms/d3c5f4be64758f396d319afbafd0721a/transformed/play-services-auth-20.7.0/AndroidManifest.xml:37:13-48
 183
-184        <activity
-184-->[com.google.android.gms:play-services-base:18.5.0] /home/shaolin/.gradle/caches/9.3.1/transforms/1b909fff78929a56b0f1218a5bb9929c/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:9-173
-185            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-185-->[com.google.android.gms:play-services-base:18.5.0] /home/shaolin/.gradle/caches/9.3.1/transforms/1b909fff78929a56b0f1218a5bb9929c/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:19-85
-186            android:exported="false"
-186-->[com.google.android.gms:play-services-base:18.5.0] /home/shaolin/.gradle/caches/9.3.1/transforms/1b909fff78929a56b0f1218a5bb9929c/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:146-170
-187            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-187-->[com.google.android.gms:play-services-base:18.5.0] /home/shaolin/.gradle/caches/9.3.1/transforms/1b909fff78929a56b0f1218a5bb9929c/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:86-145
-188
-189        <meta-data
-189-->[com.google.android.gms:play-services-basement:18.9.0] /home/shaolin/.gradle/caches/9.3.1/transforms/dc17f4ffc161cf8817961427db6ff332/transformed/play-services-basement-18.9.0/AndroidManifest.xml:21:9-23:69
-190            android:name="com.google.android.gms.version"
-190-->[com.google.android.gms:play-services-basement:18.9.0] /home/shaolin/.gradle/caches/9.3.1/transforms/dc17f4ffc161cf8817961427db6ff332/transformed/play-services-basement-18.9.0/AndroidManifest.xml:22:13-58
-191            android:value="@integer/google_play_services_version" />
-191-->[com.google.android.gms:play-services-basement:18.9.0] /home/shaolin/.gradle/caches/9.3.1/transforms/dc17f4ffc161cf8817961427db6ff332/transformed/play-services-basement-18.9.0/AndroidManifest.xml:23:13-66
-192
-193        <activity
-193-->[androidx.compose.ui:ui-tooling-android:1.12.0-alpha03] /home/shaolin/.gradle/caches/9.3.1/transforms/50d099854f97e2763f77b27b4b4c4f37/transformed/ui-tooling/AndroidManifest.xml:23:9-25:39
-194            android:name="androidx.compose.ui.tooling.PreviewActivity"
-194-->[androidx.compose.ui:ui-tooling-android:1.12.0-alpha03] /home/shaolin/.gradle/caches/9.3.1/transforms/50d099854f97e2763f77b27b4b4c4f37/transformed/ui-tooling/AndroidManifest.xml:24:13-71
-195            android:exported="true" />
-195-->[androidx.compose.ui:ui-tooling-android:1.12.0-alpha03] /home/shaolin/.gradle/caches/9.3.1/transforms/50d099854f97e2763f77b27b4b4c4f37/transformed/ui-tooling/AndroidManifest.xml:25:13-36
-196        <activity
-196-->[androidx.test:core:1.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/9505a7c1e18b70d0f20122d96a96aa0c/transformed/core-1.7.0/AndroidManifest.xml:27:9-34:20
-197            android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity"
-197-->[androidx.test:core:1.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/9505a7c1e18b70d0f20122d96a96aa0c/transformed/core-1.7.0/AndroidManifest.xml:28:13-99
-198            android:exported="true"
-198-->[androidx.test:core:1.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/9505a7c1e18b70d0f20122d96a96aa0c/transformed/core-1.7.0/AndroidManifest.xml:29:13-36
-199            android:theme="@style/WhiteBackgroundTheme" >
-199-->[androidx.test:core:1.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/9505a7c1e18b70d0f20122d96a96aa0c/transformed/core-1.7.0/AndroidManifest.xml:30:13-56
-200            <intent-filter android:priority="-100" >
-200-->[androidx.test:core:1.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/9505a7c1e18b70d0f20122d96a96aa0c/transformed/core-1.7.0/AndroidManifest.xml:31:13-33:29
-200-->[androidx.test:core:1.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/9505a7c1e18b70d0f20122d96a96aa0c/transformed/core-1.7.0/AndroidManifest.xml:31:28-51
-201                <category android:name="android.intent.category.LAUNCHER" />
-201-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:41:17-77
-201-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:41:27-74
-202            </intent-filter>
-203        </activity>
-204        <activity
-204-->[androidx.test:core:1.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/9505a7c1e18b70d0f20122d96a96aa0c/transformed/core-1.7.0/AndroidManifest.xml:35:9-42:20
-205            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity"
-205-->[androidx.test:core:1.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/9505a7c1e18b70d0f20122d96a96aa0c/transformed/core-1.7.0/AndroidManifest.xml:36:13-95
-206            android:exported="true"
-206-->[androidx.test:core:1.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/9505a7c1e18b70d0f20122d96a96aa0c/transformed/core-1.7.0/AndroidManifest.xml:37:13-36
-207            android:theme="@style/WhiteBackgroundTheme" >
-207-->[androidx.test:core:1.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/9505a7c1e18b70d0f20122d96a96aa0c/transformed/core-1.7.0/AndroidManifest.xml:38:13-56
-208            <intent-filter android:priority="-100" >
-208-->[androidx.test:core:1.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/9505a7c1e18b70d0f20122d96a96aa0c/transformed/core-1.7.0/AndroidManifest.xml:31:13-33:29
-208-->[androidx.test:core:1.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/9505a7c1e18b70d0f20122d96a96aa0c/transformed/core-1.7.0/AndroidManifest.xml:31:28-51
-209                <category android:name="android.intent.category.LAUNCHER" />
-209-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:41:17-77
-209-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:41:27-74
-210            </intent-filter>
-211        </activity>
-212        <activity
-212-->[androidx.test:core:1.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/9505a7c1e18b70d0f20122d96a96aa0c/transformed/core-1.7.0/AndroidManifest.xml:43:9-50:20
-213            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity"
-213-->[androidx.test:core:1.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/9505a7c1e18b70d0f20122d96a96aa0c/transformed/core-1.7.0/AndroidManifest.xml:44:13-103
-214            android:exported="true"
-214-->[androidx.test:core:1.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/9505a7c1e18b70d0f20122d96a96aa0c/transformed/core-1.7.0/AndroidManifest.xml:45:13-36
-215            android:theme="@style/WhiteBackgroundDialogTheme" >
-215-->[androidx.test:core:1.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/9505a7c1e18b70d0f20122d96a96aa0c/transformed/core-1.7.0/AndroidManifest.xml:46:13-62
-216            <intent-filter android:priority="-100" >
-216-->[androidx.test:core:1.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/9505a7c1e18b70d0f20122d96a96aa0c/transformed/core-1.7.0/AndroidManifest.xml:31:13-33:29
-216-->[androidx.test:core:1.7.0] /home/shaolin/.gradle/caches/9.3.1/transforms/9505a7c1e18b70d0f20122d96a96aa0c/transformed/core-1.7.0/AndroidManifest.xml:31:28-51
-217                <category android:name="android.intent.category.LAUNCHER" />
-217-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:41:17-77
-217-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:41:27-74
-218            </intent-filter>
-219        </activity>
+184        <provider
+184-->[com.google.firebase:firebase-common:21.0.0] /home/shaolin/.gradle/caches/9.6.1/transforms/cf3e37c0df4a341a54492a771625bab5/transformed/firebase-common-21.0.0/AndroidManifest.xml:23:9-28:39
+185            android:name="com.google.firebase.provider.FirebaseInitProvider"
+185-->[com.google.firebase:firebase-common:21.0.0] /home/shaolin/.gradle/caches/9.6.1/transforms/cf3e37c0df4a341a54492a771625bab5/transformed/firebase-common-21.0.0/AndroidManifest.xml:24:13-77
+186            android:authorities="com.meta.wearable.retail.firebaseinitprovider"
+186-->[com.google.firebase:firebase-common:21.0.0] /home/shaolin/.gradle/caches/9.6.1/transforms/cf3e37c0df4a341a54492a771625bab5/transformed/firebase-common-21.0.0/AndroidManifest.xml:25:13-72
+187            android:directBootAware="true"
+187-->[com.google.firebase:firebase-common:21.0.0] /home/shaolin/.gradle/caches/9.6.1/transforms/cf3e37c0df4a341a54492a771625bab5/transformed/firebase-common-21.0.0/AndroidManifest.xml:26:13-43
+188            android:exported="false"
+188-->[com.google.firebase:firebase-common:21.0.0] /home/shaolin/.gradle/caches/9.6.1/transforms/cf3e37c0df4a341a54492a771625bab5/transformed/firebase-common-21.0.0/AndroidManifest.xml:27:13-37
+189            android:initOrder="100" />
+189-->[com.google.firebase:firebase-common:21.0.0] /home/shaolin/.gradle/caches/9.6.1/transforms/cf3e37c0df4a341a54492a771625bab5/transformed/firebase-common-21.0.0/AndroidManifest.xml:28:13-36
+190
+191        <activity
+191-->[com.google.android.gms:play-services-base:18.0.1] /home/shaolin/.gradle/caches/9.6.1/transforms/6c80db89a33a58fdd573e68a0ee92ee1/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+192            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+192-->[com.google.android.gms:play-services-base:18.0.1] /home/shaolin/.gradle/caches/9.6.1/transforms/6c80db89a33a58fdd573e68a0ee92ee1/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+193            android:exported="false"
+193-->[com.google.android.gms:play-services-base:18.0.1] /home/shaolin/.gradle/caches/9.6.1/transforms/6c80db89a33a58fdd573e68a0ee92ee1/transformed/play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+194            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+194-->[com.google.android.gms:play-services-base:18.0.1] /home/shaolin/.gradle/caches/9.6.1/transforms/6c80db89a33a58fdd573e68a0ee92ee1/transformed/play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+195
+196        <service
+196-->[com.meta.wearable:mwdat-core:0.7.0] /home/shaolin/.gradle/caches/9.6.1/transforms/d9a1e01a8dd6840b4b5200ff5c296ee8/transformed/mwdat-core-0.7.0/AndroidManifest.xml:21:9-29:19
+197            android:name="com.meta.wearable.acdc.sdk.service.ACDCRegistrationService"
+197-->[com.meta.wearable:mwdat-core:0.7.0] /home/shaolin/.gradle/caches/9.6.1/transforms/d9a1e01a8dd6840b4b5200ff5c296ee8/transformed/mwdat-core-0.7.0/AndroidManifest.xml:22:13-86
+198            android:exported="true" >
+198-->[com.meta.wearable:mwdat-core:0.7.0] /home/shaolin/.gradle/caches/9.6.1/transforms/d9a1e01a8dd6840b4b5200ff5c296ee8/transformed/mwdat-core-0.7.0/AndroidManifest.xml:23:13-36
+199            <intent-filter>
+199-->[com.meta.wearable:mwdat-core:0.7.0] /home/shaolin/.gradle/caches/9.6.1/transforms/d9a1e01a8dd6840b4b5200ff5c296ee8/transformed/mwdat-core-0.7.0/AndroidManifest.xml:24:13-28:29
+200                <action android:name="com.meta.wearable.acdc.sdk.service.ACDCRegistrationService.BIND" />
+200-->[com.meta.wearable:mwdat-core:0.7.0] /home/shaolin/.gradle/caches/9.6.1/transforms/d9a1e01a8dd6840b4b5200ff5c296ee8/transformed/mwdat-core-0.7.0/AndroidManifest.xml:25:17-106
+200-->[com.meta.wearable:mwdat-core:0.7.0] /home/shaolin/.gradle/caches/9.6.1/transforms/d9a1e01a8dd6840b4b5200ff5c296ee8/transformed/mwdat-core-0.7.0/AndroidManifest.xml:25:25-103
+201
+202                <category android:name="android.intent.category.DEFAULT" />
+202-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:49:17-76
+202-->/home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wearable-retail-app/src/main/AndroidManifest.xml:49:27-73
+203            </intent-filter>
+204        </service>
+205
+206        <provider
+206-->[androidx.emoji2:emoji2:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/e2faed2c30259e66353dc5443c6a91be/transformed/emoji2-1.4.0/AndroidManifest.xml:24:9-32:20
+207            android:name="androidx.startup.InitializationProvider"
+207-->[androidx.emoji2:emoji2:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/e2faed2c30259e66353dc5443c6a91be/transformed/emoji2-1.4.0/AndroidManifest.xml:25:13-67
+208            android:authorities="com.meta.wearable.retail.androidx-startup"
+208-->[androidx.emoji2:emoji2:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/e2faed2c30259e66353dc5443c6a91be/transformed/emoji2-1.4.0/AndroidManifest.xml:26:13-68
+209            android:exported="false" >
+209-->[androidx.emoji2:emoji2:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/e2faed2c30259e66353dc5443c6a91be/transformed/emoji2-1.4.0/AndroidManifest.xml:27:13-37
+210            <meta-data
+210-->[androidx.emoji2:emoji2:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/e2faed2c30259e66353dc5443c6a91be/transformed/emoji2-1.4.0/AndroidManifest.xml:29:13-31:52
+211                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+211-->[androidx.emoji2:emoji2:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/e2faed2c30259e66353dc5443c6a91be/transformed/emoji2-1.4.0/AndroidManifest.xml:30:17-75
+212                android:value="androidx.startup" />
+212-->[androidx.emoji2:emoji2:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/e2faed2c30259e66353dc5443c6a91be/transformed/emoji2-1.4.0/AndroidManifest.xml:31:17-49
+213            <meta-data
+213-->[androidx.lifecycle:lifecycle-process:2.9.4] /home/shaolin/.gradle/caches/9.6.1/transforms/941d209582208f96d95f1145c1d282bd/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:29:13-31:52
+214                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+214-->[androidx.lifecycle:lifecycle-process:2.9.4] /home/shaolin/.gradle/caches/9.6.1/transforms/941d209582208f96d95f1145c1d282bd/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:30:17-78
+215                android:value="androidx.startup" />
+215-->[androidx.lifecycle:lifecycle-process:2.9.4] /home/shaolin/.gradle/caches/9.6.1/transforms/941d209582208f96d95f1145c1d282bd/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:31:17-49
+216            <meta-data
+216-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/0e8afe6446108b3646ac1c3fa8df30ff/transformed/profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
+217                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+217-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/0e8afe6446108b3646ac1c3fa8df30ff/transformed/profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
+218                android:value="androidx.startup" />
+218-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/0e8afe6446108b3646ac1c3fa8df30ff/transformed/profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
+219        </provider>
 220
 221        <uses-library
-221-->[androidx.window:window:1.5.0] /home/shaolin/.gradle/caches/9.3.1/transforms/b4d4c954e9bdbeb708b2b26ff7c4c6b3/transformed/window-1.5.0/AndroidManifest.xml:23:9-25:40
+221-->[androidx.window:window:1.5.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c4a812314229974016ac9be4c5618c1c/transformed/window-1.5.0/AndroidManifest.xml:23:9-25:40
 222            android:name="androidx.window.extensions"
-222-->[androidx.window:window:1.5.0] /home/shaolin/.gradle/caches/9.3.1/transforms/b4d4c954e9bdbeb708b2b26ff7c4c6b3/transformed/window-1.5.0/AndroidManifest.xml:24:13-54
+222-->[androidx.window:window:1.5.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c4a812314229974016ac9be4c5618c1c/transformed/window-1.5.0/AndroidManifest.xml:24:13-54
 223            android:required="false" />
-223-->[androidx.window:window:1.5.0] /home/shaolin/.gradle/caches/9.3.1/transforms/b4d4c954e9bdbeb708b2b26ff7c4c6b3/transformed/window-1.5.0/AndroidManifest.xml:25:13-37
+223-->[androidx.window:window:1.5.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c4a812314229974016ac9be4c5618c1c/transformed/window-1.5.0/AndroidManifest.xml:25:13-37
 224        <uses-library
-224-->[androidx.window:window:1.5.0] /home/shaolin/.gradle/caches/9.3.1/transforms/b4d4c954e9bdbeb708b2b26ff7c4c6b3/transformed/window-1.5.0/AndroidManifest.xml:26:9-28:40
+224-->[androidx.window:window:1.5.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c4a812314229974016ac9be4c5618c1c/transformed/window-1.5.0/AndroidManifest.xml:26:9-28:40
 225            android:name="androidx.window.sidecar"
-225-->[androidx.window:window:1.5.0] /home/shaolin/.gradle/caches/9.3.1/transforms/b4d4c954e9bdbeb708b2b26ff7c4c6b3/transformed/window-1.5.0/AndroidManifest.xml:27:13-51
+225-->[androidx.window:window:1.5.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c4a812314229974016ac9be4c5618c1c/transformed/window-1.5.0/AndroidManifest.xml:27:13-51
 226            android:required="false" />
-226-->[androidx.window:window:1.5.0] /home/shaolin/.gradle/caches/9.3.1/transforms/b4d4c954e9bdbeb708b2b26ff7c4c6b3/transformed/window-1.5.0/AndroidManifest.xml:28:13-37
+226-->[androidx.window:window:1.5.0] /home/shaolin/.gradle/caches/9.6.1/transforms/c4a812314229974016ac9be4c5618c1c/transformed/window-1.5.0/AndroidManifest.xml:28:13-37
 227
-228        <provider
-228-->[androidx.emoji2:emoji2:1.4.0] /home/shaolin/.gradle/caches/9.3.1/transforms/d2611d4bbb1f0ed7085b057e5ae3e5ae/transformed/emoji2-1.4.0/AndroidManifest.xml:24:9-32:20
-229            android:name="androidx.startup.InitializationProvider"
-229-->[androidx.emoji2:emoji2:1.4.0] /home/shaolin/.gradle/caches/9.3.1/transforms/d2611d4bbb1f0ed7085b057e5ae3e5ae/transformed/emoji2-1.4.0/AndroidManifest.xml:25:13-67
-230            android:authorities="com.meta.wearable.retail.androidx-startup"
-230-->[androidx.emoji2:emoji2:1.4.0] /home/shaolin/.gradle/caches/9.3.1/transforms/d2611d4bbb1f0ed7085b057e5ae3e5ae/transformed/emoji2-1.4.0/AndroidManifest.xml:26:13-68
-231            android:exported="false" >
-231-->[androidx.emoji2:emoji2:1.4.0] /home/shaolin/.gradle/caches/9.3.1/transforms/d2611d4bbb1f0ed7085b057e5ae3e5ae/transformed/emoji2-1.4.0/AndroidManifest.xml:27:13-37
-232            <meta-data
-232-->[androidx.emoji2:emoji2:1.4.0] /home/shaolin/.gradle/caches/9.3.1/transforms/d2611d4bbb1f0ed7085b057e5ae3e5ae/transformed/emoji2-1.4.0/AndroidManifest.xml:29:13-31:52
-233                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-233-->[androidx.emoji2:emoji2:1.4.0] /home/shaolin/.gradle/caches/9.3.1/transforms/d2611d4bbb1f0ed7085b057e5ae3e5ae/transformed/emoji2-1.4.0/AndroidManifest.xml:30:17-75
-234                android:value="androidx.startup" />
-234-->[androidx.emoji2:emoji2:1.4.0] /home/shaolin/.gradle/caches/9.3.1/transforms/d2611d4bbb1f0ed7085b057e5ae3e5ae/transformed/emoji2-1.4.0/AndroidManifest.xml:31:17-49
-235            <meta-data
-235-->[androidx.lifecycle:lifecycle-process:2.10.0] /home/shaolin/.gradle/caches/9.3.1/transforms/9554ba6f57fd586cad1e387428478260/transformed/lifecycle-process-2.10.0/AndroidManifest.xml:29:13-31:52
-236                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-236-->[androidx.lifecycle:lifecycle-process:2.10.0] /home/shaolin/.gradle/caches/9.3.1/transforms/9554ba6f57fd586cad1e387428478260/transformed/lifecycle-process-2.10.0/AndroidManifest.xml:30:17-78
-237                android:value="androidx.startup" />
-237-->[androidx.lifecycle:lifecycle-process:2.10.0] /home/shaolin/.gradle/caches/9.3.1/transforms/9554ba6f57fd586cad1e387428478260/transformed/lifecycle-process-2.10.0/AndroidManifest.xml:31:17-49
-238            <meta-data
-238-->[androidx.profileinstaller:profileinstaller:1.4.1] /home/shaolin/.gradle/caches/9.3.1/transforms/93497ba8be94d4d6db10b3b25ecbb41c/transformed/profileinstaller-1.4.1/AndroidManifest.xml:29:13-31:52
-239                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-239-->[androidx.profileinstaller:profileinstaller:1.4.1] /home/shaolin/.gradle/caches/9.3.1/transforms/93497ba8be94d4d6db10b3b25ecbb41c/transformed/profileinstaller-1.4.1/AndroidManifest.xml:30:17-85
-240                android:value="androidx.startup" />
-240-->[androidx.profileinstaller:profileinstaller:1.4.1] /home/shaolin/.gradle/caches/9.3.1/transforms/93497ba8be94d4d6db10b3b25ecbb41c/transformed/profileinstaller-1.4.1/AndroidManifest.xml:31:17-49
-241            <meta-data
-241-->[com.squareup.okhttp3:okhttp-android:5.4.0] /home/shaolin/.gradle/caches/9.3.1/transforms/b892fc91643c110f7d8cd9d0ee360271/transformed/okhttp/AndroidManifest.xml:16:13-18:52
-242                android:name="okhttp3.internal.platform.PlatformInitializer"
-242-->[com.squareup.okhttp3:okhttp-android:5.4.0] /home/shaolin/.gradle/caches/9.3.1/transforms/b892fc91643c110f7d8cd9d0ee360271/transformed/okhttp/AndroidManifest.xml:17:17-77
-243                android:value="androidx.startup" />
-243-->[com.squareup.okhttp3:okhttp-android:5.4.0] /home/shaolin/.gradle/caches/9.3.1/transforms/b892fc91643c110f7d8cd9d0ee360271/transformed/okhttp/AndroidManifest.xml:18:17-49
-244        </provider>
-245
-246        <receiver
-246-->[androidx.profileinstaller:profileinstaller:1.4.1] /home/shaolin/.gradle/caches/9.3.1/transforms/93497ba8be94d4d6db10b3b25ecbb41c/transformed/profileinstaller-1.4.1/AndroidManifest.xml:34:9-52:20
-247            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-247-->[androidx.profileinstaller:profileinstaller:1.4.1] /home/shaolin/.gradle/caches/9.3.1/transforms/93497ba8be94d4d6db10b3b25ecbb41c/transformed/profileinstaller-1.4.1/AndroidManifest.xml:35:13-76
-248            android:directBootAware="false"
-248-->[androidx.profileinstaller:profileinstaller:1.4.1] /home/shaolin/.gradle/caches/9.3.1/transforms/93497ba8be94d4d6db10b3b25ecbb41c/transformed/profileinstaller-1.4.1/AndroidManifest.xml:36:13-44
-249            android:enabled="true"
-249-->[androidx.profileinstaller:profileinstaller:1.4.1] /home/shaolin/.gradle/caches/9.3.1/transforms/93497ba8be94d4d6db10b3b25ecbb41c/transformed/profileinstaller-1.4.1/AndroidManifest.xml:37:13-35
-250            android:exported="true"
-250-->[androidx.profileinstaller:profileinstaller:1.4.1] /home/shaolin/.gradle/caches/9.3.1/transforms/93497ba8be94d4d6db10b3b25ecbb41c/transformed/profileinstaller-1.4.1/AndroidManifest.xml:38:13-36
-251            android:permission="android.permission.DUMP" >
-251-->[androidx.profileinstaller:profileinstaller:1.4.1] /home/shaolin/.gradle/caches/9.3.1/transforms/93497ba8be94d4d6db10b3b25ecbb41c/transformed/profileinstaller-1.4.1/AndroidManifest.xml:39:13-57
-252            <intent-filter>
-252-->[androidx.profileinstaller:profileinstaller:1.4.1] /home/shaolin/.gradle/caches/9.3.1/transforms/93497ba8be94d4d6db10b3b25ecbb41c/transformed/profileinstaller-1.4.1/AndroidManifest.xml:40:13-42:29
-253                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-253-->[androidx.profileinstaller:profileinstaller:1.4.1] /home/shaolin/.gradle/caches/9.3.1/transforms/93497ba8be94d4d6db10b3b25ecbb41c/transformed/profileinstaller-1.4.1/AndroidManifest.xml:41:17-91
-253-->[androidx.profileinstaller:profileinstaller:1.4.1] /home/shaolin/.gradle/caches/9.3.1/transforms/93497ba8be94d4d6db10b3b25ecbb41c/transformed/profileinstaller-1.4.1/AndroidManifest.xml:41:25-88
-254            </intent-filter>
-255            <intent-filter>
-255-->[androidx.profileinstaller:profileinstaller:1.4.1] /home/shaolin/.gradle/caches/9.3.1/transforms/93497ba8be94d4d6db10b3b25ecbb41c/transformed/profileinstaller-1.4.1/AndroidManifest.xml:43:13-45:29
-256                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-256-->[androidx.profileinstaller:profileinstaller:1.4.1] /home/shaolin/.gradle/caches/9.3.1/transforms/93497ba8be94d4d6db10b3b25ecbb41c/transformed/profileinstaller-1.4.1/AndroidManifest.xml:44:17-85
-256-->[androidx.profileinstaller:profileinstaller:1.4.1] /home/shaolin/.gradle/caches/9.3.1/transforms/93497ba8be94d4d6db10b3b25ecbb41c/transformed/profileinstaller-1.4.1/AndroidManifest.xml:44:25-82
-257            </intent-filter>
-258            <intent-filter>
-258-->[androidx.profileinstaller:profileinstaller:1.4.1] /home/shaolin/.gradle/caches/9.3.1/transforms/93497ba8be94d4d6db10b3b25ecbb41c/transformed/profileinstaller-1.4.1/AndroidManifest.xml:46:13-48:29
-259                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-259-->[androidx.profileinstaller:profileinstaller:1.4.1] /home/shaolin/.gradle/caches/9.3.1/transforms/93497ba8be94d4d6db10b3b25ecbb41c/transformed/profileinstaller-1.4.1/AndroidManifest.xml:47:17-88
-259-->[androidx.profileinstaller:profileinstaller:1.4.1] /home/shaolin/.gradle/caches/9.3.1/transforms/93497ba8be94d4d6db10b3b25ecbb41c/transformed/profileinstaller-1.4.1/AndroidManifest.xml:47:25-85
-260            </intent-filter>
-261            <intent-filter>
-261-->[androidx.profileinstaller:profileinstaller:1.4.1] /home/shaolin/.gradle/caches/9.3.1/transforms/93497ba8be94d4d6db10b3b25ecbb41c/transformed/profileinstaller-1.4.1/AndroidManifest.xml:49:13-51:29
-262                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-262-->[androidx.profileinstaller:profileinstaller:1.4.1] /home/shaolin/.gradle/caches/9.3.1/transforms/93497ba8be94d4d6db10b3b25ecbb41c/transformed/profileinstaller-1.4.1/AndroidManifest.xml:50:17-95
-262-->[androidx.profileinstaller:profileinstaller:1.4.1] /home/shaolin/.gradle/caches/9.3.1/transforms/93497ba8be94d4d6db10b3b25ecbb41c/transformed/profileinstaller-1.4.1/AndroidManifest.xml:50:25-92
-263            </intent-filter>
-264        </receiver>
+228        <activity
+228-->[androidx.compose.ui:ui-tooling-android:1.12.0-alpha03] /home/shaolin/.gradle/caches/9.6.1/transforms/05e4aaa7173c23200c693df9cbeca05f/transformed/ui-tooling/AndroidManifest.xml:23:9-25:39
+229            android:name="androidx.compose.ui.tooling.PreviewActivity"
+229-->[androidx.compose.ui:ui-tooling-android:1.12.0-alpha03] /home/shaolin/.gradle/caches/9.6.1/transforms/05e4aaa7173c23200c693df9cbeca05f/transformed/ui-tooling/AndroidManifest.xml:24:13-71
+230            android:exported="true" />
+230-->[androidx.compose.ui:ui-tooling-android:1.12.0-alpha03] /home/shaolin/.gradle/caches/9.6.1/transforms/05e4aaa7173c23200c693df9cbeca05f/transformed/ui-tooling/AndroidManifest.xml:25:13-36
+231
+232        <meta-data
+232-->[com.google.android.gms:play-services-basement:18.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/dce55d1674e3e6839b1e90500ab8b2f8/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:9-122
+233            android:name="com.google.android.gms.version"
+233-->[com.google.android.gms:play-services-basement:18.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/dce55d1674e3e6839b1e90500ab8b2f8/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:20-65
+234            android:value="@integer/google_play_services_version" />
+234-->[com.google.android.gms:play-services-basement:18.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/dce55d1674e3e6839b1e90500ab8b2f8/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:66-119
+235
+236        <receiver
+236-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/0e8afe6446108b3646ac1c3fa8df30ff/transformed/profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
+237            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+237-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/0e8afe6446108b3646ac1c3fa8df30ff/transformed/profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
+238            android:directBootAware="false"
+238-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/0e8afe6446108b3646ac1c3fa8df30ff/transformed/profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
+239            android:enabled="true"
+239-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/0e8afe6446108b3646ac1c3fa8df30ff/transformed/profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
+240            android:exported="true"
+240-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/0e8afe6446108b3646ac1c3fa8df30ff/transformed/profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
+241            android:permission="android.permission.DUMP" >
+241-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/0e8afe6446108b3646ac1c3fa8df30ff/transformed/profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
+242            <intent-filter>
+242-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/0e8afe6446108b3646ac1c3fa8df30ff/transformed/profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
+243                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+243-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/0e8afe6446108b3646ac1c3fa8df30ff/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
+243-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/0e8afe6446108b3646ac1c3fa8df30ff/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
+244            </intent-filter>
+245            <intent-filter>
+245-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/0e8afe6446108b3646ac1c3fa8df30ff/transformed/profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
+246                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+246-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/0e8afe6446108b3646ac1c3fa8df30ff/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
+246-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/0e8afe6446108b3646ac1c3fa8df30ff/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
+247            </intent-filter>
+248            <intent-filter>
+248-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/0e8afe6446108b3646ac1c3fa8df30ff/transformed/profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
+249                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+249-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/0e8afe6446108b3646ac1c3fa8df30ff/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
+249-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/0e8afe6446108b3646ac1c3fa8df30ff/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
+250            </intent-filter>
+251            <intent-filter>
+251-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/0e8afe6446108b3646ac1c3fa8df30ff/transformed/profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
+252                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+252-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/0e8afe6446108b3646ac1c3fa8df30ff/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
+252-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/shaolin/.gradle/caches/9.6.1/transforms/0e8afe6446108b3646ac1c3fa8df30ff/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:25-92
+253            </intent-filter>
+254        </receiver>
+255
+256        <meta-data
+256-->[com.facebook.soloader:soloader:0.12.1] /home/shaolin/.gradle/caches/9.6.1/transforms/80c9dc57641f040e98e7f8392edfe042/transformed/soloader-0.12.1/AndroidManifest.xml:12:9-14:37
+257            android:name="com.facebook.soloader.enabled"
+257-->[com.facebook.soloader:soloader:0.12.1] /home/shaolin/.gradle/caches/9.6.1/transforms/80c9dc57641f040e98e7f8392edfe042/transformed/soloader-0.12.1/AndroidManifest.xml:13:13-57
+258            android:value="false" /> <!-- The activities will be merged into the manifest of the hosting app. -->
+258-->[com.facebook.soloader:soloader:0.12.1] /home/shaolin/.gradle/caches/9.6.1/transforms/80c9dc57641f040e98e7f8392edfe042/transformed/soloader-0.12.1/AndroidManifest.xml:14:13-34
+259        <activity
+259-->[com.google.android.play:core-common:2.0.3] /home/shaolin/.gradle/caches/9.6.1/transforms/651db322b682a5d91d16b823846fc2a7/transformed/core-common-2.0.3/AndroidManifest.xml:14:9-18:65
+260            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+260-->[com.google.android.play:core-common:2.0.3] /home/shaolin/.gradle/caches/9.6.1/transforms/651db322b682a5d91d16b823846fc2a7/transformed/core-common-2.0.3/AndroidManifest.xml:15:13-93
+261            android:exported="false"
+261-->[com.google.android.play:core-common:2.0.3] /home/shaolin/.gradle/caches/9.6.1/transforms/651db322b682a5d91d16b823846fc2a7/transformed/core-common-2.0.3/AndroidManifest.xml:16:13-37
+262            android:stateNotNeeded="true"
+262-->[com.google.android.play:core-common:2.0.3] /home/shaolin/.gradle/caches/9.6.1/transforms/651db322b682a5d91d16b823846fc2a7/transformed/core-common-2.0.3/AndroidManifest.xml:17:13-42
+263            android:theme="@style/Theme.PlayCore.Transparent" />
+263-->[com.google.android.play:core-common:2.0.3] /home/shaolin/.gradle/caches/9.6.1/transforms/651db322b682a5d91d16b823846fc2a7/transformed/core-common-2.0.3/AndroidManifest.xml:18:13-62
+264    </application>
 265
-266        <meta-data
-266-->[com.facebook.soloader:soloader:0.12.1] /home/shaolin/.gradle/caches/9.3.1/transforms/2fea4c32fece7a5b55b6c5fcdf7227c2/transformed/soloader-0.12.1/AndroidManifest.xml:12:9-14:37
-267            android:name="com.facebook.soloader.enabled"
-267-->[com.facebook.soloader:soloader:0.12.1] /home/shaolin/.gradle/caches/9.3.1/transforms/2fea4c32fece7a5b55b6c5fcdf7227c2/transformed/soloader-0.12.1/AndroidManifest.xml:13:13-57
-268            android:value="false" /> <!-- The activities will be merged into the manifest of the hosting app. -->
-268-->[com.facebook.soloader:soloader:0.12.1] /home/shaolin/.gradle/caches/9.3.1/transforms/2fea4c32fece7a5b55b6c5fcdf7227c2/transformed/soloader-0.12.1/AndroidManifest.xml:14:13-34
-269        <activity
-269-->[com.google.android.play:core-common:2.0.4] /home/shaolin/.gradle/caches/9.3.1/transforms/a7a83a0d1294472a2bf4caad00e66eb8/transformed/core-common-2.0.4/AndroidManifest.xml:14:9-18:65
-270            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
-270-->[com.google.android.play:core-common:2.0.4] /home/shaolin/.gradle/caches/9.3.1/transforms/a7a83a0d1294472a2bf4caad00e66eb8/transformed/core-common-2.0.4/AndroidManifest.xml:15:13-93
-271            android:exported="false"
-271-->[com.google.android.play:core-common:2.0.4] /home/shaolin/.gradle/caches/9.3.1/transforms/a7a83a0d1294472a2bf4caad00e66eb8/transformed/core-common-2.0.4/AndroidManifest.xml:16:13-37
-272            android:stateNotNeeded="true"
-272-->[com.google.android.play:core-common:2.0.4] /home/shaolin/.gradle/caches/9.3.1/transforms/a7a83a0d1294472a2bf4caad00e66eb8/transformed/core-common-2.0.4/AndroidManifest.xml:17:13-42
-273            android:theme="@style/Theme.PlayCore.Transparent" />
-273-->[com.google.android.play:core-common:2.0.4] /home/shaolin/.gradle/caches/9.3.1/transforms/a7a83a0d1294472a2bf4caad00e66eb8/transformed/core-common-2.0.4/AndroidManifest.xml:18:13-62
-274    </application>
-275
-276</manifest>
+266</manifest>

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.meta.wearable.retail.wearable-retail-app-mergeDebugResources-63:/values-v21/values-v21.xml",
+            "outputFile": "com.meta.wearable.retail.wearable-retail-app-mergeDebugResources-70:/values-v21/values-v21.xml",
             "map": [
                 {
-                    "source": "/home/shaolin/.gradle/caches/9.3.1/transforms/cd33b47ef70dc78f33f8ceda03120b3c/transformed/appcompat-1.7.1/res/values-v21/values-v21.xml",
+                    "source": "/home/shaolin/.gradle/caches/9.6.1/transforms/c079ca8fa420f795505fced9bd8fc579/transformed/appcompat-1.6.1/res/values-v21/values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,17,19,20,21,22,24,26,27,28,29,30,32,34,36,38,40,42,43,48,50,52,53,54,56,58,59,60,61,62,63,106,109,152,155,158,160,162,164,167,171,174,175,176,179,180,181,182,183,184,187,188,190,192,194,196,200,202,203,204,205,207,211,213,215,216,217,218,219,220,222,223,224,234,235,236,248",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -15,26 +15,7 @@
                     }
                 },
                 {
-                    "source": "/home/shaolin/.gradle/caches/9.3.1/transforms/9505a7c1e18b70d0f20122d96a96aa0c/transformed/core-1.7.0/res/values-v21/values.xml",
-                    "from": {
-                        "startLines": "4,13",
-                        "startColumns": "0,0",
-                        "startOffsets": "146,621",
-                        "endLines": "12,21",
-                        "endColumns": "8,8",
-                        "endOffsets": "620,1093"
-                    },
-                    "to": {
-                        "startLines": "268,277",
-                        "startColumns": "4,4",
-                        "startOffsets": "18835,19314",
-                        "endLines": "276,285",
-                        "endColumns": "8,8",
-                        "endOffsets": "19309,19786"
-                    }
-                },
-                {
-                    "source": "/home/shaolin/.gradle/caches/9.3.1/transforms/71e62dec00961082886918e21966c5dc/transformed/credentials-play-services-auth-1.6.0/res/values-v21/values-v21.xml",
+                    "source": "/home/shaolin/.gradle/caches/9.6.1/transforms/dec16fbb5f3106fbfc5e16a9782f3846/transformed/credentials-play-services-auth-1.2.0-rc01/res/values-v21/values-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.meta.wearable.retail.wearable-retail-app-mergeDebugResources-63:/values-v26/values-v26.xml",
+            "outputFile": "com.meta.wearable.retail.wearable-retail-app-mergeDebugResources-70:/values-v26/values-v26.xml",
             "map": [
                 {
-                    "source": "/home/shaolin/.gradle/caches/9.3.1/transforms/cd33b47ef70dc78f33f8ceda03120b3c/transformed/appcompat-1.7.1/res/values-v26/values-v26.xml",
+                    "source": "/home/shaolin/.gradle/caches/9.6.1/transforms/c079ca8fa420f795505fced9bd8fc579/transformed/appcompat-1.6.1/res/values-v26/values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",

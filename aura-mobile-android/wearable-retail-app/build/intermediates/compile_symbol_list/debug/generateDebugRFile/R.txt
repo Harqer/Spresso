@@ -7,5 +7,11 @@ int drawable support 0x0
 int drawable welcome 0x0
 int mipmap ic_launcher 0x0
 int mipmap ic_launcher_round 0x0
+int string gcm_defaultSenderId 0x0
+int string google_api_key 0x0
+int string google_app_id 0x0
+int string google_crash_reporting_api_key 0x0
+int string google_storage_bucket 0x0
+int string project_id 0x0
 int string vaultier_app_name 0x0
 int style Theme_RetailAgenticCommerce 0x0
