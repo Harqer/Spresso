@@ -102,13 +102,14 @@ class RetailSessionManager(private val context: Context) {
         videoStreamJob = scope.launch {
             stream.videoStream.collect { frame ->
                 // Industrial Pulse: Real-time Base64 Encoding
+                // Using .data for 0.7.0 compatibility
                 val base64Data = android.util.Base64.encodeToString(frame.data, android.util.Base64.NO_WRAP)
                 
                 val message = JSONObject().apply {
                     put("type", "client_content")
                     put("content", JSONObject().apply {
                         put("mime_type", "image/jpeg")
-                        put("data", base64Data) // Fixed: Real frame data transmitted
+                        put("data", base64Data)
                     })
                 }
                 socket?.send(message.toString())
@@ -134,9 +135,6 @@ class RetailSessionManager(private val context: Context) {
         
         val session = _currentSession.value
         if (session != null) {
-            // Industrial Handshake: Detach capabilities before terminal stop
-            session.removeStream()
-            session.removeDisplay()
             session.stop()
         }
 

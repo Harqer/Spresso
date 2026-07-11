@@ -6,7 +6,7 @@ import { auth } from "@/lib/firebase";
 
 interface AuthContextType {
   user: User | null;
-  loading: bool;
+  loading: boolean;
 }
 
 const AuthContext = createContext<AuthContextType>({ user: null, loading: true });

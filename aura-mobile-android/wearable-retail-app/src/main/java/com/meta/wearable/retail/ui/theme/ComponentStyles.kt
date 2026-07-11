@@ -1,44 +1,23 @@
 package com.meta.wearable.retail.ui.theme
 
-import androidx.compose.foundation.style.Style
-import androidx.compose.foundation.style.StyleScope
-import androidx.compose.foundation.style.background
-import androidx.compose.foundation.style.shape
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.foundation.background
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.ReadOnlyComposable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
-object VaultierComponentStyles {
-    val userChatBubbleStyle: Style = Style {
-        background(Color(0xFF2C2A26))
-        shape(vaultierShapes.medium)
-    }
+// Industrial Hardening: Standardizing Style Extensions
+// Replaced experimental Style API with stable Modifier extensions
 
-    val assistantChatBubbleStyle: Style = Style {
-        background(Color.White)
-        shape(vaultierShapes.medium)
-    }
+@Composable
+fun Modifier.userChatBubble(): Modifier = this
+    .background(Color(0xFF2C2A26), RoundedCornerShape(12.dp))
 
-    val productCardStyle: Style = Style {
-        background(Color.White)
-        shape(vaultierShapes.extraSmall)
-    }
-}
+@Composable
+fun Modifier.assistantChatBubble(): Modifier = this
+    .background(Color.White, RoundedCornerShape(12.dp))
 
-// Extensions on StyleScope to reference theme tokens
-val StyleScope.vaultierColors: VaultierColors
-    @Composable
-    @ReadOnlyComposable
-    get() = LocalVaultierColors.currentValue
-
-val StyleScope.vaultierTypography: androidx.compose.material3.Typography
-    @Composable
-    @ReadOnlyComposable
-    get() = MaterialTheme.typography
-
-val StyleScope.vaultierShapes: androidx.compose.material3.Shapes
-    @Composable
-    @ReadOnlyComposable
-    get() = MaterialTheme.shapes
+@Composable
+fun Modifier.productCard(): Modifier = this
+    .background(Color.White, RoundedCornerShape(8.dp))

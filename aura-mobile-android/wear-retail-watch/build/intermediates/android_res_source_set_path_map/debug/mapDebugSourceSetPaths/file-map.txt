@@ -1,7 +1,0 @@
-com.aura.retail.watch.wear-retail-watch-pngs-0 /home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wear-retail-watch/build/generated/res/pngs/debug
-com.aura.retail.watch.wear-retail-watch-updated_navigation_xml-1 /home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wear-retail-watch/build/generated/updated_navigation_xml/debug
-com.aura.retail.watch.wear-retail-watch-packageDebugResources-2 /home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wear-retail-watch/build/intermediates/incremental/debug/packageDebugResources/merged.dir
-com.aura.retail.watch.wear-retail-watch-packageDebugResources-3 /home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wear-retail-watch/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
-com.aura.retail.watch.wear-retail-watch-debug-4 /home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wear-retail-watch/build/intermediates/merged_res/debug/mergeDebugResources
-com.aura.retail.watch.wear-retail-watch-debug-5 /home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wear-retail-watch/src/debug/res
-com.aura.retail.watch.wear-retail-watch-main-6 /home/shaolin/Downloads/aura-quiet-living/aura-mobile-android/wear-retail-watch/src/main/res

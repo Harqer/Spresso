@@ -3,15 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
     id("com.google.gms.google-services")
     id("com.google.dagger.hilt.android")
-    id("kotlin-kapt")
-}
-
-kotlin {
-    compilerOptions {
-        jvmTarget = JvmTarget.fromTarget("17")
-        freeCompilerArgs.add("-Xskip-metadata-version-check")
-        freeCompilerArgs.add("-opt-in=androidx.compose.foundation.style.ExperimentalFoundationStyleApi")
-    }
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -30,15 +22,14 @@ android {
             useSupportLibrary = true
         }
 
-        // Industrial Security: Secrets injected via Infisical Environment
-        val backendUrl: String = System.getenv("VAULTIER_BACKEND_URL") ?: project.findProperty("VAULTIER_BACKEND_URL") as String? ?: "https://aura-edge-service.quantumcoin.workers.dev"
+        val backendUrl: String = System.getenv("VAULTIER_BACKEND_URL") ?: "https://aura-edge-service.quantumcoin.workers.dev"
         buildConfigField("String", "VAULTIER_BACKEND_URL", "\"$backendUrl\"")
 
-        val googleId: String = System.getenv("GOOGLE_WEB_CLIENT_ID") ?: project.findProperty("GOOGLE_WEB_CLIENT_ID") as String? ?: ""
+        val googleId: String = System.getenv("GOOGLE_WEB_CLIENT_ID") ?: ""
         buildConfigField("String", "GOOGLE_WEB_CLIENT_ID", "\"$googleId\"")
 
-        val internalSecret: String = System.getenv("VAULTIER_INTERNAL_SECRET") ?: project.findProperty("VAULTIER_INTERNAL_SECRET") as String? ?: ""
-        val vaultierDomain: String = System.getenv("VAULTIER_DOMAIN") ?: project.findProperty("VAULTIER_DOMAIN") as String? ?: "vaultier.wearables.com"
+        val internalSecret: String = System.getenv("VAULTIER_INTERNAL_SECRET") ?: ""
+        val vaultierDomain: String = System.getenv("VAULTIER_DOMAIN") ?: "vaultier.wearables.com"
         buildConfigField("String", "VAULTIER_DOMAIN", "\"$vaultierDomain\"")
         buildConfigField("String", "VAULTIER_INTERNAL_SECRET", "\"$internalSecret\"")
     }
@@ -61,37 +52,28 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlin {
-        jvmToolchain(17)
-    }
-    buildFeatures {
-        compose = true
-    }
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
-    implementation("androidx.activity:activity-compose:1.8.2")
-    implementation(platform("androidx.compose:compose-bom:2026.04.01"))
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.ui:ui-graphics")
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.compose.material3:material3")
-    implementation("androidx.compose.foundation:foundation")
-    implementation("androidx.biometric:biometric-ktx:1.2.0-alpha05")
-    implementation("androidx.credentials:credentials:1.6.0-rc02")
-    implementation("androidx.credentials:credentials-play-services-auth:1.6.0-rc02")
-    implementation("com.google.android.libraries.identity.googleid:googleid:1.1.1")
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.activity.compose)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.ui.graphics)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.foundation)
+    implementation(libs.androidx.biometric.ktx)
     
     // Hilt DI
-    implementation("com.google.dagger:hilt-android:2.51.1")
-    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
-    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+    implementation(libs.hilt.navigation.compose)
 
-    // Industrial Identity: Firebase Auth (Replacing Clerk)
-    implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
-    implementation("com.google.firebase:firebase-auth")
+    // Firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.auth)
 
     implementation(libs.androidx.datastore.preferences)
     
@@ -101,15 +83,13 @@ dependencies {
     implementation("com.meta.wearable:mwdat-camera:0.7.0")
     debugImplementation("com.meta.wearable:mwdat-mockdevice:0.7.0")
     
-    // Jetpack Compose Glimmer for glasses UI
     implementation("androidx.xr.glimmer:glimmer:1.0.0-alpha14")
     implementation("androidx.xr.glimmer:glimmer-google-fonts:1.0.0-alpha14")
     
-    // Industrial Image Loading (No Mocks)
-    implementation("io.coil-kt:coil-compose:2.6.0")
+    implementation(libs.coil.compose)
     
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    debugImplementation("androidx.compose.ui:ui-tooling")
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.androidx.test.espresso.core)
+    debugImplementation(libs.androidx.compose.ui.tooling)
 }
