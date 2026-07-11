@@ -10,7 +10,6 @@ vi.mock("next/image", () => ({
     const imageProps: Record<string, unknown> = { ...props };
     delete imageProps.alt;
     delete imageProps.fill;
-    // eslint-disable-next-line @next/next/no-img-element
     return <img alt={alt} {...imageProps} />;
   },
 }));
