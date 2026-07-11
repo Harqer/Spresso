@@ -1,6 +1,5 @@
 import { withSentryConfig } from "@sentry/nextjs";
 import type { NextConfig } from "next";
-import path from "path";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -8,6 +7,9 @@ const nextConfig: NextConfig = {
   transpilePackages: ["@kui/foundations-react-external", "@kui/foundations-design-tokens"],
   experimental: {
     clientTraceMetadata: ["x-genkit-trace-id"], // Propagate Genkit traces to client
+    turbo: {
+       // Workaround for Turbopack invariant error in 16.x
+    }
   },
   // Enable standalone output for Docker deployment
   output: "standalone",

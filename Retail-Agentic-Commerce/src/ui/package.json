@@ -17,7 +17,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@arcjet/next": "^1.6.1",
+    "@arcjet/next": "^1.8.0",
     "@ariakit/react": "^0.4.31",
     "@date-fns/tz": "^1.5.0",
     "@kui/foundations-design-tokens": "workspace:*",
@@ -51,7 +51,7 @@
     "fast-equals": "^5.4.0",
     "firebase": "^11.10.0",
     "lodash": "^4.18.1",
-    "next": "^16.2.10",
+    "next": "15.2.9",
     "postcss": "^8.5.16",
     "react": "^19.0.0",
     "react-day-picker": "^9.14.0",
@@ -64,30 +64,29 @@
   },
   "pnpm": {
     "overrides": {
-      "ajv": "^8.18.0",
-      "postcss": "^8.5.10",
-      "eslint>ajv": "^6.14.0",
-      "@eslint/eslintrc>ajv": "^6.14.0",
-      "sharp": "0.34.5",
-      "flatted": "3.4.2",
-      "form-data": "4.0.6",
-      "picomatch": "4.0.4",
-      "esbuild": "0.28.1"
+      "lodash": "^4.18.1",
+      "postcss": "^8.5.16",
+      "esbuild": "^0.28.1"
     }
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.2.0",
+    "@eslint/eslintrc": "^3.3.6",
+    "@next/eslint-plugin-next": "^16.2.10",
     "@tailwindcss/postcss": "^4.0.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
     "@types/node": "^22.20.0",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
+    "@typescript-eslint/eslint-plugin": "^8.63.0",
+    "@typescript-eslint/parser": "^8.63.0",
     "@vitejs/plugin-react": "^4.7.0",
     "ajv": "^8.17.1",
-    "eslint": "^10.6.0",
+    "eslint": "^10.7.0",
     "eslint-config-next": "^16.2.10",
     "eslint-config-prettier": "^9.1.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
     "jsdom": "^25.0.1",
     "prettier": "^3.4.2",
     "tailwindcss": "^4.0.0",

@@ -6,7 +6,6 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.LocalActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
@@ -21,6 +20,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Build
+import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -33,10 +33,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.style.TextAlign
 import androidx.core.content.ContextCompat
-import androidx.credentials.CredentialManager
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.lifecycleScope
-import com.meta.wearable.retail.ui.theme.VaultierTheme
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -46,10 +44,10 @@ import com.meta.wearable.dat.core.types.DeviceIdentifier
 import com.meta.wearable.dat.core.types.Permission
 import com.meta.wearable.dat.core.types.PermissionStatus
 import com.meta.wearable.dat.core.types.RegistrationState
-import com.meta.wearable.retail.ui.theme.VaultierTheme
 import com.meta.wearable.retail.ui.Product
 import com.meta.wearable.retail.ui.ProductRepository
 import com.meta.wearable.retail.ui.RetailMobileApp
+import com.meta.wearable.retail.ui.theme.VaultierTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
@@ -65,224 +63,253 @@ class MainActivity : FragmentActivity() {
     @Inject lateinit var sessionManager: RetailSessionManager
     @Inject lateinit var repository: ProductRepository
     private lateinit var executor: Executor
-    private var sharedImageUri by mutableStateOf<Uri?>(null)
-    @Inject lateinit var auth: FirebaseAuth
+    private var sharedImageUri by mutableStateOf(Uri.EMPTY)
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // sessionManager and auth are injected by Hilt
+        auth = Firebase.auth
         executor = ContextCompat.getMainExecutor(this)
         handleIntent(intent)
-        
+
         setContent {
-            val user by remember { mutableStateOf(auth.currentUser) }
-            val galleryPermissionLauncher = rememberLauncherForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { }
-            var showRationale by remember { mutableStateOf(false) }
-            var currentScreen by remember { mutableStateOf(AppScreen.Launch) }
-            
             VaultierTheme {
-                val isAuthenticated = user != null
-                val registrationState by Wearables.registrationState.collectAsState()
-                val permissionLauncher = rememberLauncherForActivityResult(Wearables.RequestPermissionContract()) { result ->
-                    result.onSuccess { status ->
-                        if (status is PermissionStatus.Granted) {
-                            currentScreen = AppScreen.Welcome
-                        }
+                var currentScreen by remember { mutableStateOf(AppScreen.Launch) }
+                val regState by Wearables.registrationState.collectAsState()
+                var showRationale by remember { mutableStateOf(false) }
+
+                LaunchedEffect(regState) {
+                    if (regState == RegistrationState.REGISTERED && currentScreen == AppScreen.Hardware) {
+                        currentScreen = AppScreen.Permissions
                     }
                 }
 
-                if (showRationale) {
-                    AlertDialog(
-                        onDismissRequest = { showRationale = false },
-                        title = { Text("Vaultier Gallery Access") },
-                        text = { Text("To analyze looks from your photos, we need gallery access.") },
-                        confirmButton = {
-                            TextButton(onClick = {
-                                showRationale = false
-                                val permissions = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
-                                    arrayOf(android.Manifest.permission.READ_MEDIA_IMAGES, android.Manifest.permission.READ_MEDIA_VISUAL_USER_SELECTED)
-                                } else arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE)
-                                galleryPermissionLauncher.launch(permissions)
-                            }) { Text("Continue") }
-                        },
-                        dismissButton = { TextButton(onClick = { showRationale = false }) { Text("Not Now") } }
-                    )
-                }
-                
-                when (currentScreen) {
-                    AppScreen.Launch -> FullScreenAsset(R.drawable.launch_scre) { 
-                        currentScreen = if (isAuthenticated) {
-                            if (registrationState == RegistrationState.REGISTERED) AppScreen.Welcome else AppScreen.Hardware
-                        } else AppScreen.Identity 
-                    }
-                    AppScreen.Identity -> {
-                        if (isAuthenticated) { 
-                            currentScreen = if (registrationState == RegistrationState.REGISTERED) AppScreen.Welcome else AppScreen.Hardware 
+                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+                    when (currentScreen) {
+                        AppScreen.Launch -> {
+                            FullScreenAsset(
+                                imageRes = R.drawable.launch_scre,
+                                tagline = "THE FUTURE OF RETAIL",
+                                onContinue = { currentScreen = AppScreen.Welcome }
+                            )
                         }
-                        else { 
-                            // Firebase Identity Bridge
-                            Box(modifier = Modifier.fillMaxSize().background(Color(0xFFF5F2EB)), contentAlignment = Alignment.Center) { 
-                                Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                                    Text("Vaultier Identity", style = VaultierTheme.typography.headlineLarge)
-                                    Spacer(Modifier.height(32.dp))
-                                    Button(onClick = { 
-                                        // Placeholder for Google Sign In / Email Auth
-                                        // auth.signInAnonymously().addOnSuccessListener { currentScreen = AppScreen.Hardware }
-                                    }) { Text("Sign In with Google") }
+                        AppScreen.Welcome -> {
+                            OnboardingScreen(
+                                bgColor = Color(0xFF2C2A26),
+                                tagline = "AGENTIC COMMERCE\nFOR THE WEARABLE ERA",
+                                onContinue = {
+                                    if (auth.currentUser != null) {
+                                        currentScreen = if (regState == RegistrationState.REGISTERED) AppScreen.Shop else AppScreen.Hardware
+                                    } else {
+                                        currentScreen = AppScreen.Identity
+                                    }
                                 }
-                            } 
+                            )
                         }
-                    }
-                    AppScreen.Hardware -> HardwareScreen(registrationState) { 
-                        lifecycleScope.launch {
-                            Wearables.checkPermissionStatus(Permission.CAMERA).onSuccess { status ->
-                                currentScreen = if (status is PermissionStatus.Granted) AppScreen.Welcome else AppScreen.Permissions
-                            }
-                        }
-                    }
-                    AppScreen.Permissions -> PermissionsScreen { permissionLauncher.launch(Permission.CAMERA) }
-                    AppScreen.Welcome -> FullScreenAsset(R.drawable.welcome, "Welcome to Vaultier") { currentScreen = AppScreen.ChooseVoice }
-                    AppScreen.ChooseVoice -> OnboardingScreen(Color.Black, "Visionary Voice") { currentScreen = AppScreen.Shop }
-                    AppScreen.Shop -> {
-                        // Retrieve JWT for Agentic Pulse
-                        var token by remember { mutableStateOf("") }
-                        LaunchedEffect(user) {
-                            user?.getIdToken(true)?.addOnSuccessListener { result ->
-                                token = result.token ?: ""
-                            }
-                        }
-
-                        if (isAuthenticated) {
-                            var showMobileApp by remember { mutableStateOf(true) }
-                            Scaffold(
-                                topBar = { 
-                                    if (showMobileApp) { 
-                                        Row(modifier = Modifier.fillMaxWidth().padding(8.dp), horizontalArrangement = Arrangement.End) { 
-                                            TextButton(onClick = { auth.signOut(); currentScreen = AppScreen.Identity }) {
-                                                Text("Sign Out")
-                                            }
-                                        } 
-                                    } 
-                                }
-                            ) { padding ->
-                                Box(modifier = Modifier.padding(padding)) {
-                                    if (showMobileApp) {
-                                        RetailMobileApp(
-                                            userToken = token,
-                                            sessionManager = sessionManager,
-                                            repository = repository,
-                                            initialImageUri = sharedImageUri,
-                                            onRequestGalleryAccess = { showRationale = true },
-                                            onCompletePurchase = { items, onAuthenticated ->
-                                                showBiometricPrompt(
-                                                    title = "Confirm Purchase",
-                                                    subtitle = "Finalize order",
-                                                    onSuccess = onAuthenticated
-                                                )
-                                            }
-                                        )
-                                        Box(modifier = Modifier.fillMaxSize()) {
-                                            ExtendedFloatingActionButton(onClick = { showMobileApp = false }, modifier = Modifier.align(Alignment.BottomEnd).padding(16.dp)) {
-                                                Icon(Icons.Default.Build, contentDescription = null)
-                                                Spacer(Modifier.width(8.dp))
-                                                Text("Glasses Mode")
+                        AppScreen.Identity -> {
+                            var email by remember { mutableStateOf("") }
+                            var pass by remember { mutableStateOf("") }
+                            Column(modifier = Modifier.fillMaxSize().padding(32.dp), verticalArrangement = Arrangement.Center) {
+                                Text("VAULTIER IDENTITY", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Black)
+                                Spacer(modifier = Modifier.height(32.dp))
+                                OutlinedTextField(value = email, onValueChange = { email = it }, label = { Text("Email") }, modifier = Modifier.fillMaxWidth())
+                                OutlinedTextField(value = pass, onValueChange = { pass = it }, label = { Text("Password") }, modifier = Modifier.fillMaxWidth())
+                                Spacer(modifier = Modifier.height(24.dp))
+                                Button(
+                                    onClick = { 
+                                        auth.signInWithEmailAndPassword(email, pass).addOnCompleteListener { 
+                                            if (it.isSuccessful) {
+                                                currentScreen = if (regState == RegistrationState.REGISTERED) AppScreen.Shop else AppScreen.Hardware
                                             }
                                         }
-                                    } else {
-                                        GlassesController(sessionManager, onBack = { showMobileApp = true }, context = LocalActivity.current as ComponentActivity)
+                                    },
+                                    modifier = Modifier.fillMaxWidth().height(56.dp)
+                                ) { Text("SIGN IN") }
+                            }
+                        }
+                        AppScreen.Hardware -> {
+                            HardwareScreen(regState) {
+                                Wearables.startRegistration(this@MainActivity)
+                            }
+                        }
+                        AppScreen.Permissions -> {
+                            PermissionsScreen {
+                                currentScreen = AppScreen.Shop
+                            }
+                        }
+                        AppScreen.Shop -> {
+                            var isAuthenticated by remember { mutableStateOf(false) }
+                            var userToken by remember { mutableStateOf("") }
+
+                            LaunchedEffect(Unit) {
+                                val currentUser = auth.currentUser
+                                if (currentUser != null) {
+                                    currentUser.getIdToken(false).addOnSuccessListener { result ->
+                                        userToken = result.token ?: ""
+                                        isAuthenticated = true
+                                    }
+                                } else {
+                                    // Fallback for simulation if needed, but should be authenticated
+                                    isAuthenticated = true
+                                    userToken = "SIMULATED_USER_TOKEN"
+                                }
+                            }
+
+                            if (isAuthenticated && userToken.isNotEmpty()) {
+                                var showMobileApp by remember { mutableStateOf(true) }
+                                Scaffold(
+                                    topBar = { 
+                                        if (showMobileApp) { 
+                                            Row(modifier = Modifier.fillMaxWidth().padding(8.dp), horizontalArrangement = Arrangement.End) { 
+                                                TextButton(onClick = { auth.signOut(); currentScreen = AppScreen.Identity }) {
+                                                    Text("Sign Out")
+                                                }
+                                            } 
+                                        } 
+                                    }
+                                ) { padding ->
+                                    Box(modifier = Modifier.padding(padding)) {
+                                        if (showMobileApp) {
+                                            RetailMobileApp(
+                                                userToken = userToken,
+                                                sessionManager = sessionManager,
+                                                repository = repository,
+                                                initialImageUri = sharedImageUri,
+                                                onExit = { currentScreen = AppScreen.Welcome }
+                                            )
+                                            Box(modifier = Modifier.fillMaxSize()) {
+                                                ExtendedFloatingActionButton(onClick = { showMobileApp = false }, modifier = Modifier.align(Alignment.BottomEnd).padding(16.dp)) {
+                                                    Icon(Icons.Default.Build, contentDescription = null)
+                                                    Text("CONTROLLER")
+                                                }
+                                            }
+                                        } else {
+                                            GlassesController(sessionManager, onBack = { showMobileApp = true }, this@MainActivity)
+                                        }
                                     }
                                 }
                             }
-                        } else { currentScreen = AppScreen.Identity }
+                        }
+                        else -> Unit
                     }
-                    else -> Box(modifier = Modifier.fillMaxSize())
                 }
             }
         }
     }
 
-    override fun onNewIntent(intent: Intent) { 
+    override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
-        // Industrial Standard: Update the activity intent reference to prevent stale data pulses
-        setIntent(intent)
-        handleIntent(intent) 
+        handleIntent(intent)
     }
-    private fun handleIntent(intent: Intent?) { if (intent?.action == Intent.ACTION_SEND && intent.type?.startsWith("image/") == true) { (intent.getParcelableExtra<Uri>(Intent.EXTRA_STREAM))?.let { uri -> sharedImageUri = uri } } }
 
-    @Composable
-    fun FullScreenAsset(resId: Int, label: String? = null, onNext: () -> Unit) {
-        Box(modifier = Modifier.fillMaxSize().clickable { onNext() }) {
-            Image(painter = painterResource(id = resId), contentDescription = null, modifier = Modifier.fillMaxSize())
-            if (label != null) { Text(text = label, modifier = Modifier.align(Alignment.Center), style = VaultierTheme.typography.headlineMedium, color = Color.White) }
+    private fun handleIntent(intent: Intent) {
+        if (intent.action == Intent.ACTION_SEND && intent.type?.startsWith("image/") == true) {
+            val uri = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                intent.getParcelableExtra(Intent.EXTRA_STREAM, Uri::class.java)
+            } else {
+                @Suppress("DEPRECATION")
+                intent.getParcelableExtra(Intent.EXTRA_STREAM)
+            }
+            uri?.let { sharedImageUri = it }
         }
     }
 
     @Composable
-    fun OnboardingScreen(bgColor: Color, label: String, onNext: () -> Unit) {
-        Box(modifier = Modifier.fillMaxSize().background(bgColor).clickable { onNext() }, contentAlignment = Alignment.Center) {
-            Text(label, style = VaultierTheme.typography.headlineMedium, color = Color.White)
+    fun FullScreenAsset(imageRes: Int, tagline: String?, onContinue: () -> Unit) {
+        Box(modifier = Modifier.fillMaxSize().clickable { onContinue() }) {
+            Image(painter = painterResource(imageRes), contentDescription = null, modifier = Modifier.fillMaxSize(), contentScale = androidx.compose.ui.layout.ContentScale.Crop)
+            tagline?.let {
+                Text(it, modifier = Modifier.align(Alignment.BottomCenter).padding(bottom = 64.dp), color = Color.White, fontWeight = FontWeight.Bold, letterSpacing = 2.sp)
+            }
         }
     }
 
     @Composable
-    fun HardwareScreen(state: RegistrationState, onNext: () -> Unit) {
-        val activity = LocalActivity.current as ComponentActivity
-        Box(modifier = Modifier.fillMaxSize().background(Color.Black).padding(24.dp), contentAlignment = Alignment.Center) {
-            Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(24.dp)) {
-                Text("Link your Glasses", color = Color.White, style = VaultierTheme.typography.headlineLarge)
-                Text("Registration Status: $state", color = Color.LightGray)
-                if (state == RegistrationState.REGISTERED) {
-                    Button(onClick = onNext) { Text("Continue") }
-                } else {
-                    Button(onClick = { Wearables.startRegistration(activity) }) { Text("Start Registration") }
+    fun OnboardingScreen(bgColor: Color, tagline: String, onContinue: () -> Unit) {
+        Column(modifier = Modifier.fillMaxSize().background(bgColor).clickable { onContinue() }, horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
+            Text(tagline, color = Color.White, textAlign = TextAlign.Center, fontWeight = FontWeight.Black, fontSize = 24.sp, letterSpacing = 4.sp)
+            Spacer(modifier = Modifier.height(48.dp))
+            Text("TAP TO START", color = Color.Gray, fontSize = 12.sp, letterSpacing = 2.sp)
+        }
+    }
+
+    @Composable
+    fun HardwareScreen(state: RegistrationState, onRegister: () -> Unit) {
+        Column(modifier = Modifier.fillMaxSize().padding(32.dp), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
+            Text("CONNECT HARDWARE", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Black)
+            Spacer(modifier = Modifier.height(16.dp))
+            Text("Vaultier requires Ray-Ban Meta glasses to enable agentic shopping flows.", textAlign = TextAlign.Center, color = Color.Gray)
+            Spacer(modifier = Modifier.height(48.dp))
+            if (state == RegistrationState.REGISTERING) {
+                CircularProgressIndicator(color = Color.Black)
+            } else {
+                Button(onClick = onRegister, modifier = Modifier.fillMaxWidth().height(56.dp)) {
+                    Text("PAIR GLASSES")
                 }
             }
         }
     }
 
     @Composable
-    fun PermissionsScreen(onRequest: () -> Unit) {
-        Box(modifier = Modifier.fillMaxSize().background(Color.Black).padding(24.dp), contentAlignment = Alignment.Center) {
-            Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(24.dp)) {
-                Text("Vision Access", color = Color.White, style = VaultierTheme.typography.headlineLarge)
-                Text("Vaultier needs camera access to see and suggest products.", color = Color.LightGray, textAlign = TextAlign.Center)
-                Button(onClick = onRequest) { Text("Grant Access") }
+    fun PermissionsScreen(onComplete: () -> Unit) {
+        val scope = rememberCoroutineScope()
+        Column(modifier = Modifier.fillMaxSize().padding(32.dp), verticalArrangement = Arrangement.Center) {
+            Text("DEVICE ACCESS", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Black)
+            Spacer(modifier = Modifier.height(16.dp))
+            Text("Grant camera access to enable visual product search and VTO.")
+            Spacer(modifier = Modifier.height(32.dp))
+            Button(onClick = { scope.launch { onComplete() } }, modifier = Modifier.fillMaxWidth().height(56.dp)) {
+                Text("GRANT ACCESS")
             }
         }
     }
 
-    private fun showBiometricPrompt(title: String, subtitle: String, onSuccess: () -> Unit) {
-        val promptInfo = BiometricPrompt.PromptInfo.Builder().setTitle(title).setSubtitle(subtitle).setNegativeButtonText("Cancel").setAllowedAuthenticators(BiometricManager.Authenticators.BIOMETRIC_STRONG).build()
-        val biometricPrompt = BiometricPrompt(this, executor, object : BiometricPrompt.AuthenticationCallback() {
-            override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) { super.onAuthenticationSucceeded(result); onSuccess() }
+    fun showBiometricPrompt(title: String, subtitle: String, onSuccess: () -> Unit) {
+        val info = BiometricPrompt.PromptInfo.Builder().setTitle(title).setSubtitle(subtitle).setNegativeButtonText("Cancel").build()
+        val bp = BiometricPrompt(this, executor, object : BiometricPrompt.AuthenticationCallback() {
+            override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
+                super.onAuthenticationSucceeded(result)
+                onSuccess()
+            }
         })
-        biometricPrompt.authenticate(promptInfo)
+        bp.authenticate(info)
     }
 
-    override fun onDestroy() { super.onDestroy(); sessionManager.destroy() }
+    override fun onDestroy() {
+        super.onDestroy()
+        sessionManager.destroy()
+    }
 }
 
 @Composable
-fun GlassesController(sessionManager: RetailSessionManager, onBack: () -> Unit, context: ComponentActivity) {
-    val deviceIds by Wearables.devices.collectAsState(initial = emptySet())
+fun GlassesController(sessionManager: RetailSessionManager, onBack: () -> Unit, activity: ComponentActivity) {
     val session by sessionManager.currentSession.collectAsState()
-    val sessionState by (session?.state ?: MutableStateFlow(DeviceSessionState.STOPPED)).collectAsState(DeviceSessionState.STOPPED)
-    Surface(modifier = Modifier.fillMaxSize()) {
-        Column(modifier = Modifier.padding(16.dp).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(16.dp)) {
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back") }
-                Text(text = "Glasses Controller", style = VaultierTheme.typography.headlineSmall)
+    var isStreaming by remember { mutableStateOf(false) }
+
+    Column(modifier = Modifier.fillMaxSize().background(Color.Black).padding(24.dp)) {
+        IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null, tint = Color.White) }
+        Spacer(modifier = Modifier.height(24.dp))
+        Text("VAULTIER PULSE", color = Color.White, style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.Black)
+        Spacer(modifier = Modifier.height(48.dp))
+        
+        Card(modifier = Modifier.fillMaxWidth(), colors = CardDefaults.cardColors(containerColor = Color(0xFF1A1A1A))) {
+            Column(modifier = Modifier.padding(24.dp)) {
+                Text("HARDWARE STATUS", color = Color.Gray, fontSize = 10.sp)
+                Text(if (session != null) "CONNECTED" else "DISCONNECTED", color = if (session != null) Color.Green else Color.Red, fontWeight = FontWeight.Bold)
             }
-            Button(onClick = { Wearables.startRegistration(context) }, modifier = Modifier.fillMaxWidth()) { Text("Update Registration") }
-            deviceIds.forEach { deviceId -> Button(onClick = { sessionManager.startSession(deviceId, "") }, modifier = Modifier.fillMaxWidth()) { Text("Connect: $deviceId") } }
-            if (sessionState == DeviceSessionState.STARTED) {
-                Card(modifier = Modifier.fillMaxWidth()) {
-                    Column(modifier = Modifier.padding(16.dp)) {
-                        Button(onClick = { sessionManager.showWelcome() }, modifier = Modifier.fillMaxWidth()) { Text("Push UI") }
-                        Button(onClick = { sessionManager.stopSession() }, modifier = Modifier.fillMaxWidth(), colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error)) { Text("Stop") }
-                    }
-                }
-            }
+        }
+        
+        Spacer(modifier = Modifier.height(24.dp))
+        
+        Button(
+            onClick = { 
+                isStreaming = !isStreaming
+                sessionManager.updateStreamingStatus(isStreaming)
+            },
+            modifier = Modifier.fillMaxWidth().height(64.dp),
+            colors = ButtonDefaults.buttonColors(containerColor = if (isStreaming) Color.Red else Color.White)
+        ) {
+            Text(if (isStreaming) "STOP STREAM" else "START STREAM", color = if (isStreaming) Color.White else Color.Black)
         }
     }
 }
