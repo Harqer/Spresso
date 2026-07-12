@@ -18,6 +18,19 @@ export default {
     const url = new URL(request.url);
     const path = url.pathname;
 
+    // --- Layer 7 WAF & DDoS Protection ---
+    const cf = request.cf as any;
+    if (cf) {
+      // Block high-threat requests based on Cloudflare's threat intelligence
+      if (cf.threatScore && cf.threatScore > 50) {
+        return new Response("Blocked by Edge WAF - Threat Detected", { status: 403 });
+      }
+      // Block likely automated bots (score < 30 indicates high likelihood of bot)
+      if (cf.botManagement && cf.botManagement.score < 30) {
+        return new Response("Blocked by Edge WAF - Automated Traffic Detected", { status: 403 });
+      }
+    }
+
     // 1. Enterprise Identity Pulse: Timing-Safe internal auth OR Firebase JWT
     const authHeader = request.headers.get("Authorization");
 
