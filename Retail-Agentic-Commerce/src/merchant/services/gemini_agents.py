@@ -12,7 +12,6 @@ from typing import Any
 import genkit
 from genkit import Part, Media
 from genkit.plugins.google_genai import GoogleAI
-from genkit.plugins.evaluators import register_genkit_evaluators
 from genkit.evaluator import BaseDataPoint, EvalFnResponse, EvalStatusEnum, Score, Details
 from pydantic import BaseModel, Field
 from sqlmodel import select
@@ -50,7 +49,6 @@ ai = genkit.Genkit(
         GoogleAI(api_key=os.getenv("GEMINI_API_KEY"))
     ]
 )
-register_genkit_evaluators(ai)
 
 # --- INDUSTRIAL EVALUATORS ---
 

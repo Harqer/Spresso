@@ -17,7 +17,12 @@
   "pnpm": {
     "overrides": {
       "postcss": "^8.5.10",
-      "esbuild": "^0.28.1"
+      "esbuild": "^0.28.1",
+      "undici": "^6.27.0",
+      "ws": "^8.21.0",
+      "@opentelemetry/sdk-node": "^0.217.0",
+      "@opentelemetry/core": "^2.8.0",
+      "@opentelemetry/auto-instrumentations-node": "^0.75.0"
     }
   }
 }
