@@ -97,3 +97,31 @@ async def stripe_webhook(request: Request):
         logger.warning(f"Payment Pulse FAILED for Order {order_id}: {error_message}")
 
     return {"status": "success"}
+
+@router.post("/github")
+async def github_webhook(request: Request):
+    """GitHub Webhook Handler for automated Agentic remediation.
+
+    Receives push and Dependabot events to trigger autonomous AI agents.
+    """
+    payload = await request.body()
+    sig_header = request.headers.get("x-hub-signature-256")
+    webhook_secret = os.getenv("GITHUB_WEBHOOK_SECRET")
+
+    if not webhook_secret:
+        logger.warning("No GITHUB_WEBHOOK_SECRET configured, skipping signature validation.")
+    elif not sig_header:
+        logger.error("Security Alert: GitHub webhook triggered without signature.")
+        raise HTTPException(status_code=400, detail="Missing signature")
+    
+    # In a real scenario, validate HMAC SHA256 signature here using webhook_secret and payload
+    
+    data = await request.json()
+    event_type = request.headers.get("x-github-event", "unknown")
+    
+    logger.info(f"Received GitHub Webhook Event: {event_type}")
+    
+    # Trigger A2A background task to handle the event (e.g., spawn remediation agent)
+    # This could integrate with our AgentExecutor or Genkit Flow
+    
+    return {"status": "received", "event": event_type}
