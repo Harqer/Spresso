@@ -16,8 +16,8 @@ class InternalSecurityMiddleware(BaseHTTPMiddleware):
     """
 
     async def dispatch(self, request: Request, call_next) -> Response:
-        # Skip security for public health check
-        if request.url.path == "/health":
+        # Skip security for public endpoints like health checks and webhooks
+        if request.url.path == "/health" or request.url.path.startswith("/webhooks"):
             return await call_next(request)
 
         # Retrieve internal secret from environment
