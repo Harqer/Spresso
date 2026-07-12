@@ -147,7 +147,7 @@ fun RetailMobileApp(
         Scaffold(
             topBar = {
                 CenterAlignedTopAppBar(
-                    title = { Text("VAULTIER", fontWeight = FontWeight.Black, letterSpacing = 4.sp) },
+                    title = { Text("VAULTIER", style = VaultierTheme.typography.titleLarge, fontWeight = FontWeight.Black) },
                     navigationIcon = {
                         IconButton(onClick = onExit) {
                             Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Exit")
@@ -163,7 +163,7 @@ fun RetailMobileApp(
                     },
                     colors =
                         TopAppBarDefaults.centerAlignedTopAppBarColors(
-                            containerColor = Color.White,
+                            containerColor = VaultierTheme.colors.surface,
                         ),
                 )
             },
@@ -173,7 +173,7 @@ fun RetailMobileApp(
                     Modifier
                         .fillMaxSize()
                         .padding(padding)
-                        .background(Color(0xFFF8F8F8)),
+                        .background(VaultierTheme.colors.secondary),
             ) {
                 Column(
                     modifier =
@@ -213,7 +213,7 @@ fun RetailMobileApp(
                     if (isThinking) {
                         CircularProgressIndicator(
                             modifier = Modifier.size(24.dp).align(Alignment.CenterHorizontally),
-                            color = Color.Black,
+                            color = VaultierTheme.colors.onSurface,
                             strokeWidth = 2.dp,
                         )
                     }
@@ -222,7 +222,7 @@ fun RetailMobileApp(
                 Surface(
                     tonalElevation = 8.dp,
                     shadowElevation = 8.dp,
-                    color = Color.White,
+                    color = VaultierTheme.colors.surface,
                 ) {
                     Column(modifier = Modifier.padding(16.dp)) {
                         if (chatMessages.isNotEmpty() && chatMessages.last().filters.isNotEmpty()) {
@@ -245,8 +245,8 @@ fun RetailMobileApp(
                             shape = CircleShape,
                             colors =
                                 TextFieldDefaults.colors(
-                                    focusedContainerColor = Color(0xFFF0F0F0),
-                                    unfocusedContainerColor = Color(0xFFF0F0F0),
+                                    focusedContainerColor = VaultierTheme.colors.secondary,
+                                    unfocusedContainerColor = VaultierTheme.colors.secondary,
                                     focusedIndicatorColor = Color.Transparent,
                                     unfocusedIndicatorColor = Color.Transparent,
                                 ),
@@ -345,7 +345,7 @@ fun VTOPreviewCard(
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
     ) {
         Column {
-            Box(modifier = Modifier.fillMaxWidth().height(400.dp).background(Color.Black)) {
+            Box(modifier = Modifier.fillMaxWidth().height(400.dp).background(VaultierTheme.colors.onSurface)) {
                 if (imageUrl != null) {
                     AsyncImage(
                         model = imageUrl,
@@ -356,13 +356,13 @@ fun VTOPreviewCard(
                 }
 
                 Surface(
-                    color = Color.Black.copy(alpha = 0.6f),
+                    color = VaultierTheme.colors.onSurface.copy(alpha = 0.6f),
                     shape = CircleShape,
                     modifier = Modifier.padding(16.dp).align(Alignment.TopEnd),
                 ) {
                     Text(
                         "AI GENERATED",
-                        color = Color.White,
+                        color = VaultierTheme.colors.surface,
                         fontSize = 10.sp,
                         modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
                     )
@@ -474,7 +474,7 @@ fun ChatBubble(
             Text(
                 text = text,
                 modifier = Modifier.padding(12.dp),
-                color = if (isUser) Color.White else Color.Black,
+                color = if (isUser) VaultierTheme.colors.surface else VaultierTheme.colors.onSurface,
                 style = VaultierTheme.typography.bodyMedium,
             )
         }
@@ -530,12 +530,12 @@ fun ProductItem(
                     contentScale = ContentScale.Crop,
                 )
                 Surface(
-                    color = Color(0xFF2C2A26),
+                    color = VaultierTheme.colors.primary,
                     modifier = Modifier.padding(12.dp).align(Alignment.TopStart),
                 ) {
                     Text(
                         "LIMITED",
-                        color = Color.White,
+                        color = VaultierTheme.colors.surface,
                         fontSize = 8.sp,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp),
@@ -575,10 +575,10 @@ fun ProductItem(
                     onClick = onAddToCart,
                     modifier = Modifier.fillMaxWidth().height(48.dp),
                     shape = RoundedCornerShape(4.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF2C2A26)),
+                    colors = ButtonDefaults.buttonColors(containerColor = VaultierTheme.colors.primary),
                     contentPadding = PaddingValues(0.dp),
                 ) {
-                    Text("ADD TO CART", fontSize = 10.sp, letterSpacing = 2.sp, fontWeight = FontWeight.Bold)
+                    Text("ADD TO CART", style = VaultierTheme.typography.labelSmall, fontWeight = FontWeight.Bold)
                 }
             }
         }
@@ -625,12 +625,12 @@ fun CheckoutScreen(
                 onClick = onPurchaseComplete,
                 modifier = Modifier.fillMaxWidth().height(56.dp).padding(top = 16.dp),
                 enabled = !isProcessing,
-                colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
+                colors = ButtonDefaults.buttonColors(containerColor = VaultierTheme.colors.onSurface),
             ) {
                 if (isProcessing) {
-                    CircularProgressIndicator(color = Color.White)
+                    CircularProgressIndicator(color = VaultierTheme.colors.surface)
                 } else {
-                    Text("CONFIRM PURCHASE")
+                    Text("CONFIRM PURCHASE", color = VaultierTheme.colors.surface)
                 }
             }
         }
