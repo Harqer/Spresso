@@ -1,29 +1,31 @@
 package com.meta.wearable.retail
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.meta.wearable.retail.ui.Product
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import com.meta.wearable.retail.ui.RetailGlimmerApp
-import android.util.Log
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class RetailGlassesActivity : ComponentActivity() {
+    @Inject lateinit var sessionManager: RetailSessionManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        
-        // In a real app, products should be passed via Intent or shared ViewModel/Repository
-        val products = listOf(
-            Product("1", "SKU-TEE", "Classic Blue Tee", 25.0, "", "Apparel"),
-            Product("2", "SKU-JKT", "Denim Jacket", 85.0, "", "Apparel"),
-            Product("3", "SKU-SNK", "Canvas Sneakers", 45.0, "", "Footwear")
-        )
-        
+
         setContent {
+            val products by sessionManager.activeProducts.collectAsState()
+
             RetailGlimmerApp(
                 products = products,
                 onBuy = { product ->
                     Log.d("GlassesUI", "Buying product: ${product.name}")
-                }
+                    sessionManager.onAddToCartRequested?.invoke(product.id)
+                },
             )
         }
     }

@@ -28,27 +28,38 @@ import okhttp3.WebSocket
 import okhttp3.WebSocketListener
 import org.json.JSONObject
 
-class RetailSessionManager(private val context: Context) {
+class RetailSessionManager(
+    private val context: Context,
+) {
     private var job = Job()
     private var scope = CoroutineScope(Dispatchers.Main + job)
     private val client = OkHttpClient()
-    
-    private val BACKEND_WS_URL = BuildConfig.VAULTIER_BACKEND_URL.replace("https://", "wss://") + "/discovery/live"
+
+    private val backendWsUrl =
+        BuildConfig.VAULTIER_BACKEND_URL
+            .replace("https://", "wss://")
+            .replace("http://", "ws://") + "/discovery/live"
 
     private var userToken: String? = null
 
     private var _currentSession = MutableStateFlow<DeviceSession?>(null)
     val currentSession: StateFlow<DeviceSession?> = _currentSession
 
-    private var _display = MutableStateFlow<com.meta.wearable.dat.display.Display?>(null)
-    
+    private var _activeProducts = MutableStateFlow<List<Product>>(emptyList())
+    val activeProducts: StateFlow<List<Product>> = _activeProducts
+
+    private var internalDisplay = MutableStateFlow<com.meta.wearable.dat.display.Display?>(null)
+
     private var videoStreamJob: Job? = null
     private var socket: WebSocket? = null
-    
+
     var onAddToCartRequested: ((String) -> Unit)? = null
     var onDiscoverRequested: (() -> Unit)? = null
 
-    fun startSession(deviceId: DeviceIdentifier, token: String) {
+    fun startSession(
+        deviceId: DeviceIdentifier,
+        token: String,
+    ) {
         userToken = token
         Wearables.createSession(SpecificDeviceSelector(deviceId)).fold(
             onSuccess = { session ->
@@ -65,7 +76,7 @@ class RetailSessionManager(private val context: Context) {
             },
             onFailure = { error, _ ->
                 Log.e("RetailSession", "Session Creation FAILED: ${error.description}")
-            }
+            },
         )
     }
 
@@ -79,88 +90,111 @@ class RetailSessionManager(private val context: Context) {
             },
             onFailure = { error, _ ->
                 Log.e("RetailSession", "Stream Addition FAILED: ${error.description}")
-            }
+            },
         )
     }
 
     private fun startMultimodalBridge(stream: Stream) {
-        val request = Request.Builder()
-            .url("$BACKEND_WS_URL?token=$userToken")
-            .addHeader("x-vaultier-internal-key", BuildConfig.VAULTIER_INTERNAL_SECRET)
-            .build()
-        socket = client.newWebSocket(request, object : WebSocketListener() {
-            override fun onMessage(webSocket: WebSocket, text: String) {
-                try {
-                    val data = JSONObject(text)
-                    if (data.getString("type") == "agentic_action") {
-                        onAddToCartRequested?.invoke(data.getString("product_id"))
+        val request =
+            Request
+                .Builder()
+                .url("$backendWsUrl?token=$userToken")
+                .addHeader("x-vaultier-internal-key", BuildConfig.VAULTIER_INTERNAL_SECRET)
+                .build()
+        socket =
+            client.newWebSocket(
+                request,
+                object : WebSocketListener() {
+                    override fun onMessage(
+                        webSocket: WebSocket,
+                        text: String,
+                    ) {
+                        try {
+                            val data = JSONObject(text)
+                            if (data.getString("type") == "agentic_action") {
+                                onAddToCartRequested?.invoke(data.getString("product_id"))
+                            }
+                        } catch (e: Exception) {
+                            Log.e("RetailSession", "Bridge Error: ${e.message}")
+                        }
                     }
-                } catch (e: Exception) { Log.e("RetailSession", "Bridge Error: ${e.message}") }
-            }
-        })
+                },
+            )
 
-        videoStreamJob = scope.launch {
-            stream.videoStream.collect { frame ->
-                // Industrial Pulse: Real-time Base64 Encoding
-                // Using .data for 0.7.0 compatibility
-                val base64Data = android.util.Base64.encodeToString(frame.data, android.util.Base64.NO_WRAP)
-                
-                val message = JSONObject().apply {
-                    put("type", "client_content")
-                    put("content", JSONObject().apply {
-                        put("mime_type", "image/jpeg")
-                        put("data", base64Data)
-                    })
+        videoStreamJob =
+            scope.launch {
+                stream.videoStream.collect { frame ->
+                    // Industrial Pulse: Real-time Base64 Encoding
+                    // Using .buffer for 0.7.0 compatibility
+                    val buffer = frame.buffer
+                    val bytes = ByteArray(buffer.remaining())
+                    buffer.get(bytes)
+                    val base64Data = android.util.Base64.encodeToString(bytes, android.util.Base64.NO_WRAP)
+
+                    val message =
+                        JSONObject().apply {
+                            put("type", "client_content")
+                            put(
+                                "content",
+                                JSONObject().apply {
+                                    put("mime_type", "image/jpeg")
+                                    put("data", base64Data)
+                                },
+                            )
+                        }
+                    socket?.send(message.toString())
                 }
-                socket?.send(message.toString())
             }
-        }
     }
 
     private fun attachDisplay(session: DeviceSession) {
         session.addDisplay().fold(
             onSuccess = { display ->
-                _display.value = display
+                internalDisplay.value = display
                 showWelcome()
             },
             onFailure = { error, _ ->
                 Log.e("RetailSession", "Display Addition FAILED: ${error.description}")
-            }
+            },
         )
     }
 
     fun stopSession() {
         videoStreamJob?.cancel()
         socket?.close(1000, "User quit")
-        
+
         val session = _currentSession.value
         if (session != null) {
             session.stop()
         }
 
         _currentSession.value = null
-        _display.value = null
+        internalDisplay.value = null
     }
 
-    fun destroy() { stopSession(); job.cancel() }
+    fun destroy() {
+        stopSession()
+        job.cancel()
+    }
 
     fun showWelcome() {
-        val display = _display.value ?: return
+        val display = internalDisplay.value ?: return
         scope.launch { display.sendContent { buildWelcome(onStart = { onDiscoverRequested?.invoke() }) } }
     }
 
     fun showCart(products: List<Product>) {
-        val display = _display.value ?: return
+        _activeProducts.value = products
+        val display = internalDisplay.value ?: return
         scope.launch { display.sendContent { buildCart(products) } }
     }
 
     fun showPurchaseSuccess() {
-        val display = _display.value ?: return
+        val display = internalDisplay.value ?: return
         scope.launch { display.sendContent { buildSuccess() } }
     }
 
     fun updateStreamingStatus(isOn: Boolean) {
-        val display = _display.value ?: return
+        val display = internalDisplay.value ?: return
         scope.launch { display.sendContent { buildStreaming(isOn) } }
     }
 }

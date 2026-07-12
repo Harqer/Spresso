@@ -16,7 +16,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
-
     @Provides
     @Singleton
     fun provideFirebaseAuth(): FirebaseAuth = Firebase.auth
@@ -27,6 +26,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideRetailSessionManager(@ApplicationContext context: Context): RetailSessionManager =
-        RetailSessionManager(context)
+    fun provideRetailSessionManager(
+        @ApplicationContext context: Context,
+    ): RetailSessionManager = RetailSessionManager(context)
 }
