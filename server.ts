@@ -1,13 +1,14 @@
-import dotenv from 'dotenv';
 import express from 'express';
 import path from 'path';
-import { createServer as createViteServer } from 'vite';
 import { GoogleGenAI, Type } from '@google/genai';
+import { createServer as createViteServer } from 'vite';
+import helmet from 'helmet';
+import rateLimit from 'express-rate-limit';
+import { LRUCache } from 'lru-cache';
+import 'dotenv/config';
 
-// Load local env files (.env.local takes precedence over .env).
-// In AI Studio these vars are injected at runtime, so this is a no-op there.
-dotenv.config({ path: ['.env.local', '.env'] });
-
+// In production, environment variables are injected at runtime by the industrial vault (e.g., Kubernetes secrets, GCP Secret Manager).
+// Reading from .env files on disk is insecure and non-standard for production environments.
 let aiClient: GoogleGenAI | null = null;
 
 function getAiClient() {
@@ -114,7 +115,211 @@ async function startServer() {
   const app = express();
   const PORT = 3000;
 
+  app.use(helmet());
   app.use(express.json({ limit: '50mb' }));
+
+  const apiLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // limit each IP to 100 requests per windowMs
+    message: 'Too many requests from this IP, please try again later.'
+  });
+
+  app.use('/api/', apiLimiter);
+  app.use('/discovery/', apiLimiter);
+
+  // Endpoint to handle chat discovery and web-grounded products
+  app.post('/discovery/chat', async (req, res) => {
+    try {
+      const { message, cart_items, image_base64 } = req.body;
+      const ai = getAiClient();
+      
+      const prompt = `The user is asking: "${message}". 
+You are a high-end luxury fashion and lifestyle concierge named Vaultier.
+Search the web for up to 2 actual products related to their query. DO NOT mock data or use placeholder images. If you cannot find real products or images, return an empty array for "grid".
+Return a JSON object with the following fields:
+- "response": Your text response to the user.
+- "grid": An array of real product objects you found. Each product must strictly have:
+  - "id": a unique string ID
+  - "name": the product name
+  - "tagline": a short catchphrase
+  - "description": a short description
+  - "price": the approximate price as a number
+  - "category": a product category
+  - "imageUrl": a real URL to an image (DO NOT use placeholders)
+  - "variants": an optional array of variants (e.g., colors or sizes) found, each with "id", "name", and "price"
+- "filters": an optional array of 3 string filter categories relevant to the query (e.g., ["Summer", "Silk", "Dresses"])
+- "compare": an optional array of objects comparing the products found (e.g., [{"feature": "Material", "prod1": "Silk", "prod2": "Cotton"}])
+- "intent": "ADD_TO_CART" if the user explicitly wants to buy a specific item (otherwise null).
+- "product_id": The ID of the item if intent is "ADD_TO_CART".
+
+Do NOT wrap the JSON in markdown code blocks. Just output the raw JSON object.`;
+
+      res.setHeader('Content-Type', 'text/event-stream');
+      res.setHeader('Cache-Control', 'no-cache');
+      res.setHeader('Connection', 'keep-alive');
+      res.flushHeaders();
+
+      const aiResponse = await ai.models.generateContentStream({
+        model: 'gemini-2.5-flash',
+        contents: prompt,
+        config: {
+          thinkingConfig: { includeThoughts: true },
+          tools: [{ googleSearch: {} }],
+          responseMimeType: "application/json",
+        },
+      });
+
+      let fullJson = '';
+
+      for await (const chunk of aiResponse) {
+        if (chunk.candidates?.[0]?.content?.parts) {
+          for (const part of chunk.candidates[0].content.parts) {
+            if (part.thought && part.text) {
+              res.write(`data: ${JSON.stringify({ type: 'thought', text: part.text })}\n\n`);
+            } else if (part.text) {
+              fullJson += part.text;
+            }
+          }
+        }
+      }
+
+      if (fullJson) {
+        try {
+          const data = JSON.parse(fullJson);
+          res.write(`data: ${JSON.stringify({ type: 'result', data })}\n\n`);
+        } catch (e) {
+          console.error("JSON parse error:", e, fullJson);
+        }
+      }
+      res.end();
+
+
+    } catch (error: any) {
+      console.error('Discovery chat error:', error);
+      res.status(500).json({ error: error.message });
+    }
+  });
+
+  // Endpoint to fetch trending discovery feeds
+  app.get('/discovery/trending', async (req, res) => {
+    try {
+      const ai = getAiClient();
+      
+      const prompt = `Search the web for 2 currently trending high-end lifestyle products. DO NOT mock data or use placeholders.
+Return a JSON array of real trending items. Each item must strictly have:
+- "id": a unique string ID
+- "videoUrl": an optional URL to a video if found
+- "style": A 2-word aesthetic style
+- "world": A 2-word aesthetic world
+- "product": an object containing:
+  - "id": a unique string ID
+  - "name": the product name
+  - "tagline": a short catchphrase
+  - "description": a short description
+  - "price": the approximate price as a number
+  - "category": a product category
+  - "imageUrl": a real URL to an image (DO NOT use placeholders)
+
+Do NOT wrap the JSON in markdown code blocks. Just output the raw JSON array.`;
+
+      const aiResponse = await ai.models.generateContent({
+        model: 'gemini-2.5-flash',
+        contents: prompt,
+        config: {
+          tools: [{ googleSearch: {} }],
+          responseMimeType: "application/json",
+        },
+      });
+
+      const text = aiResponse.text;
+      if (!text) throw new Error("No response from Gemini");
+
+      const data = JSON.parse(text);
+      res.json(data);
+    } catch (error: any) {
+      console.error('Discovery trending error:', error);
+      res.status(500).json({ error: error.message });
+    }
+  });
+
+  // Endpoint to fetch journal articles
+  app.get('/discovery/journal', async (req, res) => {
+    try {
+      const ai = getAiClient();
+      
+      const prompt = `Search the web for 3 recent high-end fashion or lifestyle editorial articles.
+Return a JSON array of journal articles. Each article must strictly have:
+- "id": a unique integer ID
+- "title": the article title
+- "date": the publication date (e.g. "Oct 12, 2024")
+- "excerpt": a short excerpt or summary
+- "image": a URL to an image
+- "content": HTML content of the article (must be a valid string, not JSX)
+
+Do NOT wrap the JSON in markdown code blocks. Just output the raw JSON array.`;
+
+      const aiResponse = await ai.models.generateContent({
+        model: 'gemini-2.5-flash',
+        contents: prompt,
+        config: {
+          tools: [{ googleSearch: {} }],
+          responseMimeType: "application/json",
+        },
+      });
+
+      const text = aiResponse.text;
+      if (!text) throw new Error("No response from Gemini");
+
+      const data = JSON.parse(text);
+      res.json(data);
+    } catch (error: any) {
+      console.error('Discovery journal error:', error);
+      res.status(500).json({ error: error.message });
+    }
+  });
+
+  // Endpoint to search products using Gemini web grounding
+  app.post('/api/search-products', async (req, res) => {
+    try {
+      const { query } = req.body;
+      const ai = getAiClient();
+      
+      const prompt = `Search the web for 3 to 5 highly relevant product solutions for the following query: "${query || 'featured lifestyle products'}". DO NOT mock data or use placeholder images. If you cannot find real products or images, omit them.
+Return a JSON array of real products. Each product must strictly have the following fields: 
+- "id": a unique string ID
+- "name": the product name
+- "tagline": a short catchphrase
+- "description": a short description
+- "longDescription": a longer description
+- "price": the approximate price as a number
+- "category": a product category
+- "imageUrl": a real URL to an image (DO NOT use placeholders)
+- "gallery": an array of 2-3 real image URLs
+- "features": an array of 3 string features
+- "sizes": an array of string sizes (e.g., ["One Size"])
+- "variants": an optional array of variants (e.g., colors or sizes) found, each with "id", "name", and "price"
+
+Do NOT wrap the JSON in markdown code blocks. Just output the raw JSON array.`;
+
+      const response = await ai.models.generateContent({
+        model: 'gemini-2.5-flash',
+        contents: prompt,
+        config: {
+          tools: [{ googleSearch: {} }],
+          responseMimeType: "application/json",
+        },
+      });
+
+      const text = response.text;
+      if (!text) throw new Error("No response from Gemini");
+
+      const products = JSON.parse(text);
+      res.json({ products });
+    } catch (error: any) {
+      console.error('Search products error:', error);
+      res.status(500).json({ error: error.message });
+    }
+  });
 
   // Endpoint to generate prompt
   app.post('/api/generate-prompt', async (req, res) => {
@@ -502,7 +707,7 @@ Output ONLY the style brief text — no labels, no quotes, no preamble.`;
         prefix += "The focus is strictly on the background scene, atmosphere, room, backdrop, or stage itself, showcasing rich textures, materials, and elegant geometric structures. There are no foreground products, no subjects, and no people in the scene. ";
       }
 
-      let parts: any[] = [{ text: prefix + prompt }];
+      const parts: any[] = [{ text: prefix + prompt }];
       if (imageBase64) {
         const match = imageBase64.match(/^data:(image\/[a-zA-Z]*);base64,([^"]*)$/);
         if (match && match.length === 3) {
@@ -555,6 +760,11 @@ Output ONLY the style brief text — no labels, no quotes, no preamble.`;
       res.sendFile(path.join(distPath, 'index.html'));
     });
   }
+
+  app.use((err: any, req: express.Request, res: express.Response, _next: express.NextFunction) => {
+    console.error(err.stack);
+    res.status(500).json({ error: 'Internal Server Error' });
+  });
 
   app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on http://localhost:${PORT}`);

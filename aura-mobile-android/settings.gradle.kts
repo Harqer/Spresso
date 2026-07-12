@@ -23,9 +23,19 @@ dependencyResolutionManagement {
                 includeGroup("com.meta.wearable")
             }
             credentials {
-                // Ensure GITHUB_TOKEN is set in your Infisical vault or environment
+                // Ensure GITHUB_TOKEN is set in your Infisical vault, environment, or local.properties
                 username = "token"
-                password = System.getenv("GITHUB_TOKEN")
+                
+                // Fallback to local.properties if env var is missing
+                var localToken: String? = null
+                val localPropsFile = File(rootDir, "local.properties")
+                if (localPropsFile.exists()) {
+                    val props = java.util.Properties()
+                    props.load(java.io.FileInputStream(localPropsFile))
+                    localToken = props.getProperty("GITHUB_TOKEN")
+                }
+                
+                password = System.getenv("GITHUB_TOKEN") ?: localToken
             }
         }
     }

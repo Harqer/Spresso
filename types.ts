@@ -17,6 +17,7 @@ export interface Product {
   gallery?: string[];
   features: string[];
   sizes?: string[];
+  variants?: { id: string; name: string; price: number }[];
 }
 
 export interface JournalArticle {
@@ -32,7 +33,7 @@ export interface ChatMessage {
   role: 'user' | 'model';
   text: string;
   timestamp: number;
-  grid?: string[];
+  grid?: string[] | Product[];
   compare?: any[];
   filters?: string[];
   match_score?: number;

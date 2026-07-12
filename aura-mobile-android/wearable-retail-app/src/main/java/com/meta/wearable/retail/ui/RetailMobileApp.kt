@@ -25,12 +25,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
+import com.meta.wearable.retail.R
 import com.meta.wearable.retail.RetailSessionManager
 import com.meta.wearable.retail.ui.theme.*
 import com.meta.wearable.retail.util.GeminiNanoBanana2
@@ -62,17 +66,21 @@ fun RetailMobileApp(
     onExit: () -> Unit = {},
 ) {
     val context = LocalContext.current
+    val haptic = LocalHapticFeedback.current
     val wearSyncManager = remember { WearSyncManager(context) }
     val nanoEngine = remember { GeminiNanoBanana2(context) }
     var textInput by remember { mutableStateOf("") }
+    
+    val initialMsg = stringResource(R.string.welcome_message)
+    val vaultierRole = stringResource(R.string.vaultier_role)
+    val userRole = stringResource(R.string.user_role)
+    val analyzingPhoto = stringResource(R.string.analyzing_photo)
+    val processingSharedImage = stringResource(R.string.processing_shared_image)
+    
     var chatMessages by remember {
         mutableStateOf(
             listOf(
-                ChatUiMessage(
-                    "Vaultier",
-                    "Welcome to Vaultier. I can help you discover products and perform virtual try-ons. " +
-                        "Try sending a photo or asking about our collection!",
-                ),
+                ChatUiMessage(vaultierRole, initialMsg),
             ),
         )
     }
@@ -83,6 +91,10 @@ fun RetailMobileApp(
 
     val scope = rememberCoroutineScope()
     val scrollState = rememberScrollState()
+
+    val analyzingProductGlassesMsg = stringResource(R.string.analyze_product_glasses)
+    val analyzePhotoMsg = stringResource(R.string.analyze_photo)
+    val vtoRequiresPremiumMsg = stringResource(R.string.vto_requires_premium)
 
     // Sync products to Wear OS watch whenever they update
     LaunchedEffect(cartItems) {
@@ -96,9 +108,20 @@ fun RetailMobileApp(
             ActivityResultContracts.PickVisualMedia(),
         ) { uri ->
             if (uri != null) {
-                chatMessages = chatMessages + ChatUiMessage("User", "Analyzing photo...")
+                chatMessages = chatMessages + ChatUiMessage(userRole, analyzingPhoto)
                 isThinking = true
-                processImageUri(uri, context, userToken, repository, isWearableSource = false, userTier = userTier) { msg ->
+                processImageUri(
+                    uri, 
+                    context, 
+                    userToken, 
+                    repository, 
+                    isWearableSource = false, 
+                    userTier = userTier,
+                    analyzingProductGlassesMsg = analyzingProductGlassesMsg,
+                    analyzePhotoMsg = analyzePhotoMsg,
+                    vtoRequiresPremiumMsg = vtoRequiresPremiumMsg,
+                    vaultierRole = vaultierRole,
+                ) { msg ->
                     chatMessages = chatMessages + msg
                     isThinking = false
                 }
@@ -108,7 +131,7 @@ fun RetailMobileApp(
     LaunchedEffect(Unit) {
         products = repository.getRecommendations(userToken)
         if (initialImageUri != Uri.EMPTY) {
-            chatMessages = chatMessages + ChatUiMessage("User", "Processing shared image...")
+            chatMessages = chatMessages + ChatUiMessage(userRole, processingSharedImage)
             isThinking = true
             processImageUri(
                 initialImageUri,
@@ -117,6 +140,10 @@ fun RetailMobileApp(
                 repository,
                 isWearableSource = isWearableConnected,
                 userTier = userTier,
+                analyzingProductGlassesMsg = analyzingProductGlassesMsg,
+                analyzePhotoMsg = analyzePhotoMsg,
+                vtoRequiresPremiumMsg = vtoRequiresPremiumMsg,
+                vaultierRole = vaultierRole,
             ) { msg ->
                 chatMessages = chatMessages + msg
                 isThinking = false
@@ -147,17 +174,25 @@ fun RetailMobileApp(
         Scaffold(
             topBar = {
                 CenterAlignedTopAppBar(
-                    title = { Text("VAULTIER", style = VaultierTheme.typography.titleLarge, fontWeight = FontWeight.Black) },
+                    title = { Text(stringResource(R.string.vaultier), style = VaultierTheme.typography.titleLarge, fontWeight = FontWeight.Black) },
                     navigationIcon = {
-                        IconButton(onClick = onExit) {
-                            Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Exit")
+                        IconButton(onClick = {
+                            haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
+                            onExit()
+                        }) {
+                            Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = stringResource(R.string.cd_exit))
                         }
                     },
                     actions = {
                         val cartSize = cartItems.size
                         BadgedBox(badge = { if (cartSize > 0) Badge { Text(cartSize.toString()) } }) {
-                            IconButton(onClick = { if (cartSize > 0) showCheckout = true }) {
-                                Icon(Icons.Default.ShoppingCart, contentDescription = "Cart")
+                            IconButton(onClick = { 
+                                if (cartSize > 0) {
+                                    haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
+                                    showCheckout = true 
+                                }
+                            }) {
+                                Icon(Icons.Default.ShoppingCart, contentDescription = stringResource(R.string.cd_cart))
                             }
                         }
                     },
@@ -183,7 +218,7 @@ fun RetailMobileApp(
                             .padding(16.dp),
                 ) {
                     chatMessages.forEach { message ->
-                        ChatBubble(message.role, message.text)
+                        ChatBubble(message.role == userRole, message.text)
 
                         if (message.vtoImageUrl != null || message.vtoVideoUrl != null) {
                             VTOPreviewCard(message.vtoImageUrl, message.vtoVideoUrl)
@@ -197,7 +232,7 @@ fun RetailMobileApp(
                         }
 
                         if (message.compare.isNotEmpty()) {
-                            Text("Comparison View", style = VaultierTheme.typography.titleSmall, modifier = Modifier.padding(top = 16.dp))
+                            Text(stringResource(R.string.comparison_view), style = VaultierTheme.typography.titleSmall, modifier = Modifier.padding(top = 16.dp))
                             LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                                 items(message.compare) { p ->
                                     ProductItem(p, onAddToCart = {
@@ -228,9 +263,13 @@ fun RetailMobileApp(
                         if (chatMessages.isNotEmpty() && chatMessages.last().filters.isNotEmpty()) {
                             LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(bottom = 12.dp)) {
                                 items(chatMessages.last().filters) { filter ->
+                                    val filterText = stringResource(R.string.show_me_filter_options, filter)
                                     FilterChip(
                                         selected = false,
-                                        onClick = { textInput = "Show me $filter options" },
+                                        onClick = { 
+                                            haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
+                                            textInput = filterText
+                                        },
                                         label = { Text(filter) },
                                     )
                                 }
@@ -241,7 +280,7 @@ fun RetailMobileApp(
                             value = textInput,
                             onValueChange = { textInput = it },
                             modifier = Modifier.fillMaxWidth(),
-                            placeholder = { Text("Ask Vaultier...") },
+                            placeholder = { Text(stringResource(R.string.ask_vaultier)) },
                             shape = CircleShape,
                             colors =
                                 TextFieldDefaults.colors(
@@ -253,13 +292,17 @@ fun RetailMobileApp(
                             leadingIcon = {
                                 var showMenu by remember { mutableStateOf(false) }
                                 Box {
-                                    IconButton(onClick = { showMenu = true }) {
-                                        Icon(Icons.Default.Add, contentDescription = "Expansion List")
+                                    IconButton(onClick = { 
+                                        haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
+                                        showMenu = true 
+                                    }) {
+                                        Icon(Icons.Default.Add, contentDescription = stringResource(R.string.cd_expansion_list))
                                     }
                                     DropdownMenu(expanded = showMenu, onDismissRequest = { showMenu = false }) {
                                         DropdownMenuItem(
-                                            text = { Text("Try-On from Gallery") },
+                                            text = { Text(stringResource(R.string.try_on_from_gallery)) },
                                             onClick = {
+                                                haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
                                                 showMenu = false
                                                 galleryLauncher.launch(
                                                     androidx.activity.result.PickVisualMediaRequest(
@@ -275,8 +318,9 @@ fun RetailMobileApp(
                                 IconButton(
                                     enabled = textInput.isNotEmpty() && !isThinking,
                                     onClick = {
+                                        haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
                                         val userMsg = textInput
-                                        chatMessages = chatMessages + ChatUiMessage("User", userMsg)
+                                        chatMessages = chatMessages + ChatUiMessage(userRole, userMsg)
                                         textInput = ""
                                         isThinking = true
 
@@ -298,7 +342,7 @@ fun RetailMobileApp(
 
                                             chatMessages = chatMessages +
                                                 ChatUiMessage(
-                                                    role = "Vaultier",
+                                                    role = vaultierRole,
                                                     text = response.response,
                                                     vtoImageUrl = response.vtoImageUrl,
                                                     vtoVideoUrl = response.vtoVideoUrl,
@@ -323,7 +367,7 @@ fun RetailMobileApp(
                                         }
                                     },
                                 ) {
-                                    Icon(Icons.AutoMirrored.Filled.Send, contentDescription = "Send")
+                                    Icon(Icons.AutoMirrored.Filled.Send, contentDescription = stringResource(R.string.cd_send))
                                 }
                             },
                         )
@@ -339,6 +383,7 @@ fun VTOPreviewCard(
     imageUrl: String?,
     videoUrl: String?,
 ) {
+    val haptic = LocalHapticFeedback.current
     Card(
         modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp),
         shape = RoundedCornerShape(16.dp),
@@ -349,7 +394,7 @@ fun VTOPreviewCard(
                 if (imageUrl != null) {
                     AsyncImage(
                         model = imageUrl,
-                        contentDescription = "VTO Preview",
+                        contentDescription = stringResource(R.string.cd_vto_preview),
                         modifier = Modifier.fillMaxSize(),
                         contentScale = ContentScale.Fit,
                     )
@@ -361,7 +406,7 @@ fun VTOPreviewCard(
                     modifier = Modifier.padding(16.dp).align(Alignment.TopEnd),
                 ) {
                     Text(
-                        "AI GENERATED",
+                        stringResource(R.string.ai_generated),
                         color = VaultierTheme.colors.surface,
                         fontSize = 10.sp,
                         modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
@@ -374,11 +419,14 @@ fun VTOPreviewCard(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Column {
-                    Text("Virtual Try-On", fontWeight = FontWeight.Bold)
-                    Text("Higgsfield-1 Video Engine", style = VaultierTheme.typography.bodySmall, color = Color.Gray)
+                    Text(stringResource(R.string.virtual_try_on), fontWeight = FontWeight.Bold)
+                    Text(stringResource(R.string.higgsfield_video_engine), style = VaultierTheme.typography.bodySmall, color = Color.Gray)
                 }
-                IconButton(onClick = { /* Share */ }) {
-                    Icon(Icons.Default.Share, contentDescription = "Share")
+                IconButton(onClick = { 
+                    haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
+                    /* Share */ 
+                }) {
+                    Icon(Icons.Default.Share, contentDescription = stringResource(R.string.cd_share))
                 }
             }
         }
@@ -392,6 +440,10 @@ fun processImageUri(
     repository: ProductRepository,
     isWearableSource: Boolean,
     userTier: String,
+    analyzingProductGlassesMsg: String,
+    analyzePhotoMsg: String,
+    vtoRequiresPremiumMsg: String,
+    vaultierRole: String,
     onMessageAdded: (ChatUiMessage) -> Unit,
 ) {
     val contentResolver = context.contentResolver
@@ -404,9 +456,9 @@ fun processImageUri(
                     repository.discoveryChat(
                         message =
                             if (isWearableSource) {
-                                "Please analyze this product from my glasses camera."
+                                analyzingProductGlassesMsg
                             } else {
-                                "Please analyze this photo."
+                                analyzePhotoMsg
                             },
                         cartItems = emptyList(),
                         userToken = userToken,
@@ -425,9 +477,7 @@ fun processImageUri(
                     // Mobile app VTO requires a premium subscription
                     if (vtoImage != null || vtoVideo != null) {
                         if (userTier != "pro" && userTier != "premium") {
-                            finalResponseText =
-                                "Generating a Virtual Try-On video requires a Pro or Premium " +
-                                "subscription. Please upgrade your account to use this feature."
+                            finalResponseText = vtoRequiresPremiumMsg
                             vtoImage = null
                             vtoVideo = null
                         }
@@ -437,7 +487,7 @@ fun processImageUri(
                 kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.Main) {
                     onMessageAdded(
                         ChatUiMessage(
-                            role = "Vaultier",
+                            role = vaultierRole,
                             text = finalResponseText,
                             vtoImageUrl = vtoImage,
                             vtoVideoUrl = vtoVideo,
@@ -456,11 +506,9 @@ fun processImageUri(
 
 @Composable
 fun ChatBubble(
-    role: String,
+    isUser: Boolean,
     text: String,
 ) {
-    val isUser = role == "User"
-
     Row(
         modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = if (isUser) Arrangement.End else Arrangement.Start,
@@ -488,7 +536,7 @@ fun ProductGridSection(
 ) {
     Column(modifier = Modifier.padding(16.dp)) {
         Text(
-            text = "Shop Collection",
+            text = stringResource(R.string.shop_collection),
             style = VaultierTheme.typography.headlineSmall,
             modifier = Modifier.padding(vertical = 16.dp),
         )
@@ -514,12 +562,16 @@ fun ProductItem(
     onAddToCart: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val haptic = LocalHapticFeedback.current
     Box(
         modifier =
             modifier
                 .padding(8.dp)
                 .productCard()
-                .clickable { onAddToCart() },
+                .clickable { 
+                    haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
+                    onAddToCart() 
+                },
     ) {
         Column {
             Box(modifier = Modifier.fillMaxWidth().height(220.dp)) {
@@ -534,7 +586,7 @@ fun ProductItem(
                     modifier = Modifier.padding(12.dp).align(Alignment.TopStart),
                 ) {
                     Text(
-                        "LIMITED",
+                        stringResource(R.string.limited),
                         color = VaultierTheme.colors.surface,
                         fontSize = 8.sp,
                         fontWeight = FontWeight.Bold,
@@ -572,13 +624,16 @@ fun ProductItem(
                 }
                 Spacer(modifier = Modifier.height(12.dp))
                 Button(
-                    onClick = onAddToCart,
+                    onClick = {
+                        haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
+                        onAddToCart()
+                    },
                     modifier = Modifier.fillMaxWidth().height(48.dp),
                     shape = RoundedCornerShape(4.dp),
                     colors = ButtonDefaults.buttonColors(containerColor = VaultierTheme.colors.primary),
                     contentPadding = PaddingValues(0.dp),
                 ) {
-                    Text("ADD TO CART", style = VaultierTheme.typography.labelSmall, fontWeight = FontWeight.Bold)
+                    Text(stringResource(R.string.add_to_cart), style = VaultierTheme.typography.labelSmall, fontWeight = FontWeight.Bold)
                 }
             }
         }
@@ -593,13 +648,17 @@ fun CheckoutScreen(
     onPurchaseComplete: () -> Unit,
     isProcessing: Boolean = false,
 ) {
+    val haptic = LocalHapticFeedback.current
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("CHECKOUT", fontWeight = FontWeight.Bold) },
+                title = { Text(stringResource(R.string.checkout), fontWeight = FontWeight.Bold) },
                 navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
+                    IconButton(onClick = { 
+                        haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
+                        onBack() 
+                    }) {
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = stringResource(R.string.cd_back))
                     }
                 },
             )
@@ -619,10 +678,14 @@ fun CheckoutScreen(
             Spacer(modifier = Modifier.weight(1f))
 
             val total = items.sumOf { it.price }
-            Text("Total: $${String.format(java.util.Locale.US, "%.2f", total)}", style = VaultierTheme.typography.headlineMedium)
+            val formattedTotal = String.format(java.util.Locale.US, "%.2f", total)
+            Text(stringResource(R.string.total_price, formattedTotal), style = VaultierTheme.typography.headlineMedium)
 
             Button(
-                onClick = onPurchaseComplete,
+                onClick = { 
+                    haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
+                    onPurchaseComplete() 
+                },
                 modifier = Modifier.fillMaxWidth().height(56.dp).padding(top = 16.dp),
                 enabled = !isProcessing,
                 colors = ButtonDefaults.buttonColors(containerColor = VaultierTheme.colors.onSurface),
@@ -630,7 +693,7 @@ fun CheckoutScreen(
                 if (isProcessing) {
                     CircularProgressIndicator(color = VaultierTheme.colors.surface)
                 } else {
-                    Text("CONFIRM PURCHASE", color = VaultierTheme.colors.surface)
+                    Text(stringResource(R.string.confirm_purchase), color = VaultierTheme.colors.surface)
                 }
             }
         }

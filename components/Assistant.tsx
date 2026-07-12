@@ -4,9 +4,9 @@
 */
 
 import React, { useState, useRef, useEffect } from 'react';
-import { ChatMessage, Product } from '../types';
-import { sendMessageToGemini } from '../services/geminiService';
-import { PRODUCTS } from '../constants';
+import { ChatMessage, Product } from '@/types';
+import { sendMessageToGemini } from '@/services/geminiService';
+
 
 interface AssistantProps {
     onAddToCart?: (product: Product) => void;
@@ -44,9 +44,9 @@ const Assistant: React.FC<AssistantProps> = ({ onAddToCart }) => {
 
       // Handle Agentic Actions
       if (response.action && response.action.type === 'ADD_TO_CART') {
-          const product = PRODUCTS.find(p => p.id === response.action?.id);
+          const product = response.grid?.find((p: any) => p.id === response.action?.id);
           if (product && onAddToCart) {
-              onAddToCart(product);
+              onAddToCart(product as Product);
           }
       }
     } catch (error) {

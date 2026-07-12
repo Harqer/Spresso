@@ -5,7 +5,7 @@
 
 
 import React from 'react';
-import { JournalArticle } from '../types';
+import { JournalArticle } from '@/types';
 
 interface JournalDetailProps {
   article: JournalArticle;
