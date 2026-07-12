@@ -9,6 +9,7 @@ overrides:
   esbuild: '>=0.28.1'
   postcss: '>=8.5.17'
   undici: '>=8.7.0'
+  ws: '>=8.21.0'
 
 importers:
 
@@ -220,7 +221,7 @@ importers:
         specifier: ^14.0.1
         version: 14.0.1
       ws:
-        specifier: ^8.21.0
+        specifier: '>=8.21.0'
         version: 8.21.0
     devDependencies:
       '@eslint/eslintrc':
