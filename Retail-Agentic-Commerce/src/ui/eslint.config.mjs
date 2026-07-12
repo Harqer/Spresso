@@ -15,7 +15,7 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   {
-    ignores: [".next/**", "node_modules/**", "out/**", "build/**"]
+    ignores: [".next/**", "node_modules/**", "out/**", "build/**", "dist/**", "kui-foundations-react-external/**"]
   },
   ...compat.config({
     parser: "@typescript-eslint/parser",

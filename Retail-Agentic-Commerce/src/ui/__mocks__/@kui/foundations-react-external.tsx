@@ -86,7 +86,6 @@ export const Button = ({
   children,
   kind,
   color,
-  size: _size,
   className = "",
   onClick,
   disabled,
@@ -116,7 +115,6 @@ export const Button = ({
 export const Stack = ({
   children,
   gap,
-  align: _align,
   className = "",
 }: {
   children: React.ReactNode;
@@ -138,7 +136,6 @@ export const Flex = ({
   gap,
   align,
   justify,
-  wrap: _wrap,
   direction,
   className = "",
 }: {
@@ -198,7 +195,6 @@ export const Select = ({
   value,
   onValueChange,
   placeholder,
-  size: _size,
   disabled,
 }: {
   items: Array<{ value: string; children: string }>;

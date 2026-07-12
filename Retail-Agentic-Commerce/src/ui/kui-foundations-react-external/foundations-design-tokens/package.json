@@ -61,7 +61,6 @@
     "postbuild": "add-header ./dist",
     "clean": "rimraf dist && rimraf node_modules",
     "dev": "npm-watch build",
-    "lint": "eslint --ext .ts,.tsx,.js src/*.js scripts/**/*.js --fix",
     "type-check": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest"
