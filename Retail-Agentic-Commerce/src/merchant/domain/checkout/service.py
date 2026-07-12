@@ -556,15 +556,20 @@ async def complete_checkout_session(
     total_amount = next((t["amount"] for t in totals_data if t["type"] == "total"), 0)
 
     try:
-        # Validate Firebase Auth for Production Security
-        if payment_data.firebase_id_token:
-            is_valid = await FirebaseAuthService.verify_session(
-                payment_data.firebase_id_token
+        # Require Explicit Human-in-the-Loop Authorization
+        if not payment_data.firebase_id_token:
+            raise CheckoutServiceError(
+                "Explicit human-in-the-loop authorization required. Missing Firebase ID token.", "auth_failed"
             )
-            if not is_valid:
-                raise CheckoutServiceError(
-                    "Secure authentication failed. Session invalid.", "auth_failed"
-                )
+
+        # Validate Firebase Auth for Production Security
+        is_valid = await FirebaseAuthService.verify_session(
+            payment_data.firebase_id_token
+        )
+        if not is_valid:
+            raise CheckoutServiceError(
+                "Secure authentication failed. Session invalid.", "auth_failed"
+            )
 
         # Create a payment intent in Stripe
         await StripePaymentService.create_payment_intent(
