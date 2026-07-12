@@ -4,9 +4,7 @@ import android.net.Uri
 import android.util.Log
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
@@ -20,6 +18,7 @@ import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.Send
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -35,6 +34,7 @@ import coil.compose.AsyncImage
 import com.meta.wearable.retail.RetailSessionManager
 import com.meta.wearable.retail.ui.theme.*
 import com.meta.wearable.retail.util.GeminiNanoBanana2
+import com.meta.wearable.retail.util.WearSyncManager
 import kotlinx.coroutines.launch
 import java.io.InputStream
 
@@ -45,51 +45,79 @@ data class ChatUiMessage(
     val vtoVideoUrl: String? = null,
     val grid: List<Product> = emptyList(),
     val compare: List<Product> = emptyList(),
-    val filters: List<String> = emptyList()
+    val filters: List<String> = emptyList(),
 )
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RetailMobileApp(
     userToken: String,
+    userTier: String,
+    userName: String = "",
+    userEmail: String = "",
+    isWearableConnected: Boolean = false,
     sessionManager: RetailSessionManager,
     repository: ProductRepository,
     initialImageUri: Uri = Uri.EMPTY,
-    onExit: () -> Unit = {}
+    onExit: () -> Unit = {},
 ) {
+    val context = LocalContext.current
+    val wearSyncManager = remember { WearSyncManager(context) }
+    val nanoEngine = remember { GeminiNanoBanana2(context) }
     var textInput by remember { mutableStateOf("") }
-    var chatMessages by remember { mutableStateOf(listOf(
-        ChatUiMessage("Vaultier", "Welcome to Vaultier. I can help you discover products and perform virtual try-ons. Try sending a photo or asking about our collection!")
-    )) }
+    var chatMessages by remember {
+        mutableStateOf(
+            listOf(
+                ChatUiMessage(
+                    "Vaultier",
+                    "Welcome to Vaultier. I can help you discover products and perform virtual try-ons. " +
+                        "Try sending a photo or asking about our collection!",
+                ),
+            ),
+        )
+    }
     var isThinking by remember { mutableStateOf(false) }
     var products by remember { mutableStateOf<List<Product>>(emptyList()) }
     var cartItems by remember { mutableStateOf<List<Product>>(emptyList()) }
     var showCheckout by remember { mutableStateOf(false) }
-    
+
     val scope = rememberCoroutineScope()
     val scrollState = rememberScrollState()
-    val nanoEngine = remember { GeminiNanoBanana2() }
-    val context = LocalContext.current
 
-    val galleryLauncher = rememberLauncherForActivityResult(
-        ActivityResultContracts.PickVisualMedia()
-    ) { uri ->
-        if (uri != null) {
-            chatMessages = chatMessages + ChatUiMessage("User", "Analyzing photo...")
-            isThinking = true
-            processImageUri(uri, context, userToken, repository) { msg ->
-                chatMessages = chatMessages + msg
-                isThinking = false
-            }
+    // Sync products to Wear OS watch whenever they update
+    LaunchedEffect(cartItems) {
+        if (cartItems.isNotEmpty()) {
+            wearSyncManager.syncProducts(cartItems)
         }
     }
+
+    val galleryLauncher =
+        rememberLauncherForActivityResult(
+            ActivityResultContracts.PickVisualMedia(),
+        ) { uri ->
+            if (uri != null) {
+                chatMessages = chatMessages + ChatUiMessage("User", "Analyzing photo...")
+                isThinking = true
+                processImageUri(uri, context, userToken, repository, isWearableSource = false, userTier = userTier) { msg ->
+                    chatMessages = chatMessages + msg
+                    isThinking = false
+                }
+            }
+        }
 
     LaunchedEffect(Unit) {
         products = repository.getRecommendations(userToken)
         if (initialImageUri != Uri.EMPTY) {
             chatMessages = chatMessages + ChatUiMessage("User", "Processing shared image...")
             isThinking = true
-            processImageUri(initialImageUri, context, userToken, repository) { msg ->
+            processImageUri(
+                initialImageUri,
+                context,
+                userToken,
+                repository,
+                isWearableSource = isWearableConnected,
+                userTier = userTier,
+            ) { msg ->
                 chatMessages = chatMessages + msg
                 isThinking = false
             }
@@ -97,14 +125,23 @@ fun RetailMobileApp(
     }
 
     if (showCheckout) {
+        var isCheckingOut by remember { mutableStateOf(false) }
         CheckoutScreen(
             items = cartItems,
             onBack = { showCheckout = false },
-            onPurchaseComplete = { 
-                cartItems = emptyList()
-                showCheckout = false
-                sessionManager.showPurchaseSuccess()
-            }
+            isProcessing = isCheckingOut,
+            onPurchaseComplete = {
+                scope.launch {
+                    isCheckingOut = true
+                    val sessionId = repository.createCheckoutSession(cartItems, userToken, userName, userEmail)
+                    isCheckingOut = false
+                    if (sessionId != null) {
+                        cartItems = emptyList()
+                        showCheckout = false
+                        sessionManager.showPurchaseSuccess()
+                    }
+                }
+            },
         )
     } else {
         Scaffold(
@@ -118,33 +155,36 @@ fun RetailMobileApp(
                     },
                     actions = {
                         val cartSize = cartItems.size
-                        BadgedBox(badge = { if(cartSize > 0) Badge { Text(cartSize.toString()) } }) {
-                            IconButton(onClick = { if(cartSize > 0) showCheckout = true }) {
+                        BadgedBox(badge = { if (cartSize > 0) Badge { Text(cartSize.toString()) } }) {
+                            IconButton(onClick = { if (cartSize > 0) showCheckout = true }) {
                                 Icon(Icons.Default.ShoppingCart, contentDescription = "Cart")
                             }
                         }
                     },
-                    colors = CenterAlignedTopAppBarDefaults.centerAlignedTopAppBarColors(
-                        containerColor = Color.White
-                    )
+                    colors =
+                        TopAppBarDefaults.centerAlignedTopAppBarColors(
+                            containerColor = Color.White,
+                        ),
                 )
-            }
+            },
         ) { padding ->
             Column(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(padding)
-                    .background(Color(0xFFF8F8F8))
+                modifier =
+                    Modifier
+                        .fillMaxSize()
+                        .padding(padding)
+                        .background(Color(0xFFF8F8F8)),
             ) {
                 Column(
-                    modifier = Modifier
-                        .weight(1f)
-                        .verticalScroll(scrollState)
-                        .padding(16.dp)
+                    modifier =
+                        Modifier
+                            .weight(1f)
+                            .verticalScroll(scrollState)
+                            .padding(16.dp),
                 ) {
                     chatMessages.forEach { message ->
                         ChatBubble(message.role, message.text)
-                        
+
                         if (message.vtoImageUrl != null || message.vtoVideoUrl != null) {
                             VTOPreviewCard(message.vtoImageUrl, message.vtoVideoUrl)
                         }
@@ -160,8 +200,8 @@ fun RetailMobileApp(
                             Text("Comparison View", style = VaultierTheme.typography.titleSmall, modifier = Modifier.padding(top = 16.dp))
                             LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                                 items(message.compare) { p ->
-                                    ProductItem(p, onAddToCart = { 
-                                        if (!cartItems.contains(p)) cartItems = cartItems + p 
+                                    ProductItem(p, onAddToCart = {
+                                        if (!cartItems.contains(p)) cartItems = cartItems + p
                                     }, modifier = Modifier.width(200.dp))
                                 }
                             }
@@ -169,12 +209,12 @@ fun RetailMobileApp(
 
                         Spacer(modifier = Modifier.height(16.dp))
                     }
-                    
+
                     if (isThinking) {
                         CircularProgressIndicator(
                             modifier = Modifier.size(24.dp).align(Alignment.CenterHorizontally),
                             color = Color.Black,
-                            strokeWidth = 2.dp
+                            strokeWidth = 2.dp,
                         )
                     }
                 }
@@ -182,7 +222,7 @@ fun RetailMobileApp(
                 Surface(
                     tonalElevation = 8.dp,
                     shadowElevation = 8.dp,
-                    color = Color.White
+                    color = Color.White,
                 ) {
                     Column(modifier = Modifier.padding(16.dp)) {
                         if (chatMessages.isNotEmpty() && chatMessages.last().filters.isNotEmpty()) {
@@ -191,7 +231,7 @@ fun RetailMobileApp(
                                     FilterChip(
                                         selected = false,
                                         onClick = { textInput = "Show me $filter options" },
-                                        label = { Text(filter) }
+                                        label = { Text(filter) },
                                     )
                                 }
                             }
@@ -203,12 +243,13 @@ fun RetailMobileApp(
                             modifier = Modifier.fillMaxWidth(),
                             placeholder = { Text("Ask Vaultier...") },
                             shape = CircleShape,
-                            colors = TextFieldDefaults.colors(
-                                focusedContainerColor = Color(0xFFF0F0F0),
-                                unfocusedContainerColor = Color(0xFFF0F0F0),
-                                focusedIndicatorColor = Color.Transparent,
-                                unfocusedIndicatorColor = Color.Transparent
-                            ),
+                            colors =
+                                TextFieldDefaults.colors(
+                                    focusedContainerColor = Color(0xFFF0F0F0),
+                                    unfocusedContainerColor = Color(0xFFF0F0F0),
+                                    focusedIndicatorColor = Color.Transparent,
+                                    unfocusedIndicatorColor = Color.Transparent,
+                                ),
                             leadingIcon = {
                                 var showMenu by remember { mutableStateOf(false) }
                                 Box {
@@ -218,10 +259,14 @@ fun RetailMobileApp(
                                     DropdownMenu(expanded = showMenu, onDismissRequest = { showMenu = false }) {
                                         DropdownMenuItem(
                                             text = { Text("Try-On from Gallery") },
-                                            onClick = { 
+                                            onClick = {
                                                 showMenu = false
-                                                galleryLauncher.launch(androidx.activity.result.PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
-                                            }
+                                                galleryLauncher.launch(
+                                                    androidx.activity.result.PickVisualMediaRequest(
+                                                        ActivityResultContracts.PickVisualMedia.ImageOnly,
+                                                    ),
+                                                )
+                                            },
                                         )
                                     }
                                 }
@@ -234,24 +279,33 @@ fun RetailMobileApp(
                                         chatMessages = chatMessages + ChatUiMessage("User", userMsg)
                                         textInput = ""
                                         isThinking = true
-                                        
-                                        scope.launch {
-                                            val localIntent = nanoEngine.analyzeIntent(userMsg)
-                                            val response = if (localIntent.isHighConfidence) {
-                                                repository.discoveryChat(userMsg, cartItems, userToken, localContext = localIntent.context)
-                                            } else {
-                                                repository.discoveryChat(userMsg, cartItems, userToken)
-                                            }
 
-                                            chatMessages = chatMessages + ChatUiMessage(
-                                                role = "Vaultier", 
-                                                text = response.response,
-                                                vtoImageUrl = response.vtoImageUrl,
-                                                vtoVideoUrl = response.vtoVideoUrl,
-                                                grid = response.grid,
-                                                compare = response.compare,
-                                                filters = response.filters
-                                            )
+                                        scope.launch {
+                                            // Provide a default user ID for rate limiting, e.g., the user's email or token hash
+                                            val userId = userEmail.ifEmpty { "default_user" }
+                                            val localIntent = nanoEngine.analyzeIntent(userId, userMsg)
+                                            val response =
+                                                if (localIntent.isHighConfidence) {
+                                                    repository.discoveryChat(
+                                                        userMsg,
+                                                        cartItems,
+                                                        userToken,
+                                                        localContext = localIntent.context,
+                                                    )
+                                                } else {
+                                                    repository.discoveryChat(userMsg, cartItems, userToken)
+                                                }
+
+                                            chatMessages = chatMessages +
+                                                ChatUiMessage(
+                                                    role = "Vaultier",
+                                                    text = response.response,
+                                                    vtoImageUrl = response.vtoImageUrl,
+                                                    vtoVideoUrl = response.vtoVideoUrl,
+                                                    grid = response.grid,
+                                                    compare = response.compare,
+                                                    filters = response.filters,
+                                                )
 
                                             if (response.intent == "PURCHASE") {
                                                 val pid = response.productId
@@ -267,11 +321,11 @@ fun RetailMobileApp(
                                             isThinking = false
                                             scrollState.animateScrollTo(scrollState.maxValue)
                                         }
-                                    }
+                                    },
                                 ) {
                                     Icon(Icons.AutoMirrored.Filled.Send, contentDescription = "Send")
                                 }
-                            }
+                            },
                         )
                     }
                 }
@@ -281,11 +335,14 @@ fun RetailMobileApp(
 }
 
 @Composable
-fun VTOPreviewCard(imageUrl: String?, videoUrl: String?) {
+fun VTOPreviewCard(
+    imageUrl: String?,
+    videoUrl: String?,
+) {
     Card(
         modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp),
         shape = RoundedCornerShape(16.dp),
-        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
     ) {
         Column {
             Box(modifier = Modifier.fillMaxWidth().height(400.dp).background(Color.Black)) {
@@ -294,27 +351,27 @@ fun VTOPreviewCard(imageUrl: String?, videoUrl: String?) {
                         model = imageUrl,
                         contentDescription = "VTO Preview",
                         modifier = Modifier.fillMaxSize(),
-                        contentScale = ContentScale.Fit
+                        contentScale = ContentScale.Fit,
                     )
                 }
-                
+
                 Surface(
                     color = Color.Black.copy(alpha = 0.6f),
                     shape = CircleShape,
-                    modifier = Modifier.padding(16.dp).align(Alignment.TopEnd)
+                    modifier = Modifier.padding(16.dp).align(Alignment.TopEnd),
                 ) {
                     Text(
                         "AI GENERATED",
                         color = Color.White,
                         fontSize = 10.sp,
-                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
+                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
                     )
                 }
             }
             Row(
                 modifier = Modifier.fillMaxWidth().padding(16.dp),
                 horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
+                verticalAlignment = Alignment.CenterVertically,
             ) {
                 Column {
                     Text("Virtual Try-On", fontWeight = FontWeight.Bold)
@@ -333,31 +390,62 @@ fun processImageUri(
     context: android.content.Context,
     userToken: String,
     repository: ProductRepository,
-    onMessageAdded: (ChatUiMessage) -> Unit
+    isWearableSource: Boolean,
+    userTier: String,
+    onMessageAdded: (ChatUiMessage) -> Unit,
 ) {
-    // Industrial Logic: Image Analysis Implementation
     val contentResolver = context.contentResolver
     try {
         val inputStream: InputStream? = contentResolver.openInputStream(uri)
         val bytes = inputStream?.readBytes()
         if (bytes != null) {
             kotlinx.coroutines.CoroutineScope(kotlinx.coroutines.Dispatchers.IO).launch {
-                val response = repository.discoveryChat(
-                    message = "Please analyze this product from my glasses camera.",
-                    cartItems = emptyList(),
-                    userToken = userToken,
-                    imageBytes = bytes
-                )
+                val response =
+                    repository.discoveryChat(
+                        message =
+                            if (isWearableSource) {
+                                "Please analyze this product from my glasses camera."
+                            } else {
+                                "Please analyze this photo."
+                            },
+                        cartItems = emptyList(),
+                        userToken = userToken,
+                        imageBytes = bytes,
+                    )
+
+                var finalResponseText = response.response
+                var vtoImage = response.vtoImageUrl
+                var vtoVideo = response.vtoVideoUrl
+
+                if (isWearableSource) {
+                    // Glasses are for object identification only. Bypass VTO.
+                    vtoImage = null
+                    vtoVideo = null
+                } else {
+                    // Mobile app VTO requires a premium subscription
+                    if (vtoImage != null || vtoVideo != null) {
+                        if (userTier != "pro" && userTier != "premium") {
+                            finalResponseText =
+                                "Generating a Virtual Try-On video requires a Pro or Premium " +
+                                "subscription. Please upgrade your account to use this feature."
+                            vtoImage = null
+                            vtoVideo = null
+                        }
+                    }
+                }
+
                 kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.Main) {
-                    onMessageAdded(ChatUiMessage(
-                        role = "Vaultier",
-                        text = response.response,
-                        vtoImageUrl = response.vtoImageUrl,
-                        vtoVideoUrl = response.vtoVideoUrl,
-                        grid = response.grid,
-                        compare = response.compare,
-                        filters = response.filters
-                    ))
+                    onMessageAdded(
+                        ChatUiMessage(
+                            role = "Vaultier",
+                            text = finalResponseText,
+                            vtoImageUrl = vtoImage,
+                            vtoVideoUrl = vtoVideo,
+                            grid = response.grid,
+                            compare = response.compare,
+                            filters = response.filters,
+                        ),
+                    )
                 }
             }
         }
@@ -367,44 +455,51 @@ fun processImageUri(
 }
 
 @Composable
-fun ChatBubble(role: String, text: String) {
+fun ChatBubble(
+    role: String,
+    text: String,
+) {
     val isUser = role == "User"
-    
+
     Row(
         modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = if (isUser) Arrangement.End else Arrangement.Start
+        horizontalArrangement = if (isUser) Arrangement.End else Arrangement.Start,
     ) {
         Box(
-            modifier = Modifier
-                .widthIn(max = 300.dp)
-                .then(if (isUser) Modifier.userChatBubble() else Modifier.assistantChatBubble())
+            modifier =
+                Modifier
+                    .widthIn(max = 300.dp)
+                    .then(if (isUser) Modifier.userChatBubble() else Modifier.assistantChatBubble()),
         ) {
             Text(
                 text = text,
                 modifier = Modifier.padding(12.dp),
                 color = if (isUser) Color.White else Color.Black,
-                style = VaultierTheme.typography.bodyMedium
+                style = VaultierTheme.typography.bodyMedium,
             )
         }
     }
 }
 
 @Composable
-fun ProductGridSection(products: List<Product>, onAddToCart: (Product) -> Unit) {
+fun ProductGridSection(
+    products: List<Product>,
+    onAddToCart: (Product) -> Unit,
+) {
     Column(modifier = Modifier.padding(16.dp)) {
         Text(
             text = "Shop Collection",
             style = VaultierTheme.typography.headlineSmall,
-            modifier = Modifier.padding(vertical = 16.dp)
+            modifier = Modifier.padding(vertical = 16.dp),
         )
-        
+
         products.chunked(2).forEach { pair ->
             Row(modifier = Modifier.fillMaxWidth()) {
                 pair.forEach { product ->
                     ProductItem(
-                        product = product, 
+                        product = product,
                         onAddToCart = { onAddToCart(product) },
-                        modifier = Modifier.weight(1f)
+                        modifier = Modifier.weight(1f),
                     )
                 }
                 if (pair.size == 1) Spacer(modifier = Modifier.weight(1f))
@@ -415,15 +510,16 @@ fun ProductGridSection(products: List<Product>, onAddToCart: (Product) -> Unit) 
 
 @Composable
 fun ProductItem(
-    product: Product, 
-    onAddToCart: () -> Unit, 
-    modifier: Modifier = Modifier
+    product: Product,
+    onAddToCart: () -> Unit,
+    modifier: Modifier = Modifier,
 ) {
     Box(
-        modifier = modifier
-            .padding(8.dp)
-            .productCard()
-            .clickable { onAddToCart() }
+        modifier =
+            modifier
+                .padding(8.dp)
+                .productCard()
+                .clickable { onAddToCart() },
     ) {
         Column {
             Box(modifier = Modifier.fillMaxWidth().height(220.dp)) {
@@ -431,47 +527,47 @@ fun ProductItem(
                     model = product.imageUrl,
                     contentDescription = product.name,
                     modifier = Modifier.fillMaxSize(),
-                    contentScale = ContentScale.Crop
+                    contentScale = ContentScale.Crop,
                 )
                 Surface(
                     color = Color(0xFF2C2A26),
-                    modifier = Modifier.padding(12.dp).align(Alignment.TopStart)
+                    modifier = Modifier.padding(12.dp).align(Alignment.TopStart),
                 ) {
                     Text(
-                        "LIMITED", 
-                        color = Color.White, 
-                        fontSize = 8.sp, 
+                        "LIMITED",
+                        color = Color.White,
+                        fontSize = 8.sp,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp),
-                        letterSpacing = 1.sp
+                        letterSpacing = 1.sp,
                     )
                 }
             }
-            
+
             Column(modifier = Modifier.padding(16.dp)) {
                 Text(
-                    text = product.category.uppercase(), 
+                    text = product.category.uppercase(),
                     style = VaultierTheme.typography.labelSmall,
                     color = Color.Gray,
-                    letterSpacing = 1.sp
+                    letterSpacing = 1.sp,
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
+                    verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Text(
-                        text = product.name, 
+                        text = product.name,
                         style = VaultierTheme.typography.titleMedium,
                         modifier = Modifier.weight(1f),
                         maxLines = 1,
-                        overflow = TextOverflow.Ellipsis
+                        overflow = TextOverflow.Ellipsis,
                     )
                     Text(
                         text = "$${product.price}",
                         style = VaultierTheme.typography.bodyLarge,
-                        fontWeight = FontWeight.Light
+                        fontWeight = FontWeight.Light,
                     )
                 }
                 Spacer(modifier = Modifier.height(12.dp))
@@ -480,7 +576,7 @@ fun ProductItem(
                     modifier = Modifier.fillMaxWidth().height(48.dp),
                     shape = RoundedCornerShape(4.dp),
                     colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF2C2A26)),
-                    contentPadding = PaddingValues(0.dp)
+                    contentPadding = PaddingValues(0.dp),
                 ) {
                     Text("ADD TO CART", fontSize = 10.sp, letterSpacing = 2.sp, fontWeight = FontWeight.Bold)
                 }
@@ -492,10 +588,10 @@ fun ProductItem(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CheckoutScreen(
-    items: List<Product>, 
-    onBack: () -> Unit, 
+    items: List<Product>,
+    onBack: () -> Unit,
     onPurchaseComplete: () -> Unit,
-    isProcessing: Boolean = false
+    isProcessing: Boolean = false,
 ) {
     Scaffold(
         topBar = {
@@ -505,9 +601,9 @@ fun CheckoutScreen(
                     IconButton(onClick = onBack) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
                     }
-                }
+                },
             )
-        }
+        },
     ) { padding ->
         Column(modifier = Modifier.fillMaxSize().padding(padding).padding(16.dp)) {
             items.forEach { item ->
@@ -519,20 +615,23 @@ fun CheckoutScreen(
                     }
                 }
             }
-            
+
             Spacer(modifier = Modifier.weight(1f))
-            
+
             val total = items.sumOf { it.price }
-            Text("Total: $${String.format("%.2f", total)}", style = VaultierTheme.typography.headlineMedium)
-            
+            Text("Total: $${String.format(java.util.Locale.US, "%.2f", total)}", style = VaultierTheme.typography.headlineMedium)
+
             Button(
                 onClick = onPurchaseComplete,
                 modifier = Modifier.fillMaxWidth().height(56.dp).padding(top = 16.dp),
                 enabled = !isProcessing,
-                colors = ButtonDefaults.buttonColors(containerColor = Color.Black)
+                colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
             ) {
-                if (isProcessing) CircularProgressIndicator(color = Color.White)
-                else Text("CONFIRM PURCHASE")
+                if (isProcessing) {
+                    CircularProgressIndicator(color = Color.White)
+                } else {
+                    Text("CONFIRM PURCHASE")
+                }
             }
         }
     }
@@ -545,7 +644,7 @@ fun CheckoutScreenPreview() {
         CheckoutScreen(
             items = listOf(Product("1", "SKU", "Classic Shirt", 89.0, "", "Apparel")),
             onBack = {},
-            onPurchaseComplete = {}
+            onPurchaseComplete = {},
         )
     }
 }

@@ -15,7 +15,7 @@ fun ContentScope.buildWelcome(onStart: () -> Unit) {
             label = "Start Discovery",
             style = ButtonStyle.PRIMARY,
             iconName = IconName.EYE,
-            onClick = onStart
+            onClick = onStart,
         )
     }
 }
@@ -43,7 +43,7 @@ fun ContentScope.buildSuccess() {
 fun ContentScope.buildStreaming(isOn: Boolean) {
     val iconName = if (isOn) IconName.VIDEO_CAMERA else IconName.VIDEO_CAMERA_OFF
     val statusText = if (isOn) "Live Pulse: Active" else "Pulse: Standby"
-    
+
     flexBox(direction = Direction.COLUMN, gap = 8, padding = 12, alignment = Alignment.END, background = FlexBoxBackground.NONE) {
         flexBox(direction = Direction.ROW, gap = 8) {
             icon(name = iconName, style = IconStyle.FILLED)

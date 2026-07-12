@@ -1,0 +1,4 @@
+com.aura.retail.watch
+mipmap ic_launcher
+mipmap ic_launcher_round
+string vaultier_watch_app_name

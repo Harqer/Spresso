@@ -14,7 +14,7 @@ data class VaultierColors(
     val secondary: Color = Color(0xFFF5F5F5),
     val accent: Color = Color(0xFFE47E3A),
     val surface: Color = Color.White,
-    val onSurface: Color = Color.Black
+    val onSurface: Color = Color.Black,
 )
 
 val LocalVaultierColors = staticCompositionLocalOf { VaultierColors() }
@@ -39,24 +39,26 @@ object VaultierTheme {
 @Composable
 fun VaultierTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
-    val colors = if (darkTheme) {
-        VaultierColors(primary = Color.White, onSurface = Color.White, surface = Color.Black)
-    } else {
-        VaultierColors()
-    }
+    val colors =
+        if (darkTheme) {
+            VaultierColors(primary = Color.White, onSurface = Color.White, surface = Color.Black)
+        } else {
+            VaultierColors()
+        }
 
     CompositionLocalProvider(
-        LocalVaultierColors provides colors
+        LocalVaultierColors provides colors,
     ) {
         MaterialTheme(
-            colorScheme = lightColorScheme(
-                primary = colors.primary,
-                surface = colors.surface,
-                onSurface = colors.onSurface
-            ),
-            content = content
+            colorScheme =
+                lightColorScheme(
+                    primary = colors.primary,
+                    surface = colors.surface,
+                    onSurface = colors.onSurface,
+                ),
+            content = content,
         )
     }
 }

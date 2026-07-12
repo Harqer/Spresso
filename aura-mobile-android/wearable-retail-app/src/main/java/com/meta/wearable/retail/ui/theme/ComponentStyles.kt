@@ -11,13 +11,16 @@ import androidx.compose.ui.unit.dp
 // Replaced experimental Style API with stable Modifier extensions
 
 @Composable
-fun Modifier.userChatBubble(): Modifier = this
-    .background(Color(0xFF2C2A26), RoundedCornerShape(12.dp))
+fun Modifier.userChatBubble(): Modifier =
+    this
+        .background(Color(0xFF2C2A26), RoundedCornerShape(12.dp))
 
 @Composable
-fun Modifier.assistantChatBubble(): Modifier = this
-    .background(Color.White, RoundedCornerShape(12.dp))
+fun Modifier.assistantChatBubble(): Modifier =
+    this
+        .background(Color.White, RoundedCornerShape(12.dp))
 
 @Composable
-fun Modifier.productCard(): Modifier = this
-    .background(Color.White, RoundedCornerShape(8.dp))
+fun Modifier.productCard(): Modifier =
+    this
+        .background(Color.White, RoundedCornerShape(8.dp))
