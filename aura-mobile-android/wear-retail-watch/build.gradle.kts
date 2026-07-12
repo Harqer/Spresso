@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.aura.retail.watch"
-    compileSdk = 37
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.aura.retail.watch"
@@ -26,31 +26,33 @@ android {
             )
         }
     }
+
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
+
     buildFeatures {
         compose = true
     }
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("com.google.android.gms:play-services-wearable:18.1.0")
-    implementation("androidx.percentlayout:percentlayout:1.0.0")
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.play.services.wearable)
+    implementation(libs.androidx.percentlayout)
+    implementation(libs.androidx.legacy.support.v4)
+    implementation(libs.androidx.recyclerview)
     
     // Wear OS Compose Material3
-    implementation("androidx.wear.compose:compose-material3:1.6.2")
-    implementation("androidx.wear.compose:compose-foundation:1.6.2")
-    implementation("androidx.wear.compose:compose-navigation3:1.6.2")
+    implementation(libs.androidx.wear.compose.material3)
+    implementation(libs.androidx.wear.compose.foundation)
+    implementation(libs.androidx.wear.compose.navigation3)
     implementation(libs.androidx.datastore.preferences)
     
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.activity:activity-compose:1.8.2")
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.activity.compose)
     
-    debugImplementation("androidx.compose.ui:ui-tooling")
+    debugImplementation(libs.androidx.compose.ui.tooling)
 }

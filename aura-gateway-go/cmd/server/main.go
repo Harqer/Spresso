@@ -1,6 +1,7 @@
 package main
 
-import (
+	"bytes"
+	"context"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -11,34 +12,46 @@ import (
 	"sync"
 	"time"
 
+	"github.com/go-redis/redis/v8"
 	"github.com/gorilla/websocket"
 	"github.com/meta-wearable/aura-gateway/internal/auth"
 	"github.com/meta-wearable/aura-gateway/internal/proxy"
+	"github.com/meta-wearable/aura-gateway/internal/vault"
 )
 
 var upgrader = websocket.Upgrader{
 	CheckOrigin: func(r *http.Request) bool { return true },
 }
 
+var ctx = context.Background()
+
 type RateLimiter struct {
-	sync.RWMutex
-	limits map[string]int
+	client *redis.Client
+}
+
+func NewRateLimiter(redisUrl string) *RateLimiter {
+	opt, err := redis.ParseURL(redisUrl)
+	if err != nil {
+		log.Fatalf("Invalid Redis URL: %v", err)
+	}
+	return &RateLimiter{client: redis.NewClient(opt)}
 }
 
 func (rl *RateLimiter) Allow(userID string) bool {
-	rl.Lock()
-	defer rl.Unlock()
-	if rl.limits[userID] > 200 {
+	key := fmt.Sprintf("rate_limit:%s:%d", userID, time.Now().Unix()/60)
+	pipe := rl.client.Pipeline()
+	incr := pipe.Incr(ctx, key)
+	pipe.Expire(ctx, key, 2*time.Minute)
+	_, err := pipe.Exec(ctx)
+	if err != nil {
+		log.Printf("Redis error: %v", err)
 		return false
 	}
-	rl.limits[userID]++
-	return true
+	// Token bucket limit: 200 requests per minute
+	return incr.Val() <= 200
 }
 
-func verifyTurnstile(token string, remoteIP string) bool {
-	secret := os.Getenv("TURNSTILE_SECRET_KEY")
-	expectedHostname := os.Getenv("VAULTIER_DOMAIN")
-
+func verifyTurnstile(token string, remoteIP string, secret string, expectedHostname string) bool {
 	if secret == "" {
 		log.Fatalf("Critical Security Alert: TURNSTILE_SECRET_KEY is missing. Server shutting down.")
 	}
@@ -97,16 +110,32 @@ func sendJSONError(w http.ResponseWriter, message string, code int) {
 }
 
 func main() {
-	frontendAPI := os.Getenv("NEXT_PUBLIC_CLERK_FRONTEND_API")
+	secretVault, err := vault.NewVault()
+	if err != nil {
+		log.Fatalf("Failed to initialize secret vault: %v", err)
+	}
+
+	frontendAPI := secretVault.GetSecret("NEXT_PUBLIC_CLERK_FRONTEND_API")
 	audience := "insforge-api"
-	cortexAddr := os.Getenv("VAULTIER_CORTEX_ADDR")
+	
+	cortexAddr := secretVault.GetSecret("VAULTIER_CORTEX_ADDR")
 	if cortexAddr == "" {
 		cortexAddr = "http://localhost:8000"
 	}
+	
+	merchantApiKey := secretVault.GetSecret("MERCHANT_API_KEY")
+
+	redisUrl := secretVault.GetSecret("REDIS_URL")
+	if redisUrl == "" {
+		redisUrl = "redis://localhost:6379/0"
+	}
+
+	turnstileSecret := secretVault.GetSecret("TURNSTILE_SECRET_KEY")
+	vaultierDomain := secretVault.GetSecret("VAULTIER_DOMAIN")
 
 	authenticator := auth.NewClerkAuthenticator(frontendAPI, audience)
 	cortexProxy := proxy.NewCortexProxy(cortexAddr)
-	limiter := &RateLimiter{limits: make(map[string]int)}
+	limiter := NewRateLimiter(redisUrl)
 
 	http.HandleFunc("/products", func(w http.ResponseWriter, r *http.Request) {
 		globalProductCache.RLock()
@@ -146,14 +175,67 @@ func main() {
 		w.Write(body)
 	})
 
-	go func() {
-		for {
-			time.Sleep(1 * time.Minute)
-			limiter.Lock()
-			limiter.limits = make(map[string]int)
-			limiter.Unlock()
+	// Redis rate limiter handles expiration natively, so no background cleanup needed for RateLimiter.
+
+	http.HandleFunc("/discovery/chat", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodPost {
+			sendJSONError(w, "Method Not Allowed", http.StatusMethodNotAllowed)
+			return
 		}
-	}()
+
+		authHeader := r.Header.Get("Authorization")
+		if authHeader == "" {
+			sendJSONError(w, "Unauthorized", http.StatusUnauthorized)
+			return
+		}
+		token := strings.TrimPrefix(authHeader, "Bearer ")
+		identity, err := authenticator.VerifyToken(token)
+		if err != nil {
+			sendJSONError(w, "Unauthorized", http.StatusUnauthorized)
+			return
+		}
+		if !limiter.Allow(identity.ID) {
+			sendJSONError(w, "Rate Limit Exceeded", http.StatusTooManyRequests)
+			return
+		}
+
+		bodyBytes, err := io.ReadAll(r.Body)
+		if err != nil {
+			sendJSONError(w, "Bad Request", http.StatusBadRequest)
+			return
+		}
+
+		proxyReq, err := http.NewRequest(http.MethodPost, cortexAddr+"/discovery/chat", bytes.NewReader(bodyBytes))
+		if err != nil {
+			sendJSONError(w, "Internal Server Error", http.StatusInternalServerError)
+			return
+		}
+
+		proxyReq.Header.Set("Content-Type", "application/json")
+		proxyReq.Header.Set("X-API-Key", merchantApiKey)
+		// Pass identity info to cortex securely
+		proxyReq.Header.Set("X-Vaultier-User-Id", identity.ID)
+		proxyReq.Header.Set("X-Vaultier-User-Tier", identity.Tier)
+		
+		client := &http.Client{Timeout: 60 * time.Second}
+		resp, err := client.Do(proxyReq)
+		if err != nil {
+			log.Printf("Cortex /discovery/chat error: %v", err)
+			sendJSONError(w, "Cortex Unreachable", http.StatusServiceUnavailable)
+			return
+		}
+		defer resp.Body.Close()
+
+		respBody, err := io.ReadAll(resp.Body)
+		if err != nil {
+			sendJSONError(w, "Internal Server Error", http.StatusInternalServerError)
+			return
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		w.WriteHeader(resp.StatusCode)
+		w.Write(respBody)
+	})
 
 	http.HandleFunc("/discovery/trending", func(w http.ResponseWriter, r *http.Request) {
 		// In a production scenario, this would query a database or a recommendation engine.
@@ -214,7 +296,7 @@ func main() {
 		}
 
 		if clientPlatform == "web" {
-			if !verifyTurnstile(turnstileToken, remoteIP) {
+			if !verifyTurnstile(turnstileToken, remoteIP, turnstileSecret, vaultierDomain) {
 				log.Printf("Security Alert: Turnstile verification failed for user %s", identity.ID)
 				sendJSONError(w, "Forbidden: Security Check Failed", http.StatusForbidden)
 				return
@@ -225,7 +307,7 @@ func main() {
 			log.Printf("Native Mobile Connection Verified: %s", identity.ID)
 		} else {
 			// Default to strict: unknown clients must pass Turnstile or be rejected
-			if !verifyTurnstile(turnstileToken, remoteIP) {
+			if !verifyTurnstile(turnstileToken, remoteIP, turnstileSecret, vaultierDomain) {
 				log.Printf("Security Alert: Unknown client failed bot check.")
 				sendJSONError(w, "Forbidden: Security Check Required", http.StatusForbidden)
 				return

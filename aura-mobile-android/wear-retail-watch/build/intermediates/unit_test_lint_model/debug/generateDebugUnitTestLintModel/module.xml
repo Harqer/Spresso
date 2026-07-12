@@ -1,0 +1,19 @@
+<lint-module
+    format="1"
+    dir="REDACTED_PROJECT_ROOT/aura-mobile-android/wear-retail-watch"
+    name=":wear-retail-watch"
+    type="APP"
+    maven="Vaultier Retail:wear-retail-watch:unspecified"
+    agpVersion="9.2.1"
+    buildFolder="build"
+    bootClassPath="REDACTED_HOME/Android/Sdk/platforms/android-36/android.jar:REDACTED_HOME/Android/Sdk/build-tools/36.0.0/core-lambda-stubs.jar"
+    javaSourceLevel="17"
+    compileTarget="android-36"
+    highlightGradualR8Api="false">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="debug"/>
+</lint-module>

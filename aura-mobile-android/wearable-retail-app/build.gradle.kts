@@ -1,3 +1,6 @@
+import java.util.Properties
+import java.io.FileInputStream
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.plugin.compose")
@@ -8,7 +11,7 @@ plugins {
 
 android {
     namespace = "com.meta.wearable.retail"
-    compileSdk = 37
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.meta.wearable.retail"
@@ -22,14 +25,27 @@ android {
             useSupportLibrary = true
         }
 
-        val backendUrl: String = System.getenv("VAULTIER_BACKEND_URL") ?: "https://aura-edge-service.quantumcoin.workers.dev"
+        val properties = Properties()
+        val localPropertiesFile = rootProject.file("local.properties")
+        if (localPropertiesFile.exists()) {
+            properties.load(FileInputStream(localPropertiesFile))
+        }
+
+        val backendUrl: String = System.getenv("VAULTIER_BACKEND_URL") 
+            ?: properties.getProperty("VAULTIER_BACKEND_URL")
+            ?: "https://aura-edge-service.quantumcoin.workers.dev"
+        val googleId: String = System.getenv("GOOGLE_WEB_CLIENT_ID") 
+            ?: properties.getProperty("GOOGLE_WEB_CLIENT_ID")
+            ?: ""
+        val internalSecret: String = System.getenv("VAULTIER_INTERNAL_SECRET") 
+            ?: properties.getProperty("VAULTIER_INTERNAL_SECRET")
+            ?: ""
+        val vaultierDomain: String = System.getenv("VAULTIER_DOMAIN") 
+            ?: properties.getProperty("VAULTIER_DOMAIN")
+            ?: "vaultier.wearables.com"
+
         buildConfigField("String", "VAULTIER_BACKEND_URL", "\"$backendUrl\"")
-
-        val googleId: String = System.getenv("GOOGLE_WEB_CLIENT_ID") ?: ""
         buildConfigField("String", "GOOGLE_WEB_CLIENT_ID", "\"$googleId\"")
-
-        val internalSecret: String = System.getenv("VAULTIER_INTERNAL_SECRET") ?: ""
-        val vaultierDomain: String = System.getenv("VAULTIER_DOMAIN") ?: "vaultier.wearables.com"
         buildConfigField("String", "VAULTIER_DOMAIN", "\"$vaultierDomain\"")
         buildConfigField("String", "VAULTIER_INTERNAL_SECRET", "\"$internalSecret\"")
     }
@@ -42,12 +58,14 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -65,7 +83,7 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.foundation)
     implementation(libs.androidx.biometric.ktx)
-    
+
     // Hilt DI
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
@@ -76,18 +94,21 @@ dependencies {
     implementation(libs.firebase.auth)
 
     implementation(libs.androidx.datastore.preferences)
-    
+
     // Meta Wearables DAT SDK
-    implementation("com.meta.wearable:mwdat-core:0.7.0")
-    implementation("com.meta.wearable:mwdat-display:0.7.0")
-    implementation("com.meta.wearable:mwdat-camera:0.7.0")
-    debugImplementation("com.meta.wearable:mwdat-mockdevice:0.7.0")
-    
-    implementation("androidx.xr.glimmer:glimmer:1.0.0-alpha14")
-    implementation("androidx.xr.glimmer:glimmer-google-fonts:1.0.0-alpha14")
-    
+    implementation(libs.mwdat.core)
+    implementation(libs.mwdat.display)
+    implementation(libs.mwdat.camera)
+
+    // Wearable DataClient for Wear OS sync
+    implementation(libs.play.services.wearable)
+
+    implementation(libs.glimmer)
+    implementation(libs.glimmer.fonts)
+
     implementation(libs.coil.compose)
-    
+    implementation(libs.androidx.compose.material.icons.extended)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.androidx.test.espresso.core)
