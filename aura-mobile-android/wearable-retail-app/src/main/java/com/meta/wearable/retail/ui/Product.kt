@@ -10,5 +10,6 @@ data class Product(
     val tagline: String = "",
     val matchScore: Int = 98,
     val attributes: Map<String, String> = emptyMap(),
-    val sourceUrl: String? = null // The Web Origin (Agentic Acquisition)
+    // The Web Origin (Agentic Acquisition)
+    val sourceUrl: String? = null,
 )

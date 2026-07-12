@@ -1,11 +1,5 @@
 com.meta.wearable.retail
-drawable about
 drawable launch_scre
-drawable login_1
-drawable login_2
-drawable login_3
-drawable support
-drawable welcome
 mipmap ic_launcher
 mipmap ic_launcher_round
 string gcm_defaultSenderId

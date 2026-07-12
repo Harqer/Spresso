@@ -16,5 +16,5 @@ public final class BuildConfig {
   // Field from default config.
   public static final String VAULTIER_DOMAIN = "vaultier.wearables.com";
   // Field from default config.
-  public static final String VAULTIER_INTERNAL_SECRET = "";
+  public static final String VAULTIER_INTERNAL_SECRET = "vaultier_handshake_2026_1b4576a541788e76ea69deda";
 }

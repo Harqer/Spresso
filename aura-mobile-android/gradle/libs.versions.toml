@@ -2,6 +2,7 @@
 # Core Build Infrastructure
 androidGradlePlugin = "9.2.1"
 gradle = "9.6.1"
+mwdat_ver = "0.7.0"
 kotlin = "2.1.0"
 ksp = "2.1.0-1.0.29"
 
@@ -24,9 +25,16 @@ androidxDatastore = "1.1.1"
 coil = "2.7.0"
 biometric = "1.2.0-alpha05"
 
+# Wear OS
+wearCompose = "1.6.2"
+playServicesWearable = "18.1.0"
+percentLayout = "1.0.0"
+legacySupportV4 = "1.0.0"
+recyclerView = "1.3.2"
+
 # Wearables & Specialized
 mwdat = "0.7.0"
-glimmer = "1.0.0-alpha14"
+glimmer = "1.0.0-alpha15"
 
 [libraries]
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "androidxDatastore" }
@@ -55,7 +63,26 @@ firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.r
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth" }
 
 # Coil
+androidx-compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+
+glimmer = { module = "androidx.xr.glimmer:glimmer", version.ref = "glimmer" }
+glimmer-fonts = { module = "androidx.xr.glimmer:glimmer-google-fonts", version.ref = "glimmer" }
+
+# Meta Wearables DAT SDK
+mwdat-core = { module = "com.meta.wearable:mwdat_core", version.ref = "mwdat" }
+mwdat-display = { module = "com.meta.wearable:mwdat_display", version.ref = "mwdat" }
+mwdat-camera = { module = "com.meta.wearable:mwdat_camera", version.ref = "mwdat" }
+mwdat-mock = { module = "com.meta.wearable:mwdat_mock", version.ref = "mwdat_ver" }
+
+# Wear OS
+androidx-wear-compose-material3 = { module = "androidx.wear.compose:compose-material3", version.ref = "wearCompose" }
+androidx-wear-compose-foundation = { module = "androidx.wear.compose:compose-foundation", version.ref = "wearCompose" }
+androidx-wear-compose-navigation3 = { module = "androidx.wear.compose:compose-navigation3", version.ref = "wearCompose" }
+play-services-wearable = { module = "com.google.android.gms:play-services-wearable", version.ref = "playServicesWearable" }
+androidx-percentlayout = { module = "androidx.percentlayout:percentlayout", version.ref = "percentLayout" }
+androidx-legacy-support-v4 = { module = "androidx.legacy:legacy-support-v4", version.ref = "legacySupportV4" }
+androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerView" }
 
 # Testing
 androidx-test-core = { module = "androidx.test:core", version.ref = "androidxTest" }

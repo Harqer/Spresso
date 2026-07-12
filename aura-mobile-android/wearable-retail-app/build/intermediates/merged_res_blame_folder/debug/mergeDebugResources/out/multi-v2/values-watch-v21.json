@@ -4,7 +4,7 @@
             "outputFile": "com.meta.wearable.retail.wearable-retail-app-mergeDebugResources-70:/values-watch-v21/values-watch-v21.xml",
             "map": [
                 {
-                    "source": "/home/shaolin/.gradle/caches/9.6.1/transforms/c079ca8fa420f795505fced9bd8fc579/transformed/appcompat-1.6.1/res/values-watch-v21/values-watch-v21.xml",
+                    "source": "/home/shaolin/.gradle/caches/9.6.1/transforms/ec14d39013a2d7bbb0baf2431e0edd53/transformed/appcompat-1.6.1/res/values-watch-v21/values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",

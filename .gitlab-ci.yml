@@ -66,13 +66,26 @@ lint-and-autofix:
 # --- 2. INDUSTRIAL SECURITY SCANNING ---
 security-pulse:
   stage: security
-  image: node:22-bookworm
+  image: ubuntu:22.04
   script:
+    - "apt-get update && apt-get install -y curl npm python3-pip golang"
     - "npm install -g pnpm"
+    # JS/TS Audit
     - "pnpm install --no-frozen-lockfile"
     - "cd Retail-Agentic-Commerce/src/ui && pnpm audit"
     - "echo 'Security Gate: Edge dependencies verified.'"
-    - "cd ../../../aura-mobile-android && ./gradlew lint" # Android Security Audit
+    # Python Security Scan (Bandit & Safety)
+    - "cd ../../../Retail-Agentic-Commerce"
+    - "pip3 install --break-system-packages bandit safety uv"
+    - "bandit -r src/"
+    - "uv pip list --format=freeze > requirements.txt"
+    - "safety check -r requirements.txt || true" # warn for now
+    # Go Security Scan (Govulncheck)
+    - "cd ../aura-gateway-go"
+    - "go install golang.org/x/vuln/cmd/govulncheck@latest"
+    - "$(go env GOPATH)/bin/govulncheck ./..."
+    # Android Security Audit
+    - "cd ../aura-mobile-android && ./gradlew lint"
 
 # --- 3. IDENTITY & CLOUDFLARE HSM PULSE ---
 secure-secrets-gate:

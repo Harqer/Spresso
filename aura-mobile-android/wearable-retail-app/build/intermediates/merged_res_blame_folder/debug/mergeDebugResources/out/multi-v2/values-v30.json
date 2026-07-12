@@ -4,7 +4,7 @@
             "outputFile": "com.meta.wearable.retail.wearable-retail-app-mergeDebugResources-70:/values-v30/values-v30.xml",
             "map": [
                 {
-                    "source": "/home/shaolin/.gradle/caches/9.6.1/transforms/9a7fba48a329f14907194316ceb86ea0/transformed/material3-release/res/values-v30/values-v30.xml",
+                    "source": "/home/shaolin/.gradle/caches/9.6.1/transforms/79cee30f74bbb97671c0bea812fa8024/transformed/material3-release/res/values-v30/values-v30.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

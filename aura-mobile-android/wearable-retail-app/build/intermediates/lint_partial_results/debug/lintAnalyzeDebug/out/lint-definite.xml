@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 9.2.1" type="incidents">
+
+    <incident
+        id="VectorRaster"
+        severity="warning"
+        message="Limit vector icons sizes to 200×200 to keep icon drawing fast; see https://developer.android.com/studio/write/vector-asset-studio#when for more">
+        <location
+            file="${:wearable-retail-app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/launch_scre.xml"
+            line="1"
+            column="83"
+            startOffset="82"
+            endLine="1"
+            endColumn="88"
+            endOffset="87"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of com.google.devtools.ksp than 2.1.0-1.0.29 is available: 2.1.20-1.0.32">
+        <fix-replace
+            description="Change to 2.1.20-1.0.32"
+            family="Update versions"
+            oldString="2.1.0-1.0.29"
+            replacement="2.1.20-1.0.32"
+            priority="0"/>
+        <location
+            file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+            line="6"
+            column="7"
+            startOffset="109"
+            endLine="6"
+            endColumn="21"
+            endOffset="123"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.core:core-ktx than 1.15.0 is available: 1.19.0">
+        <fix-replace
+            description="Change to 1.19.0"
+            family="Update versions"
+            oldString="1.15.0"
+            replacement="1.19.0"
+            priority="0"/>
+        <location
+            file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+            line="9"
+            column="16"
+            startOffset="157"
+            endLine="9"
+            endColumn="24"
+            endOffset="165"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.8.7 is available: 2.11.0">
+        <fix-replace
+            description="Change to 2.11.0"
+            family="Update versions"
+            oldString="2.8.7"
+            replacement="2.11.0"
+            priority="0"/>
+        <location
+            file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+            line="10"
+            column="21"
+            startOffset="186"
+            endLine="10"
+            endColumn="28"
+            endOffset="193"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.lifecycle:lifecycle-viewmodel-compose than 2.8.7 is available: 2.11.0">
+        <fix-replace
+            description="Change to 2.11.0"
+            family="Update versions"
+            oldString="2.8.7"
+            replacement="2.11.0"
+            priority="0"/>
+        <location
+            file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+            line="10"
+            column="21"
+            startOffset="186"
+            endLine="10"
+            endColumn="28"
+            endOffset="193"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.activity:activity-compose than 1.10.0 is available: 1.13.0">
+        <fix-replace
+            description="Change to 1.13.0"
+            family="Update versions"
+            oldString="1.10.0"
+            replacement="1.13.0"
+            priority="0"/>
+        <location
+            file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+            line="11"
+            column="20"
+            startOffset="213"
+            endLine="11"
+            endColumn="28"
+            endOffset="221"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.compose:compose-bom than 2025.02.00 is available: 2026.06.01">
+        <fix-replace
+            description="Change to 2026.06.01"
+            family="Update versions"
+            oldString="2025.02.00"
+            replacement="2026.06.01"
+            priority="0"/>
+        <location
+            file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+            line="12"
+            column="22"
+            startOffset="243"
+            endLine="12"
+            endColumn="34"
+            endOffset="255"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.test:core than 1.6.1 is available: 1.7.0">
+        <fix-replace
+            description="Change to 1.7.0"
+            family="Update versions"
+            oldString="1.6.1"
+            replacement="1.7.0"
+            priority="0"/>
+        <location
+            file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+            line="13"
+            column="16"
+            startOffset="271"
+            endLine="13"
+            endColumn="23"
+            endOffset="278"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.test.ext:junit than 1.2.1 is available: 1.3.0">
+        <fix-replace
+            description="Change to 1.3.0"
+            family="Update versions"
+            oldString="1.2.1"
+            replacement="1.3.0"
+            priority="0"/>
+        <location
+            file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+            line="14"
+            column="19"
+            startOffset="297"
+            endLine="14"
+            endColumn="26"
+            endOffset="304"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.test:runner than 1.6.2 is available: 1.7.0">
+        <fix-replace
+            description="Change to 1.7.0"
+            family="Update versions"
+            oldString="1.6.2"
+            replacement="1.7.0"
+            priority="0"/>
+        <location
+            file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+            line="15"
+            column="22"
+            startOffset="326"
+            endLine="15"
+            endColumn="29"
+            endOffset="333"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.test.espresso:espresso-core than 3.6.1 is available: 3.7.0">
+        <fix-replace
+            description="Change to 3.7.0"
+            family="Update versions"
+            oldString="3.6.1"
+            replacement="3.7.0"
+            priority="0"/>
+        <location
+            file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+            line="16"
+            column="24"
+            startOffset="357"
+            endLine="16"
+            endColumn="31"
+            endOffset="364"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.hilt:hilt-navigation-compose than 1.2.0 is available: 1.4.0">
+        <fix-replace
+            description="Change to 1.4.0"
+            family="Update versions"
+            oldString="1.2.0"
+            replacement="1.4.0"
+            priority="0"/>
+        <location
+            file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+            line="20"
+            column="11"
+            startOffset="430"
+            endLine="20"
+            endColumn="18"
+            endOffset="437"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of com.google.firebase:firebase-bom than 33.10.0 is available: 34.16.0">
+        <fix-replace
+            description="Change to 34.16.0"
+            family="Update versions"
+            oldString="33.10.0"
+            replacement="34.16.0"
+            priority="0"/>
+        <location
+            file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+            line="21"
+            column="12"
+            startOffset="449"
+            endLine="21"
+            endColumn="21"
+            endOffset="458"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.datastore:datastore-preferences than 1.1.1 is available: 1.2.1">
+        <fix-replace
+            description="Change to 1.2.1"
+            family="Update versions"
+            oldString="1.1.1"
+            replacement="1.2.1"
+            priority="0"/>
+        <location
+            file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+            line="23"
+            column="21"
+            startOffset="496"
+            endLine="23"
+            endColumn="28"
+            endOffset="503"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of com.google.gms.google-services than 4.4.2 is available: 4.5.0">
+        <fix-replace
+            description="Change to 4.5.0"
+            family="Update versions"
+            oldString="4.4.2"
+            replacement="4.5.0"
+            priority="0"/>
+        <location
+            file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+            line="78"
+            column="70"
+            startOffset="3897"
+            endLine="78"
+            endColumn="77"
+            endOffset="3904"/>
+    </incident>
+
+    <incident
+        id="NewerVersionAvailable"
+        severity="warning"
+        message="A newer version of org.jetbrains.kotlin.android than 2.1.0 is available: 2.4.0">
+        <fix-replace
+            description="Change to 2.4.0"
+            family="Update versions"
+            oldString="2.1.0"
+            replacement="2.4.0"
+            priority="0"/>
+        <location
+            file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+            line="5"
+            column="10"
+            startOffset="95"
+            endLine="5"
+            endColumn="17"
+            endOffset="102"/>
+    </incident>
+
+    <incident
+        id="NewerVersionAvailable"
+        severity="warning"
+        message="A newer version of org.jetbrains.kotlin.plugin.compose than 2.1.0 is available: 2.4.0">
+        <fix-replace
+            description="Change to 2.4.0"
+            family="Update versions"
+            oldString="2.1.0"
+            replacement="2.4.0"
+            priority="0"/>
+        <location
+            file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+            line="5"
+            column="10"
+            startOffset="95"
+            endLine="5"
+            endColumn="17"
+            endOffset="102"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="This folder configuration (`v26`) is unnecessary; `minSdkVersion` is 30. Merge all the resources in this folder into `mipmap-anydpi`.">
+        <fix-data file="${:wearable-retail-app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-anydpi-v26" folderName="mipmap-anydpi" requiresApi="30"/>
+        <location
+            file="${:wearable-retail-app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-anydpi-v26"/>
+    </incident>
+
+    <incident
+        id="MonochromeLauncherIcon"
+        severity="warning"
+        message="The application adaptive icon is missing a monochrome tag">
+        <location
+            file="${:wearable-retail-app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-anydpi-v26/ic_launcher.xml"
+            line="1"
+            column="1"
+            startOffset="0"
+            endLine="4"
+            endColumn="17"
+            endOffset="207"/>
+    </incident>
+
+    <incident
+        id="MonochromeLauncherIcon"
+        severity="warning"
+        message="The application adaptive roundIcon is missing a monochrome tag">
+        <location
+            file="${:wearable-retail-app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-anydpi-v26/ic_launcher_round.xml"
+            line="1"
+            column="1"
+            startOffset="0"
+            endLine="4"
+            endColumn="17"
+            endOffset="207"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for com-meta-wearable-mwdat-core"
+            robot="true">
+            <fix-replace
+                description="Replace with metaMwdatCoreVersion = &quot;0.7.0&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="metaMwdatCoreVersion = &quot;0.7.0&quot;&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                    startOffset="574"
+                    endOffset="574"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with com-meta-wearable-mwdat-core = { module = &quot;com.meta.wearable:mwdat-core&quot;, version.ref = &quot;metaMwdatCoreVersion&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="com-meta-wearable-mwdat-core = { module = &quot;com.meta.wearable:mwdat-core&quot;, version.ref = &quot;metaMwdatCoreVersion&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                    startOffset="2143"
+                    endOffset="2143"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.com.meta.wearable.mwdat.core"
+                robot="true"
+                replacement="libs.com.meta.wearable.mwdat.core"
+                priority="0">
+                <range
+                    file="${:wearable-retail-app*projectDir}/build.gradle.kts"
+                    startOffset="2687"
+                    endOffset="2723"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:wearable-retail-app*projectDir}/build.gradle.kts"
+            line="83"
+            column="20"
+            startOffset="2687"
+            endLine="83"
+            endColumn="56"
+            endOffset="2723"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for com-meta-wearable-mwdat-display"
+            robot="true">
+            <fix-replace
+                description="Replace with metaMwdatDisplayVersion = &quot;0.7.0&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="metaMwdatDisplayVersion = &quot;0.7.0&quot;&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                    startOffset="574"
+                    endOffset="574"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with com-meta-wearable-mwdat-display = { module = &quot;com.meta.wearable:mwdat-display&quot;, version.ref = &quot;metaMwdatDisplayVersion&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="com-meta-wearable-mwdat-display = { module = &quot;com.meta.wearable:mwdat-display&quot;, version.ref = &quot;metaMwdatDisplayVersion&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                    startOffset="2143"
+                    endOffset="2143"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.com.meta.wearable.mwdat.display"
+                robot="true"
+                replacement="libs.com.meta.wearable.mwdat.display"
+                priority="0">
+                <range
+                    file="${:wearable-retail-app*projectDir}/build.gradle.kts"
+                    startOffset="2744"
+                    endOffset="2783"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:wearable-retail-app*projectDir}/build.gradle.kts"
+            line="84"
+            column="20"
+            startOffset="2744"
+            endLine="84"
+            endColumn="59"
+            endOffset="2783"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for com-meta-wearable-mwdat-camera"
+            robot="true">
+            <fix-replace
+                description="Replace with metaMwdatCameraVersion = &quot;0.7.0&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="metaMwdatCameraVersion = &quot;0.7.0&quot;&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                    startOffset="574"
+                    endOffset="574"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with com-meta-wearable-mwdat-camera = { module = &quot;com.meta.wearable:mwdat-camera&quot;, version.ref = &quot;metaMwdatCameraVersion&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="com-meta-wearable-mwdat-camera = { module = &quot;com.meta.wearable:mwdat-camera&quot;, version.ref = &quot;metaMwdatCameraVersion&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                    startOffset="2143"
+                    endOffset="2143"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.com.meta.wearable.mwdat.camera"
+                robot="true"
+                replacement="libs.com.meta.wearable.mwdat.camera"
+                priority="0">
+                <range
+                    file="${:wearable-retail-app*projectDir}/build.gradle.kts"
+                    startOffset="2804"
+                    endOffset="2842"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:wearable-retail-app*projectDir}/build.gradle.kts"
+            line="85"
+            column="20"
+            startOffset="2804"
+            endLine="85"
+            endColumn="58"
+            endOffset="2842"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for com-meta-wearable-mwdat-mockdevice"
+            robot="true">
+            <fix-replace
+                description="Replace with metaMwdatMockdeviceVersion = &quot;0.7.0&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="metaMwdatMockdeviceVersion = &quot;0.7.0&quot;&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                    startOffset="574"
+                    endOffset="574"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with com-meta-wearable-mwdat-mockdevice = { module = &quot;com.meta.wearable:mwdat-mockdevice&quot;, version.ref = &quot;metaMwdatMockdeviceVersion&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="com-meta-wearable-mwdat-mockdevice = { module = &quot;com.meta.wearable:mwdat-mockdevice&quot;, version.ref = &quot;metaMwdatMockdeviceVersion&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Downloads/aura-quiet-living/aura-mobile-android/gradle/libs.versions.toml"
+                    startOffset="2143"
+                    endOffset="2143"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.com.meta.wearable.mwdat.mockdevice"
+                robot="true"
+                replacement="libs.com.meta.wearable.mwdat.mockdevice"
+                priority="0">
+                <range
+                    file="${:wearable-retail-app*projectDir}/build.gradle.kts"
+                    startOffset="2868"
+                    endOffset="2910"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:wearable-retail-app*projectDir}/build.gradle.kts"
+            line="86"
+            column="25"
+            startOffset="2868"
+            endLine="86"
+            endColumn="67"
+            endOffset="2910"/>
+    </incident>
+
+</incidents>
