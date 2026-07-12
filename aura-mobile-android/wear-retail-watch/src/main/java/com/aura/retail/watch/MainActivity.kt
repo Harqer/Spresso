@@ -90,7 +90,8 @@ fun RetailScreen(products: List<Triple<String, String, String>>) {
                     modifier =
                         Modifier
                             .fillMaxWidth()
-                            .transformedHeight(this, transformationSpec),
+                            .transformedHeight(this, transformationSpec)
+                            .minimumVerticalContentPadding(ListHeaderDefaults.minimumTopListContentPadding),
                     transformation = SurfaceTransformation(transformationSpec),
                 ) {
                     Text(text = "Aura Retail")
@@ -110,7 +111,8 @@ fun RetailScreen(products: List<Triple<String, String, String>>) {
                         modifier =
                             Modifier
                                 .fillMaxWidth()
-                                .transformedHeight(this, transformationSpec),
+                                .transformedHeight(this, transformationSpec)
+                                .minimumVerticalContentPadding(ButtonDefaults.minimumVerticalListContentPadding),
                         transformation = SurfaceTransformation(transformationSpec),
                         onClick = {
                             if (id.isNotEmpty()) {

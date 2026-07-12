@@ -4,7 +4,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 // Industrial Hardening: Standardizing Style Extensions
@@ -13,14 +12,14 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun Modifier.userChatBubble(): Modifier =
     this
-        .background(Color(0xFF2C2A26), RoundedCornerShape(12.dp))
+        .background(VaultierTheme.colors.primary, RoundedCornerShape(12.dp))
 
 @Composable
 fun Modifier.assistantChatBubble(): Modifier =
     this
-        .background(Color.White, RoundedCornerShape(12.dp))
+        .background(VaultierTheme.colors.surface, RoundedCornerShape(12.dp))
 
 @Composable
 fun Modifier.productCard(): Modifier =
     this
-        .background(Color.White, RoundedCornerShape(8.dp))
+        .background(VaultierTheme.colors.surface, RoundedCornerShape(8.dp))
