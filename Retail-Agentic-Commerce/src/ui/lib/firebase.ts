@@ -1,13 +1,15 @@
 import { initializeApp, getApps } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
+// All Firebase config values are injected at runtime by Infisical.
+// Never hardcode credentials here — run: `infisical run -- <your-start-command>`
 const firebaseConfig = {
-  apiKey: "AIzaSyDR_OnsPrOJsEYeG4F6u2T4D-hRRcELc8A",
-  authDomain: "spresso-5561f.firebaseapp.com",
-  projectId: "spresso-5561f",
-  storageBucket: "spresso-5561f.firebasestorage.app",
-  messagingSenderId: "656500460421",
-  appId: "1:656500460421:web:24fa9e0696b8e596d252ec",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
