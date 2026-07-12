@@ -113,15 +113,29 @@ async def github_webhook(request: Request):
     elif not sig_header:
         logger.error("Security Alert: GitHub webhook triggered without signature.")
         raise HTTPException(status_code=400, detail="Missing signature")
-    
+
     # In a real scenario, validate HMAC SHA256 signature here using webhook_secret and payload
-    
+
     data = await request.json()
     event_type = request.headers.get("x-github-event", "unknown")
-    
+
     logger.info(f"Received GitHub Webhook Event: {event_type}")
-    
-    # Trigger A2A background task to handle the event (e.g., spawn remediation agent)
-    # This could integrate with our AgentExecutor or Genkit Flow
-    
+
+    if event_type == "dependabot_alert":
+        action = data.get("action", "unknown")
+        alert = data.get("alert", {})
+        summary = alert.get("security_advisory", {}).get("summary", "Unknown vulnerability")
+        package = alert.get("dependency", {}).get("package", {}).get("name", "Unknown package")
+        severity = alert.get("security_vulnerability", {}).get("severity", "unknown")
+        logger.warning(
+            f"DEPENDABOT ALERT [{severity.upper()}] | Action: {action} | "
+            f"Package: {package} | Issue: {summary}"
+        )
+
+    elif event_type == "code_scanning_alert":
+        action = data.get("action", "unknown")
+        alert = data.get("alert", {})
+        rule = alert.get("rule", {}).get("description", "Unknown rule")
+        logger.warning(f"CODE SCANNING ALERT | Action: {action} | Rule: {rule}")
+
     return {"status": "received", "event": event_type}
