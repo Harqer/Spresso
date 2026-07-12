@@ -1,0 +1,2 @@
+{"model_type": "google", "model_name": "gemini-1.5-flash", "seed": null, "generations": 10, "probes": "jailbreak,dan", "detectors": "", "eval_threshold": 0.5, "deprefix": false, "plugin_info": null, "list_probes": false, "list_detectors": false, "list_generators": false, "version": false, "verbose": 0, "generator_option": null, "report_prefix": "", "entry_type": "config"}
+{"entry_type": "init", "garak_version": "0.9.0.4", "start_time": "2026-07-12T19:10:13.826573", "run": "b73ae454-ffb1-4522-973f-09f02bc5390c"}
