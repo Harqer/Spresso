@@ -92,6 +92,7 @@ dependencies {
     // Firebase
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
+    implementation("com.google.firebase:firebase-ai")
 
     implementation(libs.androidx.datastore.preferences)
 

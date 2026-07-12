@@ -5,8 +5,7 @@
 
 
 import React, { useState, useMemo, useEffect } from 'react';
-import { PRODUCTS as FALLBACK_PRODUCTS } from '../constants';
-import { Product } from '../types';
+import { Product } from '@/types';
 import ProductCard from './ProductCard';
 
 const categories = ['All', 'Audio', 'Wearable', 'Mobile', 'Home'];
@@ -15,45 +14,27 @@ interface ProductGridProps {
   onProductClick: (product: Product) => void;
 }
 
-interface BackendProduct {
-  id: string;
-  sku: string;
-  name: string;
-  base_price: number;
-  stock_count: number;
-  min_margin: number;
-  image_url: string;
-  category: string;
-  tagline: string;
-  features: string[];
-  description: string;
-}
-
 const ProductGrid: React.FC<ProductGridProps> = ({ onProductClick }) => {
   const [activeCategory, setActiveCategory] = useState('All');
-  const [products, setProducts] = useState<Product[]>(FALLBACK_PRODUCTS);
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('/products');
+        const response = await fetch('/api/search-products', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query: 'high-end lifestyle tech products' })
+        });
         if (response.ok) {
-          const data: BackendProduct[] = await response.json();
-          // Transform backend schema to UI schema if needed
-          const transformed: Product[] = data.map((p) => ({
-            id: p.id,
-            name: p.name,
-            tagline: p.tagline || p.category,
-            description: p.description,
-            price: p.base_price / 100,
-            category: p.category as any, // Cast to expected enum-like type
-            imageUrl: p.image_url,
-            features: p.features || []
-          }));
-          setProducts(transformed);
+          const data = await response.json();
+          setProducts(data.products || []);
         }
       } catch (error) {
-        console.error("Failed to fetch live products, using fallback.", error);
+        console.error("Failed to fetch live products.", error);
+      } finally {
+        setLoading(false);
       }
     };
     fetchProducts();

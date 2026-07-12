@@ -5,7 +5,7 @@
 
 
 import React, { useState, useEffect } from 'react';
-import { BRAND_NAME } from '../constants';
+import { BRAND_NAME } from '@/constants';
 
 interface NavbarProps {
   onNavClick: (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => void;

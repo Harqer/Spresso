@@ -25,9 +25,7 @@ if (SENTRY_DSN) {
   });
 }
 
-if (!CLERK_PUBLISHABLE_KEY) {
-  throw new Error("Missing Publishable Key. Run `clerk env pull` to fetch your keys.");
-}
+// Clerk was removed in favor of Firebase, removing stale check
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -37,8 +35,18 @@ if (!rootElement) {
 const root = createRoot(rootElement);
 root.render(
   <React.StrictMode>
-    <AuthProvider>
-      <App />
-    </AuthProvider>
+    <Sentry.ErrorBoundary fallback={
+      <div className="min-h-screen bg-[#F5F2EB] flex flex-col items-center justify-center p-6 text-center">
+        <h1 className="text-3xl font-serif text-[#2C2A26] mb-4">Something went wrong.</h1>
+        <p className="text-[#5D5A53]">The application encountered an unexpected error. Our team has been notified.</p>
+        <button onClick={() => window.location.reload()} className="mt-8 px-6 py-3 bg-[#2C2A26] text-[#F5F2EB] text-sm uppercase tracking-widest hover:bg-[#433E38] transition-colors">
+          Reload Page
+        </button>
+      </div>
+    }>
+      <AuthProvider>
+        <App />
+      </AuthProvider>
+    </Sentry.ErrorBoundary>
   </React.StrictMode>
 );
