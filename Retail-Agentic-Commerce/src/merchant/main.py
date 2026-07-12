@@ -124,8 +124,11 @@ app.add_middleware(InternalSecurityMiddleware)
 # Include routers
 app.include_router(health_router)
 app.include_router(checkout_router)
-# ... (rest of routers)
 app.include_router(vaultier_checkout_router)
+app.include_router(discovery_router)
+app.include_router(metrics_router)
+app.include_router(products_router)
+app.include_router(webhooks_router)
 
 # Industrial Standard: Register the official Genkit Flow discovery handler
 @app.post("/discovery_flow", response_model=None)
