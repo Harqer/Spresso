@@ -4,15 +4,42 @@
 */
 
 
-import React from 'react';
-import { JOURNAL_ARTICLES } from '../constants';
-import { JournalArticle } from '../types';
+import React, { useState, useEffect } from 'react';
+import { JournalArticle } from '@/types';
 
 interface JournalProps {
   onArticleClick: (article: JournalArticle) => void;
 }
 
 const Journal: React.FC<JournalProps> = ({ onArticleClick }) => {
+  const [articles, setArticles] = useState<JournalArticle[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchJournal = async () => {
+      try {
+        const response = await fetch('/discovery/journal');
+        if (response.ok) {
+          const data = await response.json();
+          setArticles(data);
+        }
+      } catch (error) {
+        console.error("Failed to fetch journal articles:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchJournal();
+  }, []);
+
+  if (loading) {
+    return (
+      <section id="journal" className="bg-[#F5F2EB] py-32 px-6 md:px-12 flex items-center justify-center min-h-[500px]">
+        <div className="animate-pulse font-serif text-2xl tracking-widest text-[#A8A29E]">Loading Journal...</div>
+      </section>
+    );
+  }
+
   return (
     <section id="journal" className="bg-[#F5F2EB] py-32 px-6 md:px-12">
       <div className="max-w-[1800px] mx-auto">
@@ -24,7 +51,7 @@ const Journal: React.FC<JournalProps> = ({ onArticleClick }) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {JOURNAL_ARTICLES.map((article) => (
+            {articles.map((article) => (
                 <div key={article.id} className="group cursor-pointer flex flex-col text-left" onClick={() => onArticleClick(article)}>
                     <div className="w-full aspect-[4/3] overflow-hidden mb-8 bg-[#EBE7DE]">
                         <img 

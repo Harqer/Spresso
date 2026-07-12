@@ -6,9 +6,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useAuth } from './AuthProvider';
 import { Turnstile, type TurnstileInstance } from '@marsidev/react-turnstile';
-import { ChatMessage, Product } from '../types';
-import { sendMessageToGemini } from '../services/geminiService';
-import { PRODUCTS } from '../constants';
+import { ChatMessage, Product } from '@/types';
+import { sendMessageToGemini } from '@/services/geminiService';
+
 
 interface ChatDiscoveryProps {
   onAddToCart: (product: Product) => void;
@@ -24,6 +24,7 @@ const ChatDiscovery: React.FC<ChatDiscoveryProps> = ({ onAddToCart, onProductCli
   const [isThinking, setIsThinking] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedVariants, setSelectedVariants] = useState<Record<string, string>>({});
   const scrollRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const turnstileRef = useRef<TurnstileInstance>(null);
@@ -59,26 +60,29 @@ const ChatDiscovery: React.FC<ChatDiscoveryProps> = ({ onAddToCart, onProductCli
           throw new Error("Security check required. Please wait for Turnstile to verify.");
       }
 
-      const history = messages.map(m => ({ role: m.role, text: m.text }));
-      const response = await sendMessageToGemini(history, text, token, [], imageBase64, turnstileToken);
+      const placeholderMsgId = Date.now();
+      setMessages(prev => [...prev, { role: 'model', text: '', timestamp: placeholderMsgId }]);
 
-      const aiMsg: ChatMessage = {
-        role: 'model',
+      const history = messages.map(m => ({ role: m.role, text: m.text }));
+      const response = await sendMessageToGemini(history, text, token, [], imageBase64, turnstileToken, (progressText) => {
+          setMessages(prev => prev.map(m => m.timestamp === placeholderMsgId ? { ...m, text: progressText } : m));
+      });
+
+      setMessages(prev => prev.map(m => m.timestamp === placeholderMsgId ? {
+        ...m,
         text: response.text,
-        timestamp: Date.now(),
         grid: response.grid,
         compare: response.compare,
         vto_image_url: response.vto_image_url,
         vto_video_url: response.vto_video_url,
         citation: response.citation
-      };
-      setMessages(prev => [...prev, aiMsg]);
+      } : m));
 
       // Handle Agentic Actions
       if (response.action && response.action.type === 'ADD_TO_CART') {
-          const product = PRODUCTS.find(p => p.id === response.action?.id);
+          const product = response.grid?.find((p: any) => p.id === response.action?.id);
           if (product) {
-              onAddToCart(product);
+              onAddToCart(product as Product);
           }
       }
     } catch (error) {
@@ -179,8 +183,9 @@ const ChatDiscovery: React.FC<ChatDiscoveryProps> = ({ onAddToCart, onProductCli
                             <p className="text-xs text-[#A8A29E] uppercase tracking-widest mb-4">Higgsfield-1 Motion Engine</p>
                             <button
                                 onClick={() => {
-                                    // Extract the primary product for VTO (usually the first in the catalog for this build)
-                                    onAddToCart(PRODUCTS[0]);
+                                    if (msg.grid && msg.grid.length > 0) {
+                                        onAddToCart(msg.grid[0] as unknown as Product);
+                                    }
                                 }}
                                 className="w-full py-4 bg-[#2C2A26] text-white text-xs uppercase tracking-widest font-bold"
                             >
@@ -190,24 +195,102 @@ const ChatDiscovery: React.FC<ChatDiscoveryProps> = ({ onAddToCart, onProductCli
                     </div>
                 )}
 
+                {/* Filters UI */}
+                {msg.filters && msg.filters.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mb-6 animate-fade-in-up">
+                        {msg.filters.map((filter, i) => (
+                            <span key={i} className="px-3 py-1 bg-[#F5F2EB] text-[#5D5A53] border border-[#D6D1C7] rounded-full text-[10px] uppercase tracking-widest font-bold">
+                                {filter}
+                            </span>
+                        ))}
+                    </div>
+                )}
+
                 {/* Grid UI */}
                 {msg.grid && (
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 animate-fade-in-up">
-                        {msg.grid.map(id => {
-                            const p = PRODUCTS.find(prod => prod.id === id);
+                        {msg.grid.map((p: any) => {
                             if (!p) return null;
+                            const hasVariants = p.variants && p.variants.length > 0;
+                            const currentVariantId = selectedVariants[p.id] || (hasVariants ? p.variants[0].id : null);
+                            const currentVariant = hasVariants ? p.variants.find((v: any) => v.id === currentVariantId) : null;
+                            
+                            const handleAddToCart = (e: React.MouseEvent) => {
+                                e.stopPropagation();
+                                const productToAdd = { ...p };
+                                if (currentVariant) {
+                                    productToAdd.id = currentVariant.id;
+                                    productToAdd.name = `${p.name} - ${currentVariant.name}`;
+                                    productToAdd.price = currentVariant.price;
+                                }
+                                onAddToCart(productToAdd as Product);
+                            };
+
                             return (
-                                <div key={id} className="bg-white border border-[#EBE7DE] overflow-hidden group cursor-pointer" onClick={() => onProductClick(p)}>
-                                    <div className="aspect-[4/3] bg-[#EBE7DE] overflow-hidden">
-                                        <img src={p.imageUrl} className="w-full h-full object-cover transition-transform group-hover:scale-105" />
+                                <div key={p.id} className="bg-white border border-[#EBE7DE] overflow-hidden group cursor-pointer flex flex-col" onClick={() => onProductClick(p as Product)}>
+                                    <div className="aspect-[4/3] bg-[#EBE7DE] overflow-hidden relative">
+                                        {p.imageUrl ? (
+                                            <img src={p.imageUrl} className="w-full h-full object-cover transition-transform group-hover:scale-105" alt={p.name} />
+                                        ) : (
+                                            <div className="w-full h-full flex items-center justify-center text-[#A8A29E] text-xs uppercase tracking-widest">No Image Found</div>
+                                        )}
                                     </div>
-                                    <div className="p-4 space-y-1">
-                                        <h4 className="font-serif text-[#2C2A26]">{p.name}</h4>
-                                        <p className="text-xs text-[#A8A29E]">${p.price} • {p.tagline}</p>
+                                    <div className="p-4 space-y-3 flex-1 flex flex-col">
+                                        <div>
+                                            <h4 className="font-serif text-[#2C2A26]">{p.name}</h4>
+                                            <p className="text-xs text-[#A8A29E]">${currentVariant ? currentVariant.price : p.price} • {p.tagline}</p>
+                                        </div>
+                                        {hasVariants && (
+                                            <div className="mt-auto" onClick={(e) => e.stopPropagation()}>
+                                                <select 
+                                                    className="w-full bg-[#F5F2EB] border border-[#EBE7DE] text-[#2C2A26] text-xs py-2 px-3 outline-none"
+                                                    value={currentVariantId}
+                                                    onChange={(e) => setSelectedVariants(prev => ({ ...prev, [p.id]: e.target.value }))}
+                                                >
+                                                    {p.variants.map((v: any) => (
+                                                        <option key={v.id} value={v.id}>{v.name} - ${v.price}</option>
+                                                    ))}
+                                                </select>
+                                            </div>
+                                        )}
+                                        <button 
+                                            onClick={handleAddToCart}
+                                            className="w-full mt-2 py-3 bg-[#2C2A26] text-[#F5F2EB] text-[10px] uppercase tracking-widest font-bold hover:bg-[#433E38] transition-colors"
+                                        >
+                                            Add to Cart
+                                        </button>
                                     </div>
                                 </div>
                             );
                         })}
+                    </div>
+                )}
+
+                {/* Compare Table */}
+                {msg.compare && msg.compare.length > 0 && (
+                    <div className="mt-6 overflow-x-auto animate-fade-in-up border border-[#EBE7DE] rounded-xl bg-white shadow-sm">
+                        <table className="w-full text-xs text-left whitespace-nowrap">
+                            <thead className="bg-[#F5F2EB] border-b border-[#EBE7DE]">
+                                <tr>
+                                    {Object.keys(msg.compare[0]).map((key, i) => (
+                                        <th key={i} className="px-4 py-3 font-bold text-[#2C2A26] uppercase tracking-widest">
+                                            {key}
+                                        </th>
+                                    ))}
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y divide-[#EBE7DE]">
+                                {msg.compare.map((row: any, idx: number) => (
+                                    <tr key={idx} className="hover:bg-[#F5F2EB]/50 transition-colors">
+                                        {Object.values(row).map((val: any, j: number) => (
+                                            <td key={j} className="px-4 py-4 text-[#5D5A53]">
+                                                {String(val)}
+                                            </td>
+                                        ))}
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
                     </div>
                 )}
             </div>

@@ -7,6 +7,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
+import com.meta.wearable.retail.data.ThemeMode
 
 // Industrial Foundation: Color System
 data class VaultierColors(
@@ -38,11 +39,17 @@ object VaultierTheme {
 
 @Composable
 fun VaultierTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
+    themeMode: ThemeMode = ThemeMode.SYSTEM,
     content: @Composable () -> Unit,
 ) {
+    val isDark = when (themeMode) {
+        ThemeMode.LIGHT -> false
+        ThemeMode.DARK -> true
+        ThemeMode.SYSTEM -> isSystemInDarkTheme()
+    }
+
     val colors =
-        if (darkTheme) {
+        if (isDark) {
             VaultierColors(primary = Color.White, onSurface = Color.White, surface = Color.Black)
         } else {
             VaultierColors()

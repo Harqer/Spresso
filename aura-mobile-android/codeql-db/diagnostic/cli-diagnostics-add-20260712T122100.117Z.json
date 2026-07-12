@@ -1,0 +1,3 @@
+{"timestamp":"2026-07-12T08:20:59.968124759-04:00","source":{"id":"cli/file-coverage-baseline","name":"File coverage baseline telemetry"},"visibility":{"cliSummaryTable":false,"statusPage":false,"telemetry":true},"attributes":{"durationMilliseconds":272}}
+{"timestamp":"2026-07-12T08:20:59.976112033-04:00","source":{"id":"cli/platform","name":"Platform"},"visibility":{"cliSummaryTable":false,"statusPage":false,"telemetry":true},"attributes":{"name":"Linux","version":"6.17.0-35-generic","arch":"amd64"}}
+{"timestamp":"2026-07-12T08:21:00.082644128-04:00","source":{"id":"cli/platform","name":"Platform"},"visibility":{"cliSummaryTable":false,"statusPage":false,"telemetry":true},"attributes":{"name":"Linux","version":"6.17.0-35-generic","arch":"amd64"}}

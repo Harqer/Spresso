@@ -1,0 +1,12 @@
+---
+sourceLocationPrefix: /home/shaolin/Downloads/aura-quiet-living/aura-mobile-android
+baselineLinesOfCode: 2615
+unicodeNewlines: false
+columnKind: utf16
+primaryLanguage: java
+creationMetadata:
+  cliVersion: 2.26.0
+  creationTime: 2026-07-12T12:21:00.095529654Z
+overlayBaseDatabase: false
+overlayDatabase: false
+finalised: true

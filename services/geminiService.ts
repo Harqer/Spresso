@@ -9,7 +9,8 @@ export const sendMessageToGemini = async (
     userToken: string,
     cartItems: any[] = [],
     imageBase64?: string,
-    turnstileToken?: string
+    turnstileToken?: string,
+    onProgress?: (text: string) => void
 ): Promise<{
     text: string,
     action?: {type: string, id: string},
@@ -39,20 +40,57 @@ export const sendMessageToGemini = async (
         throw new Error("Vaultier intelligence is currently offline.");
     }
 
-    const data = await response.json();
+    const reader = response.body?.getReader();
+    if (!reader) throw new Error("ReadableStream not supported");
+    
+    const decoder = new TextDecoder("utf-8");
+    let resultData: any = null;
+    let buffer = "";
+    let accumulatedText = "";
+
+    while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buffer += decoder.decode(value, { stream: true });
+        
+        const lines = buffer.split('\n\n');
+        buffer = lines.pop() || ''; 
+        
+        for (const line of lines) {
+            if (line.startsWith('data: ')) {
+                const payload = line.slice(6);
+                try {
+                    const event = JSON.parse(payload);
+                    if (event.type === 'thought') {
+                        accumulatedText += event.text;
+                        if (onProgress) onProgress(accumulatedText);
+                    } else if (event.type === 'result') {
+                        resultData = event.data;
+                    }
+                } catch {
+                    // Ignore parse errors on incomplete chunks
+                }
+            }
+        }
+    }
+
+    if (!resultData) {
+        // Fallback if no result data was sent
+        return { text: accumulatedText || "No response received." };
+    }
 
     const result: any = {
-        text: data.response,
-        vto_image_url: data.vto_image_url,
-        vto_video_url: data.vto_video_url,
-        citation: data.citation,
-        grid: data.grid,
-        compare: data.compare,
-        filters: data.filters
+        text: accumulatedText || resultData.response,
+        vto_image_url: resultData.vto_image_url,
+        vto_video_url: resultData.vto_video_url,
+        citation: resultData.citation,
+        grid: resultData.grid,
+        compare: resultData.compare,
+        filters: resultData.filters
     };
 
-    if (data.intent === 'ADD_TO_CART' && data.product_id) {
-        result.action = { type: 'ADD_TO_CART', id: data.product_id };
+    if (resultData.intent === 'ADD_TO_CART' && resultData.product_id) {
+        result.action = { type: 'ADD_TO_CART', id: resultData.product_id };
     }
 
     return result;

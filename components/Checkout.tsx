@@ -7,8 +7,8 @@
 import React, { useState } from 'react';
 import { useAuth } from './AuthProvider';
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
-import { auth as firebaseAuth } from '../services/firebase';
-import { Product } from '../types';
+import { auth as firebaseAuth } from '@/services/firebase';
+import { Product } from '@/types';
 
 interface CheckoutProps {
   items: Product[];
