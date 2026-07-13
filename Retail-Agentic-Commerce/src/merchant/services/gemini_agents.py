@@ -172,6 +172,21 @@ class GeminiAgentService:
         current_cart = params.get("current_cart", [])
         image_data = params.get("image_data")
 
+        # --- CACHE CHECK (Industrial Optimization) ---
+        cache_key = None
+        if self.redis:
+            # Hash message + image + cart for uniqueness
+            payload_str = f"{user_message}:{image_data}:{json.dumps(current_cart)}"
+            payload_hash = hashlib.sha256(payload_str.encode()).hexdigest()
+            cache_key = f"vaultier:inference_cache:{payload_hash}"
+            try:
+                cached = self.redis.get(cache_key)
+                if cached:
+                    logger.debug(f"Inference Cache HIT: {cache_key}")
+                    return IntentResult.model_validate(json.loads(cached))
+            except Exception as e:
+                logger.error(f"Cache Retrieval Error: {e}")
+
         # 1. Load Dotprompt (Architectural Separation of Concerns)
         discovery_prompt = ai.prompt("discovery")
 
@@ -208,6 +223,14 @@ class GeminiAgentService:
         if result.intent == "VTO" and user_tier == "free":
             result.intent = "CHAT"
             result.response = "Motion Virtual Try-On is a premium feature. Join the Creator tier to see this in action."
+
+        # --- CACHE SET ---
+        if cache_key and self.redis:
+            try:
+                # TTL 1 hour for inference results
+                self.redis.setex(cache_key, 3600, json.dumps(result.model_dump()))
+            except Exception as e:
+                logger.error(f"Cache SET Error: {e}")
 
         # 5. Runtime Audit Pulse (Industrial Standard)
         # Embedding the response for live trace auditing
