@@ -50,7 +50,13 @@ class RequestLoggingMiddleware(BaseHTTPMiddleware):
     - Sensitive header redaction
     """
 
-    SENSITIVE_HEADERS = {"authorization", "x-api-key", "cookie"}
+    SENSITIVE_HEADERS = {
+        "authorization",
+        "x-api-key",
+        "cookie",
+        "x-vaultier-internal-key",
+        "x-firebase-id-token",
+    }
 
     # Endpoints to skip logging (health checks, static files)
     SKIP_ENDPOINTS = {"/health", "/healthz", "/ready", "/favicon.ico"}
