@@ -20,7 +20,7 @@ import logging
 from datetime import UTC, datetime
 from typing import Any, cast
 
-from sqlmodel import Session, select
+from sqlmodel import Session, col, select
 
 from src.merchant.db.models import CheckoutSession, CheckoutStatus, Product
 from src.merchant.domain.checkout.calculations import (
@@ -162,15 +162,20 @@ async def create_checkout_session(
         f"total qty={total_quantity}"
     )
 
+    # Fetch all products in a single batch to avoid N+1 queries
+    product_ids = [item.id for item in request.items]
+    fetched_products = db.exec(
+        select(Product).where(col(Product.id).in_(product_ids))
+    ).all()
+    products_by_id: dict[str, Product] = {p.id: p for p in fetched_products}
+
     # Build line items from products with promotion discounts
     line_items: list[dict[str, Any]] = []
-    products_by_id: dict[str, Product] = {}
     for item in request.items:
-        product = db.exec(select(Product).where(Product.id == item.id)).first()
+        product = products_by_id.get(item.id)
         if product is None:
             logger.warning(f"Product not found: {item.id}")
             raise ProductNotFoundError(item.id)
-        products_by_id[item.id] = product
 
         # Get line item with promotion discount (async call to agent)
         line_item = await calculate_line_item_with_promotion(db, product, item.quantity)
@@ -360,6 +365,13 @@ async def update_checkout_session(
     # Update items if provided (reuse existing promotion data, no agent call)
     products_by_id: dict[str, Product] = {}
     if request.items is not None:
+        # Fetch all products in a single batch to avoid N+1 queries
+        product_ids = [item.id for item in request.items]
+        fetched_products = db.exec(
+            select(Product).where(col(Product.id).in_(product_ids))
+        ).all()
+        products_by_id = {p.id: p for p in fetched_products}
+
         # Build lookup of existing line items by product ID
         existing_line_items: list[dict[str, Any]] = json.loads(session.line_items_json)
         existing_by_product_id: dict[str, dict[str, Any]] = {
@@ -368,10 +380,9 @@ async def update_checkout_session(
 
         new_line_items: list[dict[str, Any]] = []
         for item in request.items:
-            product = db.exec(select(Product).where(Product.id == item.id)).first()
+            product = products_by_id.get(item.id)
             if product is None:
                 raise ProductNotFoundError(item.id)
-            products_by_id[item.id] = product
 
             # Check if this product has existing promotion data
             existing_li = existing_by_product_id.get(item.id)
@@ -389,11 +400,11 @@ async def update_checkout_session(
         session.line_items_json = json.dumps(new_line_items)
     else:
         current_line_items: list[dict[str, Any]] = json.loads(session.line_items_json)
-        for line_item in current_line_items:
-            product_id = str(line_item["item"]["id"])
-            product = db.exec(select(Product).where(Product.id == product_id)).first()
-            if product is not None:
-                products_by_id[product_id] = product
+        product_ids = [str(li["item"]["id"]) for li in current_line_items]
+        fetched_products = db.exec(
+            select(Product).where(col(Product.id).in_(product_ids))
+        ).all()
+        products_by_id = {p.id: p for p in fetched_products}
 
     # Update buyer if provided
     if request.buyer is not None:
