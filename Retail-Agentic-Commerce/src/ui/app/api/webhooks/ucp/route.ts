@@ -44,7 +44,7 @@ interface UCPOrderWebhookPayload {
   };
 }
 
-const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET || "REDACTED_WEBHOOK_SECRET";
+const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET || "";
 const webhookEvents: WebhookEvent[] = [];
 
 function decodeBase64Url(input: string): Buffer {
