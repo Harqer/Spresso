@@ -355,7 +355,7 @@ async def update_checkout_session(
     if request.discounts is not None or request.coupons is not None:
         update_fields.append("discounts")
 
-    logger.debug(f"Updating session {session_id} | fields={update_fields}")
+    # logger.debug(f"Updating session {session_id} | fields={update_fields}")
 
     # Update items if provided (reuse existing promotion data, no agent call)
     products_by_id: dict[str, Product] = {}

@@ -262,7 +262,7 @@ export function useMCPClient() {
               const data = JSON.parse(line.slice(6));
               if (data.result || data.error) {
                 mcpResponse = data;
-                console.log("[MCP] Parsed SSE data:", data);
+                // console.log("[MCP] Parsed SSE data:", data);
               }
             } catch {
               // Continue parsing

@@ -32,7 +32,7 @@ class StripePaymentService:
                 automatic_payment_methods={"enabled": True},
                 idempotency_key=idempotency_key
             )
-            logger.info(f"PaymentIntent Created: {intent.id} (Idempotency={idempotency_key})")
+            logger.info(f"PaymentIntent Created: {intent.id}")
             return {
                 "client_secret": intent.client_secret,
                 "id": intent.id,
