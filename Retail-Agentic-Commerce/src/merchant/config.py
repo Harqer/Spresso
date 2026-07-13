@@ -44,7 +44,7 @@ class Settings(BaseSettings):
     # Webhook Configuration (Merchant → Client Agent)
     # Default to localhost for local development; Docker overrides via environment
     webhook_url: str = "http://localhost:3000/api/webhooks/acp"
-    webhook_secret: str = "whsec_demo_secret"
+    webhook_secret: str = os.getenv("WEBHOOK_SECRET", "")
 
     # Merchant API Security (for client authentication)
     merchant_api_key: str = ""
@@ -91,7 +91,7 @@ class Settings(BaseSettings):
     sentry_traces_sample_rate: float = 1.0
 
     # Redis Configuration
-    redis_url: str = os.getenv("REDIS_URL", "redis://default:bM1T4IQZxOzyjMxZb5nPuHFUDtCoGToc@redis-19343.c276.us-east-1-2.ec2.cloud.redislabs.com:19343")
+    redis_url: str = os.getenv("REDIS_URL", "")
 
     # Stripe Configuration
     stripe_secret_key: str = os.getenv("STRIPE_SECRET_KEY", "")

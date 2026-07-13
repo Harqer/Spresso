@@ -60,7 +60,7 @@ export interface ShippingUpdateData {
 }
 
 // Webhook secret for HMAC validation (should come from env in production)
-const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET || "whsec_demo_secret";
+const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET || "";
 
 /**
  * Verify webhook signature using HMAC-SHA256
