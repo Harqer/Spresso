@@ -84,6 +84,10 @@ class Settings(BaseSettings):
     # Gemini Integration
     use_gemini: bool = True
     google_api_key: str = ""
+    vaultier_policy_path: str = "src/merchant/services/ai/config/stylist_policy.yaml"
+
+    # AI Security Firewall
+    lakera_guard_api_key: str = os.getenv("LAKERA_GUARD_API_KEY", "")
 
     # Sentry Configuration
     sentry_dsn: str | None = os.getenv("SENTRY_DSN")

@@ -1,22 +1,97 @@
 import logging
+import os
 from typing import Any
 
+import httpx
 import sentry_sdk
 import yaml
 
 logger = logging.getLogger(__name__)
 
 
+class SecurityViolationError(Exception):
+    """Exception raised when a prompt violates AI security policies."""
+
+    def __init__(self, reason: str, details: dict[str, Any] | None = None):
+        self.reason = reason
+        self.details = details or {}
+        super().__init__(f"Security Violation: {reason}")
+
+
 class VaultierGuardrail:
     """Architectural Guardrail Engine.
 
     Acts as the secure gateway between the API and the Inference Model.
-    Ensures input sanitization and persona enforcement.
+    Ensures input sanitization, persona enforcement, and semantic security.
     """
 
     def __init__(self, policy_path: str):
         with open(policy_path) as f:
             self.policy = yaml.safe_load(f)
+        self.lakera_api_key = os.getenv("LAKERA_GUARD_API_KEY")
+        self.lakera_url = "https://api.lakera.ai/v1/guard"
+
+    async def check_prompt(self, prompt: str) -> None:
+        """Audits the prompt for semantic injection and jailbreaks.
+
+        Uses Lakera Guard as a specialized classifier firewall.
+        Falls back to local heuristic validation if API is unavailable.
+
+        Args:
+            prompt: The untrusted user input.
+
+        Raises:
+            SecurityViolationError: If a malicious pattern is detected.
+        """
+        if not self.lakera_api_key:
+            logger.warning("LAKERA_GUARD_API_KEY missing. Falling back to local heuristics.")
+            self._local_heuristic_audit(prompt)
+            return
+
+        try:
+            async with httpx.AsyncClient(timeout=2.0) as client:
+                response = await client.post(
+                    self.lakera_url,
+                    headers={"Authorization": f"Bearer {self.lakera_api_key}"},
+                    json={"input": prompt},
+                )
+                response.raise_for_status()
+                result = response.json()
+
+                if result.get("flagged", False):
+                    # Extract specific violation categories
+                    results = result.get("results", [{}])[0]
+                    categories = [k for k, v in results.get("categories", {}).items() if v]
+                    reason = f"Malicious intent detected: {', '.join(categories)}"
+                    logger.error(f"AI Firewall BLOCKED prompt: {reason}")
+                    raise SecurityViolationError(reason, details=result)
+
+        except httpx.HTTPError as e:
+            logger.error(f"AI Firewall API Failure: {e}. Executing fail-safe audit.")
+            self._local_heuristic_audit(prompt)
+        except SecurityViolationError:
+            raise
+        except Exception as e:
+            logger.error(f"Unexpected Firewall Error: {e}")
+            self._local_heuristic_audit(prompt)
+
+    def _local_heuristic_audit(self, prompt: str) -> None:
+        """Local pattern-based audit for immediate fallback defense."""
+        malicious_patterns = [
+            "ignore all previous",
+            "ignore previous instructions",
+            "system prompt",
+            "you are now",
+            "developer mode",
+            "sql injection",
+            "select * from",
+        ]
+        prompt_lower = prompt.lower()
+        for pattern in malicious_patterns:
+            if pattern in prompt_lower:
+                logger.error(f"Local Guardrail BLOCKED prompt pattern: {pattern}")
+                raise SecurityViolationError(f"Heuristic violation: {pattern}")
+
 
     def get_system_instruction(self) -> str:
         """Constructs the native system_instruction block for the Gemini API."""

@@ -20,8 +20,11 @@ from upstash_redis import Redis
 from src.merchant.db.database import get_session
 from src.merchant.db.models import Product
 from src.merchant.services.ai.vto_service import get_vto_engine
+from src.merchant.services.ai.guardrails.engine import VaultierGuardrail, SecurityViolationError
+from src.merchant.config import get_settings
 
 logger = logging.getLogger(__name__)
+settings = get_settings()
 
 # --- GENKIT INDUSTRIAL SCHEMAS ---
 
@@ -160,6 +163,7 @@ class GeminiAgentService:
             url=os.getenv("UPSTASH_REDIS_REST_URL", ""),
             token=os.getenv("UPSTASH_REDIS_REST_TOKEN", ""),
         )
+        self.guardrail = VaultierGuardrail(settings.vaultier_policy_path)
         self.ingestion_queue = asyncio.Queue()
         self._ingestion_task = None
 
@@ -171,6 +175,16 @@ class GeminiAgentService:
         user_tier = user_metadata.get("user_tier", "free")
         current_cart = params.get("current_cart", [])
         image_data = params.get("image_data")
+
+        # --- AI FIREWALL CHECK (Semantic Security) ---
+        try:
+            await self.guardrail.check_prompt(user_message)
+        except SecurityViolationError as e:
+            logger.warning(f"AI Firewall BLOCKED request: {e}")
+            return IntentResult(
+                intent="CHAT",
+                response="Vaultier Secure: Your request was flagged as a potential security risk. Please keep queries focused on fashion discovery."
+            )
 
         # --- CACHE CHECK (Industrial Optimization) ---
         cache_key = None
