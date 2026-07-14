@@ -92,7 +92,7 @@ dependencies {
     // Firebase
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
-    implementation("com.google.firebase:firebase-ai")
+    implementation("com.google.firebase:firebase-vertexai-preview:16.5.0")
 
     implementation(libs.androidx.datastore.preferences)
 
