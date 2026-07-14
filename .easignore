@@ -1,0 +1,7 @@
+node_modules
+.next
+.venv
+dist
+aura-mobile-android/.gradle
+aura-mobile-android/build
+Retail-Agentic-Commerce/node_modules
