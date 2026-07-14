@@ -1,0 +1,17 @@
+{
+  "expo": {
+    "name": "Spresso",
+    "slug": "spresso-android",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "android": {
+      "package": "com.meta.wearable.retail"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "82f4263b-c191-471c-b463-4e611f81936c"
+      }
+    }
+  }
+}
