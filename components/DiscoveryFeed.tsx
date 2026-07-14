@@ -43,7 +43,7 @@ const DiscoveryFeed: React.FC<DiscoveryFeedProps> = ({ onAddToCart, onProductCli
   if (loading) {
     return (
       <div className="h-[calc(100vh-85px)] flex items-center justify-center bg-black text-white">
-        <div className="animate-pulse font-serif text-2xl tracking-widest opacity-50">Vaultier is preparing your discovery feed...</div>
+        <div className="animate-pulse font-serif text-2xl tracking-widest opacity-50">Spresso is preparing your discovery feed...</div>
       </div>
     );
   }

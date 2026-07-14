@@ -1,6 +1,6 @@
-# Vaultier Architectural Alignment Checklist
+# Spresso Architectural Alignment Checklist
 
-This checklist is used to evaluate project development against core Design Principles and Vaultier's specific project goals. It is intended for both human architects and LLM-driven automated audits.
+This checklist is used to evaluate project development against core Design Principles and Spresso's specific project goals. It is intended for both human architects and LLM-driven automated audits.
 
 ## 1. Design for Scalability
 - [ ] **On-Device Offloading**: Does the feature leverage Gemini Nano (Banana 2) for local visual reasoning before hitting server APIs?
@@ -52,7 +52,7 @@ This checklist is used to evaluate project development against core Design Princ
 
 ---
 
-## Vaultier Project Specific Goals
+## Spresso Project Specific Goals
 - [ ] **Meta Wearables DAT Pulse**: Verified identity registration and authentication via DAT SDK.
 - [ ] **Glimmer UI Layout**: Jetpack Compose Glimmer components meet display glasses accessibility standards (contrast, font size).
 - [ ] **Higgsfield Motion Fit**: Virtual try-on generation output verified for spatial accuracy and lighting consistency.

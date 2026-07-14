@@ -36,7 +36,7 @@ class RetailSessionManager(
     private val client = OkHttpClient()
 
     private val backendWsUrl =
-        BuildConfig.VAULTIER_BACKEND_URL
+        BuildConfig.SPRESSO_BACKEND_URL
             .replace("https://", "wss://")
             .replace("http://", "ws://") + "/discovery/live"
 
@@ -99,7 +99,7 @@ class RetailSessionManager(
             Request
                 .Builder()
                 .url("$backendWsUrl?token=$userToken")
-                .addHeader("x-vaultier-internal-key", BuildConfig.VAULTIER_INTERNAL_SECRET)
+                .addHeader("x-spresso-internal-key", BuildConfig.SPRESSO_INTERNAL_SECRET)
                 .build()
         socket =
             client.newWebSocket(

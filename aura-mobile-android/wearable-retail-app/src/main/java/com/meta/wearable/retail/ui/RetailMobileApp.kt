@@ -72,7 +72,7 @@ fun RetailMobileApp(
     var textInput by remember { mutableStateOf("") }
     
     val initialMsg = stringResource(R.string.welcome_message)
-    val vaultierRole = stringResource(R.string.vaultier_role)
+    val spressoRole = stringResource(R.string.spresso_role)
     val userRole = stringResource(R.string.user_role)
     val analyzingPhoto = stringResource(R.string.analyzing_photo)
     val processingSharedImage = stringResource(R.string.processing_shared_image)
@@ -80,7 +80,7 @@ fun RetailMobileApp(
     var chatMessages by remember {
         mutableStateOf(
             listOf(
-                ChatUiMessage(vaultierRole, initialMsg),
+                ChatUiMessage(spressoRole, initialMsg),
             ),
         )
     }
@@ -120,7 +120,7 @@ fun RetailMobileApp(
                     analyzingProductGlassesMsg = analyzingProductGlassesMsg,
                     analyzePhotoMsg = analyzePhotoMsg,
                     vtoRequiresPremiumMsg = vtoRequiresPremiumMsg,
-                    vaultierRole = vaultierRole,
+                    spressoRole = spressoRole,
                 ) { msg ->
                     chatMessages = chatMessages + msg
                     isThinking = false
@@ -143,7 +143,7 @@ fun RetailMobileApp(
                 analyzingProductGlassesMsg = analyzingProductGlassesMsg,
                 analyzePhotoMsg = analyzePhotoMsg,
                 vtoRequiresPremiumMsg = vtoRequiresPremiumMsg,
-                vaultierRole = vaultierRole,
+                spressoRole = spressoRole,
             ) { msg ->
                 chatMessages = chatMessages + msg
                 isThinking = false
@@ -174,7 +174,7 @@ fun RetailMobileApp(
         Scaffold(
             topBar = {
                 CenterAlignedTopAppBar(
-                    title = { Text(stringResource(R.string.vaultier), style = VaultierTheme.typography.titleLarge, fontWeight = FontWeight.Black) },
+                    title = { Text(stringResource(R.string.spresso), style = SpressoTheme.typography.titleLarge, fontWeight = FontWeight.Black) },
                     navigationIcon = {
                         IconButton(onClick = {
                             haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
@@ -198,7 +198,7 @@ fun RetailMobileApp(
                     },
                     colors =
                         TopAppBarDefaults.centerAlignedTopAppBarColors(
-                            containerColor = VaultierTheme.colors.surface,
+                            containerColor = SpressoTheme.colors.surface,
                         ),
                 )
             },
@@ -208,7 +208,7 @@ fun RetailMobileApp(
                     Modifier
                         .fillMaxSize()
                         .padding(padding)
-                        .background(VaultierTheme.colors.secondary),
+                        .background(SpressoTheme.colors.secondary),
             ) {
                 Column(
                     modifier =
@@ -232,7 +232,7 @@ fun RetailMobileApp(
                         }
 
                         if (message.compare.isNotEmpty()) {
-                            Text(stringResource(R.string.comparison_view), style = VaultierTheme.typography.titleSmall, modifier = Modifier.padding(top = 16.dp))
+                            Text(stringResource(R.string.comparison_view), style = SpressoTheme.typography.titleSmall, modifier = Modifier.padding(top = 16.dp))
                             LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                                 items(message.compare) { p ->
                                     ProductItem(p, onAddToCart = {
@@ -248,7 +248,7 @@ fun RetailMobileApp(
                     if (isThinking) {
                         CircularProgressIndicator(
                             modifier = Modifier.size(24.dp).align(Alignment.CenterHorizontally),
-                            color = VaultierTheme.colors.onSurface,
+                            color = SpressoTheme.colors.onSurface,
                             strokeWidth = 2.dp,
                         )
                     }
@@ -257,7 +257,7 @@ fun RetailMobileApp(
                 Surface(
                     tonalElevation = 8.dp,
                     shadowElevation = 8.dp,
-                    color = VaultierTheme.colors.surface,
+                    color = SpressoTheme.colors.surface,
                 ) {
                     Column(modifier = Modifier.padding(16.dp)) {
                         if (chatMessages.isNotEmpty() && chatMessages.last().filters.isNotEmpty()) {
@@ -280,12 +280,12 @@ fun RetailMobileApp(
                             value = textInput,
                             onValueChange = { textInput = it },
                             modifier = Modifier.fillMaxWidth(),
-                            placeholder = { Text(stringResource(R.string.ask_vaultier)) },
+                            placeholder = { Text(stringResource(R.string.ask_spresso)) },
                             shape = CircleShape,
                             colors =
                                 TextFieldDefaults.colors(
-                                    focusedContainerColor = VaultierTheme.colors.secondary,
-                                    unfocusedContainerColor = VaultierTheme.colors.secondary,
+                                    focusedContainerColor = SpressoTheme.colors.secondary,
+                                    unfocusedContainerColor = SpressoTheme.colors.secondary,
                                     focusedIndicatorColor = Color.Transparent,
                                     unfocusedIndicatorColor = Color.Transparent,
                                 ),
@@ -342,7 +342,7 @@ fun RetailMobileApp(
 
                                             chatMessages = chatMessages +
                                                 ChatUiMessage(
-                                                    role = vaultierRole,
+                                                    role = spressoRole,
                                                     text = response.response,
                                                     vtoImageUrl = response.vtoImageUrl,
                                                     vtoVideoUrl = response.vtoVideoUrl,
@@ -390,7 +390,7 @@ fun VTOPreviewCard(
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
     ) {
         Column {
-            Box(modifier = Modifier.fillMaxWidth().height(400.dp).background(VaultierTheme.colors.onSurface)) {
+            Box(modifier = Modifier.fillMaxWidth().height(400.dp).background(SpressoTheme.colors.onSurface)) {
                 if (imageUrl != null) {
                     AsyncImage(
                         model = imageUrl,
@@ -401,13 +401,13 @@ fun VTOPreviewCard(
                 }
 
                 Surface(
-                    color = VaultierTheme.colors.onSurface.copy(alpha = 0.6f),
+                    color = SpressoTheme.colors.onSurface.copy(alpha = 0.6f),
                     shape = CircleShape,
                     modifier = Modifier.padding(16.dp).align(Alignment.TopEnd),
                 ) {
                     Text(
                         stringResource(R.string.ai_generated),
-                        color = VaultierTheme.colors.surface,
+                        color = SpressoTheme.colors.surface,
                         fontSize = 10.sp,
                         modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
                     )
@@ -420,7 +420,7 @@ fun VTOPreviewCard(
             ) {
                 Column {
                     Text(stringResource(R.string.virtual_try_on), fontWeight = FontWeight.Bold)
-                    Text(stringResource(R.string.higgsfield_video_engine), style = VaultierTheme.typography.bodySmall, color = Color.Gray)
+                    Text(stringResource(R.string.higgsfield_video_engine), style = SpressoTheme.typography.bodySmall, color = Color.Gray)
                 }
                 IconButton(onClick = { 
                     haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
@@ -443,7 +443,7 @@ fun processImageUri(
     analyzingProductGlassesMsg: String,
     analyzePhotoMsg: String,
     vtoRequiresPremiumMsg: String,
-    vaultierRole: String,
+    spressoRole: String,
     onMessageAdded: (ChatUiMessage) -> Unit,
 ) {
     val contentResolver = context.contentResolver
@@ -487,7 +487,7 @@ fun processImageUri(
                 kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.Main) {
                     onMessageAdded(
                         ChatUiMessage(
-                            role = vaultierRole,
+                            role = spressoRole,
                             text = finalResponseText,
                             vtoImageUrl = vtoImage,
                             vtoVideoUrl = vtoVideo,
@@ -500,7 +500,7 @@ fun processImageUri(
             }
         }
     } catch (e: Exception) {
-        Log.e("Vaultier", "Image processing failed: ${e.message}")
+        Log.e("Spresso", "Image processing failed: ${e.message}")
     }
 }
 
@@ -522,8 +522,8 @@ fun ChatBubble(
             Text(
                 text = text,
                 modifier = Modifier.padding(12.dp),
-                color = if (isUser) VaultierTheme.colors.surface else VaultierTheme.colors.onSurface,
-                style = VaultierTheme.typography.bodyMedium,
+                color = if (isUser) SpressoTheme.colors.surface else SpressoTheme.colors.onSurface,
+                style = SpressoTheme.typography.bodyMedium,
             )
         }
     }
@@ -537,7 +537,7 @@ fun ProductGridSection(
     Column(modifier = Modifier.padding(16.dp)) {
         Text(
             text = stringResource(R.string.shop_collection),
-            style = VaultierTheme.typography.headlineSmall,
+            style = SpressoTheme.typography.headlineSmall,
             modifier = Modifier.padding(vertical = 16.dp),
         )
 
@@ -582,12 +582,12 @@ fun ProductItem(
                     contentScale = ContentScale.Crop,
                 )
                 Surface(
-                    color = VaultierTheme.colors.primary,
+                    color = SpressoTheme.colors.primary,
                     modifier = Modifier.padding(12.dp).align(Alignment.TopStart),
                 ) {
                     Text(
                         stringResource(R.string.limited),
-                        color = VaultierTheme.colors.surface,
+                        color = SpressoTheme.colors.surface,
                         fontSize = 8.sp,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp),
@@ -599,7 +599,7 @@ fun ProductItem(
             Column(modifier = Modifier.padding(16.dp)) {
                 Text(
                     text = product.category.uppercase(),
-                    style = VaultierTheme.typography.labelSmall,
+                    style = SpressoTheme.typography.labelSmall,
                     color = Color.Gray,
                     letterSpacing = 1.sp,
                 )
@@ -611,14 +611,14 @@ fun ProductItem(
                 ) {
                     Text(
                         text = product.name,
-                        style = VaultierTheme.typography.titleMedium,
+                        style = SpressoTheme.typography.titleMedium,
                         modifier = Modifier.weight(1f),
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis,
                     )
                     Text(
                         text = "$${product.price}",
-                        style = VaultierTheme.typography.bodyLarge,
+                        style = SpressoTheme.typography.bodyLarge,
                         fontWeight = FontWeight.Light,
                     )
                 }
@@ -630,10 +630,10 @@ fun ProductItem(
                     },
                     modifier = Modifier.fillMaxWidth().height(48.dp),
                     shape = RoundedCornerShape(4.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = VaultierTheme.colors.primary),
+                    colors = ButtonDefaults.buttonColors(containerColor = SpressoTheme.colors.primary),
                     contentPadding = PaddingValues(0.dp),
                 ) {
-                    Text(stringResource(R.string.add_to_cart), style = VaultierTheme.typography.labelSmall, fontWeight = FontWeight.Bold)
+                    Text(stringResource(R.string.add_to_cart), style = SpressoTheme.typography.labelSmall, fontWeight = FontWeight.Bold)
                 }
             }
         }
@@ -679,7 +679,7 @@ fun CheckoutScreen(
 
             val total = items.sumOf { it.price }
             val formattedTotal = String.format(java.util.Locale.US, "%.2f", total)
-            Text(stringResource(R.string.total_price, formattedTotal), style = VaultierTheme.typography.headlineMedium)
+            Text(stringResource(R.string.total_price, formattedTotal), style = SpressoTheme.typography.headlineMedium)
 
             Button(
                 onClick = { 
@@ -688,12 +688,12 @@ fun CheckoutScreen(
                 },
                 modifier = Modifier.fillMaxWidth().height(56.dp).padding(top = 16.dp),
                 enabled = !isProcessing,
-                colors = ButtonDefaults.buttonColors(containerColor = VaultierTheme.colors.onSurface),
+                colors = ButtonDefaults.buttonColors(containerColor = SpressoTheme.colors.onSurface),
             ) {
                 if (isProcessing) {
-                    CircularProgressIndicator(color = VaultierTheme.colors.surface)
+                    CircularProgressIndicator(color = SpressoTheme.colors.surface)
                 } else {
-                    Text(stringResource(R.string.confirm_purchase), color = VaultierTheme.colors.surface)
+                    Text(stringResource(R.string.confirm_purchase), color = SpressoTheme.colors.surface)
                 }
             }
         }
@@ -703,7 +703,7 @@ fun CheckoutScreen(
 @Preview(showBackground = true)
 @Composable
 fun CheckoutScreenPreview() {
-    VaultierTheme {
+    SpressoTheme {
         CheckoutScreen(
             items = listOf(Product("1", "SKU", "Classic Shirt", 89.0, "", "Apparel")),
             onBack = {},

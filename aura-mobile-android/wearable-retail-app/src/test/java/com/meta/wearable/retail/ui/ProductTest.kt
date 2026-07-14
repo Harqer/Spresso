@@ -10,7 +10,7 @@ class ProductTest {
             Product(
                 id = "prod_1",
                 sku = "VAULT-001",
-                name = "Vaultier Glasses",
+                name = "Spresso Glasses",
                 price = 299.99,
                 imageUrl = "https://example.com/img.jpg",
                 category = "Wearable",
@@ -19,6 +19,6 @@ class ProductTest {
 
         assertEquals("prod_1", product.id)
         assertEquals(299.99, product.price, 0.0)
-        assertEquals("Vaultier Glasses", product.name)
+        assertEquals("Spresso Glasses", product.name)
     }
 }

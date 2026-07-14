@@ -28,7 +28,7 @@ fun RetailGlimmerApp(
                     .background(Color.Black),
         ) {
             Box(modifier = Modifier.align(Alignment.TopCenter).padding(top = 16.dp)) {
-                Text(text = "Vaultier Agentic Commerce")
+                Text(text = "Spresso Agentic Commerce")
             }
 
             Column(

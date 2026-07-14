@@ -155,7 +155,7 @@ def build_message_request(
     customer_name: str,
     items: list[OrderItem],
     status: ShippingStatus,
-    company_name: str = "Vaultier Elite",
+    company_name: str = "Spresso Elite",
     tone: MessageTone = MessageTone.FRIENDLY,
     language: SupportedLanguage = SupportedLanguage.ENGLISH,
     tracking_url: str | None = None,

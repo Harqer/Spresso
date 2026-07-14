@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-# Vaultier Production Rehearsal Script
+# Spresso Production Rehearsal Script
 # Expert Strategy: Zero-Mock Feature Verification
 
 echo "--- SYNCING DEPENDENCIES ---"
@@ -29,4 +29,4 @@ uv run python -m pytest tests/merchant/api/test_checkout.py -v -k "test_create_s
 
 echo "--- CLEANING UP ---"
 kill $BRAIN_PID
-echo "REHEARSAL SUCCESSFUL: Vaultier Core is Production-Ready."
+echo "REHEARSAL SUCCESSFUL: Spresso Core is Production-Ready."

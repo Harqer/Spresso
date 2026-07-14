@@ -41,7 +41,7 @@ def get_test_api_key() -> str:
 
 
 def get_test_internal_secret() -> str:
-    return get_required_secret("VAULTIER_INTERNAL_SECRET")
+    return get_required_secret("SPRESSO_INTERNAL_SECRET")
 
 
 @pytest.fixture(autouse=True)
@@ -59,7 +59,7 @@ def setup_test_environment(tmp_path) -> Generator[None, None, None]:
     original_db_url = os.environ.get("DATABASE_URL")
 
     # Use a file-based SQLite for test reliability across connections
-    db_file = tmp_path / "test_vaultier.db"
+    db_file = tmp_path / "test_spresso.db"
     os.environ["DATABASE_URL"] = f"sqlite:///{db_file}"
 
     # Reset engine to use the new URL and create tables
@@ -99,7 +99,7 @@ def setup_test_environment(tmp_path) -> Generator[None, None, None]:
 def client() -> Generator[TestClient, None, None]:
     """Industrial Test Client with real secret propagation."""
     with TestClient(app) as test_client:
-        test_client.headers["X-Vaultier-Internal-Key"] = get_test_internal_secret()
+        test_client.headers["X-Spresso-Internal-Key"] = get_test_internal_secret()
         yield test_client
 
 
@@ -108,7 +108,7 @@ def auth_client() -> Generator[TestClient, None, None]:
     """Authenticated Production Client using real keys."""
     with TestClient(app) as test_client:
         test_client.headers["Authorization"] = f"Bearer {get_test_api_key()}"
-        test_client.headers["X-Vaultier-Internal-Key"] = get_test_internal_secret()
+        test_client.headers["X-Spresso-Internal-Key"] = get_test_internal_secret()
         yield test_client
 
 
@@ -117,7 +117,7 @@ def auth_client_x_api_key() -> Generator[TestClient, None, None]:
     """Authenticated Client (X-API-Key variant) using real keys."""
     with TestClient(app) as test_client:
         test_client.headers["X-API-Key"] = get_test_api_key()
-        test_client.headers["X-Vaultier-Internal-Key"] = get_test_internal_secret()
+        test_client.headers["X-Spresso-Internal-Key"] = get_test_internal_secret()
         yield test_client
 
 

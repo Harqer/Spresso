@@ -1,7 +1,7 @@
-# Vaultier Ecosystem: Comprehensive Production Readiness Audit
+# Spresso Ecosystem: Comprehensive Production Readiness Audit
 
 ## 1. Introduction
-This report evaluates the Vaultier ecosystem (Merchant API, Next.js UI, and Android Mobile) for production readiness. The audit covers architectural integrity, security protocols, performance bottlenecks, and industry compliance (IoC/DI).
+This report evaluates the Spresso ecosystem (Merchant API, Next.js UI, and Android Mobile) for production readiness. The audit covers architectural integrity, security protocols, performance bottlenecks, and industry compliance (IoC/DI).
 
 ## 2. Code Structure & Architecture
 ### Strengths
@@ -16,7 +16,7 @@ This report evaluates the Vaultier ecosystem (Merchant API, Next.js UI, and Andr
 ## 3. Security Analysis
 ### Critical Vulnerabilities
 - **Android Checkout Simulation**: `RetailMobileApp.kt` still uses `pi_simulated_token` for checkout completion. This **must** be replaced with a secure Stripe/Payment pulse.
-- **Backend Fail-Open Design**: `InternalSecurityMiddleware` logs violation attempts but its logic around `VAULTIER_INTERNAL_SECRET` must ensure strict rejection of unauthenticated traffic from non-gateway sources.
+- **Backend Fail-Open Design**: `InternalSecurityMiddleware` logs violation attempts but its logic around `SPRESSO_INTERNAL_SECRET` must ensure strict rejection of unauthenticated traffic from non-gateway sources.
 
 ### Security Best Practices Adherence
 - **Authentication**: Transitioning from simulated identity to full Firebase Auth/Identity Bridge is in progress but incomplete in `MainActivity`.

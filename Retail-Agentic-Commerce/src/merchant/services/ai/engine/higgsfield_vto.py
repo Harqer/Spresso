@@ -7,7 +7,7 @@ logger = logging.getLogger(__name__)
 
 
 class HiggsfieldEngine:
-    """Industrial Higgsfield-1 Motion Engine for Vaultier VTO."""
+    """Industrial Higgsfield-1 Motion Engine for Spresso VTO."""
 
     def __init__(self):
         self.api_key = os.getenv("HIGGSFIELD_API_KEY")

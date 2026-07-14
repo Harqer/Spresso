@@ -10,7 +10,7 @@ import com.meta.wearable.retail.ui.Product
 
 fun ContentScope.buildWelcome(onStart: () -> Unit) {
     flexBox(direction = Direction.COLUMN, gap = 16, padding = 24, background = FlexBoxBackground.NONE) {
-        text("Vaultier Concierge", style = TextStyle.HEADING)
+        text("Spresso Concierge", style = TextStyle.HEADING)
         button(
             label = "Start Discovery",
             style = ButtonStyle.PRIMARY,

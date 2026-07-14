@@ -1,6 +1,6 @@
 <resources>
-    <string name="vaultier_app_name">Vaultier Retail</string>
-    <string name="vaultier_identity">VAULTIER IDENTITY</string>
+    <string name="spresso_app_name">Spresso Retail</string>
+    <string name="spresso_identity">SPRESSO IDENTITY</string>
     <string name="email_label">Email</string>
     <string name="password_label">Password</string>
     <string name="sign_in">SIGN IN</string>
@@ -17,11 +17,11 @@
     <string name="connected">Connected</string>
     <string name="disconnected">Disconnected</string>
     <string name="cancel">Cancel</string>
-    <string name="vaultier_pulse">VAULTIER PULSE</string>
+    <string name="spresso_pulse">SPRESSO PULSE</string>
     <string name="hardware_status">HARDWARE STATUS</string>
-    <string name="vaultier">VAULTIER</string>
+    <string name="spresso">SPRESSO</string>
     <string name="comparison_view">Comparison View</string>
-    <string name="ask_vaultier">Ask Vaultier...</string>
+    <string name="ask_spresso">Ask Spresso...</string>
     <string name="try_on_from_gallery">Try-On from Gallery</string>
     <string name="virtual_try_on">Virtual Try-On</string>
     <string name="higgsfield_video_engine">Higgsfield-1 Video Engine</string>
@@ -42,10 +42,10 @@
     <string name="theme_system">System</string>
     <string name="theme_light">Light</string>
     <string name="theme_dark">Dark</string>
-    <string name="welcome_message">Welcome to Vaultier. I can help you discover products and perform virtual try-ons. Try sending a photo or asking about our collection!</string>
+    <string name="welcome_message">Welcome to Spresso. I can help you discover products and perform virtual try-ons. Try sending a photo or asking about our collection!</string>
     <string name="analyzing_photo">Analyzing photo...</string>
     <string name="user_role">User</string>
-    <string name="vaultier_role">Vaultier</string>
+    <string name="spresso_role">Spresso</string>
     <string name="processing_shared_image">Processing shared image...</string>
     <string name="show_me_filter_options">Show me %1$s options</string>
     <string name="ai_generated">AI GENERATED</string>

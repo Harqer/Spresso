@@ -9,7 +9,7 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-// Vaultier Hardening: Manually specifying plugins to avoid circular structure error.
+// Spresso Hardening: Manually specifying plugins to avoid circular structure error.
 // We include a dummy '@next/next' plugin entry to satisfy 'no-img-element' references
 // in the codebase without triggering the circularity bug in the real plugin.
 

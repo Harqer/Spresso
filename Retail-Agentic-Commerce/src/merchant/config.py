@@ -48,12 +48,12 @@ class Settings(BaseSettings):
 
     # Merchant API Security (for client authentication)
     merchant_api_key: str = ""
-    vaultier_internal_secret: str = os.getenv("VAULTIER_INTERNAL_SECRET", "")
+    spresso_internal_secret: str = os.getenv("SPRESSO_INTERNAL_SECRET", "")
     # Hardened: Strictly use the paid Firebase domain from the vault
-    vaultier_domain: str = os.getenv("VAULTIER_DOMAIN", "spresso-5561f.web.app")
+    spresso_domain: str = os.getenv("SPRESSO_DOMAIN", "spresso-5561f.web.app")
     allowed_origins: list[str] = [
         "https://spresso-5561f.web.app",
-        "https://vaultier-retail.web.app" # Legacy fallback for grace period
+        "https://spresso-retail.web.app" # Legacy fallback for grace period
     ]
 
     # UCP Discovery Configuration
@@ -84,7 +84,7 @@ class Settings(BaseSettings):
     # Gemini Integration
     use_gemini: bool = True
     google_api_key: str = ""
-    vaultier_policy_path: str = "src/merchant/services/ai/config/stylist_policy.yaml"
+    spresso_policy_path: str = "src/merchant/services/ai/config/stylist_policy.yaml"
 
     # AI Security Firewall
     lakera_guard_api_key: str = os.getenv("LAKERA_GUARD_API_KEY", "")

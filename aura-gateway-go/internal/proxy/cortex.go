@@ -34,9 +34,9 @@ func NewCortexProxy(cortexAddr string) *CortexProxy {
 		log.Fatalf("Invalid Cortex Address: %v", err)
 	}
 
-	secret := os.Getenv("VAULTIER_INTERNAL_SECRET")
+	secret := os.Getenv("SPRESSO_INTERNAL_SECRET")
 	if secret == "" {
-		log.Fatalf("Critical Security Alert: VAULTIER_INTERNAL_SECRET is missing. Secure tunnel cannot be established.")
+		log.Fatalf("Critical Security Alert: SPRESSO_INTERNAL_SECRET is missing. Secure tunnel cannot be established.")
 	}
 
 	return &CortexProxy{
@@ -60,10 +60,10 @@ func (p *CortexProxy) TunnelVision(clientConn *websocket.Conn, userID string, us
 	cortexWSURL.Path = "/discovery/live"
 
 	header := http.Header{}
-	header.Add("X-Vaultier-Internal-Key", p.InternalSecret)
-	header.Add("X-Vaultier-User-ID", userID)
-	header.Add("X-Vaultier-User-Tier", userTier)
-	header.Add("X-Vaultier-User-Features", strings.Join(features, ","))
+	header.Add("X-Spresso-Internal-Key", p.InternalSecret)
+	header.Add("X-Spresso-User-ID", userID)
+	header.Add("X-Spresso-User-Tier", userTier)
+	header.Add("X-Spresso-User-Features", strings.Join(features, ","))
 
 	cortexConn, _, err := p.dialer.Dial(cortexWSURL.String(), header)
 	if err != nil {

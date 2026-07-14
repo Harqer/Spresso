@@ -4,7 +4,7 @@ appId: com.meta.wearable.retail
 - launchApp
 
 # --- 1. IDENTITY PULSE ---
-- assertVisible: "Vaultier"
+- assertVisible: "Spresso"
 - tapOn: "Sign In with Google"
 - waitForAnimationEnd
 
@@ -13,22 +13,22 @@ appId: com.meta.wearable.retail
 - tapOn: "Continue"
 
 # --- 3. DISCOVERY CYCLE ---
-- assertVisible: "Welcome to Vaultier"
-- tapOn: "Welcome to Vaultier"
+- assertVisible: "Welcome to Spresso"
+- tapOn: "Welcome to Spresso"
 
 - assertVisible: "Visionary Voice"
 - tapOn: "Visionary Voice"
 
-- assertVisible: "Vaultier"
-- assertVisible: "Welcome to Vaultier.*"
+- assertVisible: "Spresso"
+- assertVisible: "Welcome to Spresso.*"
 
 # Agentic Discovery Test
-- tapOn: "Search or ask Vaultier..."
+- tapOn: "Search or ask Spresso..."
 - inputText: "Find me a biomorphic chrome jacket."
 - tapOn:
     id: "Send"
 - waitForAnimationEnd
-- assertVisible: "Vaultier is reasoning..."
+- assertVisible: "Spresso is reasoning..."
 
 # --- 4. CART & CHECKOUT PULSE ---
 - tapOn: "ADD TO CART"

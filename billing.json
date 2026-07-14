@@ -37,7 +37,7 @@
         "description": "Hyper-personalized editorial ads tailored to your style.",
         "features": ["motion_vto", "ad_tech_modeling"],
         "is_recurring": true,
-        "name": "Vaultier Premium",
+        "name": "Spresso Premium",
         "payer_type": "user",
         "publicly_visible": true
       }

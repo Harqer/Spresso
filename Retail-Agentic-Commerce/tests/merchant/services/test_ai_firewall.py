@@ -1,11 +1,11 @@
 import pytest
 from unittest.mock import MagicMock, patch
-from src.merchant.services.ai.guardrails.engine import VaultierGuardrail, SecurityViolationError
+from src.merchant.services.ai.guardrails.engine import SpressoGuardrail, SecurityViolationError
 
 @pytest.fixture
 def guardrail():
     # Use the actual stylist policy for initialization
-    return VaultierGuardrail("src/merchant/services/ai/config/stylist_policy.yaml")
+    return SpressoGuardrail("src/merchant/services/ai/config/stylist_policy.yaml")
 
 @pytest.mark.asyncio
 async def test_safe_prompt_passes(guardrail):

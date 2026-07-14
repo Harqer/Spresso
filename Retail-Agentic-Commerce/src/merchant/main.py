@@ -30,7 +30,7 @@ from starlette.responses import Response
 from genkit.plugins.fastapi import genkit_fastapi_handler # Correct Industrial Import
 
 from src.merchant.api.dependencies import verify_api_key
-from src.merchant.api.routes.checkout import router as vaultier_checkout_router
+from src.merchant.api.routes.checkout import router as spresso_checkout_router
 from src.merchant.api.routes.discovery import router as discovery_router
 from src.merchant.api.routes.health import router as health_router
 from src.merchant.api.routes.metrics import router as metrics_router
@@ -124,7 +124,7 @@ app.add_middleware(InternalSecurityMiddleware)
 # Include routers
 app.include_router(health_router)
 app.include_router(checkout_router)
-app.include_router(vaultier_checkout_router)
+app.include_router(spresso_checkout_router)
 app.include_router(discovery_router)
 app.include_router(metrics_router)
 app.include_router(products_router)

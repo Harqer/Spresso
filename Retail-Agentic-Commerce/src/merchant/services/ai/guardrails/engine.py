@@ -18,7 +18,7 @@ class SecurityViolationError(Exception):
         super().__init__(f"Security Violation: {reason}")
 
 
-class VaultierGuardrail:
+class SpressoGuardrail:
     """Architectural Guardrail Engine.
 
     Acts as the secure gateway between the API and the Inference Model.
@@ -144,7 +144,7 @@ class VaultierGuardrail:
             )
             return {
                 "intent": "CHAT",
-                "response": "Vaultier Secure: I can only assist with fashion-related requests.",
+                "response": "Spresso Secure: I can only assist with fashion-related requests.",
             }
 
         return {"raw_text": text}

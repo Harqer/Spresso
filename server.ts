@@ -134,7 +134,7 @@ async function startServer() {
       const ai = getAiClient();
       
       const prompt = `The user is asking: "${message}". 
-You are a high-end luxury fashion and lifestyle concierge named Vaultier.
+You are a high-end luxury fashion and lifestyle concierge named Spresso.
 Search the web for up to 2 actual products related to their query. DO NOT mock data or use placeholder images. If you cannot find real products or images, return an empty array for "grid".
 Return a JSON object with the following fields:
 - "response": Your text response to the user.

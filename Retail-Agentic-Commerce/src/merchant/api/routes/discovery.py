@@ -31,25 +31,25 @@ router = APIRouter(
 @router.websocket("/live")
 async def discovery_live(
     websocket: WebSocket,
-    x_vaultier_internal_key: str | None = Header(None),
-    x_vaultier_user_tier: str = Header("free"),
-    x_vaultier_user_features: str = Header(""),
+    x_spresso_internal_key: str | None = Header(None),
+    x_spresso_user_tier: str = Header("free"),
+    x_spresso_user_features: str = Header(""),
 ):
     """Real-time multimodal discovery stream (Vision + Audio) via Gemini Live API."""
     from src.merchant.config import get_settings
     settings = get_settings()
 
-    if not x_vaultier_internal_key or x_vaultier_internal_key != settings.vaultier_internal_secret:
+    if not x_spresso_internal_key or x_spresso_internal_key != settings.spresso_internal_secret:
         await websocket.close(code=4003)
         return
 
     await websocket.accept()
     gemini = get_gemini_service()
 
-    entitlements = [f.strip() for f in x_vaultier_user_features.split(",") if f.strip()]
+    entitlements = [f.strip() for f in x_spresso_user_features.split(",") if f.strip()]
     # Added explicit instruction for Voice Output
-    vaultier_prompt = (
-        f"You are Vaultier, an ambient fashion concierge. User Tier: {x_vaultier_user_tier}. "
+    spresso_prompt = (
+        f"You are Spresso, an ambient fashion concierge. User Tier: {x_spresso_user_tier}. "
         f"Entitlements: {', '.join(entitlements)}. "
         "You can see what the user sees and hear what they say. "
         "Respond naturally with both text and voice. "
@@ -59,7 +59,7 @@ async def discovery_live(
 
     response_task = None
     try:
-        async with gemini.start_live_session(system_instruction=vaultier_prompt) as session:
+        async with gemini.start_live_session(system_instruction=spresso_prompt) as session:
 
             async def forward_responses():
                 try:
@@ -162,7 +162,7 @@ async def discovery_chat(
     request: Request,
     chat_payload: ChatRequest = Body(...),
 ) -> ChatResponse:
-    """Vaultier multimodal fashion chat with VTO and Trend support."""
+    """Spresso multimodal fashion chat with VTO and Trend support."""
     gemini = get_gemini_service()
     user_id = getattr(request.state, "user_id", "anon")
     user_tier = getattr(request.state, "user_tier", "free")
