@@ -16,9 +16,11 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        
-        // Industrial Safety: Meta SDK requires authorization. 
-        // We handle this gracefully to avoid breaking CodeQL Autobuild (401).
+
+        /*
+        Industrial Safety: Meta SDK requires authorization.
+        We handle this gracefully to avoid breaking CodeQL Autobuild (401).
+        */
         val githubToken: String? = System.getenv("GITHUB_TOKEN")
 
         if (githubToken != null) {
