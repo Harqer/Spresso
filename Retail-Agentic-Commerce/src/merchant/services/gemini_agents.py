@@ -20,7 +20,7 @@ from upstash_redis import Redis
 from src.merchant.db.database import get_session
 from src.merchant.db.models import Product
 from src.merchant.services.ai.vto_service import get_vto_engine
-from src.merchant.services.ai.guardrails.engine import VaultierGuardrail, SecurityViolationError
+from src.merchant.services.ai.guardrails.engine import SpressoGuardrail, SecurityViolationError
 from src.merchant.config import get_settings
 
 logger = logging.getLogger(__name__)
@@ -112,14 +112,14 @@ async def semantic_vibe_eval(datapoint: BaseDataPoint, _options: dict | None = N
     )
 
 ai.define_evaluator(
-    name='vaultier/intent_match',
+    name='spresso/intent_match',
     display_name='Intent Alignment',
     definition='Checks if the predicted intent matches the ground truth.',
     fn=intent_match_eval
 )
 
 ai.define_evaluator(
-    name='vaultier/semantic_vibe',
+    name='spresso/semantic_vibe',
     display_name='Semantic Vibe Audit',
     definition='Uses embeddings to verify brand alignment and response consistency.',
     fn=semantic_vibe_eval
@@ -163,7 +163,7 @@ class GeminiAgentService:
             url=os.getenv("UPSTASH_REDIS_REST_URL", ""),
             token=os.getenv("UPSTASH_REDIS_REST_TOKEN", ""),
         )
-        self.guardrail = VaultierGuardrail(settings.vaultier_policy_path)
+        self.guardrail = SpressoGuardrail(settings.spresso_policy_path)
         self.ingestion_queue = asyncio.Queue()
         self._ingestion_task = None
 
@@ -183,7 +183,7 @@ class GeminiAgentService:
             logger.warning(f"AI Firewall BLOCKED request: {e}")
             return IntentResult(
                 intent="CHAT",
-                response="Vaultier Secure: Your request was flagged as a potential security risk. Please keep queries focused on fashion discovery."
+                response="Spresso Secure: Your request was flagged as a potential security risk. Please keep queries focused on fashion discovery."
             )
 
         # --- CACHE CHECK (Industrial Optimization) ---
@@ -192,7 +192,7 @@ class GeminiAgentService:
             # Hash message + image + cart for uniqueness
             payload_str = f"{user_message}:{image_data}:{json.dumps(current_cart)}"
             payload_hash = hashlib.sha256(payload_str.encode()).hexdigest()
-            cache_key = f"vaultier:inference_cache:{payload_hash}"
+            cache_key = f"spresso:inference_cache:{payload_hash}"
             try:
                 cached = self.redis.get(cache_key)
                 if cached:
@@ -269,11 +269,11 @@ class GeminiAgentService:
 
         # Rate Limiting
         if self.redis:
-            user_limit_key = f"vaultier:llm_limit:{user_id}"
+            user_limit_key = f"spresso:llm_limit:{user_id}"
             try:
                 user_requests = self.redis.get(user_limit_key)
                 if user_requests and int(user_requests) > 50:
-                    return {"intent": "CHAT", "response": "Vaultier is calibrating. Please wait."}
+                    return {"intent": "CHAT", "response": "Spresso is calibrating. Please wait."}
 
                 self.redis.incr(user_limit_key)
                 self.redis.expire(user_limit_key, 3600)
@@ -319,7 +319,7 @@ class GeminiAgentService:
                                 stock_count=99,
                                 image_url=product_data.get("imageUrl", ""),
                                 category=product_data.get("category", "unclassified"),
-                                description=product_data.get("description", "Discovered via Vaultier Stitch Pulse"),
+                                description=product_data.get("description", "Discovered via Spresso Stitch Pulse"),
                             )
                             session.add(new_product)
                     session.commit()
@@ -356,7 +356,7 @@ class GeminiAgentService:
             )
             return json.loads(response.text) if response.text else {"message": "Order is moving."}
         except Exception:
-            return {"message": "Vaultier is tracking your order."}
+            return {"message": "Spresso is tracking your order."}
 
 _gemini_service: GeminiAgentService | None = None
 

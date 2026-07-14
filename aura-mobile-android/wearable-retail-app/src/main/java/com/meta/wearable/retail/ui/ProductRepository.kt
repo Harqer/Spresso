@@ -22,7 +22,7 @@ data class ChatResponse(
 )
 
 class ProductRepository {
-    private val backendUrl = BuildConfig.VAULTIER_BACKEND_URL
+    private val backendUrl = BuildConfig.SPRESSO_BACKEND_URL
 
     suspend fun discoveryChat(
         message: String,
@@ -39,7 +39,7 @@ class ProductRepository {
                 conn.setRequestProperty("Content-Type", "application/json")
                 conn.setRequestProperty("Authorization", "Bearer $userToken")
                 if (localContext != null) {
-                    conn.setRequestProperty("X-Vaultier-Local-Context", localContext)
+                    conn.setRequestProperty("X-Spresso-Local-Context", localContext)
                 }
                 conn.doOutput = true
 
@@ -105,7 +105,7 @@ class ProductRepository {
                         filters = filtersList,
                     )
                 } else {
-                    ChatResponse("CHAT", null, "I'm having trouble connecting to Vaultier.")
+                    ChatResponse("CHAT", null, "I'm having trouble connecting to Spresso.")
                 }
             } catch (e: Exception) {
                 ChatResponse("CHAT", null, "Connection error: ${e.message}")
@@ -179,7 +179,7 @@ class ProductRepository {
                     emptyList()
                 }
             } catch (e: Exception) {
-                Log.e("Vaultier", "Search Error: ${e.message}")
+                Log.e("Spresso", "Search Error: ${e.message}")
                 emptyList()
             }
         }
@@ -233,7 +233,7 @@ class ProductRepository {
                     null
                 }
             } catch (e: Exception) {
-                Log.e("Vaultier", "ACP Create Session Error: ${e.message}")
+                Log.e("Spresso", "ACP Create Session Error: ${e.message}")
                 null
             }
         }
@@ -266,7 +266,7 @@ class ProductRepository {
                 OutputStreamWriter(conn.outputStream).use { it.write(requestBody.toString()) }
                 conn.responseCode == 200 || conn.responseCode == 201
             } catch (e: Exception) {
-                Log.e("Vaultier", "ACP Complete Error: ${e.message}")
+                Log.e("Spresso", "ACP Complete Error: ${e.message}")
                 false
             }
         }

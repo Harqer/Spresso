@@ -1,6 +1,6 @@
 <resources>
-    <string name="vaultier_app_name">Vaultier Retail</string>
-    <string name="vaultier_identity">VAULTIER アイデンティティ</string>
+    <string name="spresso_app_name">Spresso Retail</string>
+    <string name="spresso_identity">SPRESSO アイデンティティ</string>
     <string name="email_label">メールアドレス</string>
     <string name="password_label">パスワード</string>
     <string name="sign_in">サインイン</string>
@@ -17,11 +17,11 @@
     <string name="connected">接続済み</string>
     <string name="disconnected">未接続</string>
     <string name="cancel">キャンセル</string>
-    <string name="vaultier_pulse">VAULTIER パルス</string>
+    <string name="spresso_pulse">SPRESSO パルス</string>
     <string name="hardware_status">ハードウェア状態</string>
-    <string name="vaultier">VAULTIER</string>
+    <string name="spresso">SPRESSO</string>
     <string name="comparison_view">比較ビュー</string>
-    <string name="ask_vaultier">Vaultierに質問...</string>
+    <string name="ask_spresso">Spressoに質問...</string>
     <string name="try_on_from_gallery">ギャラリーから試着</string>
     <string name="virtual_try_on">バーチャル試着</string>
     <string name="higgsfield_video_engine">Higgsfield-1 ビデオエンジン</string>

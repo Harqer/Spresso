@@ -1,6 +1,6 @@
-# Vaultier Ecosystem: Hardening & Architectural Audit
+# Spresso Ecosystem: Hardening & Architectural Audit
 
-This document summarizes the current security, performance, and architectural status of the Vaultier ecosystem, following the integration of industrial Redis caching.
+This document summarizes the current security, performance, and architectural status of the Spresso ecosystem, following the integration of industrial Redis caching.
 
 ## 1. Infrastructure: Redis Caching
 Standard Redis has been integrated into the Merchant API using the provided high-fidelity instance.

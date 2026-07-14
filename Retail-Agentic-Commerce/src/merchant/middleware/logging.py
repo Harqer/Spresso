@@ -54,7 +54,7 @@ class RequestLoggingMiddleware(BaseHTTPMiddleware):
         "authorization",
         "x-api-key",
         "cookie",
-        "x-vaultier-internal-key",
+        "x-spresso-internal-key",
         "x-firebase-id-token",
     }
 

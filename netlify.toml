@@ -19,4 +19,4 @@
   status = 200
 
 [context.production.environment]
-  NEXT_PUBLIC_VAULTIER_ENV = "production"
+  NEXT_PUBLIC_SPRESSO_ENV = "production"

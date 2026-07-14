@@ -12,14 +12,14 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun Modifier.userChatBubble(): Modifier =
     this
-        .background(VaultierTheme.colors.primary, RoundedCornerShape(12.dp))
+        .background(SpressoTheme.colors.primary, RoundedCornerShape(12.dp))
 
 @Composable
 fun Modifier.assistantChatBubble(): Modifier =
     this
-        .background(VaultierTheme.colors.surface, RoundedCornerShape(12.dp))
+        .background(SpressoTheme.colors.surface, RoundedCornerShape(12.dp))
 
 @Composable
 fun Modifier.productCard(): Modifier =
     this
-        .background(VaultierTheme.colors.surface, RoundedCornerShape(8.dp))
+        .background(SpressoTheme.colors.surface, RoundedCornerShape(8.dp))

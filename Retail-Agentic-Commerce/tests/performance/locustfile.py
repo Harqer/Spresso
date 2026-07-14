@@ -4,9 +4,9 @@ import uuid
 from locust import HttpUser, between, events, task
 
 
-class VaultierScaleUser(HttpUser):
+class SpressoScaleUser(HttpUser):
     """
-    Industrial Load Tester for Vaultier Global Commerce.
+    Industrial Load Tester for Spresso Global Commerce.
     Simulates high-fidelity user journeys at a scale of billions.
     """
 
@@ -26,7 +26,7 @@ class VaultierScaleUser(HttpUser):
         queries = [
             "Find me a biomorphic chrome jacket.",
             "Complete this look with high-grain leather boots.",
-            "Price arbitrage for the Vaultier Horizon glasses.",
+            "Price arbitrage for the Spresso Horizon glasses.",
             "Show me the match score for biomorphic silhouettes.",
         ]
         payload = {
@@ -101,7 +101,7 @@ def _(parser):
     parser.add_argument(
         "--vibe",
         type=str,
-        env_var="VAULTIER_VIBE",
+        env_var="SPRESSO_VIBE",
         default="industrial",
         help="The design vibe for the load test logs.",
     )
@@ -109,11 +109,11 @@ def _(parser):
 
 @events.test_start.add_listener
 def on_test_start(environment, **_kwargs):
-    print("--- VAULTIER GLOBAL SCALE: COMMENCING INDUSTRIAL LOAD TEST ---")
+    print("--- SPRESSO GLOBAL SCALE: COMMENCING INDUSTRIAL LOAD TEST ---")
     print(f"Targeting: {environment.host}")
     print("Zero-Mock Policy: ACTIVE")
 
 
 @events.test_stop.add_listener
 def on_test_stop(_environment, **_kwargs):
-    print("--- VAULTIER GLOBAL SCALE: LOAD TEST COMPLETE ---")
+    print("--- SPRESSO GLOBAL SCALE: LOAD TEST COMPLETE ---")

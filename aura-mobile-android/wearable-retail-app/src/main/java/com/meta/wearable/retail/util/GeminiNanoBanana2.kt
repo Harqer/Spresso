@@ -76,7 +76,7 @@ class GeminiNanoBanana2(
     }
 
     fun warmUp() {
-        Log.d("VaultierNano", "Warming up production Gemini Nano (Banana 2) on-device engine...")
+        Log.d("SpressoNano", "Warming up production Gemini Nano (Banana 2) on-device engine...")
     }
 
     suspend fun analyzeIntent(
@@ -85,21 +85,21 @@ class GeminiNanoBanana2(
     ): NanoIntent {
         // Security: Input validation
         if (message.isBlank() || message.length > 500) {
-            Log.w("VaultierNano", "Invalid input size for user $userId")
+            Log.w("SpressoNano", "Invalid input size for user $userId")
             return NanoIntent(false)
         }
 
         // Rate Limiting
         val rateLimiter = userRateLimits.getOrPut(userId) { RateLimiter() }
         if (!rateLimiter.consume()) {
-            Log.w("VaultierNano", "Rate limit exceeded for user $userId")
+            Log.w("SpressoNano", "Rate limit exceeded for user $userId")
             return NanoIntent(false, "RATE_LIMIT_EXCEEDED")
         }
 
         // Caching
         val cacheKey = "${userId}_${message.lowercase().trim()}"
         intentCache.get(cacheKey)?.let {
-            Log.d("VaultierNano", "Cache hit for: $message")
+            Log.d("SpressoNano", "Cache hit for: $message")
             return it
         }
 
@@ -121,7 +121,7 @@ class GeminiNanoBanana2(
 
     private suspend fun processBatch(batch: List<IntentRequest>) {
         // Simulated on-device model batch execution
-        Log.d("VaultierNano", "Processing batch of ${batch.size} intents")
+        Log.d("SpressoNano", "Processing batch of ${batch.size} intents")
 
         for (request in batch) {
             val isHighConfidence =

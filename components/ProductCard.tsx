@@ -42,7 +42,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) => {
       <div className="space-y-2">
         <div className="flex justify-between items-start">
           <div className="text-left">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-[#A8A29E] font-bold mb-1">{product.category} • Vaultier Studio</p>
+            <p className="text-[10px] uppercase tracking-[0.2em] text-[#A8A29E] font-bold mb-1">{product.category} • Spresso Studio</p>
             <h3 className="text-2xl font-serif text-[#2C2A26] group-hover:opacity-70 transition-opacity">{product.name}</h3>
           </div>
           <span className="text-lg font-light text-[#2C2A26]">${product.price}</span>

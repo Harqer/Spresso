@@ -10,7 +10,7 @@ import androidx.compose.ui.graphics.Color
 import com.meta.wearable.retail.data.ThemeMode
 
 // Industrial Foundation: Color System
-data class VaultierColors(
+data class SpressoColors(
     val primary: Color = Color(0xFF2C2A26),
     val secondary: Color = Color(0xFFF5F5F5),
     val accent: Color = Color(0xFFE47E3A),
@@ -18,13 +18,13 @@ data class VaultierColors(
     val onSurface: Color = Color.Black,
 )
 
-val LocalVaultierColors = staticCompositionLocalOf { VaultierColors() }
+val LocalSpressoColors = staticCompositionLocalOf { SpressoColors() }
 
-object VaultierTheme {
-    val colors: VaultierColors
+object SpressoTheme {
+    val colors: SpressoColors
         @Composable
         @ReadOnlyComposable
-        get() = LocalVaultierColors.current
+        get() = LocalSpressoColors.current
 
     val typography: Typography
         @Composable
@@ -38,7 +38,7 @@ object VaultierTheme {
 }
 
 @Composable
-fun VaultierTheme(
+fun SpressoTheme(
     themeMode: ThemeMode = ThemeMode.SYSTEM,
     content: @Composable () -> Unit,
 ) {
@@ -50,13 +50,13 @@ fun VaultierTheme(
 
     val colors =
         if (isDark) {
-            VaultierColors(primary = Color.White, onSurface = Color.White, surface = Color.Black)
+            SpressoColors(primary = Color.White, onSurface = Color.White, surface = Color.Black)
         } else {
-            VaultierColors()
+            SpressoColors()
         }
 
     CompositionLocalProvider(
-        LocalVaultierColors provides colors,
+        LocalSpressoColors provides colors,
     ) {
         MaterialTheme(
             colorScheme =

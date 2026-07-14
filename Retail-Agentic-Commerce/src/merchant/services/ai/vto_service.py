@@ -40,7 +40,7 @@ class KyzoVTOEngine:
         if not self._ready:
             return None
 
-        # Industrial Grade: Upgraded Professional Photography Prompt (Vaultier 2026)
+        # Industrial Grade: Upgraded Professional Photography Prompt (Spresso 2026)
         prompt = (
             "Strictly professional, elegant, highly detailed color photography. "
             "High-resolution, cinematic lighting, realistic vibrant colors, crisp focus. "
@@ -68,7 +68,7 @@ class KyzoVTOEngine:
             return None
 
         try:
-            # Industrial Grade: Upgraded Professional Video Directive (Vaultier 2026)
+            # Industrial Grade: Upgraded Professional Video Directive (Spresso 2026)
             video_prompt = (
                 "Create a professional product showcase reel of the garment locked to the reference image "
                 "so its identity, proportions, label and material stay accurate. "

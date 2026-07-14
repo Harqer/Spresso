@@ -36,7 +36,7 @@ def get_redis_client() -> redis.Redis | None:
             _redis_client = None
     return _redis_client
 
-def cached(ttl: int = 300, prefix: str = "vaultier"):
+def cached(ttl: int = 300, prefix: str = "spresso"):
     """Decorator for caching function results in Redis."""
     def decorator(func: Callable):
         @wraps(func)

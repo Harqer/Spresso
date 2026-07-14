@@ -18,7 +18,7 @@ interface ChatDiscoveryProps {
 const ChatDiscovery: React.FC<ChatDiscoveryProps> = ({ onAddToCart, onProductClick }) => {
   const { getToken } = useAuth();
   const [messages, setMessages] = useState<ChatMessage[]>([
-    { role: 'model', text: 'Welcome to Vaultier. I am your personal fashion concierge. I can help you find latest drops, trend reports, or perform virtual try-ons. How can I assist your style discovery today?', timestamp: Date.now() }
+    { role: 'model', text: 'Welcome to Spresso. I am your personal fashion concierge. I can help you find latest drops, trend reports, or perform virtual try-ons. How can I assist your style discovery today?', timestamp: Date.now() }
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isThinking, setIsThinking] = useState(false);
@@ -176,7 +176,7 @@ const ChatDiscovery: React.FC<ChatDiscoveryProps> = ({ onAddToCart, onProductCli
                                 </div>
                             )}
                             <div className="absolute top-4 left-4 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full border border-white/30">
-                                <span className="text-[10px] text-white uppercase tracking-widest font-bold">Vaultier VTO</span>
+                                <span className="text-[10px] text-white uppercase tracking-widest font-bold">Spresso VTO</span>
                             </div>
                         </div>
                         <div className="p-6 text-center">
@@ -360,7 +360,7 @@ const ChatDiscovery: React.FC<ChatDiscoveryProps> = ({ onAddToCart, onProductCli
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onKeyDown={handleKeyPress}
-              placeholder="Tell Vaultier what you're looking for..."
+              placeholder="Tell Spresso what you're looking for..."
               className="w-full bg-transparent px-6 py-5 text-base outline-none resize-none placeholder-[#A8A29E] text-[#2C2A26] min-h-[64px] max-h-[200px]"
               style={{ height: 'auto' }}
             />

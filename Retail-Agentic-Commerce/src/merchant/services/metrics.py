@@ -72,7 +72,7 @@ from typing import Any
 logger = logging.getLogger(__name__)
 
 
-@cached(ttl=90, prefix="vaultier:metrics")
+@cached(ttl=90, prefix="spresso:metrics")
 def get_dashboard_metrics(
     db: Session, time_range: DashboardTimeRange
 ) -> dict[str, Any]:

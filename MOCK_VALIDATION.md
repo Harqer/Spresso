@@ -1,10 +1,10 @@
 # Mock Device Kit Validation Guide
 
-This document describes how to perform manual validation of the Vaultier Retail wearable experience using the built-in Mock Device Kit (MDK).
+This document describes how to perform manual validation of the Spresso Retail wearable experience using the built-in Mock Device Kit (MDK).
 
 ## Manual Validation Path
 
-1. **Enable Mock Mode**: Toggle the "Mock Mode" switch in the Vaultier Retail mobile app.
+1. **Enable Mock Mode**: Toggle the "Mock Mode" switch in the Spresso Retail mobile app.
 2. **Pair Device**: Tap "Pair Mock Ray-Ban Meta". This creates a virtual device in the SDK stack.
 3. **Simulate State**:
    - Tap **Power On**: Simulates battery connection.

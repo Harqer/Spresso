@@ -24,7 +24,7 @@ function App() {
   const [cartItems, setCartItems] = useState<Product[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
-  // Vaultier Handlers
+  // Spresso Handlers
   const handleSignIn = async () => {
     const provider = new GoogleAuthProvider();
     await signInWithPopup(auth, provider);
@@ -57,7 +57,7 @@ function App() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Vaultier Branding for Clerk
+  // Spresso Branding for Clerk
   const clerkAppearance = {
     elements: {
       formButtonPrimary: 'bg-[#2C2A26] hover:bg-[#433E38] text-sm uppercase tracking-widest transition-all rounded-none py-4',
@@ -86,7 +86,7 @@ function App() {
           <div className="absolute inset-0 bg-[#F5F2EB]/90 backdrop-blur-sm"></div>
           <div className="w-full max-w-md relative z-10 animate-fade-in-up">
             <div className="mb-16">
-                <h1 className="text-5xl font-serif mb-4 tracking-tight">Vaultier</h1>
+                <h1 className="text-5xl font-serif mb-4 tracking-tight">Spresso</h1>
                 <p className="text-[#A8A29E] uppercase tracking-[0.3em] text-[10px] font-medium">AI Fashion Concierge & Space</p>
             </div>
             <div className="bg-white border border-[#EBE7DE] p-12 space-y-8">

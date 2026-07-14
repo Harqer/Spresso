@@ -42,7 +42,7 @@ import com.meta.wearable.retail.data.SettingsRepository
 import com.meta.wearable.retail.data.ThemeMode
 import com.meta.wearable.retail.ui.ProductRepository
 import com.meta.wearable.retail.ui.RetailMobileApp
-import com.meta.wearable.retail.ui.theme.VaultierTheme
+import com.meta.wearable.retail.ui.theme.SpressoTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import java.util.concurrent.Executor
@@ -79,7 +79,7 @@ class MainActivity : FragmentActivity() {
                 }
             }
 
-            VaultierTheme(themeMode = themeMode) {
+            SpressoTheme(themeMode = themeMode) {
                 var currentScreen by remember { mutableStateOf(AppScreen.Launch) }
                 val regState by Wearables.registrationState.collectAsState()
                 var showRationale by remember { mutableStateOf(false) }
@@ -110,7 +110,7 @@ class MainActivity : FragmentActivity() {
                             var email by remember { mutableStateOf("") }
                             var pass by remember { mutableStateOf("") }
                             Column(modifier = Modifier.fillMaxSize().padding(32.dp), verticalArrangement = Arrangement.Center) {
-                                Text(stringResource(R.string.vaultier_identity), style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Black)
+                                Text(stringResource(R.string.spresso_identity), style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Black)
                                 Spacer(modifier = Modifier.height(32.dp))
                                 OutlinedTextField(
                                     value = email,
@@ -156,14 +156,14 @@ class MainActivity : FragmentActivity() {
                             var isAuthenticated by remember { mutableStateOf(false) }
                             var userToken by remember { mutableStateOf("") }
                             var userTier by remember { mutableStateOf("free") }
-                            var userName by remember { mutableStateOf("Vaultier User") }
-                            var userEmail by remember { mutableStateOf("user@vaultier.ai") }
+                            var userName by remember { mutableStateOf("Spresso User") }
+                            var userEmail by remember { mutableStateOf("user@spresso.ai") }
 
                             LaunchedEffect(Unit) {
                                 val currentUser = auth.currentUser
                                 if (currentUser != null) {
-                                    userName = currentUser.displayName ?: "Vaultier User"
-                                    userEmail = currentUser.email ?: "user@vaultier.ai"
+                                    userName = currentUser.displayName ?: "Spresso User"
+                                    userEmail = currentUser.email ?: "user@spresso.ai"
                                     currentUser.getIdToken(false).addOnSuccessListener { result ->
                                         userToken = result.token ?: ""
                                         userTier = result.claims["stripeRole"] as? String ?: "free"
@@ -527,7 +527,7 @@ fun GlassesController(
             onBack() 
         }) { Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null, tint = Color.White) }
         Spacer(modifier = Modifier.height(24.dp))
-        Text(stringResource(R.string.vaultier_pulse), color = Color.White, style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.Black)
+        Text(stringResource(R.string.spresso_pulse), color = Color.White, style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.Black)
         Spacer(modifier = Modifier.height(48.dp))
 
         Card(modifier = Modifier.fillMaxWidth(), colors = CardDefaults.cardColors(containerColor = Color(0xFF1A1A1A))) {

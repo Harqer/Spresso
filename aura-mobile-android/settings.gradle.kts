@@ -36,6 +36,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Vaultier Retail"
+rootProject.name = "Spresso Retail"
 include(":wearable-retail-app")
 include(":wear-retail-watch")

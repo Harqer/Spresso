@@ -21,22 +21,22 @@ class InternalSecurityMiddleware(BaseHTTPMiddleware):
             return await call_next(request)
 
         # Retrieve internal secret from environment
-        internal_secret = os.getenv("VAULTIER_INTERNAL_SECRET")
-        request_secret = request.headers.get("X-Vaultier-Internal-Key")
+        internal_secret = os.getenv("SPRESSO_INTERNAL_SECRET")
+        request_secret = request.headers.get("X-Spresso-Internal-Key")
 
         # 2026 Zero-Trust Standard: Reject if secret is missing or mismatched
         if not internal_secret or request_secret != internal_secret:
             return Response(
-                content="Network Isolation Violation: Direct access to Vaultier Cortex is prohibited.",
+                content="Network Isolation Violation: Direct access to Spresso Cortex is prohibited.",
                 status_code=403,
             )
 
         # Identity Propagation: Store Tier and Entitlements in request state
-        request.state.user_id = request.headers.get("X-Vaultier-User-ID")
-        request.state.user_tier = request.headers.get("X-Vaultier-User-Tier", "free")
+        request.state.user_id = request.headers.get("X-Spresso-User-ID")
+        request.state.user_tier = request.headers.get("X-Spresso-User-Tier", "free")
 
         # Features are propagated as a comma-separated string from the Go Gateway
-        features_raw = request.headers.get("X-Vaultier-User-Features", "")
+        features_raw = request.headers.get("X-Spresso-User-Features", "")
         request.state.user_features = [
             f.strip() for f in features_raw.split(",") if f.strip()
         ]

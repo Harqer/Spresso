@@ -31,23 +31,23 @@ android {
             properties.load(FileInputStream(localPropertiesFile))
         }
 
-        val backendUrl: String = System.getenv("VAULTIER_BACKEND_URL") 
-            ?: properties.getProperty("VAULTIER_BACKEND_URL")
+        val backendUrl: String = System.getenv("SPRESSO_BACKEND_URL") 
+            ?: properties.getProperty("SPRESSO_BACKEND_URL")
             ?: "https://aura-edge-service.quantumcoin.workers.dev"
         val googleId: String = System.getenv("GOOGLE_WEB_CLIENT_ID") 
             ?: properties.getProperty("GOOGLE_WEB_CLIENT_ID")
             ?: ""
-        val internalSecret: String = System.getenv("VAULTIER_INTERNAL_SECRET") 
-            ?: properties.getProperty("VAULTIER_INTERNAL_SECRET")
+        val internalSecret: String = System.getenv("SPRESSO_INTERNAL_SECRET") 
+            ?: properties.getProperty("SPRESSO_INTERNAL_SECRET")
             ?: ""
-        val vaultierDomain: String = System.getenv("VAULTIER_DOMAIN") 
-            ?: properties.getProperty("VAULTIER_DOMAIN")
-            ?: "vaultier.wearables.com"
+        val spressoDomain: String = System.getenv("SPRESSO_DOMAIN") 
+            ?: properties.getProperty("SPRESSO_DOMAIN")
+            ?: "spresso.wearables.com"
 
-        buildConfigField("String", "VAULTIER_BACKEND_URL", "\"$backendUrl\"")
+        buildConfigField("String", "SPRESSO_BACKEND_URL", "\"$backendUrl\"")
         buildConfigField("String", "GOOGLE_WEB_CLIENT_ID", "\"$googleId\"")
-        buildConfigField("String", "VAULTIER_DOMAIN", "\"$vaultierDomain\"")
-        buildConfigField("String", "VAULTIER_INTERNAL_SECRET", "\"$internalSecret\"")
+        buildConfigField("String", "SPRESSO_DOMAIN", "\"$spressoDomain\"")
+        buildConfigField("String", "SPRESSO_INTERNAL_SECRET", "\"$internalSecret\"")
     }
 
     buildFeatures {
@@ -92,7 +92,7 @@ dependencies {
     // Firebase
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
-    implementation("com.google.firebase:firebase-vertexai-preview:16.5.0")
+    implementation("com.google.firebase:firebase-vertexai:16.2.0")
 
     implementation(libs.androidx.datastore.preferences)
 

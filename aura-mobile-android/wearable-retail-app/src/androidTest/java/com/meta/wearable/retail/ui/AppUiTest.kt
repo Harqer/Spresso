@@ -28,6 +28,6 @@ class AppUiTest {
             )
         }
 
-        composeTestRule.onNodeWithText("Vaultier").assertIsDisplayed()
+        composeTestRule.onNodeWithText("Spresso").assertIsDisplayed()
     }
 }

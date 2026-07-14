@@ -1,6 +1,6 @@
 <resources>
-    <string name="vaultier_app_name">Vaultier Retail</string>
-    <string name="vaultier_identity">IDENTITÉ VAULTIER</string>
+    <string name="spresso_app_name">Spresso Retail</string>
+    <string name="spresso_identity">IDENTITÉ SPRESSO</string>
     <string name="email_label">E-mail</string>
     <string name="password_label">Mot de passe</string>
     <string name="sign_in">SE CONNECTER</string>
@@ -17,11 +17,11 @@
     <string name="connected">Connecté</string>
     <string name="disconnected">Déconnecté</string>
     <string name="cancel">Annuler</string>
-    <string name="vaultier_pulse">POULS VAULTIER</string>
+    <string name="spresso_pulse">POULS SPRESSO</string>
     <string name="hardware_status">ÉTAT DU MATÉRIEL</string>
-    <string name="vaultier">VAULTIER</string>
+    <string name="spresso">SPRESSO</string>
     <string name="comparison_view">Vue de comparaison</string>
-    <string name="ask_vaultier">Demandez à Vaultier...</string>
+    <string name="ask_spresso">Demandez à Spresso...</string>
     <string name="try_on_from_gallery">Essayage depuis la galerie</string>
     <string name="virtual_try_on">Essayage virtuel</string>
     <string name="higgsfield_video_engine">Moteur vidéo Higgsfield-1</string>

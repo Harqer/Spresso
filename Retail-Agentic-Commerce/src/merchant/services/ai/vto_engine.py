@@ -45,7 +45,7 @@ class KyzoVTOEngine:
             config=Config(signature_version="s3v4"),
             region_name="auto",
         )
-        self.bucket_name = "vaultier-generative-assets"
+        self.bucket_name = "spresso-generative-assets"
 
         policy_path = os.path.join(
             os.path.dirname(__file__), "../config/stylist_policy.json"
@@ -68,7 +68,7 @@ class KyzoVTOEngine:
             # Check if object exists in R2
             try:
                 self.r2.head_object(Bucket=self.bucket_name, Key=f"{key}.mp4")
-                public_url = f"https://cdn.vaultier.com/vto/{key}.mp4"
+                public_url = f"https://cdn.spresso.com/vto/{key}.mp4"
                 self.redis.set(key, public_url, ex=86400)  # Re-populate hot cache
                 return public_url
             except Exception:
@@ -95,7 +95,7 @@ class KyzoVTOEngine:
 
         aesthetic_keywords = self.style_guide.get(style_id, "")
         prompt = (
-            f"Vaultier industrial Production: Map {garment_image_url} onto user in {user_photo_url}. "
+            f"Spresso industrial Production: Map {garment_image_url} onto user in {user_photo_url}. "
             f"Aesthetic: {aesthetic_keywords}. "
             "Specs: 8k, Ray-Traced, physically accurate fabric drape."
         )
@@ -120,8 +120,8 @@ class KyzoVTOEngine:
     ) -> dict[str, Any]:
         """User-specific loop with Higgsfield-1 cost protection."""
 
-        user_photo_uri = f"gs://vaultier-reference-photos/{user_id}/base.jpg"
-        garment_uri = f"https://catalog.vaultier.com/{garment_id}/high_res.jpg"
+        user_photo_uri = f"gs://spresso-reference-photos/{user_id}/base.jpg"
+        garment_uri = f"https://catalog.spresso.com/{garment_id}/high_res.jpg"
 
         # Expert Strategy: Prevent redundant $0.50 Higgsfield inference
         vto_key = self._generate_stable_key("vto", user_id, garment_id, requested_style)
@@ -167,7 +167,7 @@ class KyzoVTOEngine:
                     # Expert Strategy: Commit to cold storage
                     if vto_video:
                         with contextlib.suppress(Exception):
-                            # Transfer from Higgsfield to Vaultier R2 Storage
+                            # Transfer from Higgsfield to Spresso R2 Storage
                             # (Simulated transfer for this implementation)
                             self.redis.set(vto_key, vto_video, ex=86400)
 

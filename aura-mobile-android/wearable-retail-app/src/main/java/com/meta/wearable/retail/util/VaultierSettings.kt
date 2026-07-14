@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.map
  * Modern Jetpack DataStore implementation of a property file.
  * Replaces legacy java.util.Properties with a reactive, coroutine-safe system.
  */
-class VaultierSettings(
+class SpressoSettings(
     private val context: Context,
     private val name: String,
 ) {

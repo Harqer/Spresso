@@ -28,7 +28,7 @@ export default withSentryConfig(nextConfig, {
   // For all available options, see:
   // https://github.com/getsentry/sentry-webpack-plugin#options
 
-  org: "vaultier-retail",
+  org: "spresso-retail",
   project: "***REDACTED_PROJECT_ID***",
 
   // Only print logs for uploading source maps in CI

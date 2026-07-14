@@ -37,7 +37,7 @@ export const sendMessageToGemini = async (
     });
 
     if (!response.ok) {
-        throw new Error("Vaultier intelligence is currently offline.");
+        throw new Error("Spresso intelligence is currently offline.");
     }
 
     const reader = response.body?.getReader();
@@ -96,7 +96,7 @@ export const sendMessageToGemini = async (
     return result;
 
   } catch (error) {
-    console.error("Vaultier Discovery Error:", error);
+    console.error("Spresso Discovery Error:", error);
     return { text: "I apologize, but I seem to be having trouble reaching our archives at the moment." };
   }
 };

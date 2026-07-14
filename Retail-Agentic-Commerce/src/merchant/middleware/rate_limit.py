@@ -43,7 +43,7 @@ class RedisRateLimitMiddleware(BaseHTTPMiddleware):
         client_id = request.headers.get("Authorization", request.client.host if request.client else "unknown")
         import hashlib
         # expert strategy: partition rate limits by path to prevent global lockout
-        key = f"vaultier:ratelimit:{hashlib.md5(client_id.encode()).hexdigest()[:12]}:{request.url.path}"
+        key = f"spresso:ratelimit:{hashlib.md5(client_id.encode()).hexdigest()[:12]}:{request.url.path}"
 
         try:
             current = self.redis.get(key)

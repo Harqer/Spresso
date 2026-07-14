@@ -28,7 +28,7 @@ async def firebase_webhook(
         data = await request.json()
         user_id = data.get("uid")
         email = data.get("email")
-        name = data.get("displayName", "Vaultier Member")
+        name = data.get("displayName", "Spresso Member")
 
         if not user_id or not email:
             raise HTTPException(status_code=400, detail="Incomplete user data")

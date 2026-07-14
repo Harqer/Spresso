@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.map
 /**
  * Modern Jetpack DataStore implementation for Wear OS settings.
  */
-class VaultierSettings(
+class SpressoSettings(
     private val context: Context,
     private val name: String,
 ) {

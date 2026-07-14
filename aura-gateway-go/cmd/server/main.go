@@ -118,7 +118,7 @@ func main() {
 	frontendAPI := secretVault.GetSecret("NEXT_PUBLIC_CLERK_FRONTEND_API")
 	audience := "insforge-api"
 	
-	cortexAddr := secretVault.GetSecret("VAULTIER_CORTEX_ADDR")
+	cortexAddr := secretVault.GetSecret("SPRESSO_CORTEX_ADDR")
 	if cortexAddr == "" {
 		cortexAddr = "http://localhost:8000"
 	}
@@ -131,7 +131,7 @@ func main() {
 	}
 
 	turnstileSecret := secretVault.GetSecret("TURNSTILE_SECRET_KEY")
-	vaultierDomain := secretVault.GetSecret("VAULTIER_DOMAIN")
+	spressoDomain := secretVault.GetSecret("SPRESSO_DOMAIN")
 
 	authenticator := auth.NewClerkAuthenticator(frontendAPI, audience)
 	cortexProxy := proxy.NewCortexProxy(cortexAddr)
@@ -214,8 +214,8 @@ func main() {
 		proxyReq.Header.Set("Content-Type", "application/json")
 		proxyReq.Header.Set("X-API-Key", merchantApiKey)
 		// Pass identity info to cortex securely
-		proxyReq.Header.Set("X-Vaultier-User-Id", identity.ID)
-		proxyReq.Header.Set("X-Vaultier-User-Tier", identity.Tier)
+		proxyReq.Header.Set("X-Spresso-User-Id", identity.ID)
+		proxyReq.Header.Set("X-Spresso-User-Tier", identity.Tier)
 		
 		client := &http.Client{Timeout: 60 * time.Second}
 		resp, err := client.Do(proxyReq)
@@ -243,10 +243,10 @@ func main() {
 		trending := []map[string]interface{}{
 			{
 				"id":       "v1",
-				"videoUrl": "https://cdn.vaultier.com/samples/vto_chrome_1.mp4",
+				"videoUrl": "https://cdn.spresso.com/samples/vto_chrome_1.mp4",
 				"product": map[string]interface{}{
 					"id":      "prod_1",
-					"name":    "Vaultier Harmony",
+					"name":    "Spresso Harmony",
 					"tagline": "Listen naturally.",
 					"price":   429,
 				},
@@ -255,10 +255,10 @@ func main() {
 			},
 			{
 				"id":       "v2",
-				"videoUrl": "https://cdn.vaultier.com/samples/vto_pastel_2.mp4",
+				"videoUrl": "https://cdn.spresso.com/samples/vto_pastel_2.mp4",
 				"product": map[string]interface{}{
 					"id":      "prod_2",
-					"name":    "Vaultier Epoch",
+					"name":    "Spresso Epoch",
 					"tagline": "Moments, not minutes.",
 					"price":   349,
 				},
@@ -296,7 +296,7 @@ func main() {
 		}
 
 		if clientPlatform == "web" {
-			if !verifyTurnstile(turnstileToken, remoteIP, turnstileSecret, vaultierDomain) {
+			if !verifyTurnstile(turnstileToken, remoteIP, turnstileSecret, spressoDomain) {
 				log.Printf("Security Alert: Turnstile verification failed for user %s", identity.ID)
 				sendJSONError(w, "Forbidden: Security Check Failed", http.StatusForbidden)
 				return
@@ -307,7 +307,7 @@ func main() {
 			log.Printf("Native Mobile Connection Verified: %s", identity.ID)
 		} else {
 			// Default to strict: unknown clients must pass Turnstile or be rejected
-			if !verifyTurnstile(turnstileToken, remoteIP, turnstileSecret, vaultierDomain) {
+			if !verifyTurnstile(turnstileToken, remoteIP, turnstileSecret, spressoDomain) {
 				log.Printf("Security Alert: Unknown client failed bot check.")
 				sendJSONError(w, "Forbidden: Security Check Required", http.StatusForbidden)
 				return
@@ -321,7 +321,7 @@ func main() {
 		}
 		defer conn.Close()
 
-		log.Printf("Vaultier Live Tunnel Active: User %s (%s Tier)", identity.ID, identity.Tier)
+		log.Printf("Spresso Live Tunnel Active: User %s (%s Tier)", identity.ID, identity.Tier)
 
 		cortexProxy.TunnelVision(conn, identity.ID, identity.Tier, identity.Features)
 	})
