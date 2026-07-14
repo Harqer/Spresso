@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { describe, it, expect } from "vitest";
 import { renderHook, act } from "@testing-library/react";
 import { AgentActivityLogProvider, useAgentActivityLog } from "./useAgentActivityLog";
