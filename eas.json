@@ -1,8 +1,18 @@
 {
+  "cli": {
+    "version": ">= 14.1.0",
+    "appExtensions": {
+      "managedAndroidBuild": true
+    }
+  },
   "build": {
-    "preview": {
+    "production": {
       "android": {
-        "buildType": "apk"
+        "buildType": "apk",
+        "gradleCommand": ":wearable-retail-app:assembleRelease"
+      },
+      "env": {
+        "GITHUB_TOKEN": "***REDACTED_PLACEHOLDER***"
       }
     }
   }
