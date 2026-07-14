@@ -29,3 +29,4 @@ aura-mobile-android/**/*.aab
 # Lockfile hygiene: pnpm is the only package manager for this repo.
 Retail-Agentic-Commerce/package-lock.json
 Retail-Agentic-Commerce/yarn.lock
+local.properties
