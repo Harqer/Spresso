@@ -146,34 +146,34 @@ workflow:
     max_attempts: 2
     retry_on_exception: true
 
-    EXAMPLE INPUT:
-    {
-      "brand_persona": {
-        "company_name": "Acme T-Shirts",
-        "tone": "friendly",
-        "preferred_language": "en"
-      },
-      "order": {
-        "order_id": "order_xyz789",
-        "customer_name": "John",
-        "items": [
-          { "name": "Classic Tee", "quantity": 1 },
-          { "name": "Logo Hoodie", "quantity": 2 }
-        ],
-        "tracking_url": "https://track.example.com/abc123",
-        "estimated_delivery": "2026-01-28"
-      },
-      "status": "order_shipped"
-    }
+# EXAMPLE INPUT (Documented for developers):
+#    {
+#      "brand_persona": {
+#        "company_name": "Acme T-Shirts",
+#        "tone": "friendly",
+#        "preferred_language": "en"
+#      },
+#      "order": {
+#        "order_id": "order_xyz789",
+#        "customer_name": "John",
+#        "items": [
+#          { "name": "Classic Tee", "quantity": 1 },
+#          { "name": "Logo Hoodie", "quantity": 2 }
+#        ],
+#        "tracking_url": "https://track.example.com/abc123",
+#        "estimated_delivery": "2026-01-28"
+#      },
+#      "status": "order_shipped"
+#    }
 
-    EXAMPLE OUTPUT:
-    {
-      "order_id": "order_xyz789",
-      "status": "order_shipped",
-      "language": "en",
-      "subject": "Your Classic Tee is on its way! 🚚",
-      "message": "Hey John! Great news - your Classic Tee is on its way! 🚚\n\nTrack your package: https://track.example.com/abc123\n\nExpected delivery: January 28, 2026\n\n- The Acme T-Shirts Team"
-    }
+# EXAMPLE OUTPUT:
+#    {
+#      "order_id": "order_xyz789",
+#      "status": "order_shipped",
+#      "language": "en",
+#      "subject": "Your Classic Tee is on its way! 🚚",
+#      "message": "Hey John! Great news - your Classic Tee is on its way! 🚚\n\nTrack your package: https://track.example.com/abc123\n\nExpected delivery: January 28, 2026\n\n- The Acme T-Shirts Team"
+#    }
 
 # =============================================================================
 # EVALUATION & PROFILING
