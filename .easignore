@@ -1,7 +1,10 @@
 node_modules
 .next
+.git
 .venv
-dist
-aura-mobile-android/.gradle
+codeql-db
+*.log
+index.html
+Retail-Agentic-Commerce/src/ui/node_modules
 aura-mobile-android/build
-Retail-Agentic-Commerce/node_modules
+aura-mobile-android/.gradle
