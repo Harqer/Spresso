@@ -1,4 +1,4 @@
-# Aura Retail Proguard Rules
+# Spresso Retail Proguard Rules
 
 # Meta Wearables DAT SDK
 -keep class com.meta.wearable.dat.** { *; }
