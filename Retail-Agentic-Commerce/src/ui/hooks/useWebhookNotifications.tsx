@@ -20,6 +20,7 @@ import {
   useRef,
   ReactNode,
 } from "react";
+import * as Sentry from "@sentry/nextjs";
 
 // Types matching the webhook API
 export interface WebhookEvent {
@@ -117,7 +118,7 @@ export function WebhookNotificationsProvider({
       const response = await fetch(url);
 
       if (!response.ok) {
-        console.error("[Webhook] Failed to fetch notifications:", response.status);
+        Sentry.captureMessage(`Webhook fetch failed: ${response.status}`, "error");
         return;
       }
 
@@ -152,7 +153,7 @@ export function WebhookNotificationsProvider({
         }
       }
     } catch (error) {
-      console.error("[Webhook] Error fetching notifications:", error);
+      Sentry.captureException(error, { tags: { hook: "useWebhookNotifications" } });
     }
   }, [checkoutSessionId]);
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
+import * as Sentry from "@sentry/nextjs";
 import { Stack, Flex, Text } from "@kui/foundations-react-external";
 import { ChatMessage } from "./ChatMessage";
 import { ProductGrid } from "./ProductGrid";
@@ -412,8 +413,7 @@ export function AgentPanel({ protocol }: AgentPanelProps) {
           setProducts(data.results || []);
         }
       } catch (e) {
-        // eslint-disable-next-line no-console
-        console.error("Failed to load live products:", e);
+        Sentry.captureException(e, { tags: { component: "AgentPanel", action: "fetchInitialData" } });
       }
     };
     void fetchInitialData();

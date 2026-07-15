@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Navbar, PanelDivider } from "@/components/layout";
 import { AgentPanel } from "@/components/agent";
 import { BusinessPanel } from "@/components/business";
@@ -15,7 +16,7 @@ import type { CheckoutProtocol } from "@/types";
  * Main page - Three-panel layout with Agent simulator, Merchant view, and Agent Activity
  * Uses CSS custom properties for consistent spacing (see globals.css)
  * Wrapped in ACPLogProvider and AgentActivityLogProvider to share logs between panels
- * Features NVIDIA-style Nebula animated background with gradient overlays
+ * Features Spresso-style Nebula animated background with gradient overlays
  */
 export default function Home() {
   const [protocol, setProtocol] = useState<CheckoutProtocol>("acp");
@@ -45,7 +46,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Top Green Gradient Overlay */}
+          {/* Top Spresso Gradient Overlay */}
           <div
             className="pointer-events-none"
             style={{
@@ -54,32 +55,13 @@ export default function Home() {
               left: 0,
               right: 0,
               height: "500px",
-              background: "linear-gradient(80.22deg, #BFF230 1.49%, #7CD7FE 99.95%)",
-              opacity: 0.12,
+              background: "linear-gradient(80.22deg, #FF8C00 1.49%, #FFA500 99.95%)",
+              opacity: 0.1,
               zIndex: 0,
               maskImage:
                 "radial-gradient(ellipse 150% 120% at top, black 0%, black 30%, transparent 70%)",
               WebkitMaskImage:
                 "radial-gradient(ellipse 150% 120% at top, black 0%, black 30%, transparent 70%)",
-            }}
-          />
-
-          {/* Bottom Green Gradient Overlay */}
-          <div
-            className="pointer-events-none"
-            style={{
-              position: "fixed",
-              bottom: 0,
-              left: 0,
-              right: 0,
-              height: "300px",
-              background: "linear-gradient(80.22deg, #BFF230 1.49%, #7CD7FE 99.95%)",
-              opacity: 0.12,
-              zIndex: 0,
-              maskImage:
-                "radial-gradient(ellipse 120% 130% at bottom, black 0%, black 25%, transparent 60%)",
-              WebkitMaskImage:
-                "radial-gradient(ellipse 120% 130% at bottom, black 0%, black 25%, transparent 60%)",
             }}
           />
 

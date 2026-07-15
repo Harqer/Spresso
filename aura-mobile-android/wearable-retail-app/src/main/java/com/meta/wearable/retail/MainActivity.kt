@@ -42,6 +42,7 @@ import com.meta.wearable.retail.data.SettingsRepository
 import com.meta.wearable.retail.data.ThemeMode
 import com.meta.wearable.retail.ui.ProductRepository
 import com.meta.wearable.retail.ui.RetailMobileApp
+import com.meta.wearable.retail.ui.SpressoOnboarding
 import com.meta.wearable.retail.ui.theme.SpressoTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -94,16 +95,14 @@ class MainActivity : FragmentActivity() {
                             )
                         }
                         AppScreen.Welcome -> {
-                            OnboardingScreen(
-                                bgColor = Color(0xFF2C2A26),
-                                tagline = "AGENTIC COMMERCE\nFOR THE WEARABLE ERA",
+                            SpressoOnboarding(
                                 onContinue = {
                                     if (auth.currentUser != null) {
                                         currentScreen = AppScreen.Shop
                                     } else {
                                         currentScreen = AppScreen.Identity
                                     }
-                                },
+                                }
                             )
                         }
                         AppScreen.Identity -> {

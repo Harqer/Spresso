@@ -14,6 +14,7 @@
  */
 
 import { NextRequest, NextResponse } from "next/server";
+import * as Sentry from "@sentry/nextjs";
 
 // Force Node.js runtime (not Edge) for full API compatibility
 export const runtime = "nodejs";
@@ -25,7 +26,7 @@ const PSP_API_KEY = process.env.PSP_API_KEY;
 // Fail-fast: log warning on module load if API key is missing
 // (actual error returned on first request)
 if (!PSP_API_KEY) {
-  console.warn("[PSPProxy] PSP_API_KEY not configured - requests will fail");
+  // Sentry.captureMessage("[PSPProxy] PSP_API_KEY not configured", "warning");
 }
 
 // Headers to forward from client to upstream
@@ -91,7 +92,7 @@ async function proxyRequest(
 ): Promise<NextResponse> {
   // Fail-fast: return 500 if API key is not configured
   if (!PSP_API_KEY) {
-    console.error("[PSPProxy] PSP_API_KEY is not configured");
+    Sentry.captureMessage("[PSPProxy] PSP_API_KEY is not configured", "error");
     return NextResponse.json(
       { error: "Proxy misconfigured: PSP_API_KEY not set" },
       { status: 500 }
@@ -102,7 +103,10 @@ async function proxyRequest(
 
   // SSRF protection: validate path segments
   if (!validatePathSegments(pathSegments)) {
-    console.error("[PSPProxy] Invalid path segments:", pathSegments);
+    Sentry.captureMessage(`[PSPProxy] Invalid path segments: ${pathSegments.join("/")}`, {
+      level: "error",
+      extra: { pathSegments },
+    });
     return NextResponse.json({ error: "Invalid path" }, { status: 400 });
   }
 
@@ -141,7 +145,7 @@ async function proxyRequest(
       headers: responseHeaders,
     });
   } catch (error) {
-    console.error("[PSPProxy] Fetch error:", error);
+    Sentry.captureException(error, { tags: { endpoint: "/api/proxy/psp" } });
     return NextResponse.json({ error: "Upstream request failed" }, { status: 502 });
   }
 }

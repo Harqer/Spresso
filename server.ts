@@ -1,5 +1,6 @@
 import express from 'express';
 import path from 'path';
+import * as Sentry from "@sentry/node";
 import { GoogleGenAI, Type } from '@google/genai';
 import { createServer as createViteServer } from 'vite';
 import helmet from 'helmet';
@@ -98,6 +99,13 @@ No products in shot. No logos. No product plinth.
 
 No title, notes or quotes. The suppression line is the only place the word "product" appears.`;
 
+// Initialize Sentry for Industrial Observability
+Sentry.init({
+  dsn: process.env.SENTRY_DSN || "https://REDACTED_SENTRY_KEY@o***REDACTED_SENTRY_ORG_ID***.ingest.us.sentry.io/***REDACTED_SENTRY_ID***",
+  environment: process.env.NODE_ENV || "production",
+  tracesSampleRate: 1.0,
+});
+
 // gemini-3.1-flash-lite-image with delivery:'inline' returns image bytes in the response, but
 // fall back to downloading the File API uri if a uri ever comes back instead.
 async function fileUriToBase64(uri: string): Promise<{ data: string; mimeType: string }> {
@@ -188,14 +196,14 @@ Do NOT wrap the JSON in markdown code blocks. Just output the raw JSON object.`;
           const data = JSON.parse(fullJson);
           res.write(`data: ${JSON.stringify({ type: 'result', data })}\n\n`);
         } catch (e) {
-          console.error("JSON parse error:", e, fullJson);
+          Sentry.captureException(e, { extra: { fullJson } });
         }
       }
       res.end();
 
 
     } catch (error: any) {
-      console.error('Discovery chat error:', error);
+      Sentry.captureException(error, { tags: { endpoint: "/discovery/chat" } });
       res.status(500).json({ error: error.message });
     }
   });
@@ -237,7 +245,7 @@ Do NOT wrap the JSON in markdown code blocks. Just output the raw JSON array.`;
       const data = JSON.parse(text);
       res.json(data);
     } catch (error: any) {
-      console.error('Discovery trending error:', error);
+      Sentry.captureException(error, { tags: { endpoint: "/discovery/trending" } });
       res.status(500).json({ error: error.message });
     }
   });
@@ -273,7 +281,7 @@ Do NOT wrap the JSON in markdown code blocks. Just output the raw JSON array.`;
       const data = JSON.parse(text);
       res.json(data);
     } catch (error: any) {
-      console.error('Discovery journal error:', error);
+      Sentry.captureException(error, { tags: { endpoint: "/discovery/journal" } });
       res.status(500).json({ error: error.message });
     }
   });
@@ -316,7 +324,7 @@ Do NOT wrap the JSON in markdown code blocks. Just output the raw JSON array.`;
       const products = JSON.parse(text);
       res.json({ products });
     } catch (error: any) {
-      console.error('Search products error:', error);
+      Sentry.captureException(error, { tags: { endpoint: "/api/search-products" } });
       res.status(500).json({ error: error.message });
     }
   });
@@ -404,7 +412,7 @@ Materials and physics: <how light and matter behave securely>. Audio: near-silen
 
       res.json({ prompt: response.text });
     } catch (e: any) {
-      console.error('Error generating prompt:', e);
+      Sentry.captureException(e, { tags: { endpoint: "/api/generate-prompt" } });
       res.status(500).json({ error: e.message });
     }
   });
@@ -450,7 +458,7 @@ Output ONLY the style brief text — no labels, no quotes, no preamble.`;
 
       res.json({ description: (response.text || '').trim() });
     } catch (e: any) {
-      console.error('Error describing image:', e);
+      Sentry.captureException(e, { tags: { endpoint: "/api/describe" } });
       res.status(500).json({ error: e.message });
     }
   });
@@ -504,7 +512,7 @@ Output ONLY the style brief text — no labels, no quotes, no preamble.`;
 
       res.json({ image: { data, mimeType }, prompt: imagePrompt });
     } catch (e: any) {
-      console.error('Error generating atmosphere:', e);
+      Sentry.captureException(e, { tags: { endpoint: "/api/generate-atmosphere" } });
       res.status(500).json({ error: e?.body || e.message });
     }
   });
@@ -544,7 +552,7 @@ Output ONLY the style brief text — no labels, no quotes, no preamble.`;
 
       res.json({ interactionId: interaction.id, uri: interaction.output_video.uri, fileId });
     } catch (e: any) {
-      console.error('Error generating video:', e);
+      Sentry.captureException(e, { tags: { endpoint: "/api/generate-video" } });
       // Try to dump error details closely
       res.status(500).json({ error: e?.body || e.message });
     }
@@ -581,7 +589,7 @@ Output ONLY the style brief text — no labels, no quotes, no preamble.`;
 
       res.json({ interactionId: interaction.id, uri: interaction.output_video.uri, fileId });
     } catch (e: any) {
-      console.error('Error editing video:', e);
+      Sentry.captureException(e, { tags: { endpoint: "/api/edit-video" } });
       res.status(500).json({ error: e?.body || e.message });
     }
   });
@@ -596,7 +604,7 @@ Output ONLY the style brief text — no labels, no quotes, no preamble.`;
       const state = (fInfo.state as any)?.name || fInfo.state;
       res.json({ state });
     } catch (e: any) {
-      console.error('Error getting file status:', e);
+      Sentry.captureException(e, { tags: { endpoint: "/api/file-status/:fileId" } });
       res.status(500).json({ error: e.message });
     }
   });
@@ -652,7 +660,7 @@ Output ONLY the style brief text — no labels, no quotes, no preamble.`;
         res.end(buffer);
       }
     } catch (e: any) {
-      console.error('Error streaming video:', e);
+      Sentry.captureException(e, { tags: { endpoint: "/api/video/:fileId" } });
       res.status(500).send(e.message);
     }
   });
@@ -687,7 +695,7 @@ Output ONLY the style brief text — no labels, no quotes, no preamble.`;
       const responseData = JSON.parse(rawText);
       res.json(responseData);
     } catch (error: any) {
-      console.error(error);
+      Sentry.captureException(error, { tags: { endpoint: "/api/generate" } });
       res.status(500).json({ error: "Failed to generate text content." });
     }
   });
@@ -742,7 +750,7 @@ Output ONLY the style brief text — no labels, no quotes, no preamble.`;
         res.status(500).json({ error: "No image generated" });
       }
     } catch (error: any) {
-      console.error("Error generating image:", error);
+      Sentry.captureException(error, { tags: { endpoint: "/api/generate-image" } });
       res.status(500).json({ error: error.message || "Failed to generate image" });
     }
   });
@@ -762,12 +770,12 @@ Output ONLY the style brief text — no labels, no quotes, no preamble.`;
   }
 
   app.use((err: any, req: express.Request, res: express.Response, _next: express.NextFunction) => {
-    console.error(err.stack);
+    Sentry.captureException(err);
     res.status(500).json({ error: 'Internal Server Error' });
   });
 
   app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    // Sentry.captureMessage(`Server started on port ${PORT}`, "info");
   });
 }
 

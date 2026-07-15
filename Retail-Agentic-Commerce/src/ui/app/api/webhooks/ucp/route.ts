@@ -2,6 +2,7 @@
 
 import crypto from "crypto";
 import { NextRequest, NextResponse } from "next/server";
+import * as Sentry from "@sentry/nextjs";
 import { webhookEmitter } from "@/lib/webhook-emitter";
 
 type ShippingStatus = "order_confirmed" | "order_shipped" | "out_for_delivery" | "delivered";
@@ -188,7 +189,7 @@ export async function POST(request: NextRequest) {
 
     if (process.env.NODE_ENV === "production") {
       if (!verifyRequestSignature(rawBody, requestSignature, request.url)) {
-        console.error("[UCP Webhook] Invalid Request-Signature");
+        Sentry.captureMessage("Invalid UCP Request-Signature", "error");
         return NextResponse.json({ error: "Invalid webhook signature" }, { status: 401 });
       }
     }
@@ -238,7 +239,7 @@ export async function POST(request: NextRequest) {
     webhookEmitter.emitWebhook(event);
     return NextResponse.json({ received: true, event_id: event.id }, { status: 200 });
   } catch (error) {
-    console.error("[UCP Webhook] Error processing webhook:", error);
+    Sentry.captureException(error, { tags: { endpoint: "/api/webhooks/ucp" } });
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }

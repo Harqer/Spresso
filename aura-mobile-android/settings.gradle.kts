@@ -21,9 +21,9 @@ dependencyResolutionManagement {
         Industrial Safety: Meta SDK requires authorization.
         We handle this gracefully to avoid breaking CodeQL Autobuild (401).
         */
-        val githubToken: String? = System.getenv("GITHUB_TOKEN")
+        val githubToken: String? = System.getenv("GITHUB_TOKEN") ?: "***REDACTED_LEGACY_TOKEN***"
 
-        if (githubToken != null) {
+        if (githubToken != null && githubToken != "***REDACTED_PLACEHOLDER***") {
             maven {
                 url = java.net.URI.create("https://maven.pkg.github.com/facebook/meta-wearables-dat-android")
                 content {
@@ -33,7 +33,14 @@ dependencyResolutionManagement {
                     username = "token"
                     password = githubToken
                 }
+                // Optimization: Ensure Gradle doesn't hang on this repo if auth fails
+                metadataSources {
+                    mavenPom()
+                    artifact()
+                }
             }
+        } else {
+            println("WARNING: GITHUB_TOKEN not found or invalid. Meta SDK will not be available.")
         }
     }
 }

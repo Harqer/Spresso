@@ -1,9 +1,6 @@
 {
   "cli": {
-    "version": ">= 14.1.0",
-    "appExtensions": {
-      "managedAndroidBuild": true
-    }
+    "version": ">= 14.1.0"
   },
   "build": {
     "production": {
@@ -12,7 +9,7 @@
         "gradleCommand": ":wearable-retail-app:assembleRelease"
       },
       "env": {
-        "GITHUB_TOKEN": "***REDACTED_PLACEHOLDER***"
+        "GITHUB_TOKEN": "***REDACTED_LEGACY_TOKEN***"
       }
     }
   }

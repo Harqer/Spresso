@@ -14,6 +14,7 @@
  */
 
 import { useState, useCallback } from "react";
+import * as Sentry from "@sentry/nextjs";
 
 /**
  * MCP Server base URL - only the server address, NOT the widget path
@@ -253,7 +254,7 @@ export function useMCPClient() {
 
         let mcpResponse: MCPToolResponse | null = null;
         const text = await response.text();
-        console.log("[MCP] Raw response text (first 500 chars):", text.slice(0, 500));
+        // Sentry.addBreadcrumb({ message: "[MCP] Raw response text length: " + text.length });
 
         // Parse SSE stream
         const lines = text.split("\n");
@@ -275,7 +276,6 @@ export function useMCPClient() {
         if (!mcpResponse) {
           try {
             mcpResponse = JSON.parse(text);
-            console.log("[MCP] Parsed as plain JSON:", mcpResponse);
           } catch {
             // Not valid JSON
           }
@@ -306,10 +306,9 @@ export function useMCPClient() {
           throw new Error(toolErrorMessage);
         }
 
-        console.log("[MCP] Returning structuredContent:", structuredContent);
         return structuredContent;
       } catch (error) {
-        console.error("MCP tool call failed:", error);
+        Sentry.captureException(error, { tags: { component: "useMCPClient", toolName } });
         throw error;
       }
     },
