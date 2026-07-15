@@ -17,10 +17,12 @@
 
 import logging
 import sys
+import os
 from collections.abc import AsyncGenerator
 from contextlib import asynccontextmanager
 
 import sentry_sdk
+from litellm import callbacks
 from a2a.server.apps import A2AStarletteApplication
 from a2a.server.request_handlers import DefaultRequestHandler
 from a2a.server.tasks import InMemoryTaskStore
@@ -78,12 +80,19 @@ def configure_logging() -> None:
 
 configure_logging()
 
+# Industrial Observability Setup
 if settings.sentry_dsn:
     sentry_sdk.init(
         dsn=settings.sentry_dsn,
         environment=settings.sentry_environment,
         traces_sample_rate=settings.sentry_traces_sample_rate,
     )
+
+# Langfuse LLM Observability Callback
+if os.getenv("LANGFUSE_PUBLIC_KEY"):
+    import litellm
+    litellm.success_callback = ["langfuse"]
+    litellm.failure_callback = ["langfuse"]
 
 
 @asynccontextmanager

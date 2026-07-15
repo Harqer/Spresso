@@ -9,6 +9,7 @@
 /* eslint-disable no-console */
 
 import { NextRequest, NextResponse } from "next/server";
+import * as Sentry from "@sentry/nextjs";
 
 const POST_PURCHASE_AGENT_URL = process.env.POST_PURCHASE_AGENT_URL || "http://localhost:8003";
 
@@ -73,7 +74,8 @@ export async function POST(request: NextRequest) {
     });
 
     if (!response.ok) {
-      console.error("[PostPurchase] Agent returned error:", response.status, await response.text());
+      const errorText = await response.text();
+      Sentry.captureMessage(`PostPurchase Agent error: ${response.status} - ${errorText}`, "error");
       return NextResponse.json(
         { error: `Agent error: ${response.status}` },
         { status: response.status }
@@ -87,11 +89,14 @@ export async function POST(request: NextRequest) {
       const parsed = JSON.parse(data.value);
       return NextResponse.json(parsed);
     } catch {
-      console.error("[PostPurchase] Failed to parse agent response:", data);
+      Sentry.captureMessage("Failed to parse post-purchase agent response", {
+        extra: { data },
+        level: "error",
+      });
       return NextResponse.json({ error: "Failed to parse agent response" }, { status: 500 });
     }
   } catch (error) {
-    console.error("[PostPurchase] Proxy error:", error);
+    Sentry.captureException(error, { tags: { endpoint: "/api/agents/post-purchase" } });
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }

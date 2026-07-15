@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import * as Sentry from "@sentry/nextjs";
 import { Button, Flex, Stack, Text } from "@kui/foundations-react-external";
 
 interface ErrorProps {
@@ -10,12 +11,8 @@ interface ErrorProps {
 
 export default function Error({ error, reset }: ErrorProps) {
   useEffect(() => {
-    // Log the error to an error reporting service
-    // In production, replace with proper error logging
-    if (process.env.NODE_ENV === "development") {
-      // eslint-disable-next-line no-console
-      console.error("Error:", error);
-    }
+    // Industrial Error Tracking
+    Sentry.captureException(error);
   }, [error]);
 
   return (

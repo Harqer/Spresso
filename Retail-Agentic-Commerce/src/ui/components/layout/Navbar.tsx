@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { AppBar, Text, Flex } from "@kui/foundations-react-external";
 
 /**
- * Main navigation bar with NVIDIA branding
+ * Main navigation bar with Spresso branding
  * Transparent header that blends with the Nebula background
  */
 export function Navbar() {
@@ -19,14 +19,14 @@ export function Navbar() {
           <Link href="/" className="inline-flex items-center gap-3">
             <Image
               src="/logo.png"
-              alt="NVIDIA Logo"
+              alt="Spresso Logo"
               width={36}
               height={36}
               priority
               className="object-contain"
             />
             <Text kind="label/semibold/md" className="text-gray-100 hidden sm:block">
-              Agentic Commerce
+              Spresso
             </Text>
           </Link>
         }

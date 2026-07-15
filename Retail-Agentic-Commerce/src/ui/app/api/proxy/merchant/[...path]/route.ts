@@ -14,6 +14,7 @@
  */
 
 import { NextRequest, NextResponse } from "next/server";
+import * as Sentry from "@sentry/nextjs";
 
 // Force Node.js runtime (not Edge) for full API compatibility
 export const runtime = "nodejs";
@@ -25,7 +26,7 @@ const MERCHANT_API_KEY = process.env.MERCHANT_API_KEY;
 // Fail-fast: log warning on module load if API key is missing
 // (actual error returned on first request)
 if (!MERCHANT_API_KEY) {
-  console.warn("[MerchantProxy] MERCHANT_API_KEY not configured - requests will fail");
+  // Sentry.captureMessage("[MerchantProxy] MERCHANT_API_KEY not configured", "warning");
 }
 
 // Headers to forward from client to upstream
@@ -99,7 +100,7 @@ async function proxyRequest(
 ): Promise<NextResponse> {
   // Fail-fast: return 500 if API key is not configured
   if (!MERCHANT_API_KEY) {
-    console.error("[MerchantProxy] MERCHANT_API_KEY is not configured");
+    Sentry.captureMessage("[MerchantProxy] MERCHANT_API_KEY is not configured", "error");
     return NextResponse.json(
       { error: "Proxy misconfigured: MERCHANT_API_KEY not set" },
       { status: 500 }
@@ -110,7 +111,10 @@ async function proxyRequest(
 
   // SSRF protection: validate path segments
   if (!validatePathSegments(pathSegments)) {
-    console.error("[MerchantProxy] Invalid path segments:", pathSegments);
+    Sentry.captureMessage(`[MerchantProxy] Invalid path segments: ${pathSegments.join("/")}`, {
+      level: "error",
+      extra: { pathSegments },
+    });
     return NextResponse.json({ error: "Invalid path" }, { status: 400 });
   }
 
@@ -149,7 +153,7 @@ async function proxyRequest(
       headers: responseHeaders,
     });
   } catch (error) {
-    console.error("[MerchantProxy] Fetch error:", error);
+    Sentry.captureException(error, { tags: { endpoint: "/api/proxy/merchant" } });
     return NextResponse.json({ error: "Upstream request failed" }, { status: 502 });
   }
 }

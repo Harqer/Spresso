@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect, useCallback, useRef } from "react";
+import * as Sentry from "@sentry/nextjs";
 import { useACPLog, type ACPEventType } from "./useACPLog";
 import { useAgentActivityLog } from "./useAgentActivityLog";
 import type {
@@ -217,7 +218,7 @@ export function useCheckoutEvents(mcpServerUrl = MCP_SERVER_URL) {
           }
         }
       } catch (error) {
-        console.error("[useCheckoutEvents] Failed to parse checkout event:", error);
+        Sentry.captureException(error, { tags: { source: "useCheckoutEvents", type: "checkout" } });
       }
     },
     [logEvent, completeEvent]
@@ -261,7 +262,9 @@ export function useCheckoutEvents(mcpServerUrl = MCP_SERVER_URL) {
           completeAgentCall(localId, status, decision, recData.error);
         }
       } catch (error) {
-        console.error("[useCheckoutEvents] Failed to parse agent activity event:", error);
+        Sentry.captureException(error, {
+          tags: { source: "useCheckoutEvents", type: "agent_activity" },
+        });
       }
     },
     [addAgentEvent, logAgentCall, completeAgentCall]

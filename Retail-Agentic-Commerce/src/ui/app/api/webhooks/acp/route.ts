@@ -21,6 +21,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import crypto from "crypto";
+import * as Sentry from "@sentry/nextjs";
 import { webhookEmitter } from "@/lib/webhook-emitter";
 
 // In-memory store for webhook events (kept for backward compatibility with GET endpoint)
@@ -116,7 +117,7 @@ export async function POST(request: NextRequest) {
     // Verify signature (skip in development for easier testing)
     if (process.env.NODE_ENV === "production") {
       if (!verifySignature(rawBody, signature, timestamp)) {
-        console.error("[Webhook] Invalid signature");
+        Sentry.captureMessage("Invalid webhook signature", "error");
         return NextResponse.json({ error: "Invalid webhook signature" }, { status: 401 });
       }
     }
@@ -163,12 +164,6 @@ export async function POST(request: NextRequest) {
     // This is the production-like approach: push immediately, no polling
     webhookEmitter.emitWebhook(event);
 
-    console.log(`[Webhook] Received and pushed event: ${event.type}`, {
-      id: event.id,
-      checkout_session_id: payload.data.checkout_session_id,
-    });
-
-    // Return success
     return NextResponse.json(
       {
         received: true,
@@ -177,7 +172,7 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     );
   } catch (error) {
-    console.error("[Webhook] Error processing webhook:", error);
+    Sentry.captureException(error, { tags: { endpoint: "/api/webhooks/acp" } });
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }
@@ -219,6 +214,5 @@ export async function GET(request: NextRequest) {
 export async function DELETE() {
   const count = webhookEvents.length;
   webhookEvents.length = 0; // Clear the array in place
-  console.log(`[Webhook] Cleared ${count} stored events`);
   return NextResponse.json({ cleared: count });
 }
