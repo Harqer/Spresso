@@ -102,7 +102,7 @@ class RetailSessionManager(
                                         }
                                     }
                                     .onFailure { error, _ ->
-                                        Log.e("RetailSession", "Permission Check FAILED: ${error.toString()}")
+                                        Log.e("RetailSession", "Permission Check FAILED: ${error.getLocalizedDescription(context)}")
                                     }
                             }
                             DeviceSessionState.STOPPED -> {
@@ -116,8 +116,8 @@ class RetailSessionManager(
             }
             .onFailure { error, _ ->
                 val message = when (error) {
-                    is WearablesError -> "SDK Error: ${error.toString()}"
-                    else -> "Session Creation FAILED: ${error.toString()}"
+                    is WearablesError -> "SDK Error: ${error.getLocalizedDescription(context)}"
+                    else -> "Session Creation FAILED: ${error.getLocalizedDescription(context)}"
                 }
                 Log.e("RetailSession", message)
             }
@@ -149,13 +149,13 @@ class RetailSessionManager(
         session.addStream(StreamConfiguration(VideoQuality.MEDIUM, 24))
             .onSuccess { stream ->
                 stream.start().onFailure { error, _ ->
-                    val errorMsg = if (error is StreamError) "Stream Error: $error" else "Stream Start FAILED"
+                    val errorMsg = if (error is StreamError) "Stream Error: ${error.getLocalizedDescription(context)}" else "Stream Start FAILED"
                     Log.e("RetailSession", errorMsg)
                 }
                 startMultimodalBridge(stream)
             }
             .onFailure { error, _ ->
-                Log.e("RetailSession", "Stream Addition FAILED: ${error.toString()}")
+                Log.e("RetailSession", "Stream Addition FAILED: ${error.getLocalizedDescription(context)}")
             }
     }
 
@@ -218,7 +218,7 @@ class RetailSessionManager(
                 showWelcome()
             }
             .onFailure { error, _ ->
-                val errorMsg = if (error is DisplayError) "Display Error: $error" else "Display Addition FAILED"
+                val errorMsg = if (error is DisplayError) "Display Error: ${error.getLocalizedDescription(context)}" else "Display Addition FAILED"
                 Log.e("RetailSession", errorMsg)
             }
     }

@@ -1,32 +1,41 @@
 from __future__ import annotations
 
 import asyncio
+import base64
 import hashlib
 import json
 import logging
 import os
-import base64
-from contextlib import asynccontextmanager
 from typing import Any
 
 import genkit
-from genkit import Part, Media
+from genkit import Part
+from genkit.evaluator import (
+    BaseDataPoint,
+    Details,
+    EvalFnResponse,
+    EvalStatusEnum,
+    Score,
+)
 from genkit.plugins.google_genai import GoogleAI
-from genkit.evaluator import BaseDataPoint, EvalFnResponse, EvalStatusEnum, Score, Details
 from pydantic import BaseModel, Field
 from sqlmodel import select
 from upstash_redis import Redis
 
+from src.merchant.config import get_settings
 from src.merchant.db.database import get_session
 from src.merchant.db.models import Product
+from src.merchant.services.ai.guardrails.engine import (
+    SecurityViolationError,
+    SpressoGuardrail,
+)
 from src.merchant.services.ai.vto_service import get_vto_engine
-from src.merchant.services.ai.guardrails.engine import SpressoGuardrail, SecurityViolationError
-from src.merchant.config import get_settings
 
 logger = logging.getLogger(__name__)
 settings = get_settings()
 
 # --- GENKIT INDUSTRIAL SCHEMAS ---
+
 
 class ProductDiscovery(BaseModel):
     id: str = Field(description="Unique product ID")
@@ -34,6 +43,7 @@ class ProductDiscovery(BaseModel):
     price: float = Field(description="Price in USD")
     imageUrl: str = Field(description="URL to product image")
     description: str = Field(description="Concise procurement context")
+
 
 class IntentResult(BaseModel):
     intent: str = Field(description="Action intent: SEARCH, VTO, ADD_TO_CART, CHAT")
@@ -45,17 +55,17 @@ class IntentResult(BaseModel):
     grid: list[ProductDiscovery] = Field(default_factory=list)
     compare: list[dict[str, Any]] = Field(default_factory=list)
 
+
 # --- INITIALIZE GENKIT PULSE ---
 # Industrial Standard: Secrets injected from Infisical into GEMINI_API_KEY
-ai = genkit.Genkit(
-    plugins=[
-        GoogleAI(api_key=os.getenv("GEMINI_API_KEY"))
-    ]
-)
+ai = genkit.Genkit(plugins=[GoogleAI(api_key=os.getenv("GEMINI_API_KEY"))])
 
 # --- INDUSTRIAL EVALUATORS ---
 
-async def intent_match_eval(datapoint: BaseDataPoint, _options: dict | None = None) -> EvalFnResponse:
+
+async def intent_match_eval(
+    datapoint: BaseDataPoint, _options: dict | None = None
+) -> EvalFnResponse:
     """Industrial Evaluator: Verifies intent alignment with reference expectation."""
     output = datapoint.output if isinstance(datapoint.output, dict) else {}
     reference = datapoint.reference if isinstance(datapoint.reference, dict) else {}
@@ -65,15 +75,20 @@ async def intent_match_eval(datapoint: BaseDataPoint, _options: dict | None = No
 
     match = expected_intent == actual_intent
     return EvalFnResponse(
-        test_case_id=datapoint.test_case_id or '',
+        test_case_id=datapoint.test_case_id or "",
         evaluation=Score(
             score=1.0 if match else 0.0,
             status=EvalStatusEnum.PASS if match else EvalStatusEnum.FAIL,
-            details=Details(reasoning=f"Expected {expected_intent}, got {actual_intent}")
-        )
+            details=Details(
+                reasoning=f"Expected {expected_intent}, got {actual_intent}"
+            ),
+        ),
     )
 
-async def semantic_vibe_eval(datapoint: BaseDataPoint, _options: dict | None = None) -> EvalFnResponse:
+
+async def semantic_vibe_eval(
+    datapoint: BaseDataPoint, _options: dict | None = None
+) -> EvalFnResponse:
     """Industrial Evaluator: Uses text-embedding-004 to audit response 'vibe' consistency."""
     output_text = ""
     if isinstance(datapoint.output, dict):
@@ -84,59 +99,74 @@ async def semantic_vibe_eval(datapoint: BaseDataPoint, _options: dict | None = N
     reference_text = str(datapoint.reference or "")
     if not reference_text or not output_text:
         return EvalFnResponse(
-            test_case_id=datapoint.test_case_id or '',
-            evaluation=Score(score=0.0, status=EvalStatusEnum.FAIL, details=Details(reasoning="Missing output or reference text"))
+            test_case_id=datapoint.test_case_id or "",
+            evaluation=Score(
+                score=0.0,
+                status=EvalStatusEnum.FAIL,
+                details=Details(reasoning="Missing output or reference text"),
+            ),
         )
 
     # 1. Embed both texts
     # We use ai.embed for each to get vectors
-    res1 = await ai.embed(embedder='googleai/text-embedding-004', content=output_text)
-    res2 = await ai.embed(embedder='googleai/text-embedding-004', content=reference_text)
+    res1 = await ai.embed(embedder="googleai/text-embedding-004", content=output_text)
+    res2 = await ai.embed(
+        embedder="googleai/text-embedding-004", content=reference_text
+    )
 
     v1 = res1[0].embedding
     v2 = res2[0].embedding
 
     # 2. Cosine Similarity (Pure Python Pulse)
-    dot_product = sum(a * b for a, b in zip(v1, v2))
+    dot_product = sum(a * b for a, b in zip(v1, v2, strict=False))
     norm_v1 = sum(a * a for a in v1) ** 0.5
     norm_v2 = sum(b * b for b in v2) ** 0.5
-    similarity = dot_product / (norm_v1 * norm_v2) if norm_v1 > 0 and norm_v2 > 0 else 0.0
+    similarity = (
+        dot_product / (norm_v1 * norm_v2) if norm_v1 > 0 and norm_v2 > 0 else 0.0
+    )
 
     return EvalFnResponse(
-        test_case_id=datapoint.test_case_id or '',
+        test_case_id=datapoint.test_case_id or "",
         evaluation=Score(
             score=similarity,
             status=EvalStatusEnum.PASS if similarity >= 0.85 else EvalStatusEnum.FAIL,
-            details=Details(reasoning=f"Semantic similarity: {similarity:.4f}. Reference: '{reference_text[:50]}...'")
-        )
+            details=Details(
+                reasoning=f"Semantic similarity: {similarity:.4f}. Reference: '{reference_text[:50]}...'"
+            ),
+        ),
     )
 
+
 ai.define_evaluator(
-    name='spresso/intent_match',
-    display_name='Intent Alignment',
-    definition='Checks if the predicted intent matches the ground truth.',
-    fn=intent_match_eval
+    name="spresso/intent_match",
+    display_name="Intent Alignment",
+    definition="Checks if the predicted intent matches the ground truth.",
+    fn=intent_match_eval,
 )
 
 ai.define_evaluator(
-    name='spresso/semantic_vibe',
-    display_name='Semantic Vibe Audit',
-    definition='Uses embeddings to verify brand alignment and response consistency.',
-    fn=semantic_vibe_eval
+    name="spresso/semantic_vibe",
+    display_name="Semantic Vibe Audit",
+    definition="Uses embeddings to verify brand alignment and response consistency.",
+    fn=semantic_vibe_eval,
 )
 
 # --- GENKIT NATIVE TOOLS ---
 
-@ai.tool(name='search_products', description='Search the live product catalog for fashion, home, and tech items.')
+
+@ai.tool(
+    name="search_products",
+    description="Search the live product catalog for fashion, home, and tech items.",
+)
 async def search_products(query: str) -> list[ProductDiscovery]:
     """Industrial Standard: Fetching real data from the Neon Backend."""
 
     async def do_db_query() -> list[ProductDiscovery]:
         with next(get_session()) as session:
             statement = select(Product).where(
-                Product.name.contains(query) |
-                Product.category.contains(query) |
-                Product.description.contains(query)
+                Product.name.contains(query)
+                | Product.category.contains(query)
+                | Product.description.contains(query)
             )
             products = session.exec(statement).all()
 
@@ -146,12 +176,16 @@ async def search_products(query: str) -> list[ProductDiscovery]:
                     name=p.name,
                     price=float(p.base_price) / 100.0,
                     imageUrl=p.image_url,
-                    description=p.description or p.tagline or "Premium quality selection."
-                ) for p in products
+                    description=p.description
+                    or p.tagline
+                    or "Premium quality selection.",
+                )
+                for p in products
             ]
 
     # Traceable Step: DB Search
     return await ai.run(f"db-search-{query}", do_db_query)
+
 
 class GeminiAgentService:
     """Industrial Genkit Flow-based AI Fashion Cortex."""
@@ -183,7 +217,7 @@ class GeminiAgentService:
             logger.warning(f"AI Firewall BLOCKED request: {e}")
             return IntentResult(
                 intent="CHAT",
-                response="Spresso Secure: Your request was flagged as a potential security risk. Please keep queries focused on fashion discovery."
+                response="Spresso Secure: Your request was flagged as a potential security risk. Please keep queries focused on fashion discovery.",
             )
 
         # --- CACHE CHECK (Industrial Optimization) ---
@@ -208,8 +242,14 @@ class GeminiAgentService:
         prompt_parts = []
         if image_data:
             try:
-                img_bytes = base64.b64decode(image_data) if isinstance(image_data, str) else image_data
-                prompt_parts.append(Part.from_media(data=img_bytes, content_type="image/jpeg"))
+                img_bytes = (
+                    base64.b64decode(image_data)
+                    if isinstance(image_data, str)
+                    else image_data
+                )
+                prompt_parts.append(
+                    Part.from_media(data=img_bytes, content_type="image/jpeg")
+                )
             except Exception:
                 logger.warning("Visual Heartbeat data corruption detected.")
 
@@ -224,12 +264,14 @@ class GeminiAgentService:
             tools=[search_products],
             config={
                 "google_search_retrieval": True,
-            }
+            },
         )
 
         result_data = response.output
         if not result_data:
-             raise ValueError("Agentic Reasoning Failed: Model output was empty or invalid.")
+            raise ValueError(
+                "Agentic Reasoning Failed: Model output was empty or invalid."
+            )
 
         result = IntentResult.model_validate(result_data)
 
@@ -249,7 +291,9 @@ class GeminiAgentService:
         # 5. Runtime Audit Pulse (Industrial Standard)
         # Embedding the response for live trace auditing
         async def audit_vibe():
-            await ai.embed(embedder='googleai/text-embedding-004', content=result.response)
+            await ai.embed(
+                embedder="googleai/text-embedding-004", content=result.response
+            )
 
         await ai.run("runtime-vibe-audit", audit_vibe)
 
@@ -273,7 +317,10 @@ class GeminiAgentService:
             try:
                 user_requests = self.redis.get(user_limit_key)
                 if user_requests and int(user_requests) > 50:
-                    return {"intent": "CHAT", "response": "Spresso is calibrating. Please wait."}
+                    return {
+                        "intent": "CHAT",
+                        "response": "Spresso is calibrating. Please wait.",
+                    }
 
                 self.redis.incr(user_limit_key)
                 self.redis.expire(user_limit_key, 3600)
@@ -285,7 +332,7 @@ class GeminiAgentService:
             "user_message": user_message,
             "user_metadata": user_metadata,
             "current_cart": current_cart,
-            "image_data": image_data
+            "image_data": image_data,
         }
         result = await self.discovery_flow(params)
 
@@ -308,18 +355,25 @@ class GeminiAgentService:
             try:
                 with next(get_session()) as session:
                     for product_data in batch:
-                        product_id = product_data.get("id") or f"web_{hashlib.md5(str(product_data).encode()).hexdigest()[:8]}"
+                        product_id = (
+                            product_data.get("id")
+                            or f"web_{hashlib.md5(str(product_data).encode()).hexdigest()[:8]}"
+                        )
                         existing = session.get(Product, product_id)
                         if not existing:
                             new_product = Product(
                                 id=product_id,
                                 sku=f"VAULT-{product_id[:8].upper()}",
                                 name=product_data.get("name", "Grounded Discovery"),
-                                base_price=int(float(product_data.get("price", 0)) * 100),
+                                base_price=int(
+                                    float(product_data.get("price", 0)) * 100
+                                ),
                                 stock_count=99,
                                 image_url=product_data.get("imageUrl", ""),
                                 category=product_data.get("category", "unclassified"),
-                                description=product_data.get("description", "Discovered via Spresso Stitch Pulse"),
+                                description=product_data.get(
+                                    "description", "Discovered via Spresso Stitch Pulse"
+                                ),
                             )
                             session.add(new_product)
                     session.commit()
@@ -341,24 +395,32 @@ class GeminiAgentService:
             response = await ai.generate(
                 model=self.model,
                 prompt=f"Describe this product: {image_url}",
-                system=instruction
+                system=instruction,
             )
             return response.text.strip()
         except Exception:
             return "Premium fashion discovery."
 
-    async def generate_shipping_message(self, request: dict[str, Any]) -> dict[str, Any]:
+    async def generate_shipping_message(
+        self, request: dict[str, Any]
+    ) -> dict[str, Any]:
         """Uses Gemini to generate personalized, multilingual shipping messages."""
         try:
             response = await ai.generate(
                 model=self.model,
                 prompt=f"Generate a shipping update message for this request: {request}",
             )
-            return json.loads(response.text) if response.text else {"message": "Order is moving."}
+            return (
+                json.loads(response.text)
+                if response.text
+                else {"message": "Order is moving."}
+            )
         except Exception:
             return {"message": "Spresso is tracking your order."}
 
+
 _gemini_service: GeminiAgentService | None = None
+
 
 def get_gemini_service() -> GeminiAgentService:
     global _gemini_service

@@ -44,7 +44,9 @@ class SpressoGuardrail:
             SecurityViolationError: If a malicious pattern is detected.
         """
         if not self.lakera_api_key:
-            logger.warning("LAKERA_GUARD_API_KEY missing. Falling back to local heuristics.")
+            logger.warning(
+                "LAKERA_GUARD_API_KEY missing. Falling back to local heuristics."
+            )
             self._local_heuristic_audit(prompt)
             return
 
@@ -61,7 +63,9 @@ class SpressoGuardrail:
                 if result.get("flagged", False):
                     # Extract specific violation categories
                     results = result.get("results", [{}])[0]
-                    categories = [k for k, v in results.get("categories", {}).items() if v]
+                    categories = [
+                        k for k, v in results.get("categories", {}).items() if v
+                    ]
                     reason = f"Malicious intent detected: {', '.join(categories)}"
                     logger.error(f"AI Firewall BLOCKED prompt: {reason}")
                     raise SecurityViolationError(reason, details=result)
@@ -91,7 +95,6 @@ class SpressoGuardrail:
             if pattern in prompt_lower:
                 logger.error(f"Local Guardrail BLOCKED prompt pattern: {pattern}")
                 raise SecurityViolationError(f"Heuristic violation: {pattern}")
-
 
     def get_system_instruction(self) -> str:
         """Constructs the native system_instruction block for the Gemini API."""

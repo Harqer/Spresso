@@ -95,7 +95,9 @@ def get_vto_engine() -> KyzoVTOEngine:
     if _kyzo_engine is None:
         project_id = os.getenv("GOOGLE_CLOUD_PROJECT")
         if not project_id:
-            logger.error("GOOGLE_CLOUD_PROJECT missing. KyzoVTOEngine initialization aborted.")
-            return None # Fail closed in production
+            logger.error(
+                "GOOGLE_CLOUD_PROJECT missing. KyzoVTOEngine initialization aborted."
+            )
+            return None  # Fail closed in production
         _kyzo_engine = KyzoVTOEngine(project_id)
     return _kyzo_engine

@@ -1,9 +1,8 @@
 import logging
-import os
 from typing import Any
 
 import firebase_admin
-from firebase_admin import auth, credentials
+from firebase_admin import auth
 
 logger = logging.getLogger(__name__)
 
@@ -14,7 +13,10 @@ try:
         # If credentials are not provided via env var, it will attempt to use default credentials
         firebase_admin.initialize_app()
 except Exception as e:
-    logger.warning(f"Firebase Admin initialization warning: {e}. Ensure GOOGLE_APPLICATION_CREDENTIALS is set for production.")
+    logger.warning(
+        f"Firebase Admin initialization warning: {e}. Ensure GOOGLE_APPLICATION_CREDENTIALS is set for production."
+    )
+
 
 class FirebaseAuthService:
     """Production-grade Firebase identity verification service."""

@@ -20,7 +20,7 @@ class StripePaymentService:
         amount: int,
         currency: str = "usd",
         metadata: dict[str, Any] = None,
-        idempotency_key: str = None
+        idempotency_key: str = None,
     ) -> dict[str, Any]:
         """Creates a Stripe PaymentIntent with Idempotency Guard."""
         try:
@@ -30,7 +30,7 @@ class StripePaymentService:
                 currency=currency,
                 metadata=metadata or {},
                 automatic_payment_methods={"enabled": True},
-                idempotency_key=idempotency_key
+                idempotency_key=idempotency_key,
             )
             logger.info(f"PaymentIntent Created: {intent.id}")
             return {

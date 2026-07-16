@@ -29,12 +29,12 @@ performed by LLM agents declared in ``configs/recommendation.yml``.
 
 import json
 import logging
-from typing import Any, AsyncGenerator, Union
+from typing import Any
 
 from adk.builder import Builder
 from adk.cli import register_node
 from adk.data_models.event import Event
-from adk.nodes import NodeBaseConfig
+from adk.nodes import FunctionInfo, NodeBaseConfig
 from pydantic import Field
 
 logger = logging.getLogger(__name__)
@@ -222,11 +222,11 @@ async def rag_retriever_node(config: RAGRetrieverConfig, builder: Builder):
             "candidates": candidates[: config.top_k],
         }
 
-        # ADK 2.0 Best Practice: Yield events for industrial telemetry and state management
+        # ADK 2.0 Best Practice: Yield events for industrial telemetry
         yield Event(
             name="retrieval_success",
             output=retrieval_result,
-            node_info={"node_id": "rag_retriever", "candidates_count": len(candidates)}
+            node_info={"node_id": "rag_retriever", "candidates_count": len(candidates)},
         )
 
         return json.dumps(retrieval_result)
@@ -267,7 +267,7 @@ async def text_function_adapter(config: TextFunctionAdapterConfig, builder: Buil
         yield Event(
             name="adapter_execution",
             output=output,
-            node_info={"node_id": "text_adapter", "target": config.node_name}
+            node_info={"node_id": "text_adapter", "target": config.node_name},
         )
         return output
 
@@ -383,7 +383,7 @@ async def output_contract_guard_node(
         yield Event(
             name="contract_verification",
             output=result,
-            node_info={"node_id": "contract_guard", "status": "verified"}
+            node_info={"node_id": "contract_guard", "status": "verified"},
         )
 
         return json.dumps(result)

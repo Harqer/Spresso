@@ -478,13 +478,16 @@ def init_and_seed_db() -> None:
     log the error but allow the application to proceed.
     """
     import logging
+
     logger = logging.getLogger(__name__)
     try:
         init_db()
         with Session(get_engine()) as session:
             seed_data(session)
     except Exception as e:
-        logger.error(f"Database Initialization Pulse FAILED: {e}. Proceeding in Offline Mode.")
+        logger.error(
+            f"Database Initialization Pulse FAILED: {e}. Proceeding in Offline Mode."
+        )
 
 
 def reset_engine() -> None:

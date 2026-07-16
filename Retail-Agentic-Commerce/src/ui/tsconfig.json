@@ -48,6 +48,7 @@
   ],
   "exclude": [
     "node_modules",
-    "kui-foundations-react-external"
+    "kui-foundations-react-external",
+    "e2e"
   ]
 }

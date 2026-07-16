@@ -16,20 +16,19 @@
 """FastAPI application entry point for the Agentic Commerce middleware."""
 
 import logging
-import sys
 import os
+import sys
 from collections.abc import AsyncGenerator
 from contextlib import asynccontextmanager
 
 import sentry_sdk
-from litellm import callbacks
 from a2a.server.apps import A2AStarletteApplication
 from a2a.server.request_handlers import DefaultRequestHandler
 from a2a.server.tasks import InMemoryTaskStore
 from fastapi import Depends, FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from genkit.plugins.fastapi import genkit_fastapi_handler  # Correct Industrial Import
 from starlette.responses import Response
-from genkit.plugins.fastapi import genkit_fastapi_handler # Correct Industrial Import
 
 from src.merchant.api.dependencies import verify_api_key
 from src.merchant.api.routes.checkout import router as spresso_checkout_router
@@ -41,17 +40,14 @@ from src.merchant.api.routes.webhooks import router as webhooks_router
 from src.merchant.config import get_settings
 from src.merchant.db import init_and_seed_db
 from src.merchant.middleware import ACPHeadersMiddleware, RequestLoggingMiddleware
-from src.merchant.middleware.security import InternalSecurityMiddleware
 from src.merchant.middleware.rate_limit import RedisRateLimitMiddleware
+from src.merchant.middleware.security import InternalSecurityMiddleware
 from src.merchant.protocols.acp.api.routes.checkout import router as checkout_router
-from src.merchant.protocols.ucp.api.routes.discovery import (
-    router as ucp_discovery_router,
-)
 from src.merchant.protocols.ucp.services.agent_executor import (
     UCPCheckoutAgentExecutor,
     build_sdk_agent_card,
 )
-from src.merchant.services.gemini_agents import ai # Discoverable AI Instance
+from src.merchant.services.gemini_agents import ai  # Discoverable AI Instance
 
 settings = get_settings()
 
@@ -64,7 +60,7 @@ def configure_logging() -> None:
         level=log_level,
         format="%(asctime)s | %(levelname)-8s | %(name)s | %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
-        stream=sys.stderr, # Standard: Redirect noise to stderr to satisfy Genkit CLI
+        stream=sys.stderr,  # Standard: Redirect noise to stderr to satisfy Genkit CLI
         force=True,
     )
 
@@ -91,6 +87,7 @@ if settings.sentry_dsn:
 # Langfuse LLM Observability Callback
 if os.getenv("LANGFUSE_PUBLIC_KEY"):
     import litellm
+
     litellm.success_callback = ["langfuse"]
     litellm.failure_callback = ["langfuse"]
 
@@ -139,14 +136,17 @@ app.include_router(metrics_router)
 app.include_router(products_router)
 app.include_router(webhooks_router)
 
+
 # Industrial Standard: Register the official Genkit Flow discovery handler
 @app.post("/discovery_flow", response_model=None)
 @genkit_fastapi_handler(ai)
 async def discovery_flow_endpoint():
     """The official bridge between Genkit CLI and FastAPI."""
     from src.merchant.services.gemini_agents import get_gemini_service
+
     service = get_gemini_service()
     return service.discovery_flow
+
 
 # ---------------------------------------------------------------------------
 # UCP A2A: SDK transport stack

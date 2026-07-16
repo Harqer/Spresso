@@ -615,10 +615,13 @@ class TestGetPromotionsForProducts:
             side_effect=RuntimeError("Test error")
         )
 
-        with patch(
-            "src.merchant.services.promotion.get_promotion_for_product",
-            side_effect=RuntimeError("Test error"),
-        ), pytest.raises(RuntimeError, match="Test error"):
+        with (
+            patch(
+                "src.merchant.services.promotion.get_promotion_for_product",
+                side_effect=RuntimeError("Test error"),
+            ),
+            pytest.raises(RuntimeError, match="Test error"),
+        ):
             await get_promotions_for_products(mock_session, products, mock_client)
 
 

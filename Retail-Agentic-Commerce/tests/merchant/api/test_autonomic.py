@@ -1,8 +1,8 @@
 # SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 
-import pytest
 from fastapi.testclient import TestClient
+
 
 class TestAutonomicRepair:
     """Test suite for POST /autonomic/repair endpoint."""
@@ -13,7 +13,7 @@ class TestAutonomicRepair:
             "job": "test-job",
             "url": "http://gitlab.com/test-job",
             "error": "Simulated failure",
-            "branch": "main"
+            "branch": "main",
         }
         response = auth_client.post("/autonomic/repair", json=payload)
         assert response.status_code == 202
@@ -24,7 +24,7 @@ class TestAutonomicRepair:
         payload = {
             "job": "test-job",
             "url": "http://gitlab.com/test-job",
-            "error": "Simulated failure"
+            "error": "Simulated failure",
         }
         response = client.post("/autonomic/repair", json=payload)
         assert response.status_code == 401

@@ -18,6 +18,7 @@
 from __future__ import annotations
 
 import json
+import logging
 from collections import defaultdict
 from datetime import UTC, datetime, timedelta
 from typing import Any, cast
@@ -27,10 +28,10 @@ from sqlmodel import Session, select
 from src.merchant.api.metrics_schemas import DashboardTimeRange
 from src.merchant.db.models import CheckoutSession, CompetitorPrice, Product
 from src.merchant.services.agent_outcomes import summarize_agent_outcomes
+from src.merchant.services.cache import cached
 from src.merchant.services.recommendation_attribution import (
     summarize_recommendation_attribution,
 )
-from src.merchant.services.cache import cached
 
 _TIME_RANGE_TO_DURATION: dict[DashboardTimeRange, timedelta] = {
     DashboardTimeRange.ONE_HOUR: timedelta(hours=1),
@@ -63,11 +64,6 @@ _PROMOTION_FAILURE_MARKERS = (
     "error:",
 )
 
-
-from upstash_redis import Redis
-import os
-import logging
-from typing import Any
 
 logger = logging.getLogger(__name__)
 

@@ -163,7 +163,9 @@ class AddressInput(BaseModel):
 class PaymentDataInput(BaseModel):
     """Payment data input for completing checkout."""
 
-    model_config = ConfigDict(extra="allow")  # Allow Firebase ID token or other metadata
+    model_config = ConfigDict(
+        extra="allow"
+    )  # Allow Firebase ID token or other metadata
 
     token: str = Field(..., description="Payment method token (e.g., spt_123)")
     provider: PaymentProviderEnum = Field(..., description="Payment processor")

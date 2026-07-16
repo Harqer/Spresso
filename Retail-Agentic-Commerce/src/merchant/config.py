@@ -53,7 +53,7 @@ class Settings(BaseSettings):
     spresso_domain: str = os.getenv("SPRESSO_DOMAIN", "***REDACTED_PROJECT_ID***.web.app")
     allowed_origins: list[str] = [
         "https://***REDACTED_PROJECT_ID***.web.app",
-        "https://spresso-retail.web.app" # Legacy fallback for grace period
+        "https://spresso-retail.web.app",  # Legacy fallback for grace period
     ]
 
     # UCP Discovery Configuration

@@ -570,7 +570,8 @@ async def complete_checkout_session(
         # Require Explicit Human-in-the-Loop Authorization
         if not payment_data.firebase_id_token:
             raise CheckoutServiceError(
-                "Explicit human-in-the-loop authorization required. Missing Firebase ID token.", "auth_failed"
+                "Explicit human-in-the-loop authorization required. Missing Firebase ID token.",
+                "auth_failed",
             )
 
         # Validate Firebase Auth for Production Security

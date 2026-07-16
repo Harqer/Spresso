@@ -9,7 +9,7 @@ from pydantic import BaseModel
 from sqlmodel import Session, select
 
 from src.merchant.api.dependencies import get_current_user, get_secure_session
-from src.merchant.db.models import Order, OrderItem, CheckoutSession, Product
+from src.merchant.db.models import CheckoutSession, Order, Product
 from src.merchant.services.stripe_service import StripePaymentService
 
 router = APIRouter(
@@ -19,11 +19,13 @@ router = APIRouter(
 
 # --- ACP v2026-01-16 Compliant Schemas ---
 
+
 class Buyer(BaseModel):
     first_name: str
     last_name: str
     email: str
     phone_number: str | None = None
+
 
 class FulfillmentAddress(BaseModel):
     name: str
@@ -34,29 +36,35 @@ class FulfillmentAddress(BaseModel):
     country: str
     postal_code: str
 
+
 class CheckoutItem(BaseModel):
     id: str
     quantity: int
+
 
 class CreateCheckoutRequest(BaseModel):
     items: list[CheckoutItem]
     buyer: Buyer
     fulfillment_address: FulfillmentAddress
 
+
 class PaymentData(BaseModel):
     token: str
     provider: str
     billing_address: dict[str, Any] | None = None
 
+
 class CompleteCheckoutRequest(BaseModel):
     payment_data: PaymentData
 
+
 # --- ACP Endpoints ---
+
 
 @router.post("", status_code=status.HTTP_201_CREATED)
 async def create_checkout_session(
     request: CreateCheckoutRequest,
-    user_id: str = Depends(get_current_user),
+    _user_id: str = Depends(get_current_user),
     db: Session = Depends(get_secure_session),
 ):
     """FR-ACP-01: Initialize an agentic checkout session."""
@@ -70,20 +78,24 @@ async def create_checkout_session(
         for item in request.items:
             product = db.exec(select(Product).where(Product.id == item.id)).first()
             if not product:
-                raise HTTPException(status_code=404, detail=f"Product {item.id} not found")
+                raise HTTPException(
+                    status_code=404, detail=f"Product {item.id} not found"
+                )
 
             amount = product.base_price * item.quantity
             subtotal_cents += amount
 
-            line_items.append({
-                "id": f"li_{uuid.uuid4().hex[:8]}",
-                "item": {"id": product.id, "quantity": item.quantity},
-                "base_amount": product.base_price,
-                "discount": 0,
-                "subtotal": amount,
-                "tax": 0, # Simplified for demo
-                "total": amount
-            })
+            line_items.append(
+                {
+                    "id": f"li_{uuid.uuid4().hex[:8]}",
+                    "item": {"id": product.id, "quantity": item.quantity},
+                    "base_amount": product.base_price,
+                    "discount": 0,
+                    "subtotal": amount,
+                    "tax": 0,  # Simplified for demo
+                    "total": amount,
+                }
+            )
 
         # 2. Persist the real session state to the database
         new_session = CheckoutSession(
@@ -93,10 +105,20 @@ async def create_checkout_session(
             line_items_json=json.dumps(line_items),
             buyer_json=request.buyer.model_dump_json(),
             fulfillment_address_json=request.fulfillment_address.model_dump_json(),
-            totals_json=json.dumps([
-                {"type": "subtotal", "display_text": "Subtotal", "amount": subtotal_cents},
-                {"type": "total", "display_text": "Total", "amount": subtotal_cents}
-            ])
+            totals_json=json.dumps(
+                [
+                    {
+                        "type": "subtotal",
+                        "display_text": "Subtotal",
+                        "amount": subtotal_cents,
+                    },
+                    {
+                        "type": "total",
+                        "display_text": "Total",
+                        "amount": subtotal_cents,
+                    },
+                ]
+            ),
         )
         db.add(new_session)
         db.commit()
@@ -108,23 +130,28 @@ async def create_checkout_session(
             "currency": "usd",
             "payment_provider": {
                 "provider": "stripe",
-                "supported_payment_methods": [{"type": "card"}]
+                "supported_payment_methods": [{"type": "card"}],
             },
             "line_items": line_items,
             "totals": [
-                {"type": "subtotal", "display_text": "Subtotal", "amount": subtotal_cents},
-                {"type": "total", "display_text": "Total", "amount": subtotal_cents}
-            ]
+                {
+                    "type": "subtotal",
+                    "display_text": "Subtotal",
+                    "amount": subtotal_cents,
+                },
+                {"type": "total", "display_text": "Total", "amount": subtotal_cents},
+            ],
         }
     except HTTPException:
         raise
     except Exception as e:
         db.rollback()
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
+
 
 @router.post("/{session_id}/complete")
 async def complete_checkout(
-    session_id: str,
+    _session_id: str,
     request: CompleteCheckoutRequest,
     user_id: str = Depends(get_current_user),
     db: Session = Depends(get_secure_session),
@@ -150,7 +177,10 @@ async def complete_checkout(
 
     except Exception as e:
         db.rollback()
-        raise HTTPException(status_code=500, detail=f"Checkout completion failed: {str(e)}")
+        raise HTTPException(
+            status_code=500, detail=f"Checkout completion failed: {str(e)}"
+        ) from e
+
 
 @router.get("/{session_id}")
 async def get_checkout_session(session_id: str):

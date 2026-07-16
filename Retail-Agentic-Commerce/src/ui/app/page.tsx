@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Navbar, PanelDivider } from "@/components/layout";
 import { AgentPanel } from "@/components/agent";
 import { BusinessPanel } from "@/components/business";

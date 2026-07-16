@@ -2,9 +2,8 @@
 # SPDX-License-Identifier: Apache-2.0
 
 import logging
-from typing import Any
 
-from fastapi import APIRouter, Depends, HTTPException, Request, status
+from fastapi import APIRouter, Depends, Request, status
 from pydantic import BaseModel
 
 from src.merchant.api.dependencies import verify_api_key
@@ -16,12 +15,14 @@ router = APIRouter(
     tags=["autonomic"],
 )
 
+
 class PipelineFailureAlert(BaseModel):
     job: str
     url: str
     error: str
     commit_sha: str | None = None
     branch: str | None = None
+
 
 @router.post(
     "/repair",
@@ -30,7 +31,7 @@ class PipelineFailureAlert(BaseModel):
 )
 async def report_pipeline_failure(
     alert: PipelineFailureAlert,
-    request: Request,
+    _request: Request,
 ) -> dict[str, str]:
     """Receives pipeline failure alerts and initiates autonomic recovery processes."""
 
@@ -44,5 +45,5 @@ async def report_pipeline_failure(
 
     return {
         "status": "received",
-        "message": "Autonomic repair cycle initiated. AI architect has been notified."
+        "message": "Autonomic repair cycle initiated. AI architect has been notified.",
     }

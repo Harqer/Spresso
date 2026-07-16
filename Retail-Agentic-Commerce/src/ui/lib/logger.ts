@@ -1,38 +1,42 @@
 import * as Sentry from "@sentry/nextjs";
 
-type LogLevel = "debug" | "info" | "warn" | "error";
-
 export const logger = {
-  debug: (message: string, ...args: any[]) => {
+  debug: (message: string, ...args: unknown[]) => {
     if (process.env.NODE_ENV === "development") {
       // eslint-disable-next-line no-console
       console.log(`[DEBUG] ${message}`, ...args);
     }
   },
-  info: (message: string, ...args: any[]) => {
+  info: (message: string, ...args: unknown[]) => {
     if (process.env.NODE_ENV === "development") {
       // eslint-disable-next-line no-console
       console.log(`[INFO] ${message}`, ...args);
     } else {
-      Sentry.addBreadcrumb({
+      const breadcrumb: Sentry.Breadcrumb = {
         category: "log",
         message: message,
         level: "info",
-        data: args.length > 0 ? { args } : undefined,
-      });
+      };
+      if (args.length > 0) {
+        breadcrumb.data = { args };
+      }
+      Sentry.addBreadcrumb(breadcrumb);
     }
   },
-  warn: (message: string, ...args: any[]) => {
+  warn: (message: string, ...args: unknown[]) => {
     if (process.env.NODE_ENV === "development") {
       // eslint-disable-next-line no-console
       console.warn(`[WARN] ${message}`, ...args);
     }
-    Sentry.captureMessage(message, {
+    const context: Sentry.CaptureContext = {
       level: "warning",
-      extra: args.length > 0 ? { args } : undefined,
-    });
+    };
+    if (args.length > 0) {
+      context.extra = { args };
+    }
+    Sentry.captureMessage(message, context);
   },
-  error: (message: string, error?: any, ...args: any[]) => {
+  error: (message: string, error?: unknown, ...args: unknown[]) => {
     if (process.env.NODE_ENV === "development") {
       // eslint-disable-next-line no-console
       console.error(`[ERROR] ${message}`, error, ...args);

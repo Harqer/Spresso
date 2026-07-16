@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="account">アカウント</string>
+    <string name="add_to_cart">カートに追加</string>
+    <string name="ask_spresso">Spressoに質問...</string>
+    <string name="cancel">キャンセル</string>
+    <string name="cd_back">戻る</string>
+    <string name="cd_cart">カート</string>
+    <string name="cd_exit">終了</string>
+    <string name="cd_expansion_list">拡張リスト</string>
+    <string name="cd_send">送信</string>
+    <string name="cd_settings">設定</string>
+    <string name="cd_share">共有</string>
+    <string name="cd_vto_preview">VTOプレビュー</string>
+    <string name="checkout">レジに進む</string>
+    <string name="comparison_view">比較ビュー</string>
+    <string name="confirm_purchase">購入を確定</string>
+    <string name="connect_glasses">グラスの接続</string>
+    <string name="connected">接続済み</string>
+    <string name="connecting">接続中...</string>
+    <string name="controller">コントローラー</string>
+    <string name="disconnect_glasses">グラスの切断</string>
+    <string name="disconnected">未接続</string>
+    <string name="email_label">メールアドレス</string>
+    <string name="hardware">ハードウェア</string>
+    <string name="hardware_status">ハードウェア状態</string>
+    <string name="higgsfield_video_engine">Higgsfield-1 ビデオエンジン</string>
+    <string name="language">言語</string>
+    <string name="password_label">パスワード</string>
+    <string name="rayban_meta_glasses">Ray-Ban Meta グラス</string>
+    <string name="settings">設定</string>
+    <string name="sign_in">サインイン</string>
+    <string name="sign_out">サインアウト</string>
+    <string name="spresso">SPRESSO</string>
+    <string name="spresso_app_name">Spresso Retail</string>
+    <string name="spresso_identity">SPRESSO アイデンティティ</string>
+    <string name="spresso_pulse">SPRESSO パルス</string>
+    <string name="tap_to_start">タップして開始</string>
+    <string name="theme">テーマ</string>
+    <string name="theme_dark">ダーク</string>
+    <string name="theme_light">ライト</string>
+    <string name="theme_system">システム</string>
+    <string name="total_price">合計: $%1$s</string>
+    <string name="try_on_from_gallery">ギャラリーから試着</string>
+    <string name="virtual_try_on">バーチャル試着</string>
+</resources>

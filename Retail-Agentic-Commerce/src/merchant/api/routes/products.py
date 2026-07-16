@@ -97,6 +97,7 @@ def get_product(
         raise HTTPException(status_code=404, detail=f"Product {product_id} not found")
 
     import json
+
     return ProductResponse(
         id=product.id,
         sku=product.sku,
@@ -107,6 +108,8 @@ def get_product(
         image_url=product.image_url,
         category=product.category if hasattr(product, "category") else "General",
         tagline=product.tagline if hasattr(product, "tagline") else "",
-        features=json.loads(product.features_json) if hasattr(product, "features_json") else [],
+        features=json.loads(product.features_json)
+        if hasattr(product, "features_json")
+        else [],
         description=product.description if hasattr(product, "description") else "",
     )

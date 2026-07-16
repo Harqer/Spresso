@@ -1,12 +1,13 @@
-import time
+import logging
+import os
+
 from fastapi import Request, Response
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.responses import JSONResponse
 from upstash_redis import Redis
-import os
-import logging
 
 logger = logging.getLogger(__name__)
+
 
 class RedisRateLimitMiddleware(BaseHTTPMiddleware):
     """Industrial-grade Rate Limiting using Upstash Redis.
@@ -14,6 +15,7 @@ class RedisRateLimitMiddleware(BaseHTTPMiddleware):
     Protects sensitive AI discovery and transaction endpoints from connection exhaustion.
     Follows Cloudflare/Upstash secure REST patterns.
     """
+
     def __init__(self, app, limit: int = 60, window: int = 60):
         super().__init__(app)
         self.limit = limit
@@ -23,7 +25,9 @@ class RedisRateLimitMiddleware(BaseHTTPMiddleware):
         _token = os.getenv("UPSTASH_REDIS_REST_TOKEN")
 
         if not _url or not _token:
-            logger.error("CRITICAL: Redis Rate Limiter Credentials Missing. Rate Limiting is DISABLED.")
+            logger.error(
+                "CRITICAL: Redis Rate Limiter Credentials Missing. Rate Limiting is DISABLED."
+            )
             self.redis = None
         else:
             self.redis = Redis(
@@ -36,12 +40,17 @@ class RedisRateLimitMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next) -> Response:
         # Only rate limit sensitive production paths
         sensitive_paths = ["/discovery", "/orders", "/checkout_sessions"]
-        if not self.redis or not any(request.url.path.startswith(path) for path in sensitive_paths):
+        if not self.redis or not any(
+            request.url.path.startswith(path) for path in sensitive_paths
+        ):
             return await call_next(request)
 
         # identify user by IP or Auth Token
-        client_id = request.headers.get("Authorization", request.client.host if request.client else "unknown")
+        client_id = request.headers.get(
+            "Authorization", request.client.host if request.client else "unknown"
+        )
         import hashlib
+
         # expert strategy: partition rate limits by path to prevent global lockout
         key = f"spresso:ratelimit:{hashlib.md5(client_id.encode()).hexdigest()[:12]}:{request.url.path}"
 
@@ -51,7 +60,9 @@ class RedisRateLimitMiddleware(BaseHTTPMiddleware):
                 logger.warning(f"Industrial Rate Limit Triggered: {key}")
                 return JSONResponse(
                     status_code=429,
-                    content={"error": "Rate limit exceeded. Please wait before retrying."}
+                    content={
+                        "error": "Rate limit exceeded. Please wait before retrying."
+                    },
                 )
 
             # Atomic Increment and Expire

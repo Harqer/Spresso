@@ -3,7 +3,6 @@ import base64
 import contextlib
 import json
 import logging
-import os
 from typing import Any
 
 from fastapi import (
@@ -37,9 +36,13 @@ async def discovery_live(
 ):
     """Real-time multimodal discovery stream (Vision + Audio) via Gemini Live API."""
     from src.merchant.config import get_settings
+
     settings = get_settings()
 
-    if not x_spresso_internal_key or x_spresso_internal_key != settings.spresso_internal_secret:
+    if (
+        not x_spresso_internal_key
+        or x_spresso_internal_key != settings.spresso_internal_secret
+    ):
         await websocket.close(code=4003)
         return
 
@@ -59,7 +62,9 @@ async def discovery_live(
 
     response_task = None
     try:
-        async with gemini.start_live_session(system_instruction=spresso_prompt) as session:
+        async with gemini.start_live_session(
+            system_instruction=spresso_prompt
+        ) as session:
 
             async def forward_responses():
                 try:
@@ -131,12 +136,14 @@ class Citation(BaseModel):
     source: str
     url: str
 
+
 class ProductDiscovery(BaseModel):
     id: str
     name: str
     price: float
     imageUrl: str
     description: str
+
 
 class ChatRequest(BaseModel):
     message: str

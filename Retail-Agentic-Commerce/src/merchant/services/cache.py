@@ -5,10 +5,11 @@
 
 import json
 import logging
+from collections.abc import Callable
 from functools import wraps
-from typing import Any, Callable
 
 import redis
+
 from src.merchant.config import get_settings
 
 logger = logging.getLogger(__name__)
@@ -16,6 +17,7 @@ settings = get_settings()
 
 # Expert Strategy: Singleton Redis Client with Connection Pooling
 _redis_client: redis.Redis | None = None
+
 
 def get_redis_client() -> redis.Redis | None:
     """Initialize or return the existing Redis client."""
@@ -26,7 +28,7 @@ def get_redis_client() -> redis.Redis | None:
                 settings.redis_url,
                 decode_responses=True,
                 socket_timeout=5,
-                retry_on_timeout=True
+                retry_on_timeout=True,
             )
             # Test connection
             _redis_client.ping()
@@ -36,8 +38,10 @@ def get_redis_client() -> redis.Redis | None:
             _redis_client = None
     return _redis_client
 
+
 def cached(ttl: int = 300, prefix: str = "spresso"):
     """Decorator for caching function results in Redis."""
+
     def decorator(func: Callable):
         @wraps(func)
         def wrapper(*args, **kwargs):
@@ -72,5 +76,7 @@ def cached(ttl: int = 300, prefix: str = "spresso"):
                 logger.error(f"Cache Write Error: {e}")
 
             return result
+
         return wrapper
+
     return decorator
