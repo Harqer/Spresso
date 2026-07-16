@@ -28,10 +28,10 @@
 
         <meta-data
             android:name="com.meta.wearable.mwdat.APPLICATION_ID"
-            android:value="***REDACTED_META_APP_ID***" />
+            android:value="${metaApplicationId}" />
         <meta-data
             android:name="com.meta.wearable.mwdat.CLIENT_TOKEN"
-            android:value="***REDACTED_META_TOKEN***" />
+            android:value="${metaClientToken}" />
         <meta-data
             android:name="com.meta.wearable.mwdat.DAM_ENABLED"
             android:value="true" />

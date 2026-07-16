@@ -43,11 +43,24 @@ android {
         val spressoDomain: String = System.getenv("SPRESSO_DOMAIN") 
             ?: properties.getProperty("SPRESSO_DOMAIN")
             ?: "spresso.wearables.com"
+        val sentryDsn: String = System.getenv("SENTRY_DSN")
+            ?: properties.getProperty("SENTRY_DSN")
+            ?: "https://REDACTED_SENTRY_KEY@o***REDACTED_SENTRY_ORG_ID***.ingest.us.sentry.io/***REDACTED_SENTRY_ID***"
+        val metaAppId: String = System.getenv("META_APPLICATION_ID")
+            ?: properties.getProperty("META_APPLICATION_ID")
+            ?: "***REDACTED_META_APP_ID***"
+        val metaClientToken: String = System.getenv("META_CLIENT_TOKEN")
+            ?: properties.getProperty("META_CLIENT_TOKEN")
+            ?: "***REDACTED_META_TOKEN***"
 
         buildConfigField("String", "SPRESSO_BACKEND_URL", "\"$backendUrl\"")
         buildConfigField("String", "GOOGLE_WEB_CLIENT_ID", "\"$googleId\"")
         buildConfigField("String", "SPRESSO_DOMAIN", "\"$spressoDomain\"")
         buildConfigField("String", "SPRESSO_INTERNAL_SECRET", "\"$internalSecret\"")
+        buildConfigField("String", "SENTRY_DSN", "\"$sentryDsn\"")
+
+        manifestPlaceholders["metaApplicationId"] = metaAppId
+        manifestPlaceholders["metaClientToken"] = metaClientToken
     }
 
     buildFeatures {

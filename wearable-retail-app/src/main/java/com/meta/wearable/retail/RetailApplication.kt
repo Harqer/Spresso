@@ -11,7 +11,7 @@ class RetailApplication : Application() {
         super.onCreate()
         
         SentryAndroid.init(this) { options ->
-            options.dsn = "https://REDACTED_SENTRY_KEY@o***REDACTED_SENTRY_ORG_ID***.ingest.us.sentry.io/***REDACTED_SENTRY_ID***"
+            options.dsn = BuildConfig.SENTRY_DSN
             // Add any additional Spresso-specific options here
         }
 
