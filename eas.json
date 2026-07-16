@@ -9,7 +9,7 @@
         "gradleCommand": ":wearable-retail-app:assembleRelease"
       },
       "env": {
-        "GITHUB_TOKEN": "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"
+        "GITHUB_TOKEN": "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"
       }
     }
   }

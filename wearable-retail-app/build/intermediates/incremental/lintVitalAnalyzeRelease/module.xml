@@ -1,0 +1,19 @@
+<lint-module
+    format="1"
+    dir="/home/shaolin/Downloads/aura-quiet-living/wearable-retail-app"
+    name=":wearable-retail-app"
+    type="APP"
+    maven="Spresso Retail:wearable-retail-app:unspecified"
+    agpVersion="9.2.1"
+    buildFolder="build"
+    bootClassPath="/home/shaolin/Android/Sdk/platforms/android-37.0/android.jar:/home/shaolin/Android/Sdk/build-tools/36.0.0/core-lambda-stubs.jar"
+    javaSourceLevel="17"
+    compileTarget="android-37.0"
+    highlightGradualR8Api="false">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="release"/>
+</lint-module>

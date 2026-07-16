@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.aura.retail.watch"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.aura.retail.watch"
         minSdk = 25
-        targetSdk = 35
+        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
 

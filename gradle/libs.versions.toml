@@ -19,6 +19,7 @@ coroutines = "1.10.1"
 junit = "4.13.2"
 hilt = "2.60.1"
 hiltNav = "1.2.0"
+material = "1.12.0"
 firebase = "33.10.0"
 clerk = "1.0.32"
 androidxDatastore = "1.1.1"
@@ -57,6 +58,7 @@ androidx-biometric-ktx = { module = "androidx.biometric:biometric-ktx", version.
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
 hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNav" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
 
 # Firebase
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase" }
@@ -70,10 +72,10 @@ glimmer = { module = "androidx.xr.glimmer:glimmer", version.ref = "glimmer" }
 glimmer-fonts = { module = "androidx.xr.glimmer:glimmer-google-fonts", version.ref = "glimmer" }
 
 # Meta Wearables DAT SDK
-mwdat-core = { module = "com.meta.wearable:mwdat_core", version.ref = "mwdat" }
-mwdat-display = { module = "com.meta.wearable:mwdat_display", version.ref = "mwdat" }
-mwdat-camera = { module = "com.meta.wearable:mwdat_camera", version.ref = "mwdat" }
-mwdat-mock = { module = "com.meta.wearable:mwdat_mock", version.ref = "mwdat_ver" }
+mwdat-core = { module = "com.meta.wearable:mwdat-core", version.ref = "mwdat" }
+mwdat-display = { module = "com.meta.wearable:mwdat-display", version.ref = "mwdat" }
+mwdat-camera = { module = "com.meta.wearable:mwdat-camera", version.ref = "mwdat" }
+mwdat-mock = { module = "com.meta.wearable:mwdat-mockdevice", version.ref = "mwdat_ver" }
 
 # Wear OS
 androidx-wear-compose-material3 = { module = "androidx.wear.compose:compose-material3", version.ref = "wearCompose" }
