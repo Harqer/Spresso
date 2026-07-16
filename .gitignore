@@ -1,21 +1,51 @@
-# Standard Git Exclusions
+# Root-level Exclusions (Monorepo Maintenance)
 node_modules/
 .next/
 .venv/
 __pycache__/
-build/
-.gradle/
+codeql-db/
+dist/
+logs/
 *.log
 local.properties
-.env*
-dist/
-codeql-db/
-ktlint
-k6
 
-# Monorepo Backend (External to Android Build)
-Retail-Agentic-Commerce/
-aura-cloudflare/
-aura-gateway-go/
-services/
-maestro/
+# Large Binaries & Build Tools
+ktlint*
+k6
+gradle-*.zip
+
+# IDE & AI Agent Metadata (Security/Privacy Guardrail)
+.idea/
+.descriptions.xml
+.genkit/
+.junie/
+.windsurf/
+.devin/
+.continue/
+.cursor/
+.cursorignore
+.projects/
+.kotlin/
+.infisical.env
+
+# Android Build Artifacts (Definitive Root Paths)
+wearable-retail-app/build/
+wear-retail-watch/build/
+.gradle/
+*.apk
+*.aab
+
+# Environment & Secrets (Zero-Trust)
+.env
+.env.*
+*.env
+full_env_prod.txt
+*_env_*.txt
+*_env.txt
+
+# SDK Specific (Meta Wearables)
+MWDAT.plist
+
+# Lockfile hygiene
+Retail-Agentic-Commerce/package-lock.json
+Retail-Agentic-Commerce/yarn.lock

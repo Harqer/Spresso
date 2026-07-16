@@ -50,7 +50,7 @@ import java.util.concurrent.Executor
 import javax.inject.Inject
 
 enum class AppScreen {
-    Support, About, Launch, Identity, Welcome, ChooseVoice, Shop, Settings,
+    Launch, Identity, Welcome, Shop, Settings,
 }
 
 @AndroidEntryPoint
