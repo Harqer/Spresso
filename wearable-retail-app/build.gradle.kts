@@ -11,12 +11,12 @@ plugins {
 
 android {
     namespace = "com.meta.wearable.retail"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.meta.wearable.retail"
         minSdk = 30
-        targetSdk = 35
+        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
 
@@ -70,6 +70,14 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+
+    configurations.all {
+        resolutionStrategy {
+            // Industrial Hardening: Force explicit cache timeouts for dynamic versions
+            cacheDynamicVersionsFor(600, "seconds")
+            cacheChangingModulesFor(600, "seconds")
+        }
+    }
 }
 
 dependencies {
@@ -83,6 +91,7 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.foundation)
     implementation(libs.androidx.biometric.ktx)
+    implementation(libs.material)
 
     // Hilt DI
     implementation(libs.hilt.android)

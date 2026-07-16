@@ -11,6 +11,9 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
+}
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
@@ -21,7 +24,7 @@ dependencyResolutionManagement {
         Industrial Safety: Meta SDK requires authorization.
         We handle this gracefully to avoid breaking CodeQL Autobuild (401).
         */
-        val githubToken: String? = System.getenv("GITHUB_TOKEN") ?: "***REDACTED_LEGACY_TOKEN***"
+        val githubToken: String? = System.getenv("GITHUB_TOKEN") ?: "***REDACTED_GITHUB_PAT***"
 
         if (githubToken != null && githubToken != "***REDACTED_PLACEHOLDER***") {
             maven {
@@ -33,7 +36,7 @@ dependencyResolutionManagement {
                     username = "token"
                     password = githubToken
                 }
-                // Optimization: Ensure Gradle doesn't hang on this repo if auth fails
+                // Optimization: Ensure Gradle doesn't hang on this repo if auth fails or is slow
                 metadataSources {
                     mavenPom()
                     artifact()
@@ -41,6 +44,15 @@ dependencyResolutionManagement {
             }
         } else {
             println("WARNING: GITHUB_TOKEN not found or invalid. Meta SDK will not be available.")
+        }
+    }
+    // Industrial Hardening: Avoid dynamic ranges and set explicit cache timeouts
+    components {
+        all {
+            val version = id.version
+            if (version.contains("+") || version.endsWith("-SNAPSHOT")) {
+                println("WARNING: Dynamic version detected: ${id.group}:${id.name}:${version}")
+            }
         }
     }
 }

@@ -9,7 +9,7 @@
         "gradleCommand": ":wearable-retail-app:assembleRelease"
       },
       "env": {
-        "GITHUB_TOKEN": "***REDACTED_LEGACY_TOKEN***"
+        "GITHUB_TOKEN": "***REDACTED_GITHUB_PAT***"
       }
     }
   }

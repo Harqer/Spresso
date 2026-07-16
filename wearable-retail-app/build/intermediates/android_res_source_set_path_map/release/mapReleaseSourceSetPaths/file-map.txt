@@ -1,0 +1,9 @@
+com.meta.wearable.retail.wearable-retail-app-res-0 REDACTED_PROJECT_ROOT/wearable-retail-app/build/generated/res/processReleaseGoogleServices
+com.meta.wearable.retail.wearable-retail-app-updated_navigation_xml-1 REDACTED_PROJECT_ROOT/wearable-retail-app/build/generated/updated_navigation_xml/release
+com.meta.wearable.retail.wearable-retail-app-packageReleaseResources-2 REDACTED_PROJECT_ROOT/wearable-retail-app/build/intermediates/incremental/release/packageReleaseResources/merged.dir
+com.meta.wearable.retail.wearable-retail-app-packageReleaseResources-3 REDACTED_PROJECT_ROOT/wearable-retail-app/build/intermediates/incremental/release/packageReleaseResources/stripped.dir
+com.meta.wearable.retail.wearable-retail-app-merged-not-compiled-resources-4 REDACTED_PROJECT_ROOT/wearable-retail-app/build/intermediates/merged-not-compiled-resources/release
+com.meta.wearable.retail.wearable-retail-app-release-5 REDACTED_PROJECT_ROOT/wearable-retail-app/build/intermediates/merged_res/release/mergeReleaseResources
+com.meta.wearable.retail.wearable-retail-app-main-6 REDACTED_PROJECT_ROOT/wearable-retail-app/src/main/res
+com.meta.wearable.retail.wearable-retail-app-release-7 REDACTED_PROJECT_ROOT/wearable-retail-app/src/release/res
+gradleHome-0 REDACTED_PROJECT_ROOT/.gradle_home
