@@ -15,6 +15,8 @@ class RetailApplication : Application() {
             // Add any additional Spresso-specific options here
         }
 
-        Wearables.initialize(this)
+        Wearables.initialize(this).onFailure { error, _ ->
+            android.util.Log.e("RetailApp", "Wearables SDK Initialization FAILED: ${error.toString()}")
+        }
     }
 }

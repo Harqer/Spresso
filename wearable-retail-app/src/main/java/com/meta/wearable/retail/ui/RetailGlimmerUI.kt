@@ -3,7 +3,7 @@ package com.meta.wearable.retail.ui
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ShoppingCart
+import androidx.compose.material.icons.filled.ShoppingBag
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -65,8 +65,8 @@ fun ProductCard(
             horizontalArrangement = Arrangement.spacedBy(8.dp),
         ) {
             Icon(
-                imageVector = Icons.Default.ShoppingCart,
-                contentDescription = null,
+                imageVector = Icons.Default.ShoppingBag,
+                contentDescription = "Purchase",
             )
             Text(text = "Tap to Purchase")
         }

@@ -4,6 +4,8 @@
   },
   "build": {
     "production": {
+      "node": "20.12.2",
+      "pnpm": "10.0.0",
       "android": {
         "buildType": "apk",
         "gradleCommand": ":wearable-retail-app:assembleRelease"

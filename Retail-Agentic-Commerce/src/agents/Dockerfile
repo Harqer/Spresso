@@ -15,8 +15,9 @@
 
 # NAT Agents Dockerfile
 # Shared image for promotion, post-purchase, and recommendation agents
+# Multi-stage build for optimized production image and layer caching
 
-FROM python:3.12-slim
+FROM python:3.12-slim AS base
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -29,20 +30,28 @@ RUN pip install uv
 
 WORKDIR /app
 
-# Copy agent-specific pyproject.toml, README, and custom component registration
-COPY src/agents/pyproject.toml src/agents/README.md src/agents/register.py ./
+# Dependencies stage
+FROM base AS deps
+# Copy only files required for dependency resolution
+COPY pyproject.toml uv.lock README.md ./
+COPY src/agents/pyproject.toml ./src/agents/pyproject.toml
 
-# Install dependencies with prerelease support for nvidia-nat
-RUN uv pip install -e ".[dev]" --system
+# Install dependencies with frozen lockfile for deterministic builds
+# We sync at the root to leverage the workspace-wide uv.lock
+RUN uv sync --frozen --no-dev
 
-# Copy agent configurations
-COPY src/agents/configs ./configs
+# Runtime stage
+FROM base AS runtime
+# Copy virtual environment from deps stage
+COPY --from=deps /app/.venv /app/.venv
+ENV PATH="/app/.venv/bin:$PATH"
 
-# Copy scripts (for seeding Milvus, etc.)
-COPY src/agents/scripts ./scripts
+# Copy agent application code
+COPY src/agents /app/src/agents
+COPY src/data /app/src/data
 
-# Copy shared data (product catalog for Milvus seeder)
-COPY src/data ./src/data
+# Working directory for agent execution
+WORKDIR /app/src/agents
 
 # No default CMD - set via docker-compose command for each agent
 # Examples:

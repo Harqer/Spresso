@@ -14,7 +14,7 @@ fun ContentScope.buildWelcome(onStart: () -> Unit) {
         button(
             label = "Start Discovery",
             style = ButtonStyle.PRIMARY,
-            iconName = IconName.EYE,
+            iconName = IconName.TRIANGLE_RIGHT,
             onClick = onStart,
         )
     }
@@ -26,7 +26,7 @@ fun ContentScope.buildCart(products: List<Product>) {
             flexBox(direction = Direction.ROW, gap = 12, padding = 16, background = FlexBoxBackground.CARD) {
                 text(product.name, style = TextStyle.BODY)
                 text("$${product.price}", style = TextStyle.META)
-                icon(name = IconName.CART, style = IconStyle.FILLED)
+                icon(name = IconName.SHOPPING_BAG, style = IconStyle.FILLED)
             }
         }
     }
@@ -34,7 +34,7 @@ fun ContentScope.buildCart(products: List<Product>) {
 
 fun ContentScope.buildSuccess() {
     flexBox(direction = Direction.COLUMN, gap = 16, padding = 24, alignment = Alignment.CENTER, background = FlexBoxBackground.NONE) {
-        icon(name = IconName.CHECKMARK, style = IconStyle.FILLED)
+        icon(name = IconName.CHECKMARK_CIRCLE, style = IconStyle.FILLED)
         text("Purchase Verified", style = TextStyle.HEADING)
         text("Preparing objects...", style = TextStyle.BODY)
     }
@@ -49,5 +49,13 @@ fun ContentScope.buildStreaming(isOn: Boolean) {
             icon(name = iconName, style = IconStyle.FILLED)
             text(statusText, style = TextStyle.META)
         }
+    }
+}
+
+fun ContentScope.buildCoolingDown() {
+    flexBox(direction = Direction.COLUMN, gap = 16, padding = 24, alignment = Alignment.CENTER, background = FlexBoxBackground.NONE) {
+        icon(name = IconName.CLOCK, style = IconStyle.FILLED)
+        text("Thermal Protection", style = TextStyle.HEADING)
+        text("Device is cooling down. Pulse will resume shortly.", style = TextStyle.BODY)
     }
 }

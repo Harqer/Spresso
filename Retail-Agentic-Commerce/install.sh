@@ -190,14 +190,14 @@ info "Installing dependencies..."
 info "Setting up root Python environment..."
 cd "$ROOT_DIR"
 uv venv --quiet 2>/dev/null || uv venv
-uv sync --quiet 2>/dev/null || uv sync
+uv sync --frozen --quiet 2>/dev/null || uv sync --frozen
 ok "Root venv ready ($ROOT_VENV)"
 
 # Agents venv
 info "Setting up agents Python environment..."
 cd "$AGENTS_DIR"
 uv venv --quiet 2>/dev/null || uv venv
-"$AGENTS_VENV/bin/pip" install -q -e ".[dev]" 2>/dev/null || uv pip install -e ".[dev]" --python "$AGENTS_VENV/bin/python"
+uv pip install --frozen -e ".[dev]" --python "$AGENTS_VENV/bin/python"
 ok "Agents venv ready ($AGENTS_VENV)"
 
 # UI
@@ -207,17 +207,14 @@ if [ ! -f ".env.local" ]; then
     cp env.example .env.local
     ok "Created src/ui/.env.local from env.example"
 fi
-pnpm install --frozen-lockfile 2>/dev/null || pnpm install
+pnpm install --frozen-lockfile
 ok "UI dependencies installed"
 
 # Apps SDK Widget (non-blocking)
 info "Installing Apps SDK widget dependencies..."
 cd "$WIDGET_DIR"
-if pnpm install --frozen-lockfile 2>/dev/null || pnpm install 2>/dev/null; then
-    ok "Apps SDK widget dependencies installed"
-else
-    warn "Apps SDK widget install failed (non-blocking, widget dev server may not work)"
-fi
+pnpm install --frozen-lockfile || warn "Apps SDK widget install failed (non-blocking, widget dev server may not work)"
+
 
 cd "$ROOT_DIR"
 

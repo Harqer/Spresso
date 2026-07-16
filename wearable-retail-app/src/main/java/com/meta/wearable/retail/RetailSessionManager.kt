@@ -5,13 +5,20 @@ import android.util.Log
 import com.meta.wearable.dat.camera.Stream
 import com.meta.wearable.dat.camera.addStream
 import com.meta.wearable.dat.camera.types.StreamConfiguration
+import com.meta.wearable.dat.camera.types.StreamError
 import com.meta.wearable.dat.camera.types.VideoQuality
 import com.meta.wearable.dat.core.Wearables
-import com.meta.wearable.dat.core.selectors.SpecificDeviceSelector
+import com.meta.wearable.dat.core.selectors.AutoDeviceSelector
 import com.meta.wearable.dat.core.session.DeviceSession
 import com.meta.wearable.dat.core.session.DeviceSessionState
+import com.meta.wearable.dat.core.types.DeviceCompatibility
 import com.meta.wearable.dat.core.types.DeviceIdentifier
+import com.meta.wearable.dat.core.types.Permission
+import com.meta.wearable.dat.core.types.PermissionStatus
+import com.meta.wearable.dat.core.types.ThermalLevel
+import com.meta.wearable.dat.core.types.WearablesError
 import com.meta.wearable.dat.display.addDisplay
+import com.meta.wearable.dat.display.types.DisplayError
 import com.meta.wearable.dat.display.views.*
 import com.meta.wearable.retail.glimmer.*
 import com.meta.wearable.retail.ui.Product
@@ -21,6 +28,8 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -57,41 +66,97 @@ class RetailSessionManager(
     var onDiscoverRequested: (() -> Unit)? = null
 
     fun startSession(
-        deviceId: DeviceIdentifier,
         token: String,
     ) {
         userToken = token
-        Wearables.createSession(SpecificDeviceSelector(deviceId)).fold(
-            onSuccess = { session ->
+
+        // Monitor registration errors in the background for production diagnostics
+        scope.launch {
+            Wearables.registrationErrorStream.collect { error ->
+                Log.e("RetailSession", "Registration Flow Error: ${error.description}")
+            }
+        }
+
+        // Senior Architect Hardening: Use AutoDeviceSelector filtered for display capability
+        Wearables.createSession(AutoDeviceSelector(filter = { it.isDisplayCapable() }))
+            .onSuccess { session ->
                 _currentSession.value = session
                 scope.launch {
                     session.state.collectLatest { state ->
-                        if (state == DeviceSessionState.STARTED) {
-                            attachDisplay(session)
-                            attachMultimodalStream(session)
+                        when (state) {
+                            DeviceSessionState.STARTED -> {
+                                // In production, we target the first available device for thermal monitoring
+                                // when using AutoDeviceSelector.
+                                Wearables.devices.value.firstOrNull()?.let { deviceId ->
+                                    monitorThermalState(deviceId)
+                                }
+                                attachDisplay(session)
+                                
+                                // Check Camera Permissions before starting multimodal stream
+                                Wearables.checkPermissionStatus(Permission.CAMERA)
+                                    .onSuccess { status ->
+                                        if (status == PermissionStatus.Granted) {
+                                            attachMultimodalStream(session)
+                                        } else {
+                                            Log.w("RetailSession", "Camera Permission DENIED by user")
+                                        }
+                                    }
+                                    .onFailure { error, _ ->
+                                        Log.e("RetailSession", "Permission Check FAILED: ${error.toString()}")
+                                    }
+                            }
+                            DeviceSessionState.STOPPED -> {
+                                stopSession()
+                            }
+                            else -> Unit
                         }
                     }
                 }
                 session.start()
-            },
-            onFailure = { error, _ ->
-                Log.e("RetailSession", "Session Creation FAILED: ${error.description}")
-            },
-        )
+            }
+            .onFailure { error, _ ->
+                val message = when (error) {
+                    is WearablesError -> "SDK Error: ${error.toString()}"
+                    else -> "Session Creation FAILED: ${error.toString()}"
+                }
+                Log.e("RetailSession", message)
+            }
+    }
+
+    private fun monitorThermalState(deviceId: DeviceIdentifier) {
+        scope.launch {
+            Wearables.getDeviceState(deviceId)
+                .map { it.thermalLevel }
+                .distinctUntilChanged()
+                .collect { thermalLevel ->
+                    when (thermalLevel) {
+                        ThermalLevel.CRITICAL, ThermalLevel.EMERGENCY, ThermalLevel.SHUTDOWN -> {
+                            Log.w("RetailSession", "CRITICAL Thermal Level: $thermalLevel. Throttling stream.")
+                            showCoolingDown()
+                            // Force stop video stream to protect hardware
+                            videoStreamJob?.cancel()
+                        }
+                        ThermalLevel.SEVERE -> {
+                            Log.w("RetailSession", "High temperature detected. Pulse performance may be impacted.")
+                        }
+                        else -> Unit
+                    }
+                }
+        }
     }
 
     private fun attachMultimodalStream(session: DeviceSession) {
-        session.addStream(StreamConfiguration(VideoQuality.MEDIUM, 24)).fold(
-            onSuccess = { stream ->
+        session.addStream(StreamConfiguration(VideoQuality.MEDIUM, 24))
+            .onSuccess { stream ->
                 stream.start().onFailure { error, _ ->
-                    Log.e("RetailSession", "Stream Start FAILED: ${error.description}")
+                    val errorMsg = if (error is StreamError) "Stream Error: $error" else "Stream Start FAILED"
+                    Log.e("RetailSession", errorMsg)
                 }
                 startMultimodalBridge(stream)
-            },
-            onFailure = { error, _ ->
-                Log.e("RetailSession", "Stream Addition FAILED: ${error.description}")
-            },
-        )
+            }
+            .onFailure { error, _ ->
+                Log.e("RetailSession", "Stream Addition FAILED: ${error.toString()}")
+            }
     }
 
     private fun startMultimodalBridge(stream: Stream) {
@@ -122,10 +187,9 @@ class RetailSessionManager(
             )
 
         videoStreamJob =
-            scope.launch {
+            scope.launch(Dispatchers.Default) {
                 stream.videoStream.collect { frame ->
-                    // Industrial Pulse: Real-time Base64 Encoding
-                    // Using .buffer for 0.7.0 compatibility
+                    // Senior Architect: Background processing for video frames
                     val buffer = frame.buffer
                     val bytes = ByteArray(buffer.remaining())
                     buffer.get(bytes)
@@ -148,15 +212,15 @@ class RetailSessionManager(
     }
 
     private fun attachDisplay(session: DeviceSession) {
-        session.addDisplay().fold(
-            onSuccess = { display ->
+        session.addDisplay()
+            .onSuccess { display ->
                 internalDisplay.value = display
                 showWelcome()
-            },
-            onFailure = { error, _ ->
-                Log.e("RetailSession", "Display Addition FAILED: ${error.description}")
-            },
-        )
+            }
+            .onFailure { error, _ ->
+                val errorMsg = if (error is DisplayError) "Display Error: $error" else "Display Addition FAILED"
+                Log.e("RetailSession", errorMsg)
+            }
     }
 
     fun stopSession() {
@@ -191,6 +255,11 @@ class RetailSessionManager(
     fun showPurchaseSuccess() {
         val display = internalDisplay.value ?: return
         scope.launch { display.sendContent { buildSuccess() } }
+    }
+
+    fun showCoolingDown() {
+        val display = internalDisplay.value ?: return
+        scope.launch { display.sendContent { buildCoolingDown() } }
     }
 
     fun updateStreamingStatus(isOn: Boolean) {

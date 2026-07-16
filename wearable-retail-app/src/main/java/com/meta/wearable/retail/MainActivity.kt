@@ -167,6 +167,10 @@ class MainActivity : FragmentActivity() {
                                         userToken = result.token ?: ""
                                         userTier = result.claims["stripeRole"] as? String ?: "free"
                                         isAuthenticated = true
+                                        // Auto-start session for production-ready connectivity
+                                        if (regState == RegistrationState.REGISTERED) {
+                                            sessionManager.startSession(userToken)
+                                        }
                                     }.addOnFailureListener {
                                         currentScreen = AppScreen.Identity
                                     }

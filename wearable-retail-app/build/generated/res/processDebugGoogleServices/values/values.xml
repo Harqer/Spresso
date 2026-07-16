@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="gcm_defaultSenderId" translatable="false">***REDACTED_PROJECT_NUMBER***</string>
-    <string name="google_api_key" translatable="false">${FIREBASE_ANDROID_API_KEY}</string>
-    <string name="google_app_id" translatable="false">***REDACTED_APP_ID***</string>
-    <string name="google_crash_reporting_api_key" translatable="false">${FIREBASE_ANDROID_API_KEY}</string>
-    <string name="google_storage_bucket" translatable="false">***REDACTED_PROJECT_ID***.firebasestorage.app</string>
-    <string name="project_id" translatable="false">***REDACTED_PROJECT_ID***</string>
-</resources>
