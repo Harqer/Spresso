@@ -1,0 +1,28 @@
+name: Industrial Security Guardrails
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  semgrep:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Semgrep Analysis
+        run: |
+          python3 -m pip install semgrep
+          semgrep --config auto .
+          
+  gitleaks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Gitleaks Scan
+        run: |
+          # Industrial secret detection
+          docker run -v $(pwd):/path zricethezav/gitleaks:latest detect --source="/path" -v

@@ -40,6 +40,8 @@
     "eslint": "^10.7.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
+    "expo": "^57.0.6",
+    "expo-modules-core": "^57.0.5",
     "tsx": "^4.19.3",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.63.0",
@@ -51,7 +53,9 @@
       "esbuild": ">=0.28.1",
       "postcss": ">=8.5.17",
       "undici": ">=8.7.0",
-      "ws": ">=8.21.0"
+      "ws": ">=8.21.0",
+      "brace-expansion": "1.1.11",
+      "minimatch": "3.1.2"
     }
   }
 }

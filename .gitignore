@@ -1,32 +1,21 @@
-# Strict Zero-Trust Policy: Block all dotfiles and directories
-.*
-
-# Sole Exception: Allow the .gitignore file itself
-!.gitignore
-
-# ============================================================
-# SECRET VAULT POLICY: Infisical is the only source of truth.
-# Never commit .env files, env dumps, or any file with secrets.
-# ============================================================
-.env
-.env.*
-*.env
-full_env_prod.txt
-*_env_*.txt
-*_env.txt
-
-# Standard build and log ignores
-node_modules
-dist
-logs
+# Standard Git Exclusions
+node_modules/
+.next/
+.venv/
+__pycache__/
+build/
+.gradle/
 *.log
-
-# Android build artifacts — NEVER commit these, they embed API keys
-aura-mobile-android/**/build/
-aura-mobile-android/**/*.apk
-aura-mobile-android/**/*.aab
-
-# Lockfile hygiene: pnpm is the only package manager for this repo.
-Retail-Agentic-Commerce/package-lock.json
-Retail-Agentic-Commerce/yarn.lock
 local.properties
+.env*
+dist/
+codeql-db/
+ktlint
+k6
+
+# Monorepo Backend (External to Android Build)
+Retail-Agentic-Commerce/
+aura-cloudflare/
+aura-gateway-go/
+services/
+maestro/

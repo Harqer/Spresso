@@ -1,10 +1,27 @@
-node_modules
-.next
-.git
-.venv
-codeql-db
-*.log
-index.html
-Retail-Agentic-Commerce/src/ui/node_modules
-aura-mobile-android/build
-aura-mobile-android/.gradle
+# EAS Production White-list Strategy
+# Only include assets required for the Android production build.
+
+# Ignore everything by default
+*
+
+# Explicitly allow Android modules and build logic
+!wearable-retail-app/
+!wear-retail-watch/
+!gradle/
+!build.gradle.kts
+!settings.gradle.kts
+!gradle.properties
+!gradlew
+!gradlew.bat
+
+# Allow EAS and package configs
+!app.json
+!eas.json
+!package.json
+!pnpm-lock.yaml
+!.easignore
+!.gitignore
+
+# Allow standard metadata
+!metadata.json
+!README.md

@@ -1,0 +1,9 @@
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.2
+    hooks:
+      - id: gitleaks
+  - repo: https://github.com/semgrep/semgrep-action
+    rev: v1.0.0
+    hooks:
+      - id: semgrep
