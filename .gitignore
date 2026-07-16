@@ -1,10 +1,38 @@
-# Root-level Exclusions (Monorepo Maintenance)
+# ==============================================================================
+# STRICT ZERO-TRUST POLICY: Block all dotfiles and directories by default
+# ==============================================================================
+.*
+
+# === ALLOWED EXCEPTIONS (Project Configuration) ===
+!.gitignore
+!.easignore
+!.npmrc
+!.firebaserc
+!.pre-commit-config.yaml
+!.gitlab-ci.yml
+!.dockerignore
+!.prettierignore
+!.editorconfig
+
+# === ALLOWED DIRECTORIES (Source / CI) ===
+!.github/
+!.agents/
+!.claude/
+
+# Allow dot-directories for project skills/agents in subfolders
+!**/.agents/
+!**/.claude/
+
+# ==============================================================================
+# STANDARD EXCLUSIONS (Redundant Safety)
+# ==============================================================================
 node_modules/
-.next/
+dist/
+build/
+.gradle/
+.idea/
 .venv/
 __pycache__/
-codeql-db/
-dist/
 logs/
 *.log
 local.properties
@@ -14,28 +42,13 @@ ktlint*
 k6
 gradle-*.zip
 
-# IDE & AI Agent Metadata (Security/Privacy Guardrail)
-.idea/
-.descriptions.xml
-.genkit/
-.junie/
-.windsurf/
-.devin/
-.continue/
-.cursor/
-.cursorignore
-.projects/
-.kotlin/
-.infisical.env
-
 # Android Build Artifacts (Definitive Root Paths)
 wearable-retail-app/build/
 wear-retail-watch/build/
-.gradle/
 *.apk
 *.aab
 
-# Environment & Secrets (Zero-Trust)
+# Environment & Secrets (Redundant Protection)
 .env
 .env.*
 *.env
