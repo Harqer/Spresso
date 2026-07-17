@@ -1,7 +1,7 @@
 package com.meta.wearable.retail.util
 
 import android.content.Context
-import com.meta.wearable.retail.util.SpressoSpressoLogger.er
+import com.meta.wearable.retail.util.SpressoLogger
 import com.google.android.gms.wearable.PutDataMapRequest
 import com.google.android.gms.wearable.Wearable
 import com.meta.wearable.retail.ui.Product
@@ -35,7 +35,7 @@ class WearSyncManager(
             putDataReq.setUrgent()
 
             val result = dataClient.putDataItem(putDataReq).await()
-            SpressoSpressoLogger.er.d("WearSync", "Successfully synced products to watch: ${result.uri}")
+            SpressoLogger.d("WearSync", "Successfully synced products to watch: ${result.uri}")
         } catch (e: Exception) {
             SpressoLogger.e("WearSync", "Failed to sync products to watch: ${e.message}", e)
         }

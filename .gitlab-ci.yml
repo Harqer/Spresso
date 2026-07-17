@@ -22,7 +22,7 @@ cache:
   paths:
     - .uv-cache
     - .pnpm-cache
-    - aura-mobile-android/.gradle
+    - .gradle
 
 # --- 1. AUTONOMIC VALIDATION & REPAIR ---
 # --- FAILURE FEEDBACK SINK (The Alert System) ---
@@ -85,7 +85,7 @@ security-pulse:
     - "go install golang.org/x/vuln/cmd/govulncheck@latest"
     - "$(go env GOPATH)/bin/govulncheck ./..."
     # Android Security Audit
-    - "cd ../aura-mobile-android && ./gradlew lint"
+    - "cd .. && ./gradlew lint"
 
 # --- 3. IDENTITY & CLOUDFLARE HSM PULSE ---
 secure-secrets-gate:
@@ -116,12 +116,11 @@ hardware-pulse:
   stage: hardware-verification
   image: eclipse-temurin:21-jdk
   script:
-    - "cd aura-mobile-android"
     - "infisical run --env dev -- ./gradlew :wearable-retail-app:assembleDebug"
     - "./gradlew :wearable-retail-app:testDebugUnitTest"
   artifacts:
     paths:
-      - "aura-mobile-android/wearable-retail-app/build/outputs/apk/debug/*.apk"
+      - "wearable-retail-app/build/outputs/apk/debug/*.apk"
 
 # --- 6. AUTONOMOUS PROMOTION ---
 promote-to-production:

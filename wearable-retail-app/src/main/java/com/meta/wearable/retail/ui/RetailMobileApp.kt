@@ -1,7 +1,7 @@
 package com.meta.wearable.retail.ui
 
 import android.net.Uri
-import com.meta.wearable.retail.util.SpressoSpressoLogger.er
+import com.meta.wearable.retail.util.SpressoLogger
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background

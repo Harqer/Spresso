@@ -35,7 +35,7 @@ The system orchestrates three specialized agents using the NVIDIA Nemotron-3-Nan
 2. Recommendation Agent (Basket Optimization): Suggests in-stock accessories using SQL-based deterministic joins/rules over catalog + inventory, enforcing constraints (in-stock, margin rules).
 3. Post-Purchase Agent (Lifecycle Loyalty): Sends multilingual, brand-aware shipping pulses to a **global webhook endpoint** using the configured **Brand Persona**.
 
-### Client Agent Simulator (Demo Client)
+### Client Agent Production Pulse (Release Candidate Client)
 
 For this project we will also build a **client agent simulator** that behaves like the ACP client:
 
@@ -345,7 +345,7 @@ A "Glass Box" dashboard built with Next.js to visualize the underlying protocol 
 ### Right Panel: Chain of Thought (Optional)
 * **Agent Reasoning Trace**: Display real-time **agent reasoning from NeMo Agent Toolkit** when agents are triggered (tool calls, intermediate decisions, step labels)
 * **Default mode**: show a **redacted/structured explainability trace** (steps, tool inputs/outputs, short rationale)
-* **Demo/Debug mode**: optionally show **raw chain-of-thought-style output** if available from the model/runtime, clearly labeled as "demo/debug only"
+* **Release Candidate/Debug mode**: optionally show **raw chain-of-thought-style output** if available from the model/runtime, clearly labeled as "demo/debug only"
 * Visual connection between agent decisions and the resulting JSON in the middle panel
 
 ## 5. UCP Integration Requirements

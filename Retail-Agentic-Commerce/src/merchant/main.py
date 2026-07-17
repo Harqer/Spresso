@@ -152,7 +152,7 @@ async def discovery_flow_endpoint():
 # UCP A2A: SDK transport stack
 # ---------------------------------------------------------------------------
 
-_agent_card = build_sdk_agent_card(settings.ucp_base_url or "http://localhost:8000")
+_agent_card = build_sdk_agent_card(settings.ucp_base_url or f"https://{settings.spresso_domain}")
 _handler = DefaultRequestHandler(
     agent_executor=UCPCheckoutAgentExecutor(),
     task_store=InMemoryTaskStore(),

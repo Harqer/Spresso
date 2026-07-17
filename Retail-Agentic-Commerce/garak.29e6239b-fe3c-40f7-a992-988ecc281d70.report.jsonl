@@ -1,2 +1,0 @@
-{"model_type": null, "model_name": null, "seed": null, "generations": 10, "probes": "all", "detectors": "", "eval_threshold": 0.5, "deprefix": false, "plugin_info": null, "list_probes": false, "list_detectors": false, "list_generators": true, "version": false, "verbose": 0, "generator_option": null, "report_prefix": "", "entry_type": "config"}
-{"entry_type": "init", "garak_version": "0.9.0.4", "start_time": "2026-07-12T19:10:25.970396", "run": "29e6239b-fe3c-40f7-a992-988ecc281d70"}

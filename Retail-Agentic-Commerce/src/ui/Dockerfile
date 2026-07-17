@@ -47,7 +47,7 @@ COPY src/ui ./
 
 # Set build-time environment variables
 # Note: API keys are handled server-side via proxy routes (never exposed to browser)
-ARG NEXT_PUBLIC_UCP_PLATFORM_PROFILE_URL=http://merchant:8000/.well-known/ucp
+ARG NEXT_PUBLIC_UCP_PLATFORM_PROFILE_URL=https://api.spresso.ai/.well-known/ucp
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NEXT_PUBLIC_MCP_SERVER_URL=/apps-sdk
 ENV NEXT_PUBLIC_UCP_PLATFORM_PROFILE_URL=${NEXT_PUBLIC_UCP_PLATFORM_PROFILE_URL}

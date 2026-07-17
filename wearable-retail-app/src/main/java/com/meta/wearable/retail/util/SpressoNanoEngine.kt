@@ -3,6 +3,7 @@ package com.meta.wearable.retail.util
 import android.content.Context
 import android.util.LruCache
 import com.meta.wearable.retail.BuildConfig
+import com.meta.wearable.retail.util.SpressoLogger
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.sync.Mutex

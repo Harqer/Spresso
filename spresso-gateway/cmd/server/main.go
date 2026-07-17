@@ -120,14 +120,14 @@ func main() {
 	
 	cortexAddr := secretVault.GetSecret("SPRESSO_CORTEX_ADDR")
 	if cortexAddr == "" {
-		cortexAddr = "http://localhost:8000"
+		log.Fatalf("Critical Configuration Error: SPRESSO_CORTEX_ADDR is required")
 	}
 	
 	merchantApiKey := secretVault.GetSecret("MERCHANT_API_KEY")
 
 	redisUrl := secretVault.GetSecret("REDIS_URL")
 	if redisUrl == "" {
-		redisUrl = "redis://localhost:6379/0"
+		log.Fatalf("Critical Configuration Error: REDIS_URL is required")
 	}
 
 	turnstileSecret := secretVault.GetSecret("TURNSTILE_SECRET_KEY")
