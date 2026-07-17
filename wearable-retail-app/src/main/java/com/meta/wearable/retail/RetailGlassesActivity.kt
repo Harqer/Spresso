@@ -1,7 +1,7 @@
 package com.meta.wearable.retail
 
 import android.os.Bundle
-import android.util.Log
+import com.meta.wearable.retail.util.SpressoLogger
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.collectAsState
@@ -23,7 +23,7 @@ class RetailGlassesActivity : ComponentActivity() {
             RetailGlimmerApp(
                 products = products,
                 onBuy = { product ->
-                    Log.d("GlassesUI", "Buying product: ${product.name}")
+                    SpressoLogger.d("GlassesUI", "Buying product: ${product.name}")
                     sessionManager.onAddToCartRequested?.invoke(product.id)
                 },
             )

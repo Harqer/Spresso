@@ -20,7 +20,7 @@ import * as Sentry from "@sentry/nextjs";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const PSP_API_URL = process.env.PSP_API_URL || "http://localhost:8001";
+const PSP_API_URL = process.env.PSP_API_URL || "";
 const PSP_API_KEY = process.env.PSP_API_KEY;
 
 // Fail-fast: log warning on module load if API key is missing

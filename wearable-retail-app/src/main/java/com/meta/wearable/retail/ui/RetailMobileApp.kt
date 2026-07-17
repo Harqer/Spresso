@@ -1,7 +1,7 @@
 package com.meta.wearable.retail.ui
 
 import android.net.Uri
-import android.util.Log
+import com.meta.wearable.retail.util.SpressoSpressoLogger.er
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
@@ -500,7 +500,7 @@ fun processImageUri(
             }
         }
     } catch (e: Exception) {
-        Log.e("Spresso", "Image processing failed: ${e.message}")
+        SpressoLogger.e("Spresso", "Image processing failed: ${e.message}")
     }
 }
 

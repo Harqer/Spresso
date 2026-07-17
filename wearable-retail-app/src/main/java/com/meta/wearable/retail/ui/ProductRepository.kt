@@ -1,6 +1,6 @@
 package com.meta.wearable.retail.ui
 
-import android.util.Log
+import com.meta.wearable.retail.util.SpressoSpressoLogger.er
 import com.meta.wearable.retail.BuildConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -179,7 +179,7 @@ class ProductRepository {
                     emptyList()
                 }
             } catch (e: Exception) {
-                Log.e("Spresso", "Search Error: ${e.message}")
+                SpressoLogger.e("Spresso", "Search Error: ${e.message}")
                 emptyList()
             }
         }
@@ -233,7 +233,7 @@ class ProductRepository {
                     null
                 }
             } catch (e: Exception) {
-                Log.e("Spresso", "ACP Create Session Error: ${e.message}")
+                SpressoLogger.e("Spresso", "ACP Create Session Error: ${e.message}")
                 null
             }
         }
@@ -266,7 +266,7 @@ class ProductRepository {
                 OutputStreamWriter(conn.outputStream).use { it.write(requestBody.toString()) }
                 conn.responseCode == 200 || conn.responseCode == 201
             } catch (e: Exception) {
-                Log.e("Spresso", "ACP Complete Error: ${e.message}")
+                SpressoLogger.e("Spresso", "ACP Complete Error: ${e.message}")
                 false
             }
         }

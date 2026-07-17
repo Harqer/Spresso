@@ -1,7 +1,6 @@
 package com.meta.wearable.retail
 
 import android.content.Context
-import android.util.Log
 import com.meta.wearable.dat.camera.Stream
 import com.meta.wearable.dat.camera.addStream
 import com.meta.wearable.dat.camera.types.StreamConfiguration
@@ -22,6 +21,7 @@ import com.meta.wearable.dat.display.types.DisplayError
 import com.meta.wearable.dat.display.views.*
 import com.meta.wearable.retail.glimmer.*
 import com.meta.wearable.retail.ui.Product
+import com.meta.wearable.retail.util.SpressoSpressoLogger.er
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -72,7 +72,7 @@ class RetailSessionManager(
         // Monitor registration errors in the background for production diagnostics
         scope.launch {
             Wearables.registrationErrorStream.collect { error ->
-                Log.e("RetailSession", "Registration Flow Error: ${error.description}")
+                SpressoSpressoLogger.er.e("RetailSession", "Registration Flow Error: ${error.description}")
             }
         }
 
@@ -84,9 +84,7 @@ class RetailSessionManager(
                     session.state.collectLatest { state ->
                         when (state) {
                             DeviceSessionState.STARTED -> {
-                                if (BuildConfig.DEBUG) {
-                                    Log.d("RetailSession", "Session STARTED. Attaching resources.")
-                                }
+                                SpressoSpressoLogger.er.d("RetailSession", "Session STARTED. Attaching resources.")
                                 // In production, we target the first available device for thermal monitoring
                                 // when using AutoDeviceSelector.
                                 Wearables.devices.value.firstOrNull()?.let { deviceId ->
@@ -100,11 +98,11 @@ class RetailSessionManager(
                                         if (status == PermissionStatus.Granted) {
                                             attachMultimodalStream(session)
                                         } else {
-                                            Log.w("RetailSession", "Camera Permission DENIED by user")
+                                            SpressoLogger.w("RetailSession", "Camera Permission DENIED by user")
                                         }
                                     }
                                     .onFailure { error, _ ->
-                                        Log.e("RetailSession", "Permission Check FAILED: ${error.getLocalizedDescription(context)}")
+                                        SpressoSpressoLogger.er.e("RetailSession", "Permission Check FAILED: ${error.getLocalizedDescription(context)}")
                                     }
                             }
                             DeviceSessionState.STOPPED -> {
@@ -121,7 +119,7 @@ class RetailSessionManager(
                     is WearablesError -> "SDK Error: ${error.getLocalizedDescription(context)}"
                     else -> "Session Creation FAILED: ${error.getLocalizedDescription(context)}"
                 }
-                Log.e("RetailSession", message)
+                SpressoSpressoLogger.er.e("RetailSession", message)
             }
     }
 
@@ -133,13 +131,13 @@ class RetailSessionManager(
                 .collect { thermalLevel ->
                     when (thermalLevel) {
                         ThermalLevel.CRITICAL, ThermalLevel.EMERGENCY, ThermalLevel.SHUTDOWN -> {
-                            Log.w("RetailSession", "CRITICAL Thermal Level: $thermalLevel. Throttling stream.")
+                            SpressoLogger.w("RetailSession", "CRITICAL Thermal Level: $thermalLevel. Throttling stream.")
                             showCoolingDown()
                             // Force stop video stream to protect hardware
                             videoStreamJob?.cancel()
                         }
                         ThermalLevel.SEVERE -> {
-                            Log.w("RetailSession", "High temperature detected. Pulse performance may be impacted.")
+                            SpressoLogger.w("RetailSession", "High temperature detected. Pulse performance may be impacted.")
                         }
                         else -> Unit
                     }
@@ -152,12 +150,12 @@ class RetailSessionManager(
             .onSuccess { stream ->
                 stream.start().onFailure { error, _ ->
                     val errorMsg = if (error is StreamError) "Stream Error: ${error.getLocalizedDescription(context)}" else "Stream Start FAILED"
-                    Log.e("RetailSession", errorMsg)
+                    SpressoLogger.e("RetailSession", errorMsg)
                 }
                 startMultimodalBridge(stream)
             }
             .onFailure { error, _ ->
-                Log.e("RetailSession", "Stream Addition FAILED: ${error.getLocalizedDescription(context)}")
+                SpressoLogger.e("RetailSession", "Stream Addition FAILED: ${error.getLocalizedDescription(context)}")
             }
     }
 
@@ -177,15 +175,15 @@ class RetailSessionManager(
                         text: String,
                     ) {
                         try {
-                            if (BuildConfig.DEBUG) {
-                                Log.d("RetailSession", "Bridge Message Received: $text")
+                            
+                                SpressoSpressoLogger.er.d("RetailSession", "Bridge Message Received: $text")
                             }
                             val data = JSONObject(text)
                             if (data.getString("type") == "agentic_action") {
                                 onAddToCartRequested?.invoke(data.getString("product_id"))
                             }
                         } catch (e: Exception) {
-                            Log.e("RetailSession", "Bridge Error: ${e.message}")
+                            SpressoLogger.e("RetailSession", "Bridge Error: ${e.message}")
                         }
                     }
                 },
@@ -224,7 +222,7 @@ class RetailSessionManager(
             }
             .onFailure { error, _ ->
                 val errorMsg = if (error is DisplayError) "Display Error: ${error.getLocalizedDescription(context)}" else "Display Addition FAILED"
-                Log.e("RetailSession", errorMsg)
+                SpressoLogger.e("RetailSession", errorMsg)
             }
     }
 

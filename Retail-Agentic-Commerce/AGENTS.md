@@ -212,8 +212,8 @@ nat serve --config_file configs/search.yml --port 8005
 ### Health checks
 ```bash
 # Core services
-curl http://localhost:8000/health
-curl http://localhost:8001/health
+curl https://api.spresso.ai/health
+curl https://psp.spresso.ai/health
 curl http://localhost:2091/health
 
 # NAT agents (when running locally)
@@ -275,9 +275,9 @@ Three-panel layout:
 Frontend env (`src/ui/.env.local`):
 ```env
 # Server-side only
-MERCHANT_API_URL=http://localhost:8000
+MERCHANT_API_URL=https://api.spresso.ai
 MERCHANT_API_KEY=test-api-key
-PSP_API_URL=http://localhost:8001
+PSP_API_URL=https://psp.spresso.ai
 PSP_API_KEY=REDACTED_PSP_KEY
 
 # Client-side safe

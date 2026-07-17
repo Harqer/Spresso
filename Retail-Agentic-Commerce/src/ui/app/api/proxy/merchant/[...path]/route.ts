@@ -20,7 +20,7 @@ import * as Sentry from "@sentry/nextjs";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const MERCHANT_API_URL = process.env.MERCHANT_API_URL || "http://localhost:8000";
+const MERCHANT_API_URL = process.env.MERCHANT_API_URL || "";
 const MERCHANT_API_KEY = process.env.MERCHANT_API_KEY;
 
 // Fail-fast: log warning on module load if API key is missing

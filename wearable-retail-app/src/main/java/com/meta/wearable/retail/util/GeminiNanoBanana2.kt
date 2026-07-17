@@ -1,7 +1,7 @@
 package com.meta.wearable.retail.util
 
 import android.content.Context
-import android.util.Log
+import com.meta.wearable.retail.util.SpressoSpressoLogger.er
 import android.util.LruCache
 import com.meta.wearable.retail.BuildConfig
 import kotlinx.coroutines.*
@@ -78,7 +78,7 @@ class GeminiNanoBanana2(
 
     fun warmUp() {
         if (BuildConfig.DEBUG) {
-            Log.d("SpressoNano", "Warming up production Gemini Nano (Banana 2) on-device engine...")
+            SpressoSpressoLogger.er.d("SpressoNano", "Warming up production Gemini Nano (Banana 2) on-device engine...")
         }
     }
 
@@ -88,14 +88,14 @@ class GeminiNanoBanana2(
     ): NanoIntent {
         // Security: Input validation
         if (message.isBlank() || message.length > 500) {
-            Log.w("SpressoNano", "Invalid input size for user $userId")
+            SpressoSpressoLogger.er.w("SpressoNano", "Invalid input size for user $userId")
             return NanoIntent(false)
         }
 
         // Rate Limiting
         val rateLimiter = userRateLimits.getOrPut(userId) { RateLimiter() }
         if (!rateLimiter.consume()) {
-            Log.w("SpressoNano", "Rate limit exceeded for user $userId")
+            SpressoSpressoLogger.er.w("SpressoNano", "Rate limit exceeded for user $userId")
             return NanoIntent(false, "RATE_LIMIT_EXCEEDED")
         }
 
@@ -103,7 +103,7 @@ class GeminiNanoBanana2(
         val cacheKey = "${userId}_${message.lowercase().trim()}"
         intentCache.get(cacheKey)?.let {
             if (BuildConfig.DEBUG) {
-                Log.d("SpressoNano", "Cache hit for: $message")
+                SpressoSpressoLogger.er.d("SpressoNano", "Cache hit for: $message")
             }
             return it
         }
@@ -127,7 +127,7 @@ class GeminiNanoBanana2(
     private suspend fun processBatch(batch: List<IntentRequest>) {
         // Simulated on-device model batch execution
         if (BuildConfig.DEBUG) {
-            Log.d("SpressoNano", "Processing batch of ${batch.size} intents")
+            SpressoSpressoLogger.er.d("SpressoNano", "Processing batch of ${batch.size} intents")
         }
 
         for (request in batch) {

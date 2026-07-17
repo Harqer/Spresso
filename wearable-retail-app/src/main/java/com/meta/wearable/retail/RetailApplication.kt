@@ -1,6 +1,9 @@
 package com.meta.wearable.retail
 
 import android.app.Application
+import com.google.firebase.FirebaseApp
+import com.google.firebase.appcheck.FirebaseAppCheck
+import com.google.firebase.appcheck.playintegrity.PlayIntegrityAppCheckProviderFactory
 import com.meta.wearable.dat.core.Wearables
 import dagger.hilt.android.HiltAndroidApp
 import io.sentry.android.core.SentryAndroid
@@ -9,6 +12,12 @@ import io.sentry.android.core.SentryAndroid
 class RetailApplication : Application() {
     override fun onCreate() {
         super.onCreate()
+
+        FirebaseApp.initializeApp(this)
+        val firebaseAppCheck = FirebaseAppCheck.getInstance()
+        firebaseAppCheck.installAppCheckProviderFactory(
+            PlayIntegrityAppCheckProviderFactory.getInstance()
+        )
         
         SentryAndroid.init(this) { options ->
             options.dsn = BuildConfig.SENTRY_DSN
@@ -16,7 +25,7 @@ class RetailApplication : Application() {
         }
 
         Wearables.initialize(this).onFailure { error, _ ->
-            android.util.Log.e("RetailApp", "Wearables SDK Initialization FAILED: ${error.toString()}")
+            SpressoLogger.e("RetailApp", "Wearables SDK Initialization FAILED: ${error.toString()}")
         }
     }
 }

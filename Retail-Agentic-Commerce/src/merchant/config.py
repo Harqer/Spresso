@@ -39,7 +39,8 @@ class Settings(BaseSettings):
     log_sql: bool = False  # Enable verbose SQL logging (very noisy)
 
     # Database
-    database_url: str = os.getenv("DATABASE_URL", "sqlite:///./agentic_commerce.db")
+    # Industrial Standard: Strictly require DATABASE_URL for Postgres/Neon.
+    database_url: str = os.getenv("DATABASE_URL", "")
 
     # Webhook Configuration (Merchant → Client Agent)
     # Production Strategy: No localhost fallbacks permitted.
