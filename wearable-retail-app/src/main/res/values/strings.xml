@@ -42,11 +42,11 @@
     <string name="theme_system">System</string>
     <string name="theme_light">Light</string>
     <string name="theme_dark">Dark</string>
-    <string name="welcome_message">Welcome to Spresso. I can help you discover products and perform virtual try-ons. Try sending a photo or asking about our collection!</string>
-    <string name="analyzing_photo">Analyzing photo...</string>
+    <string name="welcome_message">Welcome to Spresso. I can help you discover products and perform virtual try-ons. Try sharing a photo to begin.</string>
+    <string name="analyzing_photo">Calibrating vision...</string>
     <string name="user_role">User</string>
     <string name="spresso_role">Spresso</string>
-    <string name="processing_shared_image">Processing shared image...</string>
+    <string name="processing_shared_image">Ingesting creative context...</string>
     <string name="show_me_filter_options">Show me %1 options</string>
     <string name="ai_generated">AI GENERATED</string>
     <string name="analyze_product_glasses">Please analyze this product from my glasses camera.</string>

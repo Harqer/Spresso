@@ -3,6 +3,7 @@ package com.meta.wearable.retail.util
 import android.content.Context
 import android.util.Log
 import android.util.LruCache
+import com.meta.wearable.retail.BuildConfig
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.sync.Mutex
@@ -76,7 +77,9 @@ class GeminiNanoBanana2(
     }
 
     fun warmUp() {
-        Log.d("SpressoNano", "Warming up production Gemini Nano (Banana 2) on-device engine...")
+        if (BuildConfig.DEBUG) {
+            Log.d("SpressoNano", "Warming up production Gemini Nano (Banana 2) on-device engine...")
+        }
     }
 
     suspend fun analyzeIntent(
@@ -99,7 +102,9 @@ class GeminiNanoBanana2(
         // Caching
         val cacheKey = "${userId}_${message.lowercase().trim()}"
         intentCache.get(cacheKey)?.let {
-            Log.d("SpressoNano", "Cache hit for: $message")
+            if (BuildConfig.DEBUG) {
+                Log.d("SpressoNano", "Cache hit for: $message")
+            }
             return it
         }
 
@@ -121,7 +126,9 @@ class GeminiNanoBanana2(
 
     private suspend fun processBatch(batch: List<IntentRequest>) {
         // Simulated on-device model batch execution
-        Log.d("SpressoNano", "Processing batch of ${batch.size} intents")
+        if (BuildConfig.DEBUG) {
+            Log.d("SpressoNano", "Processing batch of ${batch.size} intents")
+        }
 
         for (request in batch) {
             val isHighConfidence =

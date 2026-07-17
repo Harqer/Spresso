@@ -63,6 +63,7 @@ material = { module = "com.google.android.material:material", version.ref = "mat
 # Firebase
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase" }
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth" }
+firebase-appcheck = { group = "com.google.firebase", name = "firebase-appcheck-playintegrity" }
 
 # Coil
 androidx-compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }

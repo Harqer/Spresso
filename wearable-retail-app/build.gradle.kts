@@ -114,6 +114,7 @@ dependencies {
     // Firebase
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
+    implementation("com.google.firebase:firebase-appcheck-playintegrity")
     implementation("com.google.firebase:firebase-vertexai:16.2.0")
 
     implementation(libs.androidx.datastore.preferences)

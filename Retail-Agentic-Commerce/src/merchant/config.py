@@ -42,8 +42,8 @@ class Settings(BaseSettings):
     database_url: str = os.getenv("DATABASE_URL", "sqlite:///./agentic_commerce.db")
 
     # Webhook Configuration (Merchant → Client Agent)
-    # Default to localhost for local development; Docker overrides via environment
-    webhook_url: str = "http://localhost:3000/api/webhooks/acp"
+    # Production Strategy: No localhost fallbacks permitted.
+    webhook_url: str = os.getenv("WEBHOOK_URL", "")
     webhook_secret: str = os.getenv("WEBHOOK_SECRET", "")
 
     # Merchant API Security (for client authentication)
@@ -63,7 +63,7 @@ class Settings(BaseSettings):
     )
     ucp_business_name: str | None = None
     ucp_continue_url: str | None = None  # Fallback URL for negotiation failures
-    ucp_order_webhook_url: str = "http://localhost:3000/api/webhooks/ucp"
+    ucp_order_webhook_url: str = os.getenv("UCP_ORDER_WEBHOOK_URL", "")
 
     # UCP Signing Key (public key for webhook verification)
     ucp_signing_key_id: str = "ucp-key-1"
@@ -74,11 +74,11 @@ class Settings(BaseSettings):
     ucp_signing_key_y: str = ""  # Base64url-encoded public key y (EC only)
 
     # Promotion Agent Configuration
-    promotion_agent_url: str = "http://localhost:8002"
+    promotion_agent_url: str = os.getenv("PROMOTION_AGENT_URL", "")
     promotion_agent_timeout: float = 10.0  # seconds (NFR-LAT target)
 
     # Post-Purchase Agent Configuration
-    post_purchase_agent_url: str = "http://localhost:8003"
+    post_purchase_agent_url: str = os.getenv("POST_PURCHASE_AGENT_URL", "")
     post_purchase_agent_timeout: float = 15.0  # seconds
 
     # Gemini Integration
@@ -91,7 +91,7 @@ class Settings(BaseSettings):
 
     # Sentry Configuration
     sentry_dsn: str | None = os.getenv("SENTRY_DSN")
-    sentry_environment: str = os.getenv("ENV", "development")
+    sentry_environment: str = os.getenv("ENV", "production")
     sentry_traces_sample_rate: float = 1.0
 
     # Redis Configuration

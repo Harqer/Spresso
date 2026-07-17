@@ -46,8 +46,7 @@ class RetailSessionManager(
 
     private val backendWsUrl =
         BuildConfig.SPRESSO_BACKEND_URL
-            .replace("https://", "wss://")
-            .replace("http://", "ws://") + "/discovery/live"
+            .replace("https://", "wss://") + "/discovery/live"
 
     private var userToken: String? = null
 
@@ -85,6 +84,9 @@ class RetailSessionManager(
                     session.state.collectLatest { state ->
                         when (state) {
                             DeviceSessionState.STARTED -> {
+                                if (BuildConfig.DEBUG) {
+                                    Log.d("RetailSession", "Session STARTED. Attaching resources.")
+                                }
                                 // In production, we target the first available device for thermal monitoring
                                 // when using AutoDeviceSelector.
                                 Wearables.devices.value.firstOrNull()?.let { deviceId ->
@@ -175,6 +177,9 @@ class RetailSessionManager(
                         text: String,
                     ) {
                         try {
+                            if (BuildConfig.DEBUG) {
+                                Log.d("RetailSession", "Bridge Message Received: $text")
+                            }
                             val data = JSONObject(text)
                             if (data.getString("type") == "agentic_action") {
                                 onAddToCartRequested?.invoke(data.getString("product_id"))

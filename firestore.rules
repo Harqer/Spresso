@@ -1,0 +1,26 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Definitive Production Security: Default Deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // User-owned data isolation
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+
+      // Allow access to subcollections like vibe history or sessions
+      match /{allSubcollections=**} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+
+    // Read-only access to the production product catalog
+    match /products/{productId} {
+      allow read: if request.auth != null;
+      allow write: if false;
+    }
+  }
+}
