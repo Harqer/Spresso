@@ -16,12 +16,14 @@
 """Checkout domain helpers and calculators."""
 
 import json
+import os
 import uuid
 from datetime import UTC, datetime, timedelta
 from typing import Any, cast
 
 from sqlmodel import Session
 
+from src.merchant.config import get_settings
 from src.merchant.db.models import CheckoutSession, Product
 from src.merchant.domain.checkout.models import (
     Address,
