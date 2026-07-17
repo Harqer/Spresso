@@ -5,7 +5,7 @@ runs:
   steps:
     - name: Build Gateway
       shell: bash
-      working-directory: aura-gateway-go
+      working-directory: spresso-gateway
       run: |
         mkdir -p ../dist
         go build -o ../dist/aura-gateway ./cmd/server/main.go

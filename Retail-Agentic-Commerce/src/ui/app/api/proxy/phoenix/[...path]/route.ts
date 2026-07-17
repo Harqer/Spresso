@@ -7,7 +7,7 @@ import { NextRequest, NextResponse } from "next/server";
  * Environment variable: PHOENIX_API_URL (default: http://localhost:6006)
  */
 
-const PHOENIX_API_URL = process.env.PHOENIX_API_URL ?? "http://localhost:6006";
+const PHOENIX_API_URL = process.env.PHOENIX_API_URL ?? "";
 
 export async function GET(
   request: NextRequest,

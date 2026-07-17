@@ -19,7 +19,7 @@ import * as Sentry from "@sentry/nextjs";
 /**
  * MCP Server base URL - only the server address, NOT the widget path
  */
-const MCP_SERVER_URL = process.env.NEXT_PUBLIC_MCP_SERVER_URL || "http://localhost:2091";
+const MCP_SERVER_URL = process.env.NEXT_PUBLIC_MCP_SERVER_URL || "";
 
 /**
  * MCP tool response structure

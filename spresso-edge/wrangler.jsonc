@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "aura-edge-service",
+  "name": "spresso-edge-service",
   "main": "src/index.ts",
   "compatibility_date": "2025-06-28",
   "compatibility_flags": [
@@ -13,20 +13,20 @@
   "r2_buckets": [
     {
       "binding": "ASSETS",
-      "bucket_name": "aura-assets"
+      "bucket_name": "spresso-assets"
     }
   ],
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "aura-db",
+      "database_name": "spresso-db",
       "database_id": "9b3721d9-fd26-4b62-9173-c3c877bbd6e5"
     }
   ],
   "vectorize": [
     {
       "binding": "VECTOR_INDEX",
-      "index_name": "aura-products"
+      "index_name": "spresso-products"
     }
   ],
   "ai": {

@@ -37,7 +37,7 @@ import coil.compose.AsyncImage
 import com.meta.wearable.retail.R
 import com.meta.wearable.retail.RetailSessionManager
 import com.meta.wearable.retail.ui.theme.*
-import com.meta.wearable.retail.util.GeminiNanoBanana2
+import com.meta.wearable.retail.util.SpressoNanoEngine
 import com.meta.wearable.retail.util.WearSyncManager
 import kotlinx.coroutines.launch
 import java.io.InputStream
@@ -68,7 +68,7 @@ fun RetailMobileApp(
     val context = LocalContext.current
     val haptic = LocalHapticFeedback.current
     val wearSyncManager = remember { WearSyncManager(context) }
-    val nanoEngine = remember { GeminiNanoBanana2(context) }
+    val nanoEngine = remember { SpressoNanoEngine(context) }
     var textInput by remember { mutableStateOf("") }
     
     val initialMsg = stringResource(R.string.welcome_message)

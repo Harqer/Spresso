@@ -8,7 +8,7 @@ import type { CheckoutProtocol } from "@/types";
 /**
  * MCP Server base URL - uses nginx proxy in Docker, direct in development
  */
-const MCP_SERVER_URL = process.env.NEXT_PUBLIC_MCP_SERVER_URL || "http://localhost:2091";
+const MCP_SERVER_URL = process.env.NEXT_PUBLIC_MCP_SERVER_URL || "";
 
 /**
  * Get display info for event types

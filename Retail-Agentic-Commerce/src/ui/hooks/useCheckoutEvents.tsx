@@ -157,7 +157,7 @@ function mapEventType(type: string): ACPEventType {
 /**
  * MCP Server base URL - uses nginx proxy in Docker, direct in development
  */
-const MCP_SERVER_URL = process.env.NEXT_PUBLIC_MCP_SERVER_URL || "http://localhost:2091";
+const MCP_SERVER_URL = process.env.NEXT_PUBLIC_MCP_SERVER_URL || "";
 
 /**
  * Hook to subscribe to checkout events from the MCP server via SSE.

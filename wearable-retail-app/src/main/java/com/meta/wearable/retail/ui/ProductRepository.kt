@@ -1,6 +1,6 @@
 package com.meta.wearable.retail.ui
 
-import com.meta.wearable.retail.util.SpressoSpressoLogger.er
+import com.meta.wearable.retail.util.SpressoLogger
 import com.meta.wearable.retail.BuildConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -108,6 +108,7 @@ class ProductRepository {
                     ChatResponse("CHAT", null, "I'm having trouble connecting to Spresso.")
                 }
             } catch (e: Exception) {
+                SpressoLogger.e("Spresso", "Discovery Error: ${e.message}")
                 ChatResponse("CHAT", null, "Connection error: ${e.message}")
             }
         }

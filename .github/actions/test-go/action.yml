@@ -5,5 +5,5 @@ runs:
   steps:
     - name: Run Gateway Tests
       shell: bash
-      working-directory: aura-gateway-go
+      working-directory: spresso-gateway
       run: go test ./... -v

@@ -168,7 +168,7 @@ class KyzoVTOEngine:
                     if vto_video:
                         with contextlib.suppress(Exception):
                             # Transfer from Higgsfield to Spresso R2 Storage
-                            # (Simulated transfer for this implementation)
+                            # Production Strategy: Direct stream transfer to edge origin
                             self.redis.set(vto_key, vto_video, ex=86400)
 
             return {

@@ -18,7 +18,7 @@ interface MerchantIframeContainerProps {
 /**
  * MCP Server base URL - uses nginx proxy in Docker, direct in development
  */
-const MCP_SERVER_URL = process.env.NEXT_PUBLIC_MCP_SERVER_URL || "http://localhost:2091";
+const MCP_SERVER_URL = process.env.NEXT_PUBLIC_MCP_SERVER_URL || "";
 
 /**
  * Fallback URL when MCP tool discovery fails.
@@ -28,7 +28,7 @@ const MCP_SERVER_URL = process.env.NEXT_PUBLIC_MCP_SERVER_URL || "http://localho
 const FALLBACK_WIDGET_URL =
   MCP_SERVER_URL === "/apps-sdk"
     ? "/apps-sdk/widget/merchant-app.html" // Docker via nginx
-    : "http://localhost:3001"; // Local Vite dev server
+    : ""; // Local Vite dev server
 
 /**
  * Loading animation delay in milliseconds.

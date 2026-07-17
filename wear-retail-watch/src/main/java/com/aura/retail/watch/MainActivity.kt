@@ -94,7 +94,7 @@ fun RetailScreen(products: List<Triple<String, String, String>>) {
                             .minimumVerticalContentPadding(ListHeaderDefaults.minimumTopListContentPadding),
                     transformation = SurfaceTransformation(transformationSpec),
                 ) {
-                    Text(text = "Aura Retail")
+                    Text(text = "Spresso Retail")
                 }
             }
 

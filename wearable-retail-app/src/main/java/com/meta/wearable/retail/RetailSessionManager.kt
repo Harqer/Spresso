@@ -21,7 +21,7 @@ import com.meta.wearable.dat.display.types.DisplayError
 import com.meta.wearable.dat.display.views.*
 import com.meta.wearable.retail.glimmer.*
 import com.meta.wearable.retail.ui.Product
-import com.meta.wearable.retail.util.SpressoSpressoLogger.er
+import com.meta.wearable.retail.util.SpressoLogger
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -72,7 +72,7 @@ class RetailSessionManager(
         // Monitor registration errors in the background for production diagnostics
         scope.launch {
             Wearables.registrationErrorStream.collect { error ->
-                SpressoSpressoLogger.er.e("RetailSession", "Registration Flow Error: ${error.description}")
+                SpressoLogger.e("RetailSession", "Registration Flow Error: ${error.description}")
             }
         }
 
@@ -84,7 +84,8 @@ class RetailSessionManager(
                     session.state.collectLatest { state ->
                         when (state) {
                             DeviceSessionState.STARTED -> {
-                                SpressoSpressoLogger.er.d("RetailSession", "Session STARTED. Attaching resources.")
+                                SpressoLogger.d("RetailSession", "Session STARTED. Attaching resources.")
+                                
                                 // In production, we target the first available device for thermal monitoring
                                 // when using AutoDeviceSelector.
                                 Wearables.devices.value.firstOrNull()?.let { deviceId ->
@@ -102,7 +103,7 @@ class RetailSessionManager(
                                         }
                                     }
                                     .onFailure { error, _ ->
-                                        SpressoSpressoLogger.er.e("RetailSession", "Permission Check FAILED: ${error.getLocalizedDescription(context)}")
+                                        SpressoLogger.e("RetailSession", "Permission Check FAILED: ${error.getLocalizedDescription(context)}")
                                     }
                             }
                             DeviceSessionState.STOPPED -> {
@@ -119,7 +120,7 @@ class RetailSessionManager(
                     is WearablesError -> "SDK Error: ${error.getLocalizedDescription(context)}"
                     else -> "Session Creation FAILED: ${error.getLocalizedDescription(context)}"
                 }
-                SpressoSpressoLogger.er.e("RetailSession", message)
+                SpressoLogger.e("RetailSession", message)
             }
     }
 
@@ -175,9 +176,7 @@ class RetailSessionManager(
                         text: String,
                     ) {
                         try {
-                            
-                                SpressoSpressoLogger.er.d("RetailSession", "Bridge Message Received: $text")
-                            }
+                            SpressoLogger.d("RetailSession", "Bridge Message Received: $text")
                             val data = JSONObject(text)
                             if (data.getString("type") == "agentic_action") {
                                 onAddToCartRequested?.invoke(data.getString("product_id"))

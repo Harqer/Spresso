@@ -11,7 +11,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import * as Sentry from "@sentry/nextjs";
 
-const POST_PURCHASE_AGENT_URL = process.env.POST_PURCHASE_AGENT_URL || "http://localhost:8003";
+const POST_PURCHASE_AGENT_URL = process.env.POST_PURCHASE_AGENT_URL || "";
 
 /**
  * Brand persona for post-purchase messages

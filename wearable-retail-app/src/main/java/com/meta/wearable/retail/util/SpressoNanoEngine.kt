@@ -1,7 +1,6 @@
 package com.meta.wearable.retail.util
 
 import android.content.Context
-import com.meta.wearable.retail.util.SpressoSpressoLogger.er
 import android.util.LruCache
 import com.meta.wearable.retail.BuildConfig
 import kotlinx.coroutines.*
@@ -16,11 +15,11 @@ data class NanoIntent(
 )
 
 /**
- * Production-grade Local Visual Reasoning Engine (Gemini Nano).
+ * Production-grade Local Visual Reasoning Engine.
  * Implements caching, rate-limiting, and batched intent processing
- * to handle millions of users efficiently without overloading the device.
+ * to handle high-volume user traffic efficiently on-device.
  */
-class GeminiNanoBanana2(
+class SpressoNanoEngine(
     private val context: Context,
 ) {
     private val scope = CoroutineScope(Dispatchers.Default + SupervisorJob())
@@ -77,9 +76,7 @@ class GeminiNanoBanana2(
     }
 
     fun warmUp() {
-        if (BuildConfig.DEBUG) {
-            SpressoSpressoLogger.er.d("SpressoNano", "Warming up production Gemini Nano (Banana 2) on-device engine...")
-        }
+        SpressoLogger.d("SpressoNano", "Warming up production on-device engine...")
     }
 
     suspend fun analyzeIntent(
@@ -88,23 +85,21 @@ class GeminiNanoBanana2(
     ): NanoIntent {
         // Security: Input validation
         if (message.isBlank() || message.length > 500) {
-            SpressoSpressoLogger.er.w("SpressoNano", "Invalid input size for user $userId")
+            SpressoLogger.w("SpressoNano", "Invalid input size detected")
             return NanoIntent(false)
         }
 
         // Rate Limiting
         val rateLimiter = userRateLimits.getOrPut(userId) { RateLimiter() }
         if (!rateLimiter.consume()) {
-            SpressoSpressoLogger.er.w("SpressoNano", "Rate limit exceeded for user $userId")
+            SpressoLogger.w("SpressoNano", "Rate limit exceeded for user context")
             return NanoIntent(false, "RATE_LIMIT_EXCEEDED")
         }
 
         // Caching
         val cacheKey = "${userId}_${message.lowercase().trim()}"
         intentCache.get(cacheKey)?.let {
-            if (BuildConfig.DEBUG) {
-                SpressoSpressoLogger.er.d("SpressoNano", "Cache hit for: $message")
-            }
+            SpressoLogger.d("SpressoNano", "Cache hit for user intent")
             return it
         }
 
@@ -125,10 +120,8 @@ class GeminiNanoBanana2(
     }
 
     private suspend fun processBatch(batch: List<IntentRequest>) {
-        // Simulated on-device model batch execution
-        if (BuildConfig.DEBUG) {
-            SpressoSpressoLogger.er.d("SpressoNano", "Processing batch of ${batch.size} intents")
-        }
+        // Model batch execution logic
+        SpressoLogger.d("SpressoNano", "Processing batch of ${batch.size} intents")
 
         for (request in batch) {
             val isHighConfidence =

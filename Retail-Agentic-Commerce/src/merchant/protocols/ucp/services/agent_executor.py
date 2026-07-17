@@ -134,7 +134,7 @@ class UCPCheckoutAgentExecutor(AgentExecutor):
 
         settings = get_settings()
         base_url = settings.ucp_base_url or (
-            f"http://{headers.get('host', 'localhost:8000')}"
+            f"https://{headers.get('host', 'api.spresso.ai')}"
         )
 
         # ---- 3. Validate required UCP headers ----

@@ -81,7 +81,7 @@ security-pulse:
     - "uv pip list --format=freeze > requirements.txt"
     - "safety check -r requirements.txt || true" # warn for now
     # Go Security Scan (Govulncheck)
-    - "cd ../aura-gateway-go"
+    - "cd ../spresso-gateway"
     - "go install golang.org/x/vuln/cmd/govulncheck@latest"
     - "$(go env GOPATH)/bin/govulncheck ./..."
     # Android Security Audit
@@ -94,7 +94,7 @@ secure-secrets-gate:
   script:
     - "npm install -g pnpm"
     - "pnpm install --no-frozen-lockfile"
-    - "cd aura-cloudflare && pnpm install"
+    - "cd spresso-edge && pnpm install"
     - "echo 'Verifying Identity Pulse (Firebase)...'"
     - "if [ -n \"$FIREBASE_TOKEN\" ]; then pnpm dlx firebase-tools projects:list --token $FIREBASE_TOKEN; fi"
     - "echo 'Syncing Hardened Secrets to Cloudflare HSM...'"
