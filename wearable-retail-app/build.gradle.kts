@@ -134,7 +134,7 @@ dependencies {
     implementation(libs.androidx.compose.material.icons.extended)
 
     // Sentry SDK
-    implementation("io.sentry:sentry-android:8.3.0")
+    implementation("io.sentry:sentry-android:8.14.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
