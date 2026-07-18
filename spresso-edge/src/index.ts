@@ -1,5 +1,7 @@
+import { jwtVerify, createRemoteJWKSet } from 'jose';
+
 /**
- * Aura Edge Service
+ * Spresso Edge Service
  * Secure, High-Performance Agentic Retail Interface at the Edge.
  */
 
@@ -13,6 +15,9 @@ export interface Env {
   FIREBASE_PROJECT_ID: string; // Injected via wrangler secret
 }
 
+const JWKS_URL = 'https://www.googleapis.com/serviceaccounts/v1/jwk/securetoken@system.gserviceaccount.com';
+const JWKS = createRemoteJWKSet(new URL(JWKS_URL));
+
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
@@ -21,11 +26,9 @@ export default {
     // --- Layer 7 WAF & DDoS Protection ---
     const cf = request.cf as any;
     if (cf) {
-      // Block high-threat requests based on Cloudflare's threat intelligence
       if (cf.threatScore && cf.threatScore > 50) {
         return new Response("Blocked by Edge WAF - Threat Detected", { status: 403 });
       }
-      // Block likely automated bots (score < 30 indicates high likelihood of bot)
       if (cf.botManagement && cf.botManagement.score < 30) {
         return new Response("Blocked by Edge WAF - Automated Traffic Detected", { status: 403 });
       }
@@ -38,18 +41,25 @@ export default {
       if (!header || !header.startsWith("Bearer ")) return false;
       const token = header.substring(7);
 
-      // Industrial Shortcut: If it matches the internal AUTH_KEY (for machine-to-machine pulses)
+      // Industrial Shortcut: If it matches the internal AUTH_KEY
       if (token === env.AUTH_KEY) return true;
 
-      // In Production: We would verify the Firebase ID Token here.
-      // Firebase JWKS: https://www.googleapis.com/serviceaccounts/v1/jwk/securetoken@system.gserviceaccount.com
-      return token.length > 100; // Basic structural check for JWT
+      // Production Strategy: Cryptographic Firebase ID Token verification
+      try {
+        const { payload } = await jwtVerify(token, JWKS, {
+          issuer: `https://securetoken.google.com/${env.FIREBASE_PROJECT_ID}`,
+          audience: env.FIREBASE_PROJECT_ID,
+        });
+        return !!payload.sub;
+      } catch (e) {
+        return false;
+      }
     };
 
     if (path === "/health") return new Response("OK", { status: 200 });
 
     // 2. High-Performance Edge Caching Gate
-    const cache = caches.default;
+    const cache = (caches as any).default;
     const cacheKey = new Request(url.toString(), request);
     if (request.method === "GET") {
       const cachedResponse = await cache.match(cacheKey);
@@ -76,7 +86,7 @@ export default {
     }
 
     // 4. Secure Agentic Endpoints
-    if (!isAuthorized(authHeader, env.AUTH_KEY)) {
+    if (!(await isAuthorized(authHeader))) {
       return new Response("Unauthorized", { status: 401 });
     }
 
@@ -85,16 +95,16 @@ export default {
       const { query } = (await request.json()) as { query: string };
 
       // Step A: Generate embedding for the query at the edge
-      const embeddings = await env.AI.run("@cf/baai/bge-small-en-v1.5", {
+      const embeddings = (await env.AI.run("@cf/baai/bge-small-en-v1.5", {
         text: [query],
-      });
+      })) as any;
       const vectors = embeddings.data[0];
 
       // Step B: Query Vectorize index for top matching products
       const nearest = await env.VECTOR_INDEX.query(vectors, { topK: 5 });
 
       // Step C: Hydrate details from D1 Edge Database
-      const productIds = nearest.matches.map(m => m.id);
+      const productIds = nearest.matches.map((m: any) => m.id);
       const { results } = await env.DB.prepare(
         "SELECT * FROM products WHERE id IN (" + productIds.map(() => "?").join(",") + ")"
       ).bind(...productIds).all();

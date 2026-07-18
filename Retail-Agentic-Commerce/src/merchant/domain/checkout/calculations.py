@@ -67,10 +67,10 @@ from src.merchant.services.promotion import (
 # Constants
 # =============================================================================
 
-TAX_RATE = 0.10  # 10% tax rate
-DEFAULT_CURRENCY = "usd"
-# Industrial Strategy: Deriving production domain from environment
+# Industrial Strategy: Deriving production config from settings
 settings = get_settings()
+TAX_RATE = settings.tax_rate
+DEFAULT_CURRENCY = settings.default_currency
 DEFAULT_SHOP_URL = os.getenv("SPRESSO_SHOP_URL", f"https://{settings.spresso_domain}")
 DISCOUNT_EXTENSION_SCHEMA_URL = (
     "https://agenticcommerce.dev/schemas/discount/2026-01-27.json"

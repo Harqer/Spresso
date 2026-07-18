@@ -1015,20 +1015,20 @@ export interface BillingAddressFormData {
 }
 
 /**
- * Default payment form values for demo
+ * Default payment form values - Production Candidate: Empty by default
  */
 export const DEFAULT_PAYMENT_FORM: PaymentFormData = {
-  cardNumber: "4242424242424242",
-  expirationDate: "12/28",
-  securityCode: "123",
+  cardNumber: "",
+  expirationDate: "",
+  securityCode: "",
 };
 
 /**
- * Default billing address values for demo
+ * Default billing address values - Production Candidate: Empty by default
  */
 export const DEFAULT_BILLING_ADDRESS: BillingAddressFormData = {
-  fullName: "John Doe",
-  address: "123 Main St, San Francisco, CA 94102",
+  fullName: "",
+  address: "",
   preferredLanguage: "en",
 };
 

@@ -15,8 +15,10 @@ from fastapi import (
     WebSocketDisconnect,
 )
 from pydantic import BaseModel
+from sqlmodel import Session
 
-from src.merchant.api.dependencies import verify_api_key
+from src.merchant.api.dependencies import get_secure_session, verify_api_key
+from src.merchant.db.models import Product, ProductDiscovery
 from src.merchant.services.gemini_agents import get_gemini_service
 
 logger = logging.getLogger(__name__)
@@ -137,14 +139,6 @@ class Citation(BaseModel):
     url: str
 
 
-class ProductDiscovery(BaseModel):
-    id: str
-    name: str
-    price: float
-    imageUrl: str
-    description: str
-
-
 class ChatRequest(BaseModel):
     message: str
     cart_items: list[dict[str, Any]] = []
@@ -161,6 +155,47 @@ class ChatResponse(BaseModel):
     citation: Citation | None = None
     can_upgrade: bool = False
 
+
+@router.get("/trending", response_model=list[dict[str, Any]])
+async def get_trending_discovery(
+    db: Session = Depends(get_secure_session),
+):
+    """Retrieve trending discovery items using Recommendation Agent attribution."""
+    from datetime import UTC, datetime, timedelta
+
+    from src.merchant.services.recommendation_attribution import (
+        summarize_recommendation_attribution,
+    )
+
+    # 1. Get top products from attribution service
+    end = datetime.now(UTC)
+    start = end - timedelta(days=30)
+    summary = summarize_recommendation_attribution(db, start=start, end=end, top_limit=3)
+
+    top_products = summary.get("top_products", [])
+
+    # 2. Map to discovery format with simulated video URLs (Production Assets)
+    results = []
+    for i, p in enumerate(top_products):
+        product_id = p["product_id"]
+        product = db.get(Product, product_id)
+        if not product:
+            continue
+
+        results.append({
+            "id": f"trend_{i+1}",
+            "videoUrl": f"https://cdn.spresso.ai/vto/trending_{product_id}.mp4",
+            "product": {
+                "id": product.id,
+                "name": product.name,
+                "tagline": product.tagline or "Trending now.",
+                "price": product.base_price // 100,
+            },
+            "style": "Enterprise Modern",
+            "world": "Production Pulse",
+        })
+
+    return results
 
 @router.post(
     "/chat", response_model=ChatResponse, dependencies=[Depends(verify_api_key)]

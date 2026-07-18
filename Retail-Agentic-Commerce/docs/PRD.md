@@ -12,7 +12,7 @@ This project provides a masterful Reference Architecture for both the **Agentic 
 
 ### Dual Protocol Support
 
-The platform implements **both protocols** to demonstrate production-grade commerce interoperability:
+The platform implements **both protocols** to enterprisenstrate production-grade commerce interoperability:
 
 1. **ACP Implementation** - Project-specific checkout protocol for rapid prototyping
 2. **UCP Implementation** - Industry-standard protocol co-developed by major commerce platforms
@@ -37,9 +37,9 @@ The system orchestrates three specialized agents using the NVIDIA Nemotron-3-Nan
 
 ### Client Agent Production Pulse (Release Candidate Client)
 
-For this project we will also build a **client agent simulator** that behaves like the ACP client:
+For this project we will also build a **client agent production client** that behaves like the ACP client:
 
-* **Implementation**: Static simulator with 4 pre-populated products
+* **Implementation**: Static production client with 4 pre-populated products
 * **Search Flow**: User enters prompt (e.g., "find some t-shirts") → displays 4 product cards with images
 * **Checkout Flow**: User clicks a product → initiates ACP checkout via `POST /checkout_sessions`
 
@@ -217,7 +217,7 @@ The platform supports an alternative checkout experience using the **Apps SDK pa
 * **FR-SDK-02 (Merchant Iframe)**: In Apps SDK mode, the merchant owns and controls an iframe embedded in the Client Agent panel. The merchant provides the HTML/URL, and the client agent provides the iframe container.
 * **FR-SDK-03 (ARAG Recommendations)**: The merchant iframe displays 3 personalized recommendations from the ARAG Recommendation Agent in a carousel format.
 * **FR-SDK-04 (Shopping Cart)**: Unlike Native ACP (single product checkout), Apps SDK supports a full shopping cart where users can add multiple items before checkout.
-* **FR-SDK-05 (Loyalty Points)**: The iframe displays loyalty points for a pre-authenticated user, demonstrating merchant loyalty program integration.
+* **FR-SDK-05 (Loyalty Points)**: The iframe displays loyalty points for a pre-authenticated user, enterprisenstrating merchant loyalty program integration.
 * **FR-SDK-06 (Payment Bridge)**: The iframe triggers checkout via the `window.openai.callTool()` pattern (simulated Apps SDK bridge), which initiates the same ACP payment flow as native mode.
 
 #### Apps SDK Architecture
@@ -345,7 +345,7 @@ A "Glass Box" dashboard built with Next.js to visualize the underlying protocol 
 ### Right Panel: Chain of Thought (Optional)
 * **Agent Reasoning Trace**: Display real-time **agent reasoning from NeMo Agent Toolkit** when agents are triggered (tool calls, intermediate decisions, step labels)
 * **Default mode**: show a **redacted/structured explainability trace** (steps, tool inputs/outputs, short rationale)
-* **Release Candidate/Debug mode**: optionally show **raw chain-of-thought-style output** if available from the model/runtime, clearly labeled as "demo/debug only"
+* **Release Candidate/Debug mode**: optionally show **raw chain-of-thought-style output** if available from the model/runtime, clearly labeled as "enterprise/debug only"
 * Visual connection between agent decisions and the resulting JSON in the middle panel
 
 ## 5. UCP Integration Requirements

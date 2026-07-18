@@ -82,6 +82,10 @@ class Settings(BaseSettings):
     post_purchase_agent_url: str = os.getenv("POST_PURCHASE_AGENT_URL", "")
     post_purchase_agent_timeout: float = 15.0  # seconds
 
+    # Checkout Configuration
+    tax_rate: float = float(os.getenv("SPRESSO_TAX_RATE", "0.08"))  # Production default
+    default_currency: str = "usd"
+
     # Gemini Integration
     use_gemini: bool = True
     google_api_key: str = ""

@@ -885,60 +885,17 @@ export function useCheckoutFlow(
               completeEventId,
               "success",
               protocol === "ucp"
-                ? formatUCPStatusSummary(completedSession, "3DS required")
-                : "3DS required",
+                ? formatUCPStatusSummary(completedSession, "3DS Required")
+                : "Human-in-the-loop: 3DS Required",
               200
             );
           }
           dispatch({ type: "AUTHENTICATION_REQUIRED", session: completedSession });
-          // For now, we'll simulate 3DS completion after a delay
-          // In production, this would redirect to the 3DS URL
-          setTimeout(async () => {
-            const authEventId = loggerRef.current?.logEvent(
-              "session_complete",
-              "POST",
-              protocol === "ucp"
-                ? getUCPLogEndpoint("complete_checkout")
-                : `/checkout_sessions/${truncateId(context.sessionId!)}/complete`,
-              protocol === "ucp" ? "message/send:complete_checkout" : "3DS authentication"
-            );
-            try {
-              const finalSession = await completeCheckoutByProtocol(
-                protocol,
-                completionSessionRef,
-                {
-                  payment_data: {
-                    token: delegateResponse.id,
-                    provider: "stripe",
-                  },
-                  authentication_result: {
-                    outcome: "authenticated",
-                  },
-                  preferred_language: billingAddress.preferredLanguage,
-                }
-              );
-              if (authEventId) {
-                loggerRef.current?.completeEvent(
-                  authEventId,
-                  "success",
-                  protocol === "ucp"
-                    ? formatUCPStatusSummary(
-                        finalSession,
-                        `Order: ${finalSession.order?.id.slice(0, 10)}...`
-                      )
-                    : `Order: ${finalSession.order?.id.slice(0, 10)}...`,
-                  200
-                );
-              }
-              dispatch({ type: "PAYMENT_COMPLETE", session: finalSession });
-              // Post-purchase agent is now triggered by merchant backend (ACP architecture)
-            } catch (error) {
-              if (authEventId) {
-                loggerRef.current?.completeEvent(authEventId, "error", "Payment failed", 400);
-              }
-              dispatch({ type: "SET_ERROR", error: createAPIError(error) });
-            }
-          }, 2000);
+
+          // Production Strategy: Redirect user to the challenge URL if provided
+          if (completedSession.authentication_metadata?.redirect_url) {
+             window.location.href = completedSession.authentication_metadata.redirect_url;
+          }
         } else if (completedSession.status === "completed") {
           if (completeEventId) {
             loggerRef.current?.completeEvent(

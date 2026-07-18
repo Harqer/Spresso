@@ -238,37 +238,18 @@ func main() {
 	})
 
 	http.HandleFunc("/discovery/trending", func(w http.ResponseWriter, r *http.Request) {
-		// In a production scenario, this would query a database or a recommendation engine.
-		// For now, we return a curated list that matches the UI's VideoItem structure.
-		trending := []map[string]interface{}{
-			{
-				"id":       "v1",
-				"videoUrl": "https://cdn.spresso.com/samples/vto_chrome_1.mp4",
-				"product": map[string]interface{}{
-					"id":      "prod_1",
-					"name":    "Spresso Harmony",
-					"tagline": "Listen naturally.",
-					"price":   429,
-				},
-				"style": "Chrome Glassium",
-				"world": "Biophilic Futurism",
-			},
-			{
-				"id":       "v2",
-				"videoUrl": "https://cdn.spresso.com/samples/vto_pastel_2.mp4",
-				"product": map[string]interface{}{
-					"id":      "prod_2",
-					"name":    "Spresso Epoch",
-					"tagline": "Moments, not minutes.",
-					"price":   349,
-				},
-				"style": "Indie Pastel",
-				"world": "Liminal Mirage",
-			},
+		// Production Strategy: Dynamic Discovery via Cortex
+		resp, err := http.Get(cortexAddr + "/discovery/trending")
+		if err != nil {
+			log.Printf("Cortex Trending Error: %v", err)
+			sendJSONError(w, "Cortex Unreachable", http.StatusServiceUnavailable)
+			return
 		}
+		defer resp.Body.Close()
 
 		w.Header().Set("Content-Type", "application/json")
-		json.NewEncoder(w).Encode(trending)
+		w.WriteHeader(resp.StatusCode)
+		io.Copy(w, resp.Body)
 	})
 
 	http.HandleFunc("/discovery/live", func(w http.ResponseWriter, r *http.Request) {

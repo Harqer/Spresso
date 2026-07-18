@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.aura.retail.watch"
+    namespace = "com.spresso.retail.watch"
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "com.aura.retail.watch"
+        applicationId = "com.spresso.retail.watch"
         minSdk = 25
         targetSdk = 37
         versionCode = 1

@@ -1,4 +1,4 @@
-package com.aura.retail.watch
+package com.spresso.retail.watch
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

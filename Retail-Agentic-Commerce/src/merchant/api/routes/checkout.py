@@ -183,7 +183,28 @@ async def complete_checkout(
 
 
 @router.get("/{session_id}")
-async def get_checkout_session(session_id: str):
-    """FR-ACP-05: Retrieve checkout state."""
-    # Logic to fetch session from DB
-    return {"id": session_id, "status": "ready_for_payment"}
+async def get_checkout_session(
+    session_id: str,
+    db: Session = Depends(get_secure_session),
+):
+    """FR-ACP-05: Retrieve checkout state from database."""
+    session = db.exec(select(CheckoutSession).where(CheckoutSession.id == session_id)).first()
+    if not session:
+        raise HTTPException(status_code=404, detail="Checkout session not found")
+
+    # Return formatted session data
+    return json.loads(session_to_response_json(session))
+
+def session_to_response_json(session: CheckoutSession) -> str:
+    """Helper to convert DB session to ACP response format."""
+    return json.dumps({
+        "id": session.id,
+        "status": session.status,
+        "currency": session.currency.lower(),
+        "payment_provider": {
+            "provider": "stripe",
+            "supported_payment_methods": [{"type": "card"}],
+        },
+        "line_items": json.loads(session.line_items_json),
+        "totals": json.loads(session.totals_json),
+    })

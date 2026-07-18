@@ -1,6 +1,7 @@
 {
-  "name": "aura-edge-service",
+  "name": "spresso-edge-service",
   "version": "1.0.0",
+  "type": "module",
   "private": true,
   "scripts": {
     "deploy": "wrangler deploy",
@@ -10,6 +11,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250624.0",
+    "typescript": "^7.0.2",
     "wrangler": "^3.103.2"
   },
   "pnpm": {
@@ -18,5 +20,8 @@
       "ws": ">=8.21.0",
       "esbuild": ">=0.28.1"
     }
+  },
+  "dependencies": {
+    "jose": "^6.2.3"
   }
 }
