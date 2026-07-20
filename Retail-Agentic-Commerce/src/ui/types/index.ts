@@ -723,6 +723,8 @@ export interface ChatMessage {
   role: "user" | "agent";
   content: string;
   timestamp: string;
+  vto_image_url?: string | null;
+  vto_video_url?: string | null;
 }
 
 /**

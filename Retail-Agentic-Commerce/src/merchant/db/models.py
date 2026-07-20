@@ -48,6 +48,9 @@ class Customer(SQLModel, table=True):
     email: str = Field(unique=True, index=True)
     name: str
     tier: str = Field(default="free")  # Administered via Clerk
+    height: float | None = Field(default=None)  # in cm
+    weight: float | None = Field(default=None)  # in kg
+    avatar_url: str | None = Field(default=None)
     created_at: datetime = Field(default_factory=_utc_now)
 
     browse_history: list["BrowseHistory"] = Relationship(

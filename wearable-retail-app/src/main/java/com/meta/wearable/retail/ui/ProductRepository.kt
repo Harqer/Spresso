@@ -271,4 +271,34 @@ class ProductRepository {
                 false
             }
         }
+
+    suspend fun updateProfile(
+        height: Float,
+        weight: Float,
+        userToken: String,
+        avatarUrl: String? = null,
+    ): Boolean =
+        withContext(Dispatchers.IO) {
+            try {
+                val url = URL("$backendUrl/discovery/profile")
+                val conn = url.openConnection() as HttpURLConnection
+                conn.requestMethod = "POST"
+                conn.setRequestProperty("Content-Type", "application/json")
+                conn.setRequestProperty("Authorization", "Bearer $userToken")
+                conn.doOutput = true
+
+                val requestBody =
+                    JSONObject().apply {
+                        put("height", height)
+                        put("weight", weight)
+                        if (avatarUrl != null) put("avatar_url", avatarUrl)
+                    }
+
+                OutputStreamWriter(conn.outputStream).use { it.write(requestBody.toString()) }
+                conn.responseCode == 200 || conn.responseCode == 201
+            } catch (e: Exception) {
+                SpressoLogger.e("Spresso", "Update Profile Error: ${e.message}")
+                false
+            }
+        }
 }

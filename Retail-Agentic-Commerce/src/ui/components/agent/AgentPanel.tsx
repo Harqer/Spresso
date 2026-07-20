@@ -12,6 +12,7 @@ import { PaymentShippingForm } from "./PaymentShippingForm";
 import { ModeTabSwitcher } from "./ModeTabSwitcher";
 import { MerchantIframeContainer } from "./MerchantIframeContainer";
 import { SearchPromptBar } from "./SearchPromptBar";
+import { VTOPreviewCard } from "./VTOPreviewCard";
 import { useCheckoutFlow } from "@/hooks/useCheckoutFlow";
 import { useACPLog } from "@/hooks/useACPLog";
 import { useAgentActivityLog } from "@/hooks/useAgentActivityLog";
@@ -384,12 +385,22 @@ interface AgentPanelProps {
 }
 
 export function AgentPanel({ protocol }: AgentPanelProps) {
-  const [messages] = useState<ChatMessageType[]>([]);
+  const [messages, setMessages] = useState<ChatMessageType[]>([
+    {
+      id: "initial",
+      role: "agent",
+      content: INTRO_TEXT,
+      timestamp: new Date().toISOString(),
+    },
+  ]);
   const [products, setProducts] = useState<Product[]>([]);
+  const [isThinking, setIsThinking] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showProducts, setShowProducts] = useState(false);
   const [activeMode, setActiveMode] = useState<CheckoutMode>("native");
   const [notification, setNotification] = useState<WebhookNotification | null>(null);
+  const [nativeQuery, setNativeQuery] = useState("");
+  const [userPhoto, setUserPhoto] = useState<string | null>(null);
   const [appsSdkQuery, setAppsSdkQuery] = useState("");
   const [appsSdkLastPrompt, setAppsSdkLastPrompt] = useState<ChatMessageType | null>(null);
   const [appsSdkSearchRequest, setAppsSdkSearchRequest] = useState<{
@@ -398,6 +409,68 @@ export function AgentPanel({ protocol }: AgentPanelProps) {
   } | null>(null);
   const acpLog = useACPLog();
   const agentActivityLog = useAgentActivityLog();
+
+  const handleSendMessage = useCallback(async (query: string, photoBase64?: string) => {
+    const userMsg: ChatMessageType = {
+      id: Date.now().toString(),
+      role: "user",
+      content: query,
+      timestamp: new Date().toISOString(),
+    };
+    setMessages((prev) => [...prev, userMsg]);
+    setNativeQuery("");
+    setIsThinking(true);
+
+    try {
+      // Check if user is providing height/weight in response to a prompt
+      const profileMatch = query.match(/(\d+)\s*cm.*(\d+)\s*kg|(\d+)\s*kg.*(\d+)\s*cm/i);
+      if (profileMatch) {
+        const height = parseFloat(profileMatch[1] || profileMatch[4]);
+        const weight = parseFloat(profileMatch[2] || profileMatch[3]);
+        await fetch("/api/proxy/merchant/discovery/profile", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ height, weight })
+        });
+      }
+
+      const response = await fetch("/api/proxy/merchant/discovery/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          message: query,
+          image_base64: photoBase64 || userPhoto,
+          cart_items: [], // Should ideally come from checkout context
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        const agentMsg: ChatMessageType = {
+          id: (Date.now() + 1).toString(),
+          role: "agent",
+          content: data.response,
+          timestamp: new Date().toISOString(),
+          vto_image_url: data.vto_image_url,
+          vto_video_url: data.vto_video_url,
+        };
+        setMessages((prev) => [...prev, agentMsg]);
+        if (data.grid && data.grid.length > 0) {
+          setProducts(data.grid);
+          setShowProducts(true);
+        }
+      }
+    } catch (e) {
+      Sentry.captureException(e, { tags: { component: "AgentPanel", action: "handleSendMessage" } });
+    } finally {
+      setIsThinking(false);
+    }
+  }, [userPhoto]);
+
+  const handlePhotoUpload = useCallback((base64: string) => {
+    setUserPhoto(base64);
+    handleSendMessage("I've uploaded my photo. Can you show me how some items look on me?", base64);
+  }, [handleSendMessage]);
 
   // Load initial products from real backend
   useEffect(() => {
@@ -692,7 +765,15 @@ export function AgentPanel({ protocol }: AgentPanelProps) {
               {/* Chat message */}
               <Stack gap="3">
                 {messages.map((message) => (
-                  <ChatMessage key={message.id} message={message} />
+                  <div key={message.id}>
+                    <ChatMessage message={message} />
+                    {message.vto_image_url && (
+                      <VTOPreviewCard
+                        imageUrl={message.vto_image_url}
+                        videoUrl={message.vto_video_url}
+                      />
+                    )}
+                  </div>
                 ))}
               </Stack>
 
@@ -701,32 +782,41 @@ export function AgentPanel({ protocol }: AgentPanelProps) {
                 <ErrorDisplay error={context.error} onRetry={handleRetry} onDismiss={handleRetry} />
               )}
 
+              {/* Thinking indicator */}
+              {isThinking && (
+                <div className="flex justify-start pl-4 py-2">
+                  <div className="flex gap-1">
+                    <div className="w-1.5 h-1.5 bg-white/40 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                    <div className="w-1.5 h-1.5 bg-white/40 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                    <div className="w-1.5 h-1.5 bg-white/40 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                  </div>
+                </div>
+              )}
+
               {/* Always show product grid */}
-              {!context.error && (
+              {!context.error && showProducts && (
                 <div className="ml-2">
-                  <StreamingText
-                    text={INTRO_TEXT}
-                    speed={15}
-                    onComplete={handleTextComplete}
-                    className="text-secondary mb-5 block"
-                  />
-                  <br />
-                  <div
-                    className={`transition-all duration-700 ease-out ${
-                      showProducts ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                    }`}
-                  >
-                    {showProducts && (
-                      <ProductGrid
-                        products={products}
-                        onSelect={handleSelectProduct}
-                        animateEntrance
-                      />
-                    )}
+                  <div className="transition-all duration-700 ease-out opacity-100 translate-y-0">
+                    <ProductGrid
+                      products={products}
+                      onSelect={handleSelectProduct}
+                      animateEntrance
+                    />
                   </div>
                 </div>
               )}
             </Stack>
+          </div>
+
+          {/* Chat Input for Native Mode */}
+          <div className="p-4 border-t border-white/5 bg-black/20">
+            <SearchPromptBar
+              value={nativeQuery}
+              onChange={setNativeQuery}
+              onSubmit={handleSendMessage}
+              onPhotoUpload={handlePhotoUpload}
+              placeholder="Ask about outfits or try them on..."
+            />
           </div>
 
           {/* Payment Modal */}

@@ -41,6 +41,7 @@ import com.meta.wearable.retail.util.SpressoNanoEngine
 import com.meta.wearable.retail.util.WearSyncManager
 import kotlinx.coroutines.launch
 import java.io.InputStream
+import java.util.regex.Pattern
 
 data class ChatUiMessage(
     val role: String,
@@ -88,6 +89,7 @@ fun RetailMobileApp(
     var products by remember { mutableStateOf<List<Product>>(emptyList()) }
     var cartItems by remember { mutableStateOf<List<Product>>(emptyList()) }
     var showCheckout by remember { mutableStateOf(false) }
+    var showAgentHub by remember { mutableStateOf(false) }
 
     val scope = rememberCoroutineScope()
     val scrollState = rememberScrollState()
@@ -170,6 +172,11 @@ fun RetailMobileApp(
                 }
             },
         )
+    } else if (showAgentHub) {
+        AgentHubScreen(
+            onBack = { showAgentHub = false },
+            userToken = userToken
+        )
     } else {
         Scaffold(
             topBar = {
@@ -184,6 +191,12 @@ fun RetailMobileApp(
                         }
                     },
                     actions = {
+                        IconButton(onClick = { 
+                            haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
+                            showAgentHub = true 
+                        }) {
+                            Icon(Icons.Default.AutoAwesome, contentDescription = "Agent Hub")
+                        }
                         val cartSize = cartItems.size
                         BadgedBox(badge = { if (cartSize > 0) Badge { Text(cartSize.toString()) } }) {
                             IconButton(onClick = { 
@@ -325,6 +338,18 @@ fun RetailMobileApp(
                                         isThinking = true
 
                                         scope.launch {
+                                            // Industrial Strategy: Conversation Profiling (Height/Weight)
+                                            val heightWeightPattern = Pattern.compile("(\\d+)\\s*cm.*(\\d+)\\s*kg|(\\d+)\\s*kg.*(\\d+)\\s*cm", Pattern.CASE_INSENSITIVE)
+                                            val matcher = heightWeightPattern.matcher(userMsg)
+                                            if (matcher.find()) {
+                                                val h = (matcher.group(1) ?: matcher.group(4))?.toFloatOrNull()
+                                                val w = (matcher.group(2) ?: matcher.group(3))?.toFloatOrNull()
+                                                if (h != null && w != null) {
+                                                    repository.updateProfile(h, w, userToken)
+                                                    SpressoLogger.i("Spresso", "Saved persistent profile: ${h}cm, ${w}kg")
+                                                }
+                                            }
+
                                             // Provide a default user ID for rate limiting, e.g., the user's email or token hash
                                             val userId = userEmail.ifEmpty { "default_user" }
                                             val localIntent = nanoEngine.analyzeIntent(userId, userMsg)
@@ -695,6 +720,94 @@ fun CheckoutScreen(
                 } else {
                     Text(stringResource(R.string.confirm_purchase), color = SpressoTheme.colors.surface)
                 }
+            }
+        }
+    }
+}
+
+@Composable
+fun AgentHubScreen(
+    onBack: () -> Unit,
+    userToken: String
+) {
+    val haptic = LocalHapticFeedback.current
+    Scaffold(
+        topBar = {
+            CenterAlignedTopAppBar(
+                title = { Text("Spresso Agent Hub", fontWeight = FontWeight.Black) },
+                navigationIcon = {
+                    IconButton(onClick = { 
+                        haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
+                        onBack() 
+                    }) {
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
+                    }
+                },
+                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(containerColor = SpressoTheme.colors.surface)
+            )
+        }
+    ) { padding ->
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(padding)
+                .background(SpressoTheme.colors.secondary)
+                .padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            AgentCard(
+                title = "Economic Research",
+                description = "Live FRED & BLS data synthesis.",
+                icon = Icons.Default.TrendingUp,
+                onClick = { /* Launch flow */ }
+            )
+            AgentCard(
+                title = "Global KYC",
+                description = "Real-time compliance investigation.",
+                icon = Icons.Default.Security,
+                onClick = { /* Launch flow */ }
+            )
+            AgentCard(
+                title = "Marketing Agency",
+                description = "On-brand logos and campaigns.",
+                icon = Icons.Default.Brush,
+                onClick = { /* Launch flow */ }
+            )
+            
+            Spacer(modifier = Modifier.weight(1f))
+            Text(
+                "Provisioned on Google Cloud Reasoning Engine",
+                style = SpressoTheme.typography.labelSmall,
+                color = Color.Gray,
+                modifier = Modifier.align(Alignment.CenterHorizontally)
+            )
+        }
+    }
+}
+
+@Composable
+fun AgentCard(
+    title: String,
+    description: String,
+    icon: androidx.compose.ui.graphics.vector.ImageVector,
+    onClick: () -> Unit
+) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable { onClick() },
+        colors = CardDefaults.cardColors(containerColor = SpressoTheme.colors.surface),
+        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+    ) {
+        Row(
+            modifier = Modifier.padding(20.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Icon(icon, contentDescription = null, modifier = Modifier.size(32.dp), tint = SpressoTheme.colors.primary)
+            Spacer(modifier = Modifier.width(20.dp))
+            Column {
+                Text(title, style = SpressoTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+                Text(description, style = SpressoTheme.typography.bodySmall, color = Color.Gray)
             }
         }
     }

@@ -156,6 +156,37 @@ class ChatResponse(BaseModel):
     can_upgrade: bool = False
 
 
+class ProfileUpdateRequest(BaseModel):
+    height: float | None = None
+    weight: float | None = None
+    avatar_url: str | None = None
+
+
+@router.post("/profile", dependencies=[Depends(verify_api_key)])
+async def update_profile(
+    request: Request,
+    payload: ProfileUpdateRequest = Body(...),
+    db: Session = Depends(get_secure_session),
+):
+    """Update user physical profile for precise VTO fit."""
+    user_id = getattr(request.state, "user_id", "anon")
+    customer = db.get(Customer, user_id)
+    if not customer:
+        # Should be created during onboarding/auth
+        return {"status": "ERROR", "message": "User not found"}
+
+    if payload.height:
+        customer.height = payload.height
+    if payload.weight:
+        customer.weight = payload.weight
+    if payload.avatar_url:
+        customer.avatar_url = payload.avatar_url
+
+    db.add(customer)
+    db.commit()
+    return {"status": "SUCCESS", "profile": customer}
+
+
 @router.get("/trending", response_model=list[dict[str, Any]])
 async def get_trending_discovery(
     db: Session = Depends(get_secure_session),

@@ -23,8 +23,9 @@ from sqlmodel import select
 from upstash_redis import Redis
 
 from src.merchant.config import get_settings
+import re
 from src.merchant.db.database import get_session
-from src.merchant.db.models import Product
+from src.merchant.db.models import Customer, Product
 from src.merchant.services.ai.guardrails.engine import (
     SecurityViolationError,
     SpressoGuardrail,
@@ -54,6 +55,8 @@ class IntentResult(BaseModel):
     filters: list[str] = Field(default_factory=list)
     grid: list[ProductDiscovery] = Field(default_factory=list)
     compare: list[dict[str, Any]] = Field(default_factory=list)
+    vto_image_url: str | None = None
+    vto_video_url: str | None = None
 
 
 # --- INITIALIZE GENKIT PULSE ---
@@ -187,6 +190,20 @@ async def search_products(query: str) -> list[ProductDiscovery]:
     return await ai.run(f"db-search-{query}", do_db_query)
 
 
+def map_dimensions_to_size(height: float, weight: float) -> str:
+    """Maps user height (cm) and weight (kg) to a standard apparel size."""
+    # Simplified industrial sizing logic for Spresso 2026
+    bmi = weight / ((height / 100) ** 2)
+    if height < 165:
+        return "S" if bmi < 22 else "M"
+    elif height < 180:
+        if bmi < 20: return "S"
+        if bmi < 25: return "M"
+        return "L"
+    else:
+        return "L" if bmi < 24 else "XL"
+
+
 class GeminiAgentService:
     """Industrial Genkit Flow-based AI Fashion Cortex."""
 
@@ -206,9 +223,24 @@ class GeminiAgentService:
         """Production Discovery Flow: Hardened with Dotprompt, real Guardrails, and Grounding."""
         user_message = params["user_message"]
         user_metadata = params.get("user_metadata", {})
+        user_id = user_metadata.get("user_id", "anon")
         user_tier = user_metadata.get("user_tier", "free")
         current_cart = params.get("current_cart", [])
         image_data = params.get("image_data")
+
+        # Industrial Strategy: Active Profiling (Height/Weight parsing)
+        profile_match = re.search(r"(\d+)\s*cm.*(\d+)\s*kg|(\d+)\s*kg.*(\d+)\s*cm", user_message, re.IGNORECASE)
+        if profile_match:
+            h = float(profile_match.group(1) or profile_match.group(4))
+            w = float(profile_match.group(2) or profile_match.group(3))
+            with next(get_session()) as session:
+                customer = session.get(Customer, user_id)
+                if customer:
+                    customer.height = h
+                    customer.weight = w
+                    session.add(customer)
+                    session.commit()
+                    logger.info(f"Saved persistent profile for user {user_id}: {h}cm, {w}kg")
 
         # --- AI FIREWALL CHECK (Semantic Security) ---
         try:
@@ -275,10 +307,62 @@ class GeminiAgentService:
 
         result = IntentResult.model_validate(result_data)
 
-        # 4. Commercial Pulse: Tier-Gating Motion Loops
-        if result.intent == "VTO" and user_tier == "free":
-            result.intent = "CHAT"
-            result.response = "Motion Virtual Try-On is a premium feature. Join the Creator tier to see this in action."
+        # 4. Commercial Pulse: Real Generative VTO Pipeline (Spresso 2026)
+        if result.intent == "VTO":
+            if user_tier == "free":
+                result.intent = "CHAT"
+                result.response = "Motion Virtual Try-On is a premium feature. Join the Creator tier to see this in action."
+            elif result.product_id:
+                # Production Strategy: Profile-Aware VTO Orchestration
+                with next(get_session()) as session:
+                    product = session.get(Product, result.product_id)
+                    if not product:
+                        result.response = "I couldn't find details for that specific product."
+                        return result
+
+                    # Branch logic based on category (Apparel VTO vs Product Spin)
+                    is_apparel = product.category.lower() in ["apparel", "clothing", "t-shirt", "shirt", "outerwear"]
+
+                    if is_apparel:
+                        customer = session.get(Customer, user_id)
+                        if not customer or customer.height is None or customer.weight is None:
+                            result.intent = "CHAT"
+                            result.response = "I'd love to show you how that looks! To ensure a perfect fit, could you please tell me your height (cm) and weight (kg)?"
+                            return result
+
+                        logger.info(f"Triggering Art Director VTO for product {product.id}")
+                        user_size = map_dimensions_to_size(customer.height, customer.weight)
+                        vto_metadata = {
+                            **user_metadata,
+                            "size": user_size,
+                            "height": customer.height,
+                            "weight": customer.weight,
+                            "avatar_url": customer.avatar_url
+                        }
+
+                        vto_result = await self.vto_engine.generate_branded_try_on(
+                            user_photo_b64=image_data if isinstance(image_data, str) else base64.b64encode(image_data).decode("utf-8"),
+                            garment_image_url=product.image_url,
+                            user_metadata=vto_metadata
+                        )
+
+                        if vto_result and vto_result.get("image_url"):
+                            result.vto_image_url = vto_result["image_url"]
+                            result.response = f"I've orchestrated a professional runway photoshoot with you wearing the {product.name} (Size {user_size}). It captures the Balenciaga aesthetic perfectly. How do you like the fit?"
+                        else:
+                            result.response = "I tried to generate a branded try-on for you, but the Art Director engine is currently calibrating. I can still help you with product details!"
+                    else:
+                        # For non-apparel (shoes, tech, home), generate a 360 spin
+                        logger.info(f"Triggering 360 Product Spin for {product.id}")
+                        spin_url = await self.vto_engine.generate_product_spin(product.image_url)
+                        if spin_url:
+                            result.vto_video_url = spin_url
+                            result.response = f"I've generated a 360° cinematic spin for the {product.name} so you can see it from every angle. How does it look?"
+                        else:
+                            result.response = f"I've gathered all the specs for the {product.name}. Would you like to see the customer reviews as well?"
+
+            elif not image_data:
+                result.response = "I can definitely show you how that looks! Please share or upload a photo of yourself first so I can perform the virtual try-on."
 
         # --- CACHE SET ---
         if cache_key and self.redis:
