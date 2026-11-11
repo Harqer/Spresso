@@ -1,0 +1,16 @@
+{
+  "slug": "wardrobe-and-try-on",
+  "title": "Building a wardrobe that helps you decide",
+  "summary": "How personal collections and virtual try-on concepts fit into our approach to shopping.",
+  "category": "Feature notes",
+  "status": "draft",
+  "approved_by": "",
+  "publish_at": "2026-11-16T10:00:00-08:00",
+  "body": [
+    "It's hard to tell whether a new piece fits your style when you only see a product photo.",
+    "Our Spresso wardrobe and collections work explores a more visual approach: saving finds, arranging pieces you like, and experimenting with virtual try-on experiences.",
+    "We're sharing these ideas as development notes. Availability and the limits of try-on accuracy depend on the particular feature and version of the app.",
+    "This is one piece of the broader goal: shopping assistance that remembers the context of your decisions."
+  ],
+  "channels": {}
+}
