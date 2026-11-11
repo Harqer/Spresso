@@ -68,3 +68,16 @@ Configure your local MCP-compatible client to run `python3 /absolute/path/to/mar
 | Reddit | Draft/export only | OAuth, community rules, and nonspam content |
 
 Use `python3 marketing/pipeline.py queue` to create drafts even if every third-party account is disconnected.
+
+## Local LLM fallback (for fresh, human-grounded drafts)
+
+For real new stories without paid API calls, run a free local model (e.g. an Ollama-hosted Gemma model) on your own machine. Put dated factual notes in `marketing/source_notes/`, then use:
+
+```bash
+# Requires Ollama running locally and a model already available/downloaded.
+python3 marketing/local_writer.py --notes marketing/source_notes/2026-11-10-feature-note.md --slug feature-note --model gemma3:4b
+```
+
+This script uses `http://127.0.0.1:11434/api/generate` through Python's standard library, **rejects external hosts** to keep founder notes local, and saves only a `status:draft` JSON post requiring human review. It cannot access your laptop from GitHub Actions; generate drafts locally, commit them for review, then merge approved changes to publish on schedule. If Ollama isn't installed, the deterministic blog and platform-caption pipeline still works with manually written JSON posts. No live local LLM generation was tested here; the writer's mocked tests cover response handling and draft-only behavior.
+
+With the optional MCP server, call `draft_blog_from_local_notes` to draft from a local markdown file. It never posts or marks an article approved.
