@@ -1,0 +1,20 @@
+{
+  "slug": "welcome-to-spresso",
+  "title": "Meet Spresso: shopping starts with a conversation",
+  "summary": "An introduction to the AI personal-shopping assistant we're building, and why its experience should feel more helpful than a traditional storefront.",
+  "category": "From the builder",
+  "status": "draft",
+  "approved_by": "",
+  "publish_at": "2026-11-13T10:00:00-08:00",
+  "body": [
+    "We're building Spresso around a simple idea: shopping shouldn't require you to open a dozen tabs just to find the right thing.",
+    "Instead of behaving like a store that sells its own inventory, Spresso is intended to help you explore products, research retailers, and organize the decisions that come before a purchase.",
+    "We want the people who use Spresso to see the product evolve: the features we're testing, the choices we're making, and what still needs work. This journal is where we'll share that process.",
+    "Your shopping, on autopilot."
+  ],
+  "channels": {
+    "facebook": "We're building Spresso as an AI shopping assistant, not another storefront. Here's the thinking behind the experience and the features we're developing.",
+    "x": "Spresso isn't another online store. We're building an AI shopping assistant that helps with the decisions before you buy. Here's why.",
+    "reddit": "I'm building Spresso, an AI shopping assistant focused on research and shopping tasks. Here's the product idea and why we're sharing the development process openly. I'd love constructive feedback."
+  }
+}

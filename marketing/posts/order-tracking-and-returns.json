@@ -1,0 +1,16 @@
+{
+  "slug": "order-tracking-and-returns",
+  "title": "Shopping doesn't end at checkout",
+  "summary": "Our direction for order organization, status checks, and easier returns.",
+  "category": "Build journal",
+  "status": "draft",
+  "approved_by": "",
+  "publish_at": "2026-11-18T10:00:00-08:00",
+  "body": [
+    "Product discovery is only the beginning of a shopping experience. After checkout, people still need to know where their purchases are and what to do if something doesn't work out.",
+    "We're developing Spresso around those later tasks too, including organization of purchase information, order-status workflows and assistance with returns.",
+    "The exact integrations and supported merchants will be described as they become available. We'll distinguish features under development from those people can use today.",
+    "Our aim is to make the entire shopping journey easier to manage, not just the moment when someone clicks Buy."
+  ],
+  "channels": {}
+}
