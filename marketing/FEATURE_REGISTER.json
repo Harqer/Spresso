@@ -1,0 +1,17 @@
+{
+  "purpose": "Editorial fact-checking inventory. Planned means do not advertise as live; verify against current app and demos before marking shipped.",
+  "features": [
+    {"name":"AI conversational shopping","editorial_status":"verify_before_claiming_live","notes":"Search and product research via natural-language conversations"},
+    {"name":"Retailer research and price comparisons","editorial_status":"verify_before_claiming_live","notes":"Only compare verifiable products and prices with clear sources and currency"},
+    {"name":"Agent-assisted purchase and checkout","editorial_status":"verify_before_claiming_live","notes":"Purchase requires user authorization; never claim payment or order complete without confirmation"},
+    {"name":"Order tracking and merchant checks","editorial_status":"in_development","notes":"Separate manual order entry from automated merchant/carrier integration"},
+    {"name":"Returns assistance","editorial_status":"in_development","notes":"Distinguish guidance from successfully initiated return"},
+    {"name":"Wardrobe and saved collections","editorial_status":"verify_before_claiming_live","notes":"Describe UI and available behavior accurately"},
+    {"name":"Virtual try-on","editorial_status":"verify_before_claiming_live","notes":"Never promise accurate physical fit"},
+    {"name":"Personalized discovery and recommendations","editorial_status":"verify_before_claiming_live","notes":"Explain how recommendations work without implying inaccessible user data"},
+    {"name":"Grocery lists and shopping tasks","editorial_status":"in_development","notes":"Verify retailer capabilities before promising automation"},
+    {"name":"Voice shopping","editorial_status":"in_development","notes":"Verify specific availability by platform"},
+    {"name":"Mobile and web","editorial_status":"verify_before_claiming_live","notes":"Clearly distinguish released and prototype surfaces"},
+    {"name":"Browser automation","editorial_status":"in_development","notes":"Avoid promising arbitrary merchant support, bypasses, or guaranteed checkout"}
+  ]
+}
